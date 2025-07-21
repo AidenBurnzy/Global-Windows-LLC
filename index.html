@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GLOBAL WINDOWS | Discover Quality Windows Today</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: #2c3e50;
+            letter-spacing: -0.5px;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+        
+        .nav-links a {
+            color: #2c3e50;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+            padding: 0.5rem 0;
+        }
+        
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: #1976d2;
+        }
+        
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background: #1976d2;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-links a:hover::after,
+        .nav-links a.active::after {
+            width: 100%;
+        }
+        
+        /* Main Content */
+        main {
+            margin-top: 80px;
+        }
+        
+        .page {
+            display: none;
+        }
+        
+        .page.active {
+            display: block;
+        }
+        
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            background: linear-gradient(135deg, rgba(46, 125, 50, 0.1) 0%, rgba(25, 118, 210, 0.1) 100%),
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><rect fill="%23ffffff" width="1200" height="800"/><g opacity="0.1"><circle cx="200" cy="200" r="100" fill="%232e7d32"/><circle cx="800" cy="300" r="150" fill="%231976d2"/><circle cx="400" cy="600" r="80" fill="%234caf50"/></g></svg>');
+            display: flex;
+            align-items: center;
+            position: relative;
+            background-size: cover;
+            background-attachment: fixed;
+        }
+        
+        .hero-content {
+            max-width: 600px;
+            z-index: 2;
+        }
+        
+        .hero-badge {
+            display: inline-block;
+            background: rgba(46, 125, 50, 0.1);
+            border: 1px solid #4caf50;
+            color: #2e7d32;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            letter-spacing: 0.5px;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: #2c3e50;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+        
+        .hero-highlight {
+            color: #1976d2;
+            display: block;
+            font-size: 4rem;
+            margin: 1rem 0;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            color: #7f8c8d;
+            margin-bottom: 2.5rem;
+            line-height: 1.7;
+        }
+        
+        .cta-button {
+            background: linear-gradient(135deg, #4caf50, #2e7d32);
+            border: none;
+            color: white;
+            padding: 1rem 2rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(76, 175, 80, 0.4);
+        }
+        
+        /* Mission Section */
+        .mission-section {
+            background: #f8f9fa;
+            padding: 4rem 0;
+            text-align: center;
+        }
+        
+        .mission-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 1.5rem;
+        }
+        
+        .section-subtitle {
+            font-size: 1.3rem;
+            color: #1976d2;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        /* Services Grid */
+        .services-section {
+            padding: 6rem 0;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .service-card {
+            background: white;
+            border-radius: 15px;
+            padding: 2.5rem;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            border: 1px solid #f1f2f6;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+        }
+        
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #1976d2, #0d47a1);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: white;
+            margin-bottom: 1.5rem;
+        }
+        
+        .service-card h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+        
+        .service-card p {
+            color: #7f8c8d;
+            line-height: 1.6;
+        }
+        
+        /* About Section */
+        .about-section {
+            background: #f8f9fa;
+            padding: 6rem 0;
+        }
+        
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            margin-top: 3rem;
+        }
+        
+        .about-text h3 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 1.5rem;
+        }
+        
+        .about-text p {
+            color: #7f8c8d;
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+        
+        .about-features {
+            list-style: none;
+            margin-top: 2rem;
+        }
+        
+        .about-features li {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+            color: #2c3e50;
+            font-weight: 500;
+        }
+        
+        .about-features li::before {
+            content: '✓';
+            color: #27ae60;
+            font-weight: bold;
+            margin-right: 1rem;
+            background: rgba(39, 174, 96, 0.1);
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .about-image {
+            background: linear-gradient(135deg, rgba(25, 118, 210, 0.1), rgba(76, 175, 80, 0.1));
+            border-radius: 15px;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: #1976d2;
+        }
+        
+        /* Contact Form */
+        .contact-section {
+            padding: 6rem 0;
+        }
+        
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            margin-top: 3rem;
+        }
+        
+        .contact-info {
+            background: #f8f9fa;
+            padding: 3rem;
+            border-radius: 15px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+        
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #4caf50, #2e7d32);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            margin-right: 1.5rem;
+        }
+        
+        .contact-form {
+            background: white;
+            padding: 3rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: #2c3e50;
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid #e9ecef;
+            border-radius: 8px;
+            font-family: 'Inter', sans-serif;
+            transition: border-color 0.3s ease;
+            font-size: 1rem;
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #4caf50;
+        }
+        
+        /* Gallery */
+        .gallery-section {
+            background: #f8f9fa;
+            padding: 6rem 0;
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .gallery-item {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .gallery-item:hover {
+            transform: translateY(-5px);
+        }
+        
+        .gallery-image {
+            height: 250px;
+            background: linear-gradient(135deg, #1976d2, #4caf50);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+        }
+        
+        .gallery-content {
+            padding: 1.5rem;
+        }
+        
+        .gallery-content h4 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+        }
+        
+        .gallery-content p {
+            color: #7f8c8d;
+            font-size: 0.95rem;
+        }
+        
+        /* Footer */
+        footer {
+            background: #2c3e50;
+            color: white;
+            padding: 3rem 0 1rem;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-section h4 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: #4caf50;
+        }
+        
+        .footer-section p,
+        .footer-section a {
+            color: #bdc3c7;
+            text-decoration: none;
+            line-height: 1.6;
+        }
+        
+        .footer-section a:hover {
+            color: #4caf50;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid #34495e;
+            color: #95a5a6;
+        }
+        
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero-highlight {
+                font-size: 3rem;
+            }
+            
+            .about-grid,
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .container {
+                padding: 0 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">GLOBAL WINDOWS</div>
+            <ul class="nav-links">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#services" class="nav-link">Services</a></li>
+                <li><a href="#gallery" class="nav-link">Gallery</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Home Page -->
+        <div id="home" class="page active">
+            <section class="hero">
+                <div class="container">
+                    <div class="hero-content">
+                        <div class="hero-badge">BUILD WITH PURPOSE</div>
+                        <h1>
+                            BUILD WITH
+                            <span class="hero-highlight">Global Windows</span>
+                        </h1>
+                        <p>At our core, we install high-quality windows for both residential homes and commercial properties with expert craftsmanship and dependable service. But we do more than just install windows — we build with purpose.</p>
+                        <button class="cta-button">Get Started Today</button>
+                    </div>
+                </div>
+            </section>
+
+            <section class="mission-section">
+                <div class="container">
+                    <div class="mission-content">
+                        <div class="section-subtitle">What We Do</div>
+                        <h2 class="section-title">God's Way</h2>
+                        <p style="font-size: 1.1rem; color: #7f8c8d; line-height: 1.7;">At GLOBAL WINDOWS, we are more than just a window installation company — we are a faith-driven team committed to excellence, integrity, and service through Christ. Built on Christian values, our mission is to bring light into homes both physically and spiritually.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- About Page -->
+        <div id="about" class="page">
+            <section class="about-section">
+                <div class="container">
+                    <div class="section-subtitle">Our Story</div>
+                    <h2 class="section-title">About Global Windows</h2>
+                    
+                    <div class="about-grid">
+                        <div class="about-text">
+                            <h3>Faith-Driven Excellence</h3>
+                            <p>As a Christian-based company, we lead our team with faith, integrity, and a mission to share God's word. Every job site becomes a place of honest work and spiritual growth, where our men are not only trained in their craft but also guided by biblical principles.</p>
+                            <p>Through every window we install, we aim to bring light — both into buildings and into lives. Our commitment goes beyond just quality installation; we're building relationships and communities founded on trust and Christian values.</p>
+                            
+                            <ul class="about-features">
+                                <li>Christian-based company values</li>
+                                <li>Expert craftsmanship and training</li>
+                                <li>Residential and commercial services</li>
+                                <li>Dependable and honest service</li>
+                                <li>Mentorship and spiritual growth</li>
+                            </ul>
+                        </div>
+                        <div class="about-image">
+                            🏠
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Services Page -->
+        <div id="services" class="page">
+            <section class="services-section">
+                <div class="container">
+                    <div class="section-subtitle">What We Offer</div>
+                    <h2 class="section-title">Our Services</h2>
+                    
+                    <div class="services-grid">
+                        <div class="service-card">
+                            <div class="service-icon">🏠</div>
+                            <h3>Residential Windows</h3>
+                            <p>Professional window installation for homes with attention to detail, quality materials, and craftsmanship that stands the test of time. We bring light and beauty to your living spaces.</p>
+                        </div>
+                        <div class="service-card">
+                            <div class="service-icon">🏢</div>
+                            <h3>Commercial Windows</h3>
+                            <p>Large-scale commercial window installations for businesses, offices, and industrial properties. We understand the unique needs of commercial spaces and deliver accordingly.</p>
+                        </div>
+                        <div class="service-card">
+                            <div class="service-icon">🔧</div>
+                            <h3>Window Repair</h3>
+                            <p>Expert repair services for damaged or worn windows. We restore functionality and appearance with precision and care, extending the life of your existing windows.</p>
+                        </div>
+                        <div class="service-card">
+                            <div class="service-icon">💡</div>
+                            <h3>Consultation</h3>
+                            <p>Professional consultation services to help you choose the right windows for your needs, budget, and aesthetic preferences. We guide you through every decision.</p>
+                        </div>
+                        <div class="service-card">
+                            <div class="service-icon">⚡</div>
+                            <h3>Energy Efficiency</h3>
+                            <p>Specialized installation of energy-efficient windows that reduce heating and cooling costs while improving comfort and environmental impact.</p>
+                        </div>
+                        <div class="service-card">
+                            <div class="service-icon">🛡️</div>
+                            <h3>Warranty & Support</h3>
+                            <p>Comprehensive warranty coverage and ongoing support for all our installations. We stand behind our work with confidence and integrity.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Gallery Page -->
+        <div id="gallery" class="page">
+            <section class="gallery-section">
+                <div class="container">
+                    <div class="section-subtitle">Our Work</div>
+                    <h2 class="section-title">Project Gallery</h2>
+                    
+                    <div class="gallery-grid">
+                        <div class="gallery-item">
+                            <div class="gallery-image">🏠</div>
+                            <div class="gallery-content">
+                                <h4>Modern Family Home</h4>
+                                <p>Complete window replacement for a 3,500 sq ft family residence with energy-efficient double-pane windows.</p>
+                            </div>
+                        </div>
+                        <div class="gallery-item">
+                            <div class="gallery-image">🏢</div>
+                            <div class="gallery-content">
+                                <h4>Office Complex</h4>
+                                <p>Commercial installation for a 5-story office building featuring floor-to-ceiling windows and modern design.</p>
+                            </div>
+                        </div>
+                        <div class="gallery-item">
+                            <div class="gallery-image">🏡</div>
+                            <div class="gallery-content">
+                                <h4>Historic Renovation</h4>
+                                <p>Careful restoration of windows in a historic home while maintaining architectural integrity and character.</p>
+                            </div>
+                        </div>
+                        <div class="gallery-item">
+                            <div class="gallery-image">🏭</div>
+                            <div class="gallery-content">
+                                <h4>Industrial Facility</h4>
+                                <p>Large-scale window installation for manufacturing facility with specialized safety and durability requirements.</p>
+                            </div>
+                        </div>
+                        <div class="gallery-item">
+                            <div class="gallery-image">🏪</div>
+                            <div class="gallery-content">
+                                <h4>Retail Storefront</h4>
+                                <p>Beautiful storefront windows designed to showcase products while providing security and energy efficiency.</p>
+                            </div>
+                        </div>
+                        <div class="gallery-item">
+                            <div class="gallery-image">⛪</div>
+                            <div class="gallery-content">
+                                <h4>Church Project</h4>
+                                <p>Sacred space window installation with attention to spiritual atmosphere and natural light enhancement.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Contact Page -->
+        <div id="contact" class="page">
+            <section class="contact-section">
+                <div class="container">
+                    <div class="section-subtitle">Get In Touch</div>
+                    <h2 class="section-title">Contact Global Windows</h2>
+                    
+                    <div class="contact-grid">
+                        <div class="contact-info">
+                            <h3 style="color: #2c3e50; margin-bottom: 2rem;">Let's Build Something Great Together</h3>
+                            
+                            <div class="contact-item">
+                                <div class="contact-icon">📍</div>
+                                <div>
+                                    <h4 style="color: #2c3e50; margin-bottom: 0.5rem;">Location</h4>
+                                    <p>Serving the Greater Metro Area<br>Licensed & Insured</p>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-item">
+                                <div class="contact-icon">📞</div>
+                                <div>
+                                    <h4 style="color: #2c3e50; margin-bottom: 0.5rem;">Phone</h4>
+                                    <p>(555) 123-WINDOW<br>Available 7 Days a Week</p>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-item">
+                                <div class="contact-icon">✉️</div>
+                                <div>
+                                    <h4 style="color: #2c3e50; margin-bottom: 0.5rem;">Email</h4>
+                                    <p>info@globalwindowsllc.com<br>Free Estimates Available</p>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-item">
+                                <div class="contact-icon">⏰</div>
+                                <div>
+                                    <h4 style="color: #2c3e50; margin-bottom: 0.5rem;">Hours</h4>
+                                    <p>Mon-Fri: 7AM - 6PM<br>Saturday: 8AM - 4PM<br>Sunday: Emergency Only</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-form">
+                            <h3 style="color: #2c3e50; margin-bottom: 2rem;">Request a Free Estimate</h3>
+                            <form>
+                                <div class="form-group">
+                                    <label for="name">Full Name</label>
+                                    <input type="text" id="name" name="name" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Email Address</label>
+                                    <input type="email" id="email" name="email" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="phone">Phone Number</label>
+                                    <input type="tel" id="phone" name="phone" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="property">Property Type</label>
+                                    <select style="width: 100%; padding: 1rem; border: 2px solid #e9ecef; border-radius: 8px; font-family: 'Inter', sans-serif;">
+                                        <option>Residential</option>
+                                        <option>Commercial</option>
+                                        <option>Industrial</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="message">Project Details</label>
+                                    <textarea id="message" name="message" rows="5" placeholder="Tell us about your window installation needs..."></textarea>
+                                </div>
+                                <button type="submit" class="cta-button" style="width: 100%;">Get Free Estimate</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Global Windows LLC</h4>
+                    <p>A faith-driven window installation company committed to excellence, integrity, and service through Christ. We bring light into homes both physically and spiritually.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <p><a href="#services">Residential Windows</a></p>
+                    <p><a href="#services">Commercial Installation</a></p>
+                    <p><a href="#services">Window Repair</a></p>
+                    <p><a href="#services">Energy Efficiency</a></p>
+                </div>
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <p><a href="#about">About Us</a></p>
+                    <p><a href="#gallery">Our Work</a></p>
+                    <p><a href="#contact">Contact</a></p>
+                    <p><a href="#contact">Free Estimates</a></p>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <p>📞 (555) 123-WINDOW</p>
+                    <p>✉️ info@globalwindowsllc.com</p>
+                    <p>📍 Serving Greater Metro Area</p>
+                    <p>🛡️ Licensed & Insured</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Global Windows LLC. All rights reserved. Built with faith and purpose.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script
