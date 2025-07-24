@@ -3,292 +3,180 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GLOBAL WINDOWS | Discover Quality Windows Today</title>
+    <title>Global Windows LLC</title>
     <link rel="stylesheet" href="indexStyles.css">
-
+    
 </head>
 <body>
-    <header>
-        <nav class="container">
-            <div class="logo">GLOBAL WINDOWS</div>
-            <ul class="nav-links">
-                <li><a href="#home" class="nav-link active">Home</a></li>
-                <li><a href="aboutPage.html" class="nav-link">About</a></li>
-                <li><a href="servicesPage.html" class="nav-link">Services</a></li>
-                <li><a href="galleryPage.html" class="nav-link">Gallery</a></li>
-                <li><a href="contactPage.html" class="nav-link">Contact</a></li>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo"><img src="./pictures/GlobalWindowsLogo.png" alt="Global Windows Logo"></a>
+            
+            <ul class="nav-menu" id="nav-menu">
+                <li class="nav-item">
+                    <a href="#" class="nav-link active" data-page="home">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link" data-page="gallery">Gallery</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link" data-page="about">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link" data-page="contact">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link" data-page="principal">Principal</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link" data-page="teachings">Teachings</a>
+                </li>
             </ul>
-        </nav>
-    </header>
+            
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
 
-    <main>
+    <!-- Main Content -->
+    <main class="main-content">
         <!-- Home Page -->
-        <div id="home" class="page active">
-            <section class="hero">
-                <div class="container">
-                    <div class="hero-content">
-                        <div class="hero-badge">BUILD WITH PURPOSE</div>
-                        <h1>
-                            BUILD WITH
-                            <span class="hero-highlight">Global Windows</span>
-                        </h1>
-                        <p>At our core, we install high-quality windows for both residential homes and commercial properties with expert craftsmanship and dependable service. But we do more than just install windows — we build with purpose.</p>
-                        <button class="cta-button">Get Started Today</button>
-                    </div>
-                </div>
-            </section>
-
-            <section class="mission-section">
-                <div class="container">
-                    <div class="mission-content">
-                        <div class="section-subtitle">What We Do</div>
-                        <h2 class="section-title">God's Way</h2>
-                        <p style="font-size: 1.1rem; color: #7f8c8d; line-height: 1.7;">At GLOBAL WINDOWS, we are more than just a window installation company — we are a faith-driven team committed to excellence, integrity, and service through Christ. Built on Christian values, our mission is to bring light into homes both physically and spiritually.</p>
-                    </div>
-                </div>
-            </section>
-        </div>
-
-        <!-- About Page -->
-        <div id="about" class="page">
-            <section class="about-section">
-                <div class="container">
-                    <div class="section-subtitle">Our Story</div>
-                    <h2 class="section-title">About Global Windows</h2>
-                    
-                    <div class="about-grid">
-                        <div class="about-text">
-                            <h3>Faith-Driven Excellence</h3>
-                            <p>As a Christian-based company, we lead our team with faith, integrity, and a mission to share God's word. Every job site becomes a place of honest work and spiritual growth, where our men are not only trained in their craft but also guided by biblical principles.</p>
-                            <p>Through every window we install, we aim to bring light — both into buildings and into lives. Our commitment goes beyond just quality installation; we're building relationships and communities founded on trust and Christian values.</p>
-                            
-                            <ul class="about-features">
-                                <li>Christian-based company values</li>
-                                <li>Expert craftsmanship and training</li>
-                                <li>Residential and commercial services</li>
-                                <li>Dependable and honest service</li>
-                                <li>Mentorship and spiritual growth</li>
-                            </ul>
-                        </div>
-                        <div class="about-image">
-                            🏠
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </div>
-
-        <!-- Services Page -->
-        <div id="services" class="page">
-            <section class="services-section">
-                <div class="container">
-                    <div class="section-subtitle">What We Offer</div>
-                    <h2 class="section-title">Our Services</h2>
-                    
-                    <div class="services-grid">
-                        <div class="service-card">
-                            <div class="service-icon">🏠</div>
-                            <h3>Residential Windows</h3>
-                            <p>Professional window installation for homes with attention to detail, quality materials, and craftsmanship that stands the test of time. We bring light and beauty to your living spaces.</p>
-                        </div>
-                        <div class="service-card">
-                            <div class="service-icon">🏢</div>
-                            <h3>Commercial Windows</h3>
-                            <p>Large-scale commercial window installations for businesses, offices, and industrial properties. We understand the unique needs of commercial spaces and deliver accordingly.</p>
-                        </div>
-                        <div class="service-card">
-                            <div class="service-icon">🔧</div>
-                            <h3>Window Repair</h3>
-                            <p>Expert repair services for damaged or worn windows. We restore functionality and appearance with precision and care, extending the life of your existing windows.</p>
-                        </div>
-                        <div class="service-card">
-                            <div class="service-icon">💡</div>
-                            <h3>Consultation</h3>
-                            <p>Professional consultation services to help you choose the right windows for your needs, budget, and aesthetic preferences. We guide you through every decision.</p>
-                        </div>
-                        <div class="service-card">
-                            <div class="service-icon">⚡</div>
-                            <h3>Energy Efficiency</h3>
-                            <p>Specialized installation of energy-efficient windows that reduce heating and cooling costs while improving comfort and environmental impact.</p>
-                        </div>
-                        <div class="service-card">
-                            <div class="service-icon">🛡️</div>
-                            <h3>Warranty & Support</h3>
-                            <p>Comprehensive warranty coverage and ongoing support for all our installations. We stand behind our work with confidence and integrity.</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
+        <div class="page active" id="home-page">
+            <div class="page-header">
+                <h1 class="page-title">Welcome Home</h1>
+                <p class="page-subtitle">Your journey starts here</p>
+            </div>
+            <div class="content-placeholder">
+                <p class="placeholder-text">Home page content goes here</p>
+                <p class="placeholder-subtext">Add your hero section, featured content, or main message</p>
+            </div>
         </div>
 
         <!-- Gallery Page -->
-        <div id="gallery" class="page">
-            <section class="gallery-section">
-                <div class="container">
-                    <div class="section-subtitle">Our Work</div>
-                    <h2 class="section-title">Project Gallery</h2>
-                    
-                    <div class="gallery-grid">
-                        <div class="gallery-item">
-                            <div class="gallery-image">🏠</div>
-                            <div class="gallery-content">
-                                <h4>Modern Family Home</h4>
-                                <p>Complete window replacement for a 3,500 sq ft family residence with energy-efficient double-pane windows.</p>
-                            </div>
-                        </div>
-                        <div class="gallery-item">
-                            <div class="gallery-image">🏢</div>
-                            <div class="gallery-content">
-                                <h4>Office Complex</h4>
-                                <p>Commercial installation for a 5-story office building featuring floor-to-ceiling windows and modern design.</p>
-                            </div>
-                        </div>
-                        <div class="gallery-item">
-                            <div class="gallery-image">🏡</div>
-                            <div class="gallery-content">
-                                <h4>Historic Renovation</h4>
-                                <p>Careful restoration of windows in a historic home while maintaining architectural integrity and character.</p>
-                            </div>
-                        </div>
-                        <div class="gallery-item">
-                            <div class="gallery-image">🏭</div>
-                            <div class="gallery-content">
-                                <h4>Industrial Facility</h4>
-                                <p>Large-scale window installation for manufacturing facility with specialized safety and durability requirements.</p>
-                            </div>
-                        </div>
-                        <div class="gallery-item">
-                            <div class="gallery-image">🏪</div>
-                            <div class="gallery-content">
-                                <h4>Retail Storefront</h4>
-                                <p>Beautiful storefront windows designed to showcase products while providing security and energy efficiency.</p>
-                            </div>
-                        </div>
-                        <div class="gallery-item">
-                            <div class="gallery-image">⛪</div>
-                            <div class="gallery-content">
-                                <h4>Church Project</h4>
-                                <p>Sacred space window installation with attention to spiritual atmosphere and natural light enhancement.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
+        <div class="page" id="gallery-page">
+            <div class="page-header">
+                <h1 class="page-title">Gallery</h1>
+                <p class="page-subtitle">Explore our visual collection</p>
+            </div>
+            <div class="content-placeholder">
+                <p class="placeholder-text">Gallery content goes here</p>
+                <p class="placeholder-subtext">Add your image galleries, portfolios, or visual showcase</p>
+            </div>
+        </div>
+
+        <!-- About Page -->
+        <div class="page" id="about-page">
+            <div class="page-header">
+                <h1 class="page-title">About Us</h1>
+                <p class="page-subtitle">Learn more about our story</p>
+            </div>
+            <div class="content-placeholder">
+                <p class="placeholder-text">About page content goes here</p>
+                <p class="placeholder-subtext">Add your company story, mission, values, and team information</p>
+            </div>
         </div>
 
         <!-- Contact Page -->
-        <div id="contact" class="page">
-            <section class="contact-section">
-                <div class="container">
-                    <div class="section-subtitle">Get In Touch</div>
-                    <h2 class="section-title">Contact Global Windows</h2>
-                    
-                    <div class="contact-grid">
-                        <div class="contact-info">
-                            <h3 style="color: #2c3e50; margin-bottom: 2rem;">Let's Build Something Great Together</h3>
-                            
-                            <div class="contact-item">
-                                <div class="contact-icon">📍</div>
-                                <div>
-                                    <h4 style="color: #2c3e50; margin-bottom: 0.5rem;">Location</h4>
-                                    <p>Serving the Greater Metro Area<br>Licensed & Insured</p>
-                                </div>
-                            </div>
-                            
-                            <div class="contact-item">
-                                <div class="contact-icon">📞</div>
-                                <div>
-                                    <h4 style="color: #2c3e50; margin-bottom: 0.5rem;">Phone</h4>
-                                    <p>(555) 123-WINDOW<br>Available 7 Days a Week</p>
-                                </div>
-                            </div>
-                            
-                            <div class="contact-item">
-                                <div class="contact-icon">✉️</div>
-                                <div>
-                                    <h4 style="color: #2c3e50; margin-bottom: 0.5rem;">Email</h4>
-                                    <p>info@globalwindowsllc.com<br>Free Estimates Available</p>
-                                </div>
-                            </div>
-                            
-                            <div class="contact-item">
-                                <div class="contact-icon">⏰</div>
-                                <div>
-                                    <h4 style="color: #2c3e50; margin-bottom: 0.5rem;">Hours</h4>
-                                    <p>Mon-Fri: 7AM - 6PM<br>Saturday: 8AM - 4PM<br>Sunday: Emergency Only</p>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="contact-form">
-                            <h3 style="color: #2c3e50; margin-bottom: 2rem;">Request a Free Estimate</h3>
-                            <form>
-                                <div class="form-group">
-                                    <label for="name">Full Name</label>
-                                    <input type="text" id="name" name="name" required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="email">Email Address</label>
-                                    <input type="email" id="email" name="email" required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="phone">Phone Number</label>
-                                    <input type="tel" id="phone" name="phone" required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="property">Property Type</label>
-                                    <select style="width: 100%; padding: 1rem; border: 2px solid #e9ecef; border-radius: 8px; font-family: 'Inter', sans-serif;">
-                                        <option>Residential</option>
-                                        <option>Commercial</option>
-                                        <option>Industrial</option>
-                                    </select>
-                                </div>
-                                <div class="form-group">
-                                    <label for="message">Project Details</label>
-                                    <textarea id="message" name="message" rows="5" placeholder="Tell us about your window installation needs..."></textarea>
-                                </div>
-                                <button type="submit" class="cta-button" style="width: 100%;">Get Free Estimate</button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </section>
+        <div class="page" id="contact-page">
+            <div class="page-header">
+                <h1 class="page-title">Contact Us</h1>
+                <p class="page-subtitle">Get in touch with us</p>
+            </div>
+            <div class="content-placeholder">
+                <p class="placeholder-text">Contact page content goes here</p>
+                <p class="placeholder-subtext">Add contact forms, address, phone, email, and location maps</p>
+            </div>
+        </div>
+
+        <!-- Principal Page -->
+        <div class="page" id="principal-page">
+            <div class="page-header">
+                <h1 class="page-title">Principal</h1>
+                <p class="page-subtitle">Leadership and vision</p>
+            </div>
+            <div class="content-placeholder">
+                <p class="placeholder-text">Principal page content goes here</p>
+                <p class="placeholder-subtext">Add principal information, biography, and leadership details</p>
+            </div>
+        </div>
+
+        <!-- Teachings Page -->
+        <div class="page" id="teachings-page">
+            <div class="page-header">
+                <h1 class="page-title">Teachings</h1>
+                <p class="page-subtitle">Knowledge and wisdom shared</p>
+            </div>
+            <div class="content-placeholder">
+                <p class="placeholder-text">Teachings page content goes here</p>
+                <p class="placeholder-subtext">Add educational content, courses, lessons, or instructional materials</p>
+            </div>
         </div>
     </main>
 
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h4>Global Windows LLC</h4>
-                    <p>A faith-driven window installation company committed to excellence, integrity, and service through Christ. We bring light into homes both physically and spiritually.</p>
-                </div>
-                <div class="footer-section">
-                    <h4>Services</h4>
-                    <p><a href="#services">Residential Windows</a></p>
-                    <p><a href="#services">Commercial Installation</a></p>
-                    <p><a href="#services">Window Repair</a></p>
-                    <p><a href="#services">Energy Efficiency</a></p>
-                </div>
-                <div class="footer-section">
-                    <h4>Company</h4>
-                    <p><a href="#about">About Us</a></p>
-                    <p><a href="#gallery">Our Work</a></p>
-                    <p><a href="#contact">Contact</a></p>
-                    <p><a href="#contact">Free Estimates</a></p>
-                </div>
-                <div class="footer-section">
-                    <h4>Contact Info</h4>
-                    <p>📞 (555) 123-WINDOW</p>
-                    <p>✉️ info@globalwindowsllc.com</p>
-                    <p>📍 Serving Greater Metro Area</p>
-                    <p>🛡️ Licensed & Insured</p>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2024 Global Windows LLC. All rights reserved. Built with faith and purpose.</p>
-            </div>
-        </div>
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2025 Global Windows LLC. All rights reserved.</p>
     </footer>
 
-    <script
+    <script>
+        // Navigation functionality
+        const navLinks = document.querySelectorAll('.nav-link');
+        const pages = document.querySelectorAll('.page');
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('nav-menu');
+
+        // Handle page switching
+        navLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                
+                // Remove active class from all links and pages
+                navLinks.forEach(l => l.classList.remove('active'));
+                pages.forEach(p => p.classList.remove('active'));
+                
+                // Add active class to clicked link
+                link.classList.add('active');
+                
+                // Show corresponding page
+                const targetPage = link.getAttribute('data-page') + '-page';
+                document.getElementById(targetPage).classList.add('active');
+                
+                // Close mobile menu if open
+                navMenu.classList.remove('active');
+                
+                // Update page title
+                document.title = link.textContent + ' - Global Windows LLC';
+            });
+        });
+
+        // Mobile menu toggle
+        hamburger.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
+                navMenu.classList.remove('active');
+            }
+        });
+
+        // Smooth scroll to top when switching pages
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+
+        // Add scroll to top functionality to nav links
+        navLinks.forEach(link => {
+            link.addEventListener('click', scrollToTop);
+        });
+    </script>
+</body>
+</html>
