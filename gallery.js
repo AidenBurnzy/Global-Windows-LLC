@@ -21,7 +21,7 @@ const projectData = {
   'modern-family': {
     title: 'Modern Family Home',
     description: 'Complete window replacement featuring energy-efficient double-pane windows with custom trim work. This project transformed the home\'s energy efficiency while maintaining its contemporary aesthetic.',
-    images: ['🏠', '🪟', '🔧', '✨', '🏡'],
+    images: ['pictures', '🪟', '🔧', '✨', '🏡'],
     specs: {
       'Windows': '24 Units',
       'Type': 'Double-Hung',
