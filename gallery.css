@@ -1,0 +1,783 @@
+/* Gallery Tabs */
+.gallery-tabs {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.gallery-tab {
+  background: #ecf0f1;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 500;
+  color: #1e3a2e;
+}
+
+.gallery-tab.active,
+.gallery-tab:hover {
+  background: #27ae60;
+  color: white;
+  transform: translateY(-2px);
+}
+
+.gallery-tab:focus {
+  outline: 2px solid #27ae60;
+  outline-offset: 2px;
+}
+
+/* Gallery Content */
+.gallery-content {
+  margin-top: 2rem;
+}
+
+.gallery-section {
+  display: none;
+}
+
+.gallery-section.active {
+  display: block;
+}
+
+/* Images Grid */
+.images-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+/* Image Cards */
+.image-card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border-top: 4px solid #27ae60;
+}
+
+.image-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 25px rgba(39, 174, 96, 0.2);
+}
+
+/* Image Placeholders */
+.image-placeholder {
+  height: 200px;
+  background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 4rem;
+  color: white;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Styling for actual images within placeholders */
+.image-placeholder img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  border-radius: 0;
+  opacity: 0;
+}
+
+.image-placeholder img.loaded,
+.image-placeholder img[src]:not([src=""]) {
+  opacity: 1;
+}
+
+/* Enhanced hover effect for image cards with images */
+.image-card:hover .image-placeholder img {
+  transform: scale(1.05);
+}
+
+/* Ensure emoji placeholders still work for cards without images */
+.image-placeholder:not(:has(img)) {
+  background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%);
+}
+
+/* Alternative fallback for browsers that don't support :has() selector */
+.image-placeholder:empty {
+  background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%);
+}
+
+/* Hide broken images */
+.image-placeholder img[src=""],
+.image-placeholder img:not([src]) {
+  display: none;
+}
+
+/* Ensure the gradient background shows for placeholders without images */
+.image-placeholder:not(:has(img))::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%);
+  z-index: -1;
+}
+
+/* Image Info Section */
+.image-info {
+  padding: 1.5rem;
+}
+
+.image-title {
+  font-size: 1.3rem;
+  color: #1e3a2e;
+  margin-bottom: 0.75rem;
+  font-weight: 600;
+}
+
+.image-description {
+  color: #666;
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.image-specs {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.spec-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.25rem 0;
+  border-bottom: 1px solid #eee;
+}
+
+.spec-label {
+  font-weight: 500;
+  color: #1e3a2e;
+}
+
+.spec-value {
+  color: #666;
+}
+
+/* Modal Styles */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 2000;
+  padding: 1rem;
+}
+
+.modal.active {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-content {
+  background: white;
+  border-radius: 12px;
+  max-width: 800px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  border-top: 4px solid #27ae60;
+}
+
+.modal-header {
+  padding: 1.5rem;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal-title {
+  color: #1e3a2e;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: #999;
+  padding: 0;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.close-btn:hover {
+  background: #f8f9fa;
+  color: #333;
+}
+
+.close-btn:focus {
+  outline: 2px solid #27ae60;
+  outline-offset: 2px;
+}
+
+.modal-body {
+  padding: 1.5rem;
+}
+
+/* Carousel Styles */
+.carousel-container {
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.3s ease;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.carousel-slide {
+  min-width: 100%;
+  height: 300px;
+  background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 6rem;
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.carousel-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.carousel-slide img.loaded {
+  opacity: 1;
+}
+
+.carousel-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(30, 58, 46, 0.7);
+  color: white;
+  border: none;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1.5rem;
+  transition: all 0.3s ease;
+  z-index: 10;
+}
+
+.carousel-nav:hover {
+  background: rgba(30, 58, 46, 0.9);
+}
+
+.carousel-nav:focus {
+  outline: 2px solid #27ae60;
+  outline-offset: 2px;
+}
+
+.carousel-prev {
+  left: 1rem;
+}
+
+.carousel-next {
+  right: 1rem;
+}
+
+.carousel-indicators {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.carousel-indicator {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #ccc;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.carousel-indicator.active {
+  background: #27ae60;
+}
+
+.carousel-indicator:hover {
+  background: #2ecc71;
+}
+
+/* Modal Info Section */
+.modal-info {
+  margin-top: 1.5rem;
+}
+
+.modal-description {
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.modal-specs {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.modal-spec-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem;
+  background: #f8f9fa;
+  border-radius: 8px;
+  border-left: 4px solid #27ae60;
+}
+
+.modal-spec-item .spec-label {
+  font-weight: 600;
+  color: #1e3a2e;
+}
+
+.modal-spec-item .spec-value {
+  color: #666;
+}
+
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+  .images-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .gallery-tabs {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .gallery-tab {
+    width: 200px;
+    text-align: center;
+  }
+  
+  .modal {
+    padding: 0.5rem;
+  }
+  
+  .modal-content {
+    max-height: 95vh;
+  }
+  
+  .modal-header,
+  .modal-body {
+    padding: 1rem;
+  }
+  
+  .carousel-slide {
+    height: 250px;
+    font-size: 4rem;
+  }
+  
+  .carousel-nav {
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+  }
+  
+  .carousel-prev {
+    left: 0.5rem;
+  }
+  
+  .carousel-next {
+    right: 0.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .image-placeholder {
+    height: 150px;
+    font-size: 3rem;
+  }
+  
+  .carousel-slide {
+    height: 200px;
+    font-size: 3rem;
+  }
+  
+  .modal-header {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+  
+  .modal-title {
+    font-size: 1.2rem;
+  }
+  
+  .carousel-indicators {
+    gap: 0.25rem;
+  }
+  
+  .carousel-indicator {
+    width: 10px;
+    height: 10px;
+  }
+}
+
+/* Loading States and Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.image-card {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.modal-content {
+  animation: fadeIn 0.2s ease-in-out;
+}
+
+/* Loading shimmer effect for images */
+.image-placeholder::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+  100% {
+    left: 100%;
+  }
+}
+
+/* Remove shimmer when image is loaded */
+.image-placeholder:has(img.loaded)::before {
+  display: none;
+}
+
+/* Accessibility Enhancements */
+@media (prefers-reduced-motion: reduce) {
+  .image-card,
+  .modal-content,
+  .carousel-track,
+  .image-placeholder img {
+    animation: none !important;
+    transition: none !important;
+  }
+  
+  .image-placeholder::before {
+    display: none;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .image-card {
+    border: 2px solid #000;
+  }
+  
+  .modal-content {
+    border: 2px solid #000;
+  }
+  
+  .carousel-nav {
+    border: 2px solid #fff;
+  }
+}
+/* Modal and Carousel Styles */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.modal.active {
+  display: flex;
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-content {
+  background: white;
+  margin: auto;
+  padding: 0;
+  width: 90%;
+  max-width: 800px;
+  max-height: 90vh;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  border-bottom: 1px solid #eee;
+  background: #f8f9fa;
+}
+
+.modal-title {
+  margin: 0;
+  font-size: 1.5rem;
+  color: #333;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: #666;
+  padding: 0;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+}
+
+.close-btn:hover {
+  background: #e9ecef;
+  color: #333;
+}
+
+.modal-body {
+  padding: 0;
+}
+
+/* Carousel Container - CRITICAL for carousel functionality */
+.carousel-container {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  overflow: hidden; /* This is essential - hides slides that are off-screen */
+  background: #f8f9fa;
+}
+
+/* Carousel Track - This moves left/right to show different slides */
+.carousel-track {
+  display: flex;
+  height: 100%;
+  transition: transform 0.4s ease-in-out; /* Smooth sliding animation */
+  will-change: transform; /* Optimizes performance */
+}
+
+/* Individual Carousel Slides */
+.carousel-slide {
+  flex: 0 0 100%; /* Each slide takes up 100% of container width */
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Images within slides */
+.carousel-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+/* Navigation Arrows */
+.carousel-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  width: 50px;
+  height: 50px;
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 10;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.carousel-nav:hover {
+  background: rgba(0, 0, 0, 0.7);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.carousel-prev {
+  left: 15px;
+}
+
+.carousel-next {
+  right: 15px;
+}
+
+/* Carousel Indicators (dots) */
+.carousel-indicators {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  z-index: 10;
+}
+
+.carousel-indicator {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.carousel-indicator.active {
+  background: rgba(255, 255, 255, 0.9);
+  transform: scale(1.2);
+}
+
+/* Modal Info Section */
+.modal-info {
+  padding: 20px;
+}
+
+.modal-description {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.modal-specs {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+}
+
+.modal-spec-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  background: #f8f9fa;
+  border-radius: 5px;
+  border-left: 3px solid #27ae60;
+}
+
+.spec-label {
+  font-weight: 600;
+  color: #333;
+}
+
+.spec-value {
+  color: #666;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .modal-content {
+    width: 95%;
+    margin: 10px auto;
+  }
+  
+  .carousel-container {
+    height: 300px;
+  }
+  
+  .carousel-nav {
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+  }
+  
+  .carousel-prev {
+    left: 10px;
+  }
+  
+  .carousel-next {
+    right: 10px;
+  }
+  
+  .modal-specs {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Gallery Image Cards Hover Effect */
+.image-card {
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.image-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Loading state for images */
+.carousel-slide img {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.carousel-slide img.loaded {
+  opacity: 1;
+}

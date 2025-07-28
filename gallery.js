@@ -19,9 +19,15 @@ let currentProject = null;
 // Project data with multiple images for each project
 const projectData = {
   'modern-family': {
-    title: 'Modern Family Home',
+    title: 'Traverse City',
     description: 'Complete window replacement featuring energy-efficient double-pane windows with custom trim work. This project transformed the home\'s energy efficiency while maintaining its contemporary aesthetic.',
-    images: ['pictures', '🪟', '🔧', '✨', '🏡'],
+    images: [
+      'pictures/traverseCity/IMG_8157.jpg', 
+      'pictures/traverseCity/IMG_8156.jpg', 
+      'pictures/traverseCity/IMG_8158.jpg', 
+      '🪟', 
+      '✨'
+    ],
     specs: {
       'Windows': '24 Units',
       'Type': 'Double-Hung',
@@ -33,7 +39,13 @@ const projectData = {
   'traditional-colonial': {
     title: 'Traditional Colonial',
     description: 'Historic home restoration with period-appropriate window designs while maintaining modern efficiency. We carefully preserved the architectural integrity while upgrading performance.',
-    images: ['🏡', '🏛️', '🔨', '📏', '🎨'],
+    images: [
+      'pictures/traverseCity/IMG_8157.jpg', 
+      'pictures/traverseCity/IMG_8156.jpg', 
+      '🏛️', 
+      '🔨', 
+      '📏'
+    ],
     specs: {
       'Windows': '18 Units',
       'Type': 'Casement',
@@ -45,7 +57,13 @@ const projectData = {
   'contemporary-ranch': {
     title: 'Contemporary Ranch',
     description: 'New construction windows with sleek frames and maximum natural light optimization. The design focused on creating seamless indoor-outdoor living.',
-    images: ['🏘️', '🌅', '🪟', '🏗️', '💡'],
+    images: [
+      'pictures/traverseCity/IMG_8158.jpg', 
+      'pictures/Hotel-Rose-crains-ext1-scaled.jpg.optimal.jpg', 
+      '🌅', 
+      '🪟', 
+      '🏗️'
+    ],
     specs: {
       'Windows': '32 Units',
       'Type': 'Picture & Slider',
@@ -57,7 +75,13 @@ const projectData = {
   'craftsman-bungalow': {
     title: 'Craftsman Bungalow',
     description: 'Authentic craftsman-style windows with detailed mullions and energy-efficient glazing. We honored the craftsman tradition while incorporating modern technology.',
-    images: ['🏠', '🔨', '🎨', '🪟', '🏛️'],
+    images: [
+      'pictures/Hotel-Rose-crains-ext1-scaled.jpg.optimal.jpg', 
+      'pictures/traverseCity/IMG_8156.jpg', 
+      '🔨', 
+      '🎨', 
+      '🪟'
+    ],
     specs: {
       'Windows': '16 Units',
       'Type': 'Multi-Pane',
@@ -164,6 +188,55 @@ const projectData = {
   }
 };
 
+// Function to check if a string is an image path
+function isImagePath(str) {
+  return typeof str === 'string' && (str.includes('.jpg') || str.includes('.jpeg') || str.includes('.png') || str.includes('.gif') || str.includes('.webp'));
+}
+
+// Function to create image or emoji element
+function createMediaElement(item, altText = 'Project image') {
+  if (isImagePath(item)) {
+    const img = document.createElement('img');
+    img.src = item;
+    img.alt = altText;
+    img.style.width = '100%';
+    img.style.height = '100%';
+    img.style.objectFit = 'cover';
+    img.style.objectPosition = 'center';
+    img.style.opacity = '0';
+    img.style.transition = 'opacity 0.3s ease';
+    
+    // Add loading handler
+    img.onload = function() {
+      this.style.opacity = '1';
+      this.classList.add('loaded');
+    };
+    
+    // Add error handler
+    img.onerror = function() {
+      const parent = this.parentElement;
+      if (parent) {
+        parent.innerHTML = '🖼️';
+        parent.style.background = 'linear-gradient(135deg, #27ae60 0%, #2ecc71 100%)';
+        parent.style.display = 'flex';
+        parent.style.alignItems = 'center';
+        parent.style.justifyContent = 'center';
+        parent.style.fontSize = '6rem';
+        parent.style.color = 'white';
+      }
+    };
+    
+    return img;
+  } else {
+    // It's an emoji or text
+    const span = document.createElement('span');
+    span.textContent = item;
+    span.style.fontSize = '6rem';
+    span.style.color = 'white';
+    return span;
+  }
+}
+
 // Function to switch gallery tabs
 function switchGalleryTab(targetCategory) {
   // Remove active class from all tabs
@@ -215,10 +288,24 @@ function openProjectModal(projectId) {
 
   // Create carousel slides
   carouselTrack.innerHTML = '';
-  project.images.forEach((image, index) => {
+  project.images.forEach((item, index) => {
     const slide = document.createElement('div');
     slide.className = 'carousel-slide';
-    slide.innerHTML = image;
+    
+    if (isImagePath(item)) {
+      const img = createMediaElement(item, `${project.title} - Image ${index + 1}`);
+      slide.appendChild(img);
+    } else {
+      // It's an emoji
+      slide.innerHTML = item;
+      slide.style.background = 'linear-gradient(135deg, #27ae60 0%, #2ecc71 100%)';
+      slide.style.display = 'flex';
+      slide.style.alignItems = 'center';
+      slide.style.justifyContent = 'center';
+      slide.style.fontSize = '6rem';
+      slide.style.color = 'white';
+    }
+    
     carouselTrack.appendChild(slide);
   });
 
@@ -233,6 +320,7 @@ function openProjectModal(projectId) {
 
   // Show modal
   modal.classList.add('active');
+  document.body.style.overflow = 'hidden'; // Prevent background scrolling
   updateCarousel();
 }
 
@@ -272,8 +360,41 @@ function prevSlide() {
 // Function to close modal
 function closeProjectModal() {
   modal.classList.remove('active');
+  document.body.style.overflow = ''; // Restore scrolling
   currentProject = null;
   currentSlide = 0;
+}
+
+// Initialize gallery images on page load
+function initializeGalleryImages() {
+  const imageCards = document.querySelectorAll('.image-placeholder img');
+  imageCards.forEach(img => {
+    img.onload = function() {
+      this.classList.add('loaded');
+      this.style.opacity = '1';
+    };
+    
+    img.onerror = function() {
+      const placeholder = this.parentElement;
+      this.remove();
+      placeholder.innerHTML = '🖼️';
+      placeholder.style.background = 'linear-gradient(135deg, #27ae60 0%, #2ecc71 100%)';
+      placeholder.style.display = 'flex';
+      placeholder.style.alignItems = 'center';
+      placeholder.style.justifyContent = 'center';
+      placeholder.style.fontSize = '4rem';
+      placeholder.style.color = 'white';
+    };
+    
+    // Set initial opacity for smooth loading
+    img.style.opacity = '0';
+    img.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+    
+    // Trigger load if image is already cached
+    if (img.complete) {
+      img.onload();
+    }
+  });
 }
 
 // Add click handlers to gallery tabs
@@ -324,3 +445,41 @@ document.addEventListener('keydown', (e) => {
     }
   }
 });
+
+// Touch/swipe support for mobile
+let touchStartX = 0;
+let touchEndX = 0;
+
+if (carouselTrack) {
+  carouselTrack.addEventListener('touchstart', (e) => {
+    touchStartX = e.changedTouches[0].screenX;
+  }, { passive: true });
+
+  carouselTrack.addEventListener('touchend', (e) => {
+    touchEndX = e.changedTouches[0].screenX;
+    handleSwipe();
+  }, { passive: true });
+}
+
+function handleSwipe() {
+  const swipeThreshold = 50;
+  const diff = touchStartX - touchEndX;
+  
+  if (Math.abs(diff) > swipeThreshold) {
+    if (diff > 0) {
+      nextSlide(); // Swipe left - next slide
+    } else {
+      prevSlide(); // Swipe right - prev slide
+    }
+  }
+}
+
+// Initialize images when DOM is loaded
+document.addEventListener('DOMContentLoaded', initializeGalleryImages);
+
+// Also initialize if DOM is already loaded
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initializeGalleryImages);
+} else {
+  initializeGalleryImages();
+}
