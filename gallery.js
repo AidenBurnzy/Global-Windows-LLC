@@ -1,4 +1,4 @@
-// Gallery functionality
+// Gallery functionality - Debug version
 const galleryTabs = document.querySelectorAll('.gallery-tab');
 const gallerySections = document.querySelectorAll('.gallery-section');
 
@@ -16,17 +16,17 @@ const carouselNext = document.getElementById('carousel-next');
 let currentSlide = 0;
 let currentProject = null;
 
-// Project data with multiple images for each project
+// Project data
 const projectData = {
   'modern-family': {
     title: 'Traverse City',
     description: 'Complete window replacement featuring energy-efficient double-pane windows with custom trim work. This project transformed the home\'s energy efficiency while maintaining its contemporary aesthetic.',
     images: [
-      'pictures/traverseCity/IMG_8157.jpg', 
-      'pictures/traverseCity/IMG_8156.jpg', 
-      'pictures/traverseCity/IMG_8158.jpg', 
-      '🪟', 
-      '✨'
+      'pictures/Residential/traverseCity/IMG_8163.jpg', 
+      'pictures/Residential/traverseCity/IMG_8164.jpg', 
+      'pictures/Residential/traverseCity/IMG_8160.jpg', 
+      'pictures/Residential/traverseCity/IMG_8165.jpg', 
+      'pictures/Residential/traverseCity/IMG_8159.jpg'
     ],
     specs: {
       'Windows': '24 Units',
@@ -38,13 +38,13 @@ const projectData = {
   },
   'traditional-colonial': {
     title: 'Traditional Colonial',
-    description: 'Historic home restoration with period-appropriate window designs while maintaining modern efficiency. We carefully preserved the architectural integrity while upgrading performance.',
+    description: 'Historic home restoration with period-appropriate window designs while maintaining modern efficiency.',
     images: [
       'pictures/traverseCity/IMG_8157.jpg', 
-      'pictures/traverseCity/IMG_8156.jpg', 
-      '🏛️', 
-      '🔨', 
-      '📏'
+      'pictures/traverseCity/IMG_8157.jpg', 
+      'pictures/traverseCity/IMG_8157.jpg', 
+      'pictures/traverseCity/IMG_8157.jpg', 
+      'pictures/traverseCity/IMG_8157.jpg'
     ],
     specs: {
       'Windows': '18 Units',
@@ -56,13 +56,13 @@ const projectData = {
   },
   'contemporary-ranch': {
     title: 'Contemporary Ranch',
-    description: 'New construction windows with sleek frames and maximum natural light optimization. The design focused on creating seamless indoor-outdoor living.',
+    description: 'New construction windows with sleek frames and maximum natural light optimization.',
     images: [
-      'pictures/traverseCity/IMG_8158.jpg', 
-      'pictures/Hotel-Rose-crains-ext1-scaled.jpg.optimal.jpg', 
-      '🌅', 
-      '🪟', 
-      '🏗️'
+      'pictures/traverseCity/IMG_8157.jpg', 
+      'pictures/traverseCity/IMG_8157.jpg', 
+      'pictures/traverseCity/IMG_8157.jpg', 
+      'pictures/traverseCity/IMG_8157.jpg', 
+      'pictures/traverseCity/IMG_8157.jpg'
     ],
     specs: {
       'Windows': '32 Units',
@@ -74,13 +74,13 @@ const projectData = {
   },
   'craftsman-bungalow': {
     title: 'Craftsman Bungalow',
-    description: 'Authentic craftsman-style windows with detailed mullions and energy-efficient glazing. We honored the craftsman tradition while incorporating modern technology.',
+    description: 'Authentic craftsman-style windows with detailed mullions and energy-efficient glazing.',
     images: [
-      'pictures/Hotel-Rose-crains-ext1-scaled.jpg.optimal.jpg', 
-      'pictures/traverseCity/IMG_8156.jpg', 
-      '🔨', 
-      '🎨', 
-      '🪟'
+      'pictures/traverseCity/IMG_8157.jpg', 
+      'pictures/traverseCity/IMG_8157.jpg', 
+      'pictures/traverseCity/IMG_8157.jpg', 
+      'pictures/traverseCity/IMG_8157.jpg', 
+      'pictures/traverseCity/IMG_8157.jpg'
     ],
     specs: {
       'Windows': '16 Units',
@@ -92,7 +92,7 @@ const projectData = {
   },
   'luxury-estate': {
     title: 'Luxury Estate',
-    description: 'High-end residential project featuring custom bay windows and premium materials throughout. Every detail was crafted to meet the highest standards of luxury and performance.',
+    description: 'High-end residential project featuring custom bay windows and premium materials throughout.',
     images: ['🏡', '💎', '🏰', '🪟', '✨'],
     specs: {
       'Windows': '48 Units',
@@ -104,8 +104,14 @@ const projectData = {
   },
   'suburban-remodel': {
     title: 'Suburban Remodel',
-    description: 'Complete home renovation with energy-efficient windows and updated architectural styling. This transformation brought new life to a classic suburban home.',
-    images: ['🏘️', '🔄', '🏠', '⚡', '🌟'],
+    description: 'Complete home renovation with energy-efficient windows and updated architectural styling.',
+    images: [
+      'pictures/traverseCity/IMG_8157.jpg', 
+      'pictures/traverseCity/IMG_8157.jpg', 
+      'pictures/traverseCity/IMG_8157.jpg', 
+      'pictures/traverseCity/IMG_8157.jpg', 
+      'pictures/traverseCity/IMG_8157.jpg'
+    ],
     specs: {
       'Windows': '28 Units',
       'Type': 'Mixed Styles',
@@ -116,8 +122,14 @@ const projectData = {
   },
   'office-complex': {
     title: 'Office Complex',
-    description: 'Large-scale commercial installation featuring floor-to-ceiling windows and modern curtain wall systems. This project redefined the workplace environment with natural light.',
-    images: ['🏢', '🌆', '🏗️', '💼', '🌟'],
+    description: 'Large-scale commercial installation featuring floor-to-ceiling windows and modern curtain wall systems.',
+    images: [
+      'pictures/traverseCity/IMG_8157.jpg', 
+      'pictures/traverseCity/IMG_8157.jpg', 
+      'pictures/traverseCity/IMG_8157.jpg', 
+      'pictures/traverseCity/IMG_8157.jpg', 
+      'pictures/traverseCity/IMG_8157.jpg'
+    ],
     specs: {
       'Windows': '200+ Units',
       'Type': 'Curtain Wall',
@@ -128,7 +140,7 @@ const projectData = {
   },
   'retail-storefront': {
     title: 'Retail Storefront',
-    description: 'Downtown retail space with expansive display windows designed for maximum product visibility. The design creates an inviting shopping experience.',
+    description: 'Downtown retail space with expansive display windows designed for maximum product visibility.',
     images: ['🏪', '🛍️', '💡', '🪟', '🎯'],
     specs: {
       'Windows': '12 Units',
@@ -140,7 +152,7 @@ const projectData = {
   },
   'manufacturing-facility': {
     title: 'Manufacturing Facility',
-    description: 'Industrial windows with enhanced durability and safety features for harsh manufacturing environments. Built to withstand extreme conditions.',
+    description: 'Industrial windows with enhanced durability and safety features for harsh manufacturing environments.',
     images: ['🏭', '⚙️', '🔧', '🛡️', '🏗️'],
     specs: {
       'Windows': '85 Units',
@@ -152,7 +164,7 @@ const projectData = {
   },
   'house-worship': {
     title: 'House of Worship',
-    description: 'Sacred space windows designed to enhance natural light while maintaining the spiritual atmosphere. These windows create a sense of divine connection.',
+    description: 'Sacred space windows designed to enhance natural light while maintaining the spiritual atmosphere.',
     images: ['⛪', '🌅', '🎨', '✝️', '🕊️'],
     specs: {
       'Windows': '36 Units',
@@ -164,7 +176,7 @@ const projectData = {
   },
   'educational-campus': {
     title: 'Educational Campus',
-    description: 'School building renovation with energy-efficient windows designed for optimal learning environments. Creating bright, inspiring spaces for education.',
+    description: 'School building renovation with energy-efficient windows designed for optimal learning environments.',
     images: ['🏫', '📚', '🌅', '👥', '🎓'],
     specs: {
       'Windows': '150 Units',
@@ -176,7 +188,7 @@ const projectData = {
   },
   'medical-center': {
     title: 'Medical Center',
-    description: 'Healthcare facility windows meeting strict medical standards for cleanliness and patient comfort. Designed for healing and wellness.',
+    description: 'Healthcare facility windows meeting strict medical standards for cleanliness and patient comfort.',
     images: ['🏥', '⚕️', '💡', '🧼', '🌿'],
     specs: {
       'Windows': '120 Units',
@@ -188,74 +200,26 @@ const projectData = {
   }
 };
 
-// Function to check if a string is an image path
+// Helper function to check if string is image path
 function isImagePath(str) {
   return typeof str === 'string' && (str.includes('.jpg') || str.includes('.jpeg') || str.includes('.png') || str.includes('.gif') || str.includes('.webp'));
 }
 
-// Function to create image or emoji element
-function createMediaElement(item, altText = 'Project image') {
-  if (isImagePath(item)) {
-    const img = document.createElement('img');
-    img.src = item;
-    img.alt = altText;
-    img.style.width = '100%';
-    img.style.height = '100%';
-    img.style.objectFit = 'cover';
-    img.style.objectPosition = 'center';
-    img.style.opacity = '0';
-    img.style.transition = 'opacity 0.3s ease';
-    
-    // Add loading handler
-    img.onload = function() {
-      this.style.opacity = '1';
-      this.classList.add('loaded');
-    };
-    
-    // Add error handler
-    img.onerror = function() {
-      const parent = this.parentElement;
-      if (parent) {
-        parent.innerHTML = '🖼️';
-        parent.style.background = 'linear-gradient(135deg, #27ae60 0%, #2ecc71 100%)';
-        parent.style.display = 'flex';
-        parent.style.alignItems = 'center';
-        parent.style.justifyContent = 'center';
-        parent.style.fontSize = '6rem';
-        parent.style.color = 'white';
-      }
-    };
-    
-    return img;
-  } else {
-    // It's an emoji or text
-    const span = document.createElement('span');
-    span.textContent = item;
-    span.style.fontSize = '6rem';
-    span.style.color = 'white';
-    return span;
-  }
-}
-
 // Function to switch gallery tabs
 function switchGalleryTab(targetCategory) {
-  // Remove active class from all tabs
   galleryTabs.forEach(tab => {
     tab.classList.remove('active');
   });
 
-  // Hide all gallery sections
   gallerySections.forEach(section => {
     section.classList.remove('active');
   });
 
-  // Activate the clicked tab
   const activeTab = document.querySelector(`[data-category="${targetCategory}"]`);
   if (activeTab) {
     activeTab.classList.add('active');
   }
 
-  // Show the corresponding section
   const activeSection = document.getElementById(targetCategory + '-section');
   if (activeSection) {
     activeSection.classList.add('active');
@@ -264,11 +228,18 @@ function switchGalleryTab(targetCategory) {
 
 // Function to open project modal
 function openProjectModal(projectId) {
+  console.log('Opening modal for project:', projectId); // Debug log
+  
   const project = projectData[projectId];
-  if (!project) return;
+  if (!project) {
+    console.log('Project not found:', projectId);
+    return;
+  }
 
   currentProject = project;
   currentSlide = 0;
+
+  console.log('Project images:', project.images); // Debug log
 
   // Set modal content
   modalTitle.textContent = project.title;
@@ -288,12 +259,17 @@ function openProjectModal(projectId) {
 
   // Create carousel slides
   carouselTrack.innerHTML = '';
+  
   project.images.forEach((item, index) => {
     const slide = document.createElement('div');
     slide.className = 'carousel-slide';
     
     if (isImagePath(item)) {
-      const img = createMediaElement(item, `${project.title} - Image ${index + 1}`);
+      // It's an image
+      const img = document.createElement('img');
+      img.src = item;
+      img.alt = `${project.title} - Image ${index + 1}`;
+      // Remove the inline styles - let CSS handle the sizing
       slide.appendChild(img);
     } else {
       // It's an emoji
@@ -309,6 +285,13 @@ function openProjectModal(projectId) {
     carouselTrack.appendChild(slide);
   });
 
+  // Set the carousel track width to hold all slides side by side
+  const numImages = project.images.length;
+  carouselTrack.style.width = `${numImages * 100}%`; // Track is 500% wide for 5 images
+  
+  console.log('Number of images:', numImages); // Debug log  
+  console.log('Set carousel track width to:', carouselTrack.style.width); // Debug log
+
   // Create indicators
   carouselIndicators.innerHTML = '';
   project.images.forEach((_, index) => {
@@ -320,14 +303,24 @@ function openProjectModal(projectId) {
 
   // Show modal
   modal.classList.add('active');
-  document.body.style.overflow = 'hidden'; // Prevent background scrolling
+  document.body.style.overflow = 'hidden';
+  
+  // Update carousel to show first slide
   updateCarousel();
 }
 
 // Function to update carousel position
 function updateCarousel() {
-  const slideWidth = 100;
-  carouselTrack.style.transform = `translateX(-${currentSlide * slideWidth}%)`;
+  console.log('Updating carousel to slide:', currentSlide); // Debug log
+  console.log('Total slides:', currentProject ? currentProject.images.length : 0); // Debug log
+  
+  // Each slide is 20% of track width, so move by 20% increments  
+  const slideWidth = 20; // Each slide is 20% of track width
+  const translateValue = -currentSlide * slideWidth;
+  
+  carouselTrack.style.transform = `translateX(${translateValue}%)`;
+  
+  console.log('Applied transform:', carouselTrack.style.transform); // Debug log
 
   // Update indicators
   document.querySelectorAll('.carousel-indicator').forEach((indicator, index) => {
@@ -337,149 +330,108 @@ function updateCarousel() {
 
 // Function to go to specific slide
 function goToSlide(slideIndex) {
+  console.log('Going to slide:', slideIndex); // Debug log
   currentSlide = slideIndex;
   updateCarousel();
 }
 
 // Function to go to next slide
 function nextSlide() {
+  console.log('Next slide clicked. Current slide:', currentSlide); // Debug log
+  
   if (currentProject && currentSlide < currentProject.images.length - 1) {
     currentSlide++;
+    console.log('Moving to slide:', currentSlide); // Debug log
     updateCarousel();
+  } else {
+    console.log('Already at last slide or no project loaded'); // Debug log
   }
 }
 
 // Function to go to previous slide
 function prevSlide() {
+  console.log('Previous slide clicked. Current slide:', currentSlide); // Debug log
+  
   if (currentSlide > 0) {
     currentSlide--;
+    console.log('Moving to slide:', currentSlide); // Debug log
     updateCarousel();
+  } else {
+    console.log('Already at first slide'); // Debug log
   }
 }
 
 // Function to close modal
 function closeProjectModal() {
   modal.classList.remove('active');
-  document.body.style.overflow = ''; // Restore scrolling
+  document.body.style.overflow = '';
   currentProject = null;
   currentSlide = 0;
 }
 
-// Initialize gallery images on page load
-function initializeGalleryImages() {
-  const imageCards = document.querySelectorAll('.image-placeholder img');
-  imageCards.forEach(img => {
-    img.onload = function() {
-      this.classList.add('loaded');
-      this.style.opacity = '1';
-    };
-    
-    img.onerror = function() {
-      const placeholder = this.parentElement;
-      this.remove();
-      placeholder.innerHTML = '🖼️';
-      placeholder.style.background = 'linear-gradient(135deg, #27ae60 0%, #2ecc71 100%)';
-      placeholder.style.display = 'flex';
-      placeholder.style.alignItems = 'center';
-      placeholder.style.justifyContent = 'center';
-      placeholder.style.fontSize = '4rem';
-      placeholder.style.color = 'white';
-    };
-    
-    // Set initial opacity for smooth loading
-    img.style.opacity = '0';
-    img.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
-    
-    // Trigger load if image is already cached
-    if (img.complete) {
-      img.onload();
-    }
-  });
-}
-
-// Add click handlers to gallery tabs
-galleryTabs.forEach(tab => {
-  tab.addEventListener('click', (e) => {
-    const category = tab.getAttribute('data-category');
-    switchGalleryTab(category);
-  });
-});
-
-// Add click handlers to project cards
-document.querySelectorAll('.image-card').forEach(card => {
-  card.addEventListener('click', () => {
-    const projectId = card.getAttribute('data-project');
-    openProjectModal(projectId);
-  });
-});
-
-// Modal event listeners
-if (closeModal) {
-  closeModal.addEventListener('click', closeProjectModal);
-}
-if (carouselNext) {
-  carouselNext.addEventListener('click', nextSlide);
-}
-if (carouselPrev) {
-  carouselPrev.addEventListener('click', prevSlide);
-}
-
-// Close modal when clicking outside
-if (modal) {
-  modal.addEventListener('click', (e) => {
-    if (e.target === modal) {
-      closeProjectModal();
-    }
-  });
-}
-
-// Keyboard navigation
-document.addEventListener('keydown', (e) => {
-  if (modal && modal.classList.contains('active')) {
-    if (e.key === 'Escape') {
-      closeProjectModal();
-    } else if (e.key === 'ArrowLeft') {
-      prevSlide();
-    } else if (e.key === 'ArrowRight') {
-      nextSlide();
-    }
-  }
-});
-
-// Touch/swipe support for mobile
-let touchStartX = 0;
-let touchEndX = 0;
-
-if (carouselTrack) {
-  carouselTrack.addEventListener('touchstart', (e) => {
-    touchStartX = e.changedTouches[0].screenX;
-  }, { passive: true });
-
-  carouselTrack.addEventListener('touchend', (e) => {
-    touchEndX = e.changedTouches[0].screenX;
-    handleSwipe();
-  }, { passive: true });
-}
-
-function handleSwipe() {
-  const swipeThreshold = 50;
-  const diff = touchStartX - touchEndX;
+// Event Listeners
+document.addEventListener('DOMContentLoaded', function() {
+  console.log('DOM loaded, adding event listeners'); // Debug log
   
-  if (Math.abs(diff) > swipeThreshold) {
-    if (diff > 0) {
-      nextSlide(); // Swipe left - next slide
-    } else {
-      prevSlide(); // Swipe right - prev slide
-    }
+  // Gallery tabs
+  galleryTabs.forEach(tab => {
+    tab.addEventListener('click', (e) => {
+      const category = tab.getAttribute('data-category');
+      switchGalleryTab(category);
+    });
+  });
+
+  // Project cards
+  document.querySelectorAll('.image-card').forEach(card => {
+    card.addEventListener('click', () => {
+      const projectId = card.getAttribute('data-project');
+      console.log('Image card clicked:', projectId); // Debug log
+      openProjectModal(projectId);
+    });
+  });
+
+  // Modal controls
+  if (closeModal) {
+    closeModal.addEventListener('click', closeProjectModal);
   }
-}
+  
+  if (carouselNext) {
+    carouselNext.addEventListener('click', function(e) {
+      console.log('Next button clicked!'); // Debug log
+      e.preventDefault();
+      nextSlide();
+    });
+  }
+  
+  if (carouselPrev) {
+    carouselPrev.addEventListener('click', function(e) {
+      console.log('Previous button clicked!'); // Debug log
+      e.preventDefault();
+      prevSlide();
+    });
+  }
 
-// Initialize images when DOM is loaded
-document.addEventListener('DOMContentLoaded', initializeGalleryImages);
+  // Close modal when clicking outside
+  if (modal) {
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        closeProjectModal();
+      }
+    });
+  }
 
-// Also initialize if DOM is already loaded
-if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', initializeGalleryImages);
-} else {
-  initializeGalleryImages();
-}
+  // Keyboard navigation
+  document.addEventListener('keydown', (e) => {
+    if (modal && modal.classList.contains('active')) {
+      if (e.key === 'Escape') {
+        closeProjectModal();
+      } else if (e.key === 'ArrowLeft') {
+        prevSlide();
+      } else if (e.key === 'ArrowRight') {
+        nextSlide();
+      }
+    }
+  });
+  
+  console.log('All event listeners added'); // Debug log
+});
