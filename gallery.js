@@ -20,7 +20,7 @@ let currentProject = null;
 const projectData = {
   'modern-family': {
     title: 'Traverse City',
-    description: 'Complete window replacement featuring energy-efficient double-pane windows with custom trim work. This project transformed the home\'s energy efficiency while maintaining its contemporary aesthetic.',
+    description: 'Expanded Project Description',
     images: [
       'pictures/Residential/traverseCity/IMG_8163.jpg', 
       'pictures/Residential/traverseCity/IMG_8164.jpg', 
@@ -29,11 +29,7 @@ const projectData = {
       'pictures/Residential/traverseCity/IMG_8159.jpg'
     ],
     specs: {
-      'Windows': '24 Units',
-      'Type': 'Double-Hung',
-      'Material': 'Vinyl with Wood Interior',
-      'Energy Rating': 'Energy Star Certified',
-      'Completed': '2024'
+      
     }
   },
   'traditional-colonial': {
@@ -47,11 +43,7 @@ const projectData = {
       'pictures/traverseCity/IMG_8157.jpg'
     ],
     specs: {
-      'Windows': '18 Units',
-      'Type': 'Casement',
-      'Material': 'Wood with Historic Profile',
-      'Features': 'Custom Mullions',
-      'Completed': '2024'
+      
     }
   },
   'contemporary-ranch': {
@@ -65,11 +57,7 @@ const projectData = {
       'pictures/traverseCity/IMG_8157.jpg'
     ],
     specs: {
-      'Windows': '32 Units',
-      'Type': 'Picture & Slider',
-      'Material': 'Aluminum Clad',
-      'Features': 'Floor-to-Ceiling',
-      'Completed': '2023'
+      
     }
   },
   'craftsman-bungalow': {
@@ -83,11 +71,7 @@ const projectData = {
       'pictures/traverseCity/IMG_8157.jpg'
     ],
     specs: {
-      'Windows': '16 Units',
-      'Type': 'Multi-Pane',
-      'Material': 'Wood with Lead Glass',
-      'Features': 'Handcrafted Mullions',
-      'Completed': '2023'
+     
     }
   },
   'luxury-estate': {
@@ -95,11 +79,7 @@ const projectData = {
     description: 'High-end residential project featuring custom bay windows and premium materials throughout.',
     images: ['🏡', '💎', '🏰', '🪟', '✨'],
     specs: {
-      'Windows': '48 Units',
-      'Type': 'Bay & Custom',
-      'Material': 'Mahogany with Bronze Hardware',
-      'Features': 'Custom Shapes',
-      'Completed': '2024'
+      
     }
   },
   'suburban-remodel': {
@@ -113,11 +93,7 @@ const projectData = {
       'pictures/traverseCity/IMG_8157.jpg'
     ],
     specs: {
-      'Windows': '28 Units',
-      'Type': 'Mixed Styles',
-      'Material': 'Fiberglass Composite',
-      'Features': 'Smart Glass Technology',
-      'Completed': '2024'
+      
     }
   },
   'office-complex': {
@@ -131,11 +107,7 @@ const projectData = {
       'pictures/traverseCity/IMG_8157.jpg'
     ],
     specs: {
-      'Windows': '200+ Units',
-      'Type': 'Curtain Wall',
-      'Material': 'Structural Glazing',
-      'Features': 'Energy Management System',
-      'Completed': '2024'
+      
     }
   },
   'retail-storefront': {
@@ -143,11 +115,7 @@ const projectData = {
     description: 'Downtown retail space with expansive display windows designed for maximum product visibility.',
     images: ['🏪', '🛍️', '💡', '🪟', '🎯'],
     specs: {
-      'Windows': '12 Units',
-      'Type': 'Storefront',
-      'Material': 'Tempered Glass',
-      'Features': 'Anti-Reflective Coating',
-      'Completed': '2023'
+     
     }
   },
   'manufacturing-facility': {
@@ -155,11 +123,7 @@ const projectData = {
     description: 'Industrial windows with enhanced durability and safety features for harsh manufacturing environments.',
     images: ['🏭', '⚙️', '🔧', '🛡️', '🏗️'],
     specs: {
-      'Windows': '85 Units',
-      'Type': 'Industrial',
-      'Material': 'Reinforced Steel Frame',
-      'Features': 'Impact Resistant',
-      'Completed': '2023'
+      
     }
   },
   'house-worship': {
@@ -167,11 +131,7 @@ const projectData = {
     description: 'Sacred space windows designed to enhance natural light while maintaining the spiritual atmosphere.',
     images: ['⛪', '🌅', '🎨', '✝️', '🕊️'],
     specs: {
-      'Windows': '36 Units',
-      'Type': 'Stained Glass',
-      'Material': 'Art Glass with Lead Came',
-      'Features': 'Custom Religious Motifs',
-      'Completed': '2024'
+      
     }
   },
   'educational-campus': {
@@ -179,11 +139,7 @@ const projectData = {
     description: 'School building renovation with energy-efficient windows designed for optimal learning environments.',
     images: ['🏫', '📚', '🌅', '👥', '🎓'],
     specs: {
-      'Windows': '150 Units',
-      'Type': 'Classroom',
-      'Material': 'Low-E Insulated Glass',
-      'Features': 'Sound Dampening',
-      'Completed': '2023'
+   
     }
   },
   'medical-center': {
@@ -191,11 +147,7 @@ const projectData = {
     description: 'Healthcare facility windows meeting strict medical standards for cleanliness and patient comfort.',
     images: ['🏥', '⚕️', '💡', '🧼', '🌿'],
     specs: {
-      'Windows': '120 Units',
-      'Type': 'Medical Grade',
-      'Material': 'Antimicrobial Coating',
-      'Features': 'Easy Clean Surface',
-      'Completed': '2024'
+      
     }
   }
 };
