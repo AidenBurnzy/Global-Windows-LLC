@@ -22,6 +22,7 @@ const projectData = {
     title: 'Traverse City',
     description: 'Expanded Project Description',
     images: [
+      'pictures/Residential/traverseCity/HouseExterior.jpg',
       'pictures/Residential/traverseCity/IMG_8163.jpg', 
       'pictures/Residential/traverseCity/IMG_8164.jpg', 
       'pictures/Residential/traverseCity/IMG_8160.jpg', 
