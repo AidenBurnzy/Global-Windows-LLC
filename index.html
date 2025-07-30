@@ -9,8 +9,15 @@
 </head>
 
 <body>
+    <!-- Mobile Menu Toggle -->
+    <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle navigation menu">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+    </button>
+
     <!-- Navigation Bar -->
-    <nav class="navbar">
+    <nav class="navbar" id="navbar">
         <!-- Logo Section -->
         <div class="logo-section">
             <div class="logo-placeholder">
@@ -18,7 +25,7 @@
             </div>
         </div>
 
-        <ul class="nav-list">
+        <ul class="nav-list" id="nav-list">
             <li class="nav-item">
                 <a href="index.html" class="nav-link active">Home</a>
             </li>
@@ -154,6 +161,34 @@
     </footer>
 
     <script>
+        // Mobile menu functionality
+        const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+        const navbar = document.getElementById('navbar');
+        const navList = document.getElementById('nav-list');
+
+        if (mobileMenuToggle && navbar) {
+            mobileMenuToggle.addEventListener('click', () => {
+                navbar.classList.toggle('mobile-menu-open');
+                mobileMenuToggle.classList.toggle('active');
+            });
+
+            // Close mobile menu when clicking on a nav link
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.addEventListener('click', () => {
+                    navbar.classList.remove('mobile-menu-open');
+                    mobileMenuToggle.classList.remove('active');
+                });
+            });
+
+            // Close mobile menu when clicking outside
+            document.addEventListener('click', (e) => {
+                if (!navbar.contains(e.target) && !mobileMenuToggle.contains(e.target)) {
+                    navbar.classList.remove('mobile-menu-open');
+                    mobileMenuToggle.classList.remove('active');
+                }
+            });
+        }
+
         // Add click handler to "Get Started Today" button
         const getStartedBtn = document.getElementById('get-started-btn');
         if (getStartedBtn) {
