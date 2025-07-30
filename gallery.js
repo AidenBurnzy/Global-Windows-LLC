@@ -188,9 +188,29 @@ const projectData = {
       'pictures/Commercial/400Rose/IMG_1658.jpg',
       'pictures/Commercial/400Rose/IMG_7042.jpg'],
     specs: {}
+  },
+  'project1': {
+    title: 'American Foursquare Home',
+    description: 'American Foursquare with Colonial Revival influences.',
+    images: [
+      'pictures/Residential/project1/IMG_4510.jpeg',
+      'pictures/Residential/project1/IMG_2809.jpeg', 
+      'pictures/Residential/project1/IMG_1453.jpeg',
+      'pictures/Residential/project1/IMG_4511.jpeg',
+      'pictures/Residential/project1/IMG_2807.jpeg'],
+    specs: {}
+  },
+  'project2': {
+    title: 'Contemporary Lakeside Home',
+    description: 'Contemporary Lakeside Home with Postmodern and Neo-Eclectic influences.',
+    images: [
+      'pictures/Residential/project1/project2/IMG_6809.jpeg',
+      'pictures/Residential/project1/project2/IMG_1614.jpeg', 
+      'pictures/Residential/project1/project2/IMG_6808.jpeg',
+      'pictures/Residential/project1/project2/IMG_6811.jpeg',
+      'pictures/Residential/project1/project2/IMG_6813.jpeg'],
+    specs: {}
   }
-  
-  
 };
 
 // Helper function to check if string is image path

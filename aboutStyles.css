@@ -1,0 +1,658 @@
+
+        /* Button Styles */
+        .scroll-button {
+            background: linear-gradient(45deg, #27ae60, #2ecc71);
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            font-size: 1.1rem;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            box-shadow: 0 4px 15px rgba(39, 174, 96, 0.4);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .scroll-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(39, 174, 96, 0.6);
+            background: linear-gradient(45deg, #229954, #27ae60);
+        }
+
+        .scroll-button:focus {
+            outline: 2px solid #27ae60;
+            outline-offset: 2px;
+        }
+
+        .back-to-top-button {
+            background: rgba(39, 174, 96, 0.9);
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            font-size: 0.9rem;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            box-shadow: 0 2px 10px rgba(39, 174, 96, 0.3);
+            margin-left: 1rem;
+        }
+
+        .back-to-top-button:hover {
+            background: rgba(39, 174, 96, 1);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(39, 174, 96, 0.5);
+        }
+
+        .section-header-with-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Mobile responsiveness for buttons */
+        @media (max-width: 768px) {
+            .section-header-with-button {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .back-to-top-button {
+                margin-left: 0;
+                margin-top: 1rem;
+            }
+            
+            .scroll-button {
+                padding: 0.875rem 1.5rem;
+                font-size: 1rem;
+            }
+        }
+
+
+        /* Additional styles for about page */
+        .about-hero {
+            background: linear-gradient(rgba(30, 58, 46, 0.8), rgba(45, 90, 66, 0.8)),
+                        url('pictures/Hotel-Rose-crains-ext1-scaled.jpg.optimal.jpg');
+            background-size: cover;
+            background-position: center;
+            padding: 4rem 2rem;
+            text-align: center;
+            color: white;
+        }
+
+        .about-hero h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .about-hero p {
+            font-size: clamp(1.1rem, 2.5vw, 1.3rem);
+            max-width: 600px;
+            margin: 0 auto;
+            opacity: 0.95;
+        }
+
+        .about-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .about-section {
+            padding: 4rem 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .about-section:last-child {
+            border-bottom: none;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            color: #1e3a2e;
+            margin-bottom: 2rem;
+            text-align: center;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: #27ae60;
+            margin: 1rem auto;
+            border-radius: 2px;
+        }
+
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+            margin-top: 2rem;
+        }
+
+        .about-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #444;
+        }
+
+        .about-text p {
+            margin-bottom: 1.5rem;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #27ae60, #2ecc71);
+            color: white;
+            padding: 2.5rem;
+            border-radius: 15px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .highlight-box::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 100%;
+            height: 100%;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            transform: rotate(45deg);
+        }
+
+        .highlight-box h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .highlight-box p {
+            font-size: 1.1rem;
+            position: relative;
+            z-index: 2;
+            opacity: 0.95;
+        }
+
+        .services-showcase {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .service-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s ease;
+            border-top: 4px solid #27ae60;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(39, 174, 96, 0.2);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            display: block;
+            color: #27ae60;
+        }
+
+        .service-card h4 {
+            font-size: 1.3rem;
+            color: #1e3a2e;
+            margin-bottom: 1rem;
+        }
+
+        .service-card p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .faith-section {
+            background: #f8f9fa;
+            padding: 4rem 2rem;
+            border-radius: 20px;
+            margin: 2rem 0;
+        }
+
+        .faith-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .gospel-highlight {
+            background: linear-gradient(135deg, #1e3a2e, #2d5a42);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            border-radius: 20px;
+            margin: 3rem 0;
+        }
+
+        .gospel-highlight::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M50 10 L60 35 L85 35 L67 52 L73 77 L50 65 L27 77 L33 52 L15 35 L40 35 Z" fill="rgba(255,255,255,0.05)"/></svg>') repeat;
+            opacity: 0.3;
+        }
+
+        .gospel-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .writings-section {
+            background: white;
+            padding: 4rem 2rem;
+            border-radius: 20px;
+            margin: 3rem 0;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .writings-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .writing-card {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 15px;
+            border-left: 5px solid #27ae60;
+            transition: transform 0.3s ease;
+        }
+
+        .writing-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+
+        .writing-date {
+            font-size: 0.9rem;
+            color: #27ae60;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .writing-title {
+            font-size: 1.4rem;
+            color: #1e3a2e;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .writing-excerpt {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .writing-verse {
+            font-style: italic;
+            color: #2d5a42;
+            border-top: 1px solid #ddd;
+            padding-top: 1rem;
+            margin-top: 1rem;
+        }
+
+        .stats-showcase {
+            background: linear-gradient(135deg, #1e3a2e, #2d5a42);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+            margin: 3rem 0;
+            border-radius: 20px;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            max-width: 800px;
+            margin: 2rem auto 0;
+        }
+
+        .stat-item {
+            padding: 1.5rem;
+        }
+
+        .stat-number {
+            display: block;
+            font-size: 3rem;
+            font-weight: 700;
+            color: #2ecc71;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        /* Navigation Buttons */
+        .scroll-to-reflections-btn {
+            background: linear-gradient(45deg, #27ae60, #2ecc71) !important;
+            color: white !important;
+            border: none !important;
+            padding: 1rem 2rem !important;
+            font-size: 1rem !important;
+            border-radius: 50px !important;
+            cursor: pointer !important;
+            transition: all 0.3s ease !important;
+            font-weight: 600 !important;
+            box-shadow: 0 4px 15px rgba(39, 174, 96, 0.4) !important;
+            margin-top: 2rem !important;
+            display: inline-flex !important;
+            align-items: center !important;
+            gap: 0.5rem !important;
+            text-decoration: none !important;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+            z-index: 100 !important;
+            position: relative !important;
+        }
+
+        .scroll-to-reflections-btn:hover {
+            transform: translateY(-3px) !important;
+            box-shadow: 0 6px 20px rgba(39, 174, 96, 0.6) !important;
+            background: linear-gradient(45deg, #229954, #27ae60) !important;
+        }
+
+        .btn-arrow {
+            font-size: 1.2rem !important;
+            transition: transform 0.3s ease !important;
+            color: white !important;
+        }
+
+        .scroll-to-reflections-btn:hover .btn-arrow {
+            transform: translateY(3px) !important;
+        }
+
+        .section-header-with-button {
+            display: flex !important;
+            justify-content: center !important;
+            align-items: center !important;
+            gap: 2rem !important;
+            flex-wrap: wrap !important;
+            margin-bottom: 2rem !important;
+        }
+
+        .back-to-top-btn {
+            background: linear-gradient(45deg, #1e3a2e, #2d5a42) !important;
+            color: white !important;
+            border: none !important;
+            padding: 0.75rem 1.5rem !important;
+            font-size: 0.9rem !important;
+            border-radius: 50px !important;
+            cursor: pointer !important;
+            transition: all 0.3s ease !important;
+            font-weight: 500 !important;
+            box-shadow: 0 3px 10px rgba(30, 58, 46, 0.3) !important;
+            display: inline-flex !important;
+            align-items: center !important;
+            gap: 0.5rem !important;
+            text-decoration: none !important;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+            z-index: 100 !important;
+            position: relative !important;
+        }
+
+        .back-to-top-btn:hover {
+            transform: translateY(-2px) !important;
+            box-shadow: 0 5px 15px rgba(30, 58, 46, 0.5) !important;
+            background: linear-gradient(45deg, #2d5a42, #3a6f52) !important;
+        }
+
+        .back-to-top-btn:hover .btn-arrow {
+            transform: translateY(-3px) !important;
+        }
+
+        @media (max-width: 768px) {
+            .two-column {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .about-section {
+                padding: 2rem 0;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .faith-section, .gospel-highlight, .writings-section {
+                padding: 2rem 1rem;
+                margin: 1rem 0;
+            }
+
+            .writings-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-showcase {
+                padding: 3rem 1rem;
+            }
+
+            .section-header-with-button {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
+
+            .scroll-to-reflections-btn {
+                padding: 0.875rem 1.75rem;
+                font-size: 0.95rem;
+            }
+
+            .back-to-top-btn {
+                padding: 0.625rem 1.25rem;
+                font-size: 0.85rem;
+            }
+        }
+/* Enhanced Writing Cards Styles */
+.writings-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+    align-items: start; /* This ensures cards align to the top */
+}
+
+.writing-card {
+    background: #f8f9fa;
+    padding: 2rem;
+    border-radius: 15px;
+    border-left: 5px solid #27ae60;
+    transition: all 0.3s ease;
+    height: 500px; /* Fixed height for consistency */
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    position: relative;
+}
+
+.writing-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+.writing-date {
+    font-size: 0.9rem;
+    color: #27ae60;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    flex-shrink: 0; /* Prevents date from shrinking */
+}
+
+.writing-title {
+    font-size: 1.2rem; /* Slightly smaller for better fit */
+    color: #1e3a2e;
+    margin-bottom: 1rem;
+    font-weight: 600;
+    line-height: 1.4;
+    flex-shrink: 0; /* Prevents title from shrinking */
+    max-height: 4.2rem; /* Limit title height to ~3 lines */
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+
+.writing-excerpt {
+    color: #666;
+    line-height: 1.5; /* Slightly tighter line height */
+    margin-bottom: 1rem;
+    flex: 1; /* Takes up available space */
+    overflow: hidden;
+    font-size: 0.95rem; /* Slightly smaller font */
+    position: relative;
+}
+
+/* Create a scrollable area for long content */
+.writing-excerpt {
+    overflow-y: auto;
+    padding-right: 0.5rem;
+}
+
+/* Custom scrollbar styling */
+.writing-excerpt::-webkit-scrollbar {
+    width: 4px;
+}
+
+.writing-excerpt::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 2px;
+}
+
+.writing-excerpt::-webkit-scrollbar-thumb {
+    background: #27ae60;
+    border-radius: 2px;
+}
+
+.writing-excerpt::-webkit-scrollbar-thumb:hover {
+    background: #229954;
+}
+
+.writing-verse {
+    font-style: italic;
+    color: #2d5a42;
+    border-top: 1px solid #ddd;
+    padding-top: 1rem;
+    margin-top: 1rem;
+    flex-shrink: 0; /* Prevents verse from shrinking */
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+/* Alternative approach - Show excerpt with "Read More" functionality */
+.writing-card-alt {
+    background: #f8f9fa;
+    padding: 2rem;
+    border-radius: 15px;
+    border-left: 5px solid #27ae60;
+    transition: all 0.3s ease;
+    min-height: 400px; /* Minimum height */
+    display: flex;
+    flex-direction: column;
+}
+
+.writing-excerpt-preview {
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    flex: 1;
+    font-size: 0.95rem;
+    max-height: 200px; /* Limit preview height */
+    overflow: hidden;
+    position: relative;
+}
+
+.writing-excerpt-preview::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 40px;
+    background: linear-gradient(transparent, #f8f9fa);
+    pointer-events: none;
+}
+
+.read-more-btn {
+    background: none;
+    border: none;
+    color: #27ae60;
+    font-weight: 600;
+    cursor: pointer;
+    padding: 0.5rem 0;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+    align-self: flex-start;
+}
+
+.read-more-btn:hover {
+    color: #229954;
+    text-decoration: underline;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .writings-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .writing-card {
+        height: auto; /* Allow natural height on mobile */
+        min-height: 300px;
+        padding: 1.5rem;
+    }
+    
+    .writing-title {
+        font-size: 1.1rem;
+    }
+    
+    .writing-excerpt {
+        font-size: 0.9rem;
+        max-height: 250px; /* Limit height on mobile */
+    }
+}
+
+/* For very long titles, add ellipsis */
+@media (min-width: 769px) {
+    .writing-title {
+        display: -webkit-box;
+        -webkit-line-clamp: 2; /* Limit to 2 lines on desktop */
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        max-height: 2.8rem;
+    }
+}
