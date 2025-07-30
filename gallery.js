@@ -278,29 +278,41 @@ function goToSlide(slideIndex) {
   updateCarousel();
 }
 
-// Function to go to next slide
+// Function to go to next slide (with looping)
 function nextSlide() {
   console.log('Next slide clicked. Current slide:', currentSlide);
   
-  if (currentProject && currentSlide < currentProject.images.length - 1) {
-    currentSlide++;
-    console.log('Moving to slide:', currentSlide);
+  if (currentProject) {
+    // If at last slide, loop back to first slide
+    if (currentSlide >= currentProject.images.length - 1) {
+      currentSlide = 0;
+      console.log('Looping back to first slide');
+    } else {
+      currentSlide++;
+      console.log('Moving to slide:', currentSlide);
+    }
     updateCarousel();
   } else {
-    console.log('Already at last slide or no project loaded');
+    console.log('No project loaded');
   }
 }
 
-// Function to go to previous slide
+// Function to go to previous slide (with looping)
 function prevSlide() {
   console.log('Previous slide clicked. Current slide:', currentSlide);
   
-  if (currentSlide > 0) {
-    currentSlide--;
-    console.log('Moving to slide:', currentSlide);
+  if (currentProject) {
+    // If at first slide, loop to last slide
+    if (currentSlide <= 0) {
+      currentSlide = currentProject.images.length - 1;
+      console.log('Looping to last slide:', currentSlide);
+    } else {
+      currentSlide--;
+      console.log('Moving to slide:', currentSlide);
+    }
     updateCarousel();
   } else {
-    console.log('Already at first slide');
+    console.log('No project loaded');
   }
 }
 
