@@ -88,7 +88,7 @@ const projectData = {
   //Commercial Gallery
   'office-complex': {
     title: 'Traverse City Home',
-    description: 'Large-scale commercial installation featuring floor-to-ceiling windows and modern curtain wall systems.',
+    description: 'Large project at residential home in Traverse City, MI.',
     images: [
       'pictures/Commercial/traverseCity/HouseExterior.jpg',
       'pictures/Commercial/traverseCity/IMG_8163.jpg', 
@@ -101,7 +101,7 @@ const projectData = {
   },
   'retail-storefront': {
     title: 'Post Dr',
-    description: 'Downtown retail space with expansive display windows designed for maximum product visibility.',
+    description: 'Newly constructed building.',
     images: [
       'pictures/Commercial/postDr/IMG_1667.jpg',
       'pictures/Commercial/postDr/IMG_1658.jpg', 
@@ -113,7 +113,7 @@ const projectData = {
   },
   'manufacturing-facility': {
     title: 'Manistee Hotel',
-    description: 'Industrial windows with enhanced durability and safety features for harsh manufacturing environments.',
+    description: 'Newly constructed hotel.',
     images: [
       'pictures/Commercial/manisteeHotel/IMG_7615.jpg',
       'pictures/Commercial/manisteeHotel/IMG_7616.jpg', 
@@ -123,7 +123,7 @@ const projectData = {
   },
   'house-worship': {
     title: 'Holland Firehouse',
-    description: 'Sacred space windows designed to enhance natural light while maintaining the spiritual atmosphere.',
+    description: 'Historical landmark in Holland, MI.',
     images: [
       'pictures/Commercial/hollandFirehouse/IMG_9607.jpg',
       'pictures/Commercial/hollandFirehouse/IMG_9605.jpg', 
@@ -134,7 +134,7 @@ const projectData = {
   },
   'educational-campus': {
     title: 'Hastings FOC',
-    description: 'School building renovation with energy-efficient windows designed for optimal learning environments.',
+    description: 'County government office in Hastings, MI.',
     images: [
       'pictures/Commercial/hastingsFoc/IMG_9692.jpg',
       'pictures/Commercial/hastingsFoc/IMG_9691.jpg', 
@@ -144,7 +144,7 @@ const projectData = {
   },
   'Adelaide': {
     title: 'Adelaide Pointe Marina',
-    description: 'Healthcare facility windows meeting strict medical standards for cleanliness and patient comfort.',
+    description: 'Boat and yacht marina with housing and apartments.',
     images: [
       'pictures/Commercial/adelaidePointe/IMG_9645.jpg',
       'pictures/Commercial/adelaidePointe/IMG_9653.jpg', 
@@ -153,7 +153,7 @@ const projectData = {
   },
   'medical-center': {
     title: 'Florida Home',
-    description: 'Healthcare facility windows meeting strict medical standards for cleanliness and patient comfort.',
+    description: '$1.2 Million dollars in windows, mansion home in Naples, FL.',
     images: [
       'pictures/Commercial/florida/IMG_0485.jpg',
       'pictures/Commercial/florida/IMG_0482.jpg', 
@@ -172,7 +172,7 @@ const projectData = {
    },
   'tallTimbers': {
     title: 'Tall Timbers',
-    description: 'Healthcare facility windows meeting strict medical standards for cleanliness and patient comfort.',
+    description: 'Newly constructed apartment building.',
     images: [
       'pictures/Commercial/tallTimbers/IMG_8592.jpg',
       'pictures/Commercial/tallTimbers/IMG_8591.jpg', 
@@ -181,7 +181,7 @@ const projectData = {
   },
   '400Rose': {
     title: '400 Rose',
-    description: 'Newly constructed apartments',
+    description: 'Newly constructed apartment building in Portage, MI.',
     images: [
       'pictures/Commercial/400Rose/IMG_1176.jpg',
       'pictures/Commercial/400Rose/IMG_1657.jpg', 
