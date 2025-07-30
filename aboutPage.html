@@ -44,7 +44,7 @@
     <!-- About Hero Section -->
     <section class="about-hero">
         <h1>About Global Windows</h1>
-        <p>Professional window installation driven by faith, integrity, and building better men.</p>
+        <p>Professional window installation rooted in faith, integrity, and Christian discipleship</p>
     </section>
 
     <!-- Main Content -->
@@ -84,11 +84,6 @@
                         <h4>Window Replacement</h4>
                         <p>Expert replacement services to improve energy efficiency and enhance property value</p>
                     </div>
-                    <div class="service-card">
-                        <span class="service-icon">⚡</span>
-                        <h4>Energy Solutions</h4>
-                        <p>High-performance windows designed to reduce energy costs and improve comfort</p>
-                    </div>
                 </div>
             </section>
 
@@ -106,12 +101,8 @@
                         <span class="stat-label">Years Experience</span>
                     </div>
                     <div class="stat-item">
-                        <span class="stat-number">500+</span>
+                        <span class="stat-number">1000+</span>
                         <span class="stat-label">Satisfied Customers</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-number">100%</span>
-                        <span class="stat-label">Faith-Driven</span>
                     </div>
                 </div>
             </section>
@@ -168,8 +159,10 @@
             </section>
 
             <!-- Founder's Reflections Section -->
-            <section class="writings-section">
-                <h2 class="section-title">Reflections from Our Founder</h2>
+            <section class="writings-section" id="founder-reflections">
+                <div class="section-header-with-button">
+                    <h2 class="section-title">Reflections from Our Founder</h2>
+                </div>
                 <p style="text-align: center; font-size: 1.1rem; color: #666; margin-bottom: 2rem;">
                     Insights on faith, work, and living for Christ in the marketplace
                 </p>
@@ -272,6 +265,39 @@
                 }
             });
         }
+
+        // Smooth scrolling functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const scrollToReflectionsBtn = document.getElementById('scroll-to-reflections');
+            const backToTopBtn = document.getElementById('back-to-top');
+            const founderReflectionsSection = document.getElementById('founder-reflections');
+
+            console.log('Scroll button found:', scrollToReflectionsBtn);
+            console.log('Back to top button found:', backToTopBtn);
+            console.log('Reflections section found:', founderReflectionsSection);
+
+            if (scrollToReflectionsBtn && founderReflectionsSection) {
+                scrollToReflectionsBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    console.log('Scrolling to reflections section');
+                    founderReflectionsSection.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                });
+            }
+
+            if (backToTopBtn) {
+                backToTopBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    console.log('Scrolling to top');
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
+                });
+            }
+        });
     </script>
 </body>
 </html>
