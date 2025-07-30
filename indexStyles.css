@@ -738,6 +738,7 @@ body {
     background: white;
     box-shadow: none;
   }
+
 }
 /* Mobile Menu Styles - Add this to your indexStyles.css file */
 
@@ -873,4 +874,5 @@ body {
     padding: 0.875rem;
     font-size: 1rem;
   }
+
 }
