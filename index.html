@@ -5,6 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Global Windows LLC</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="shortcut icon" href="pictures/GlobalWindowsLogo.png">
     <link rel="stylesheet" href="indexStyles.css">
 </head>
 
@@ -18,7 +23,14 @@
             </div>
         </div>
 
-        <ul class="nav-list">
+        <!-- Mobile Menu Toggle Button -->
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+        </button>
+
+        <ul class="nav-list" id="nav-list">
             <li class="nav-item">
                 <a href="index.html" class="nav-link active">Home</a>
             </li>
@@ -29,7 +41,7 @@
                 <a href="contactPage.html" class="nav-link">Contact</a>
             </li>
             <li class="nav-item">
-                <a href="aboutPage.html" class="nav-link">About</a>
+                <a href="aboutPage.html" class="nav-link">Principal</a>
             </li>
             <li class="nav-item">
                 <a href="teachingsPage.html" class="nav-link">Teachings</a>
@@ -41,7 +53,7 @@
     <div class="main-content">
         <!-- Hero Section -->
         <section class="hero-section">
-            <!-- NEW: Dynamic animated overlays -->
+            <!-- Dynamic animated overlays -->
             <div class="floating-lines">
                 <div class="line line-1"></div>
                 <div class="line line-2"></div>
@@ -65,7 +77,6 @@
             </div>
             
             <div class="gradient-waves"></div>
-            <!-- END: New animations -->
             
             <div class="hero-content">
                 <div class="hero-badge">Faith • Quality • Excellence</div>
@@ -77,6 +88,9 @@
 
         <!-- What We Do & Gods Way Section -->
         <section class="content-section">
+            <!-- Background overlay for better text readability -->
+            <div class="content-background-overlay"></div>
+            
             <div class="section-container">
                 <div class="section-header">
                     <h2 class="section-title">Our Mission</h2>
@@ -159,6 +173,34 @@
         if (getStartedBtn) {
             getStartedBtn.addEventListener('click', () => {
                 window.location.href = 'contactPage.html';
+            });
+        }
+
+        // Mobile menu functionality
+        const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+        const navList = document.getElementById('nav-list');
+
+        if (mobileMenuToggle && navList) {
+            mobileMenuToggle.addEventListener('click', () => {
+                navList.classList.toggle('nav-open');
+                mobileMenuToggle.classList.toggle('menu-open');
+            });
+
+            // Close menu when clicking on a nav link
+            const navLinks = document.querySelectorAll('.nav-link');
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    navList.classList.remove('nav-open');
+                    mobileMenuToggle.classList.remove('menu-open');
+                });
+            });
+
+            // Close menu when clicking outside
+            document.addEventListener('click', (e) => {
+                if (!mobileMenuToggle.contains(e.target) && !navList.contains(e.target)) {
+                    navList.classList.remove('nav-open');
+                    mobileMenuToggle.classList.remove('menu-open');
+                }
             });
         }
     </script>
