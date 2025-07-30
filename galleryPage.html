@@ -12,8 +12,15 @@
 </head>
 
 <body>
+    <!-- Mobile Menu Toggle -->
+    <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle navigation menu">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+    </button>
+
     <!-- Navigation Bar -->
-    <nav class="navbar">
+    <nav class="navbar" id="navbar">
         <!-- Logo Section -->
         <div class="logo-section">
             <div class="logo-placeholder">
@@ -21,7 +28,7 @@
             </div>
         </div>
 
-        <ul class="nav-list">
+        <ul class="nav-list" id="nav-list">
             <li class="nav-item">
                 <a href="index.html" class="nav-link">Home</a>
             </li>
@@ -246,7 +253,7 @@
                                     </div>
                                     <div class="spec-item">
                                         <span class="spec-label">Type:</span>
-                                        <span class="spec-value">Commercial</span>
+                                        <span class="spec-label">Commercial</span>
                                     </div>
                                     <div class="spec-item">
                                         <span class="spec-label">Completed:</span>
@@ -408,14 +415,13 @@
                                     </div>
                                 </div>
                             </div>
+                        </div>
                     </div>
                 </div>
 
 
             </div>
         </div>
-    </div>
-    </div>
     </div>
 
     <!-- Project Modal -->
@@ -467,6 +473,27 @@
         </div>
     </footer>
 
+    <script>
+        // Mobile menu functionality
+        const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+        const navbar = document.getElementById('navbar');
+        const navList = document.getElementById('nav-list');
+
+        if (mobileMenuToggle && navbar) {
+            mobileMenuToggle.addEventListener('click', () => {
+                navbar.classList.toggle('mobile-menu-open');
+                mobileMenuToggle.classList.toggle('active');
+            });
+
+            // Close mobile menu when clicking on a nav link
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.addEventListener('click', () => {
+                    navbar.classList.remove('mobile-menu-open');
+                    mobileMenuToggle.classList.remove('active');
+                });
+            });
+        }
+    </script>
     <script src="gallery.js"></script>
 </body>
 
