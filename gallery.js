@@ -103,7 +103,7 @@ const projectData = {
     title: 'Retail Storefront',
     description: 'Downtown retail space with expansive display windows designed for maximum product visibility.',
     images: [
-      'pictures/Commercial/manisteeHotel/IMG_7615.jpg',
+      'pictures/Commercial/postDr/IMG_1667.jpg',
       'pictures/Commercial/postDr/IMG_1658.jpg', 
       'pictures/Commercial/postDr/IMG_1660.jpg', 
       'pictures/Commercial/postDr/IMG_1661.jpg', 
