@@ -87,7 +87,7 @@ const projectData = {
 
   //Commercial Gallery
   'office-complex': {
-    title: 'Office Complex',
+    title: 'Traverse City Home',
     description: 'Large-scale commercial installation featuring floor-to-ceiling windows and modern curtain wall systems.',
     images: [
       'pictures/Commercial/traverseCity/HouseExterior.jpg',
@@ -100,7 +100,7 @@ const projectData = {
     specs: {}
   },
   'retail-storefront': {
-    title: 'Retail Storefront',
+    title: 'Post Dr',
     description: 'Downtown retail space with expansive display windows designed for maximum product visibility.',
     images: [
       'pictures/Commercial/postDr/IMG_1667.jpg',
@@ -112,29 +112,46 @@ const projectData = {
     specs: {}
   },
   'manufacturing-facility': {
-    title: 'Manufacturing Facility',
+    title: 'Manistee Hotel',
     description: 'Industrial windows with enhanced durability and safety features for harsh manufacturing environments.',
-    images: ['🏭', '⚙️', '🔧', '🛡️', '🏗️'],
+    images: [
+      'pictures/Commercial/manisteeHotel/IMG_7615.jpg',
+      'pictures/Commercial/manisteeHotel/IMG_7616.jpg', 
+      'pictures/Commercial/manisteeHotel/IMG_7617.jpg', 
+      'pictures/Commercial/manisteeHotel/IMG_7618.jpg'],
     specs: {}
   },
   'house-worship': {
-    title: 'House of Worship',
+    title: 'Holland Firehouse',
     description: 'Sacred space windows designed to enhance natural light while maintaining the spiritual atmosphere.',
     images: ['⛪', '🌅', '🎨', '✝️', '🕊️'],
     specs: {}
   },
   'educational-campus': {
-    title: 'Educational Campus',
+    title: 'Hastings FOC',
     description: 'School building renovation with energy-efficient windows designed for optimal learning environments.',
     images: ['🏫', '📚', '🌅', '👥', '🎓'],
     specs: {}
   },
+  'Adelaide': {
+    title: 'Adelaide Pointe Marina',
+    description: 'Healthcare facility windows meeting strict medical standards for cleanliness and patient comfort.',
+    images: ['🏥', '⚕️', '💡', '🧼', '🌿'],
+    specs: {}
+  },
   'medical-center': {
-    title: 'Medical Center',
+    title: 'Florida Home',
+    description: 'Healthcare facility windows meeting strict medical standards for cleanliness and patient comfort.',
+    images: ['🏥', '⚕️', '💡', '🧼', '🌿'],
+    specs: {}
+   },
+  'tallTimbers': {
+    title: 'Tall Timbers',
     description: 'Healthcare facility windows meeting strict medical standards for cleanliness and patient comfort.',
     images: ['🏥', '⚕️', '💡', '🧼', '🌿'],
     specs: {}
   }
+  
 };
 
 // Helper function to check if string is image path
