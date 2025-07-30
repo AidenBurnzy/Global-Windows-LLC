@@ -1,4 +1,80 @@
 
+        /* Button Styles */
+        .scroll-button {
+            background: linear-gradient(45deg, #27ae60, #2ecc71);
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            font-size: 1.1rem;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            box-shadow: 0 4px 15px rgba(39, 174, 96, 0.4);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .scroll-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(39, 174, 96, 0.6);
+            background: linear-gradient(45deg, #229954, #27ae60);
+        }
+
+        .scroll-button:focus {
+            outline: 2px solid #27ae60;
+            outline-offset: 2px;
+        }
+
+        .back-to-top-button {
+            background: rgba(39, 174, 96, 0.9);
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            font-size: 0.9rem;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            box-shadow: 0 2px 10px rgba(39, 174, 96, 0.3);
+            margin-left: 1rem;
+        }
+
+        .back-to-top-button:hover {
+            background: rgba(39, 174, 96, 1);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(39, 174, 96, 0.5);
+        }
+
+        .section-header-with-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Mobile responsiveness for buttons */
+        @media (max-width: 768px) {
+            .section-header-with-button {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .back-to-top-button {
+                margin-left: 0;
+                margin-top: 1rem;
+            }
+            
+            .scroll-button {
+                padding: 0.875rem 1.5rem;
+                font-size: 1rem;
+            }
+        }
+
+
         /* Additional styles for about page */
         .about-hero {
             background: linear-gradient(rgba(30, 58, 46, 0.8), rgba(45, 90, 66, 0.8)),
@@ -402,3 +478,181 @@
                 font-size: 0.85rem;
             }
         }
+/* Enhanced Writing Cards Styles */
+.writings-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+    align-items: start; /* This ensures cards align to the top */
+}
+
+.writing-card {
+    background: #f8f9fa;
+    padding: 2rem;
+    border-radius: 15px;
+    border-left: 5px solid #27ae60;
+    transition: all 0.3s ease;
+    height: 500px; /* Fixed height for consistency */
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    position: relative;
+}
+
+.writing-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+.writing-date {
+    font-size: 0.9rem;
+    color: #27ae60;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    flex-shrink: 0; /* Prevents date from shrinking */
+}
+
+.writing-title {
+    font-size: 1.2rem; /* Slightly smaller for better fit */
+    color: #1e3a2e;
+    margin-bottom: 1rem;
+    font-weight: 600;
+    line-height: 1.4;
+    flex-shrink: 0; /* Prevents title from shrinking */
+    max-height: 4.2rem; /* Limit title height to ~3 lines */
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+
+.writing-excerpt {
+    color: #666;
+    line-height: 1.5; /* Slightly tighter line height */
+    margin-bottom: 1rem;
+    flex: 1; /* Takes up available space */
+    overflow: hidden;
+    font-size: 0.95rem; /* Slightly smaller font */
+    position: relative;
+}
+
+/* Create a scrollable area for long content */
+.writing-excerpt {
+    overflow-y: auto;
+    padding-right: 0.5rem;
+}
+
+/* Custom scrollbar styling */
+.writing-excerpt::-webkit-scrollbar {
+    width: 4px;
+}
+
+.writing-excerpt::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 2px;
+}
+
+.writing-excerpt::-webkit-scrollbar-thumb {
+    background: #27ae60;
+    border-radius: 2px;
+}
+
+.writing-excerpt::-webkit-scrollbar-thumb:hover {
+    background: #229954;
+}
+
+.writing-verse {
+    font-style: italic;
+    color: #2d5a42;
+    border-top: 1px solid #ddd;
+    padding-top: 1rem;
+    margin-top: 1rem;
+    flex-shrink: 0; /* Prevents verse from shrinking */
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+/* Alternative approach - Show excerpt with "Read More" functionality */
+.writing-card-alt {
+    background: #f8f9fa;
+    padding: 2rem;
+    border-radius: 15px;
+    border-left: 5px solid #27ae60;
+    transition: all 0.3s ease;
+    min-height: 400px; /* Minimum height */
+    display: flex;
+    flex-direction: column;
+}
+
+.writing-excerpt-preview {
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    flex: 1;
+    font-size: 0.95rem;
+    max-height: 200px; /* Limit preview height */
+    overflow: hidden;
+    position: relative;
+}
+
+.writing-excerpt-preview::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 40px;
+    background: linear-gradient(transparent, #f8f9fa);
+    pointer-events: none;
+}
+
+.read-more-btn {
+    background: none;
+    border: none;
+    color: #27ae60;
+    font-weight: 600;
+    cursor: pointer;
+    padding: 0.5rem 0;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+    align-self: flex-start;
+}
+
+.read-more-btn:hover {
+    color: #229954;
+    text-decoration: underline;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .writings-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .writing-card {
+        height: auto; /* Allow natural height on mobile */
+        min-height: 300px;
+        padding: 1.5rem;
+    }
+    
+    .writing-title {
+        font-size: 1.1rem;
+    }
+    
+    .writing-excerpt {
+        font-size: 0.9rem;
+        max-height: 250px; /* Limit height on mobile */
+    }
+}
+
+/* For very long titles, add ellipsis */
+@media (min-width: 769px) {
+    .writing-title {
+        display: -webkit-box;
+        -webkit-line-clamp: 2; /* Limit to 2 lines on desktop */
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        max-height: 2.8rem;
+    }
+}
