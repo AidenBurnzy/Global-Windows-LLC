@@ -124,7 +124,12 @@ const projectData = {
   'house-worship': {
     title: 'Holland Firehouse',
     description: 'Sacred space windows designed to enhance natural light while maintaining the spiritual atmosphere.',
-    images: ['⛪', '🌅', '🎨', '✝️', '🕊️'],
+    images: [
+      'pictures/Commercial/hollandFirehouse/IMG_9607.jpg',
+      'pictures/Commercial/hollandFirehouse/IMG_9605.jpg', 
+      'pictures/Commercial/hollandFirehouse/IMG_9609.jpg', 
+      'pictures/Commercial/hollandFirehouse/IMG_9610.jpg',
+      'pictures/Commercial/hollandFirehouse/IMG_9603.jpg'],
     specs: {}
   },
   'educational-campus': {
@@ -136,13 +141,19 @@ const projectData = {
   'Adelaide': {
     title: 'Adelaide Pointe Marina',
     description: 'Healthcare facility windows meeting strict medical standards for cleanliness and patient comfort.',
-    images: ['🏥', '⚕️', '💡', '🧼', '🌿'],
+    images: [
+      'pictures/Commercial/adelaidePointe/IMG_9645.jpg',
+      'pictures/Commercial/adelaidePointe/IMG_9653.jpg', 
+      'pictures/Commercial/adelaidePointe/IMG_9648.jpg'],
     specs: {}
   },
   'medical-center': {
     title: 'Florida Home',
     description: 'Healthcare facility windows meeting strict medical standards for cleanliness and patient comfort.',
-    images: ['🏥', '⚕️', '💡', '🧼', '🌿'],
+    images: [
+      'pictures/Commercial/florida/IMG_0485.jpg',
+      'pictures/Commercial/adelaidePointe/IMG_9653.jpg', 
+      'pictures/Commercial/adelaidePointe/IMG_9648.jpg'],
     specs: {}
    },
   'tallTimbers': {
