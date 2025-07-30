@@ -135,7 +135,11 @@ const projectData = {
   'educational-campus': {
     title: 'Hastings FOC',
     description: 'School building renovation with energy-efficient windows designed for optimal learning environments.',
-    images: ['🏫', '📚', '🌅', '👥', '🎓'],
+    images: [
+      'pictures/Commercial/hastingsFoc/IMG_9692.jpg',
+      'pictures/Commercial/hastingsFoc/IMG_9691.jpg', 
+      'pictures/Commercial/hastingsFoc/IMG_9688.jpg',
+      'pictures/Commercial/hastingsFoc/IMG_9702.jpg'],
     specs: {}
   },
   'Adelaide': {
