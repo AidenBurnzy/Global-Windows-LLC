@@ -5,7 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gallery - Global Windows LLC</title>
+    <!-- Core styles -->
     <link rel="stylesheet" href="indexStyles.css">
+    <!-- Gallery specific styles -->
+    <link rel="stylesheet" href="gallery.css">
 </head>
 
 <body>
@@ -18,14 +21,7 @@
             </div>
         </div>
 
-        <!-- Mobile Menu Toggle Button -->
-        <button class="mobile-menu-toggle" id="mobile-menu-toggle">
-            <span class="hamburger-line"></span>
-            <span class="hamburger-line"></span>
-            <span class="hamburger-line"></span>
-        </button>
-
-        <ul class="nav-list" id="nav-list">
+        <ul class="nav-list">
             <li class="nav-item">
                 <a href="index.html" class="nav-link">Home</a>
             </li>
@@ -36,7 +32,7 @@
                 <a href="contactPage.html" class="nav-link">Contact</a>
             </li>
             <li class="nav-item">
-                <a href="aboutPage.html" class="nav-link">Principal</a>
+                <a href="aboutPage.html" class="nav-link">About</a>
             </li>
             <li class="nav-item">
                 <a href="teachingsPage.html" class="nav-link">Teachings</a>
@@ -48,130 +44,400 @@
     <div class="main-content">
         <div class="page-content">
             <div class="page-header">
-                <h1 class="page-title">Our Work Gallery</h1>
-                <p class="page-subtitle">Showcasing our window installation projects</p>
+                <h1 class="page-title">Projects</h1>
+                <p class="page-subtitle">Quality window installations across residential and commercial properties</p>
             </div>
 
             <!-- Gallery Tabs -->
             <div class="gallery-tabs">
-                <button class="gallery-tab active" data-category="all">All Projects</button>
-                <button class="gallery-tab" data-category="residential">Residential</button>
+                <button class="gallery-tab active" data-category="residential">Residential</button>
                 <button class="gallery-tab" data-category="commercial">Commercial</button>
-                <button class="gallery-tab" data-category="repairs">Repairs</button>
             </div>
 
             <!-- Gallery Content -->
             <div class="gallery-content">
-                <!-- All Projects Section -->
-                <div class="gallery-section active" id="all">
+                <!-- Residential Section -->
+                <div class="gallery-section active" id="residential-section">
                     <div class="images-grid">
-                        <div class="image-card" onclick="openModal('project1')">
-                            <div class="image-placeholder">🏠</div>
+                        <div class="image-card" data-project="modern-family">
+                            <div class="image-placeholder">
+                                <img src="" alt="Traverse City Home Window Installation">
+                            </div>
                             <div class="image-info">
-                                <h3 class="image-title">Modern Home Installation</h3>
-                                <p class="image-description">Complete window replacement for a contemporary home</p>
+                                <h3 class="image-title">Traverse City Home</h3>
+                                <p class="image-description">Project Description Text</p>
                                 <div class="image-specs">
+                                    <div class="spec-item">
+                                        <span class="spec-label">Windows:</span>
+                                        <span class="spec-value"># Of Windows</span>
+                                    </div>
+                                    <div class="spec-item">
+                                        <span class="spec-label">Type:</span>
+                                        <span class="spec-value">Type of windows</span>
+                                    </div>
+                                    <div class="spec-item">
+                                        <span class="spec-label">Completed:</span>
+                                        <span class="spec-value">2024</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="image-card" data-project="traditional-colonial">
+                            <div class="image-placeholder">
+                                <img src="placeholderImage" alt="Traditional Colonial Window Installation">
+                            </div>
+                            <div class="image-info">
+                                <h3 class="image-title">Traditional Colonial</h3>
+                                <p class="image-description">Historic home restoration with period-appropriate
+                                    window designs while maintaining modern efficiency.</p>
+                                <div class="image-specs">
+                                    <div class="spec-item">
+                                        <span class="spec-label">Windows:</span>
+                                        <span class="spec-value">18 Units</span>
+                                    </div>
+                                    <div class="spec-item">
+                                        <span class="spec-label">Type:</span>
+                                        <span class="spec-value">Casement</span>
+                                    </div>
+                                    <div class="spec-item">
+                                        <span class="spec-label">Completed:</span>
+                                        <span class="spec-value">2024</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="image-card" data-project="contemporary-ranch">
+                            <div class="image-placeholder">
+                                <img src="pictures/traverseCity/IMG_8158.jpg"
+                                    alt="Contemporary Ranch Window Installation">
+                            </div>
+                            <div class="image-info">
+                                <h3 class="image-title">Contemporary Ranch</h3>
+                                <p class="image-description">New construction windows with sleek frames and maximum
+                                    natural light optimization.</p>
+                                <div class="image-specs">
+                                    <div class="spec-item">
+                                        <span class="spec-label">Windows:</span>
+                                        <span class="spec-value">32 Units</span>
+                                    </div>
+                                    <div class="spec-item">
+                                        <span class="spec-label">Type:</span>
+                                        <span class="spec-value">Picture & Slider</span>
+                                    </div>
+                                    <div class="spec-item">
+                                        <span class="spec-label">Completed:</span>
+                                        <span class="spec-value">2023</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="image-card" data-project="craftsman-bungalow">
+                            <div class="image-placeholder">
+                                <img src="pictures/Hotel-Rose-crains-ext1-scaled.jpg.optimal.jpg"
+                                    alt="Craftsman Bungalow Window Installation">
+                            </div>
+                            <div class="image-info">
+                                <h3 class="image-title">Craftsman Bungalow</h3>
+                                <p class="image-description">Authentic craftsman-style windows with detailed
+                                    mullions and energy-efficient glazing.</p>
+                                <div class="image-specs">
+                                    <div class="spec-item">
+                                        <span class="spec-label">Windows:</span>
+                                        <span class="spec-value">16 Units</span>
+                                    </div>
+                                    <div class="spec-item">
+                                        <span class="spec-label">Type:</span>
+                                        <span class="spec-value">Multi-Pane</span>
+                                    </div>
+                                    <div class="spec-item">
+                                        <span class="spec-label">Completed:</span>
+                                        <span class="spec-value">2023</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="image-card" data-project="luxury-estate">
+                            <div class="image-placeholder">🏡</div>
+                            <div class="image-info">
+                                <h3 class="image-title">Luxury Estate</h3>
+                                <p class="image-description">High-end residential project featuring custom bay
+                                    windows and premium materials throughout.</p>
+                                <div class="image-specs">
+                                    <div class="spec-item">
+                                        <span class="spec-label">Windows:</span>
+                                        <span class="spec-value">48 Units</span>
+                                    </div>
+                                    <div class="spec-item">
+                                        <span class="spec-label">Type:</span>
+                                        <span class="spec-value">Bay & Custom</span>
+                                    </div>
+                                    <div class="spec-item">
+                                        <span class="spec-label">Completed:</span>
+                                        <span class="spec-value">2024</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="image-card" data-project="suburban-remodel">
+                            <div class="image-placeholder">🏘️</div>
+                            <div class="image-info">
+                                <h3 class="image-title">Suburban Remodel</h3>
+                                <p class="image-description">Complete home renovation with energy-efficient windows
+                                    and updated architectural styling.</p>
+                                <div class="image-specs">
+                                    <div class="spec-item">
+                                        <span class="spec-label">Windows:</span>
+                                        <span class="spec-value">28 Units</span>
+                                    </div>
+                                    <div class="spec-item">
+                                        <span class="spec-label">Type:</span>
+                                        <span class="spec-value">Mixed Styles</span>
+                                    </div>
+                                    <div class="spec-item">
+                                        <span class="spec-label">Completed:</span>
+                                        <span class="spec-value">2024</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Commercial Section -->
+                <div class="gallery-section" id="commercial-section">
+                    <div class="images-grid">
+                        <div class="image-card" data-project="office-complex">
+                            <div class="image-placeholder"><img src="pictures/Commercial/traverseCity/HouseExterior.jpg" alt=""></div>
+                            <div class="image-info">
+                                <h3 class="image-title">Traverse City Home</h3>
+                                <p class="image-description">Large-scale commercial installation featuring
+                                    floor-to-ceiling windows and modern curtain wall systems.</p>
+                                <div class="image-specs">
+                                    <div class="spec-item">
+                                        <span class="spec-label">Windows:</span>
+                                        <span class="spec-value">200+ Units</span>
+                                    </div>
                                     <div class="spec-item">
                                         <span class="spec-label">Type:</span>
                                         <span class="spec-value">Residential</span>
                                     </div>
                                     <div class="spec-item">
-                                        <span class="spec-label">Windows:</span>
-                                        <span class="spec-value">12 Units</span>
+                                        <span class="spec-label">Completed:</span>
+                                        <span class="spec-value">2023</span>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="image-card" onclick="openModal('project2')">
-                            <div class="image-placeholder">🏢</div>
+                        <div class="image-card" data-project="retail-storefront">
+                            <div class="image-placeholder"><img src="pictures/Commercial/postDr/IMG_1667.jpg" alt=""></div>
                             <div class="image-info">
-                                <h3 class="image-title">Office Building Project</h3>
-                                <p class="image-description">Commercial window installation for downtown office</p>
+                                <h3 class="image-title">Post Dr</h3>
+                                <p class="image-description">Newly constructed building</p>
                                 <div class="image-specs">
+                                    <div class="spec-item">
+                                        <span class="spec-label">Windows:</span>
+                                        <span class="spec-value">12 Units</span>
+                                    </div>
                                     <div class="spec-item">
                                         <span class="spec-label">Type:</span>
                                         <span class="spec-value">Commercial</span>
                                     </div>
                                     <div class="spec-item">
-                                        <span class="spec-label">Windows:</span>
-                                        <span class="spec-value">45 Units</span>
+                                        <span class="spec-label">Completed:</span>
+                                        <span class="spec-value">2024</span>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="image-card" onclick="openModal('project3')">
-                            <div class="image-placeholder">🔧</div>
+                        <div class="image-card" data-project="manufacturing-facility">
+                            <div class="image-placeholder"><img src="pictures/Commercial/manisteeHotel/IMG_7615.jpg" alt=""></div>
                             <div class="image-info">
-                                <h3 class="image-title">Window Repair Service</h3>
-                                <p class="image-description">Professional repair and maintenance work</p>
+                                <h3 class="image-title">Manistee Hotel</h3>
+                                <p class="image-description">New Hotel built and installed with Global Windows</p>
                                 <div class="image-specs">
                                     <div class="spec-item">
-                                        <span class="spec-label">Type:</span>
-                                        <span class="spec-value">Repair</span>
+                                        <span class="spec-label">Windows:</span>
+                                        <span class="spec-value">85 Units</span>
                                     </div>
                                     <div class="spec-item">
-                                        <span class="spec-label">Duration:</span>
-                                        <span class="spec-value">1 Day</span>
+                                        <span class="spec-label">Type:</span>
+                                        <span class="spec-value">Commercial Hotel</span>
+                                    </div>
+                                    <div class="spec-item">
+                                        <span class="spec-label">Completed:</span>
+                                        <span class="spec-value">2022</span>
                                     </div>
                                 </div>
                             </div>
                         </div>
+
+                        <div class="image-card" data-project="house-worship">
+                            <div class="image-placeholder"><img src="pictures/Commercial/hollandFirehouse/IMG_9608.jpg" alt=""></div>
+                            <div class="image-info">
+                                <h3 class="image-title">Holland Firehouse</h3>
+                                <p class="image-description">Historical building downtown Holland MI, updated window
+                                    installation.</p>
+                                <div class="image-specs">
+                                    <div class="spec-item">
+                                        <span class="spec-label">Windows:</span>
+                                        <span class="spec-value">36 Units</span>
+                                    </div>
+                                    <div class="spec-item">
+                                        <span class="spec-label">Type:</span>
+                                        <span class="spec-value">Historical Building</span>
+                                    </div>
+                                    <div class="spec-item">
+                                        <span class="spec-label">Completed:</span>
+                                        <span class="spec-value">2024</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="image-card" data-project="educational-campus">
+                            <div class="image-placeholder"><img src="pictures/Commercial/hastingsFoc/IMG_9692.jpg" alt=""></div>
+                            <div class="image-info">
+                                <h3 class="image-title">Hastings FOC</h3>
+                                <p class="image-description">County government office in Hastings, Michigan</p>
+                                <div class="image-specs">
+                                    <div class="spec-item">
+                                        <span class="spec-label">Windows:</span>
+                                        <span class="spec-value">150 Units</span>
+                                    </div>
+                                    <div class="spec-item">
+                                        <span class="spec-label">Type:</span>
+                                        <span class="spec-value">Government Building</span>
+                                    </div>
+                                    <div class="spec-item">
+                                        <span class="spec-label">Completed:</span>
+                                        <span class="spec-value">2024</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="image-card" data-project="medical-center">
+                            <div class="image-placeholder"><img src="pictures/Commercial/florida/IMG_0485.jpg" alt=""></div>
+                            <div class="image-info">
+                                <h3 class="image-title">Florida Home</h3>
+                                <p class="image-description">$1.2 Million window job in Naples, FL.</p>
+                                <div class="image-specs">
+                                    <div class="spec-item">
+                                        <span class="spec-label">Windows:</span>
+                                        <span class="spec-value">120 Units</span>
+                                    </div>
+                                    <div class="spec-item">
+                                        <span class="spec-label">Type:</span>
+                                        <span class="spec-value">Residential</span>
+                                    </div>
+                                    <div class="spec-item">
+                                        <span class="spec-label">Completed:</span>
+                                        <span class="spec-value">2024</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="image-card" data-project="Adelaide">
+                            <div class="image-placeholder"><img src="pictures/Commercial/adelaidePointe/IMG_9645.jpg" alt=""></div>
+                            <div class="image-info">
+                                <h3 class="image-title">Adelaide Pointe</h3>
+                                <p class="image-description">Newly constructed marina in Muskegon, MI.</p>
+                                <div class="image-specs">
+                                    <div class="spec-item">
+                                        <span class="spec-label">Windows:</span>
+                                        <span class="spec-value">120 Units</span>
+                                    </div>
+                                    <div class="spec-item">
+                                        <span class="spec-label">Type:</span>
+                                        <span class="spec-value">Marina Residences</span>
+                                    </div>
+                                    <div class="spec-item">
+                                        <span class="spec-label">Completed:</span>
+                                        <span class="spec-value">2024</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="image-card" data-project="tallTimbers">
+                            <div class="image-placeholder"><img src="pictures/Commercial/tallTimbers/IMG_8592.jpg" alt=""></div>
+                            <div class="image-info">
+                                <h3 class="image-title">Tall Timbers</h3>
+                                <p class="image-description">Newly constructed apartment building in Portage, MI.</p>
+                                <div class="image-specs">
+                                    <div class="spec-item">
+                                        <span class="spec-label">Windows:</span>
+                                        <span class="spec-value">120 Units</span>
+                                    </div>
+                                    <div class="spec-item">
+                                        <span class="spec-label">Type:</span>
+                                        <span class="spec-value">Commercial Apartments</span>
+                                    </div>
+                                    <div class="spec-item">
+                                        <span class="spec-label">Completed:</span>
+                                        <span class="spec-value">2024</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <div class="image-card" data-project="400Rose">
+                            <div class="image-placeholder"><img src="pictures/Commercial/400Rose/IMG_1176.jpg" alt=""></div>
+                            <div class="image-info">
+                                <h3 class="image-title">400 Rose</h3>
+                                <p class="image-description">Newly constructed apartment building in Portage, MI.</p>
+                                <div class="image-specs">
+                                    <div class="spec-item">
+                                        <span class="spec-label">Windows:</span>
+                                        <span class="spec-value">120 Units</span>
+                                    </div>
+                                    <div class="spec-item">
+                                        <span class="spec-label">Type:</span>
+                                        <span class="spec-value">Commercial Apartments</span>
+                                    </div>
+                                    <div class="spec-item">
+                                        <span class="spec-label">Completed:</span>
+                                        <span class="spec-value">2024</span>
+                                    </div>
+                                </div>
+                            </div>
                     </div>
                 </div>
 
-                <!-- Residential Section -->
-                <div class="gallery-section" id="residential">
-                    <div class="placeholder-content">
-                        <h3 class="placeholder-text">Residential Projects Coming Soon</h3>
-                        <p class="placeholder-subtext">We're updating our residential project gallery</p>
-                    </div>
-                </div>
 
-                <!-- Commercial Section -->
-                <div class="gallery-section" id="commercial">
-                    <div class="placeholder-content">
-                        <h3 class="placeholder-text">Commercial Projects Coming Soon</h3>
-                        <p class="placeholder-subtext">We're updating our commercial project gallery</p>
-                    </div>
-                </div>
-
-                <!-- Repairs Section -->
-                <div class="gallery-section" id="repairs">
-                    <div class="placeholder-content">
-                        <h3 class="placeholder-text">Repair Projects Coming Soon</h3>
-                        <p class="placeholder-subtext">We're updating our repair project gallery</p>
-                    </div>
-                </div>
             </div>
         </div>
     </div>
+    </div>
+    </div>
 
-    <!-- Modal -->
+    <!-- Project Modal -->
     <div class="modal" id="project-modal">
         <div class="modal-content">
             <div class="modal-header">
-                <h2 class="modal-title" id="modal-title">Project Details</h2>
-                <button class="close-btn" onclick="closeModal()">&times;</button>
+                <h2 class="modal-title" id="modal-title">Project Gallery</h2>
+                <button class="close-btn" id="close-modal">&times;</button>
             </div>
             <div class="modal-body">
                 <div class="carousel-container">
                     <div class="carousel-track" id="carousel-track">
-                        <div class="carousel-slide">🏠</div>
-                        <div class="carousel-slide">📐</div>
-                        <div class="carousel-slide">✅</div>
+                        <!-- Images will be populated by JavaScript -->
                     </div>
-                    <button class="carousel-nav carousel-prev" onclick="prevSlide()">‹</button>
-                    <button class="carousel-nav carousel-next" onclick="nextSlide()">›</button>
+                    <button class="carousel-nav carousel-prev" id="carousel-prev">&#8249;</button>
+                    <button class="carousel-nav carousel-next" id="carousel-next">&#8250;</button>
                     <div class="carousel-indicators" id="carousel-indicators">
-                        <span class="carousel-indicator active" onclick="currentSlide(1)"></span>
-                        <span class="carousel-indicator" onclick="currentSlide(2)"></span>
-                        <span class="carousel-indicator" onclick="currentSlide(3)"></span>
+                        <!-- Indicators will be populated by JavaScript -->
                     </div>
                 </div>
                 <div class="modal-info">
-                    <p class="modal-description" id="modal-description">Project description will appear here.</p>
+                    <p class="modal-description" id="modal-description"></p>
                     <div class="modal-specs" id="modal-specs">
                         <!-- Specs will be populated by JavaScript -->
                     </div>
@@ -201,159 +467,7 @@
         </div>
     </footer>
 
-    <script>
-        // Gallery tab functionality
-        const galleryTabs = document.querySelectorAll('.gallery-tab');
-        const gallerySections = document.querySelectorAll('.gallery-section');
-
-        galleryTabs.forEach(tab => {
-            tab.addEventListener('click', () => {
-                const category = tab.getAttribute('data-category');
-                
-                // Update active tab
-                galleryTabs.forEach(t => t.classList.remove('active'));
-                tab.classList.add('active');
-                
-                // Show corresponding section
-                gallerySections.forEach(section => {
-                    section.classList.remove('active');
-                });
-                document.getElementById(category).classList.add('active');
-            });
-        });
-
-        // Modal functionality
-        let currentSlideIndex = 0;
-        const totalSlides = 3;
-
-        function openModal(projectId) {
-            const modal = document.getElementById('project-modal');
-            const modalTitle = document.getElementById('modal-title');
-            const modalDescription = document.getElementById('modal-description');
-            const modalSpecs = document.getElementById('modal-specs');
-
-            // Sample project data
-            const projects = {
-                project1: {
-                    title: 'Modern Home Installation',
-                    description: 'Complete window replacement for a contemporary home featuring energy-efficient double-pane windows with custom frames.',
-                    specs: [
-                        { label: 'Project Type', value: 'Residential' },
-                        { label: 'Windows Installed', value: '12 Units' },
-                        { label: 'Duration', value: '3 Days' },
-                        { label: 'Window Type', value: 'Double-Pane' }
-                    ]
-                },
-                project2: {
-                    title: 'Office Building Project',
-                    description: 'Large-scale commercial window installation for a downtown office building with specialized commercial-grade windows.',
-                    specs: [
-                        { label: 'Project Type', value: 'Commercial' },
-                        { label: 'Windows Installed', value: '45 Units' },
-                        { label: 'Duration', value: '2 Weeks' },
-                        { label: 'Window Type', value: 'Commercial Grade' }
-                    ]
-                },
-                project3: {
-                    title: 'Window Repair Service',
-                    description: 'Professional window repair and maintenance service including seal replacement and frame restoration.',
-                    specs: [
-                        { label: 'Service Type', value: 'Repair & Maintenance' },
-                        { label: 'Windows Serviced', value: '8 Units' },
-                        { label: 'Duration', value: '1 Day' },
-                        { label: 'Work Type', value: 'Seal & Frame Repair' }
-                    ]
-                }
-            };
-
-            const project = projects[projectId];
-            if (project) {
-                modalTitle.textContent = project.title;
-                modalDescription.textContent = project.description;
-                
-                // Populate specs
-                modalSpecs.innerHTML = '';
-                project.specs.forEach(spec => {
-                    const specItem = document.createElement('div');
-                    specItem.className = 'modal-spec-item';
-                    specItem.innerHTML = `
-                        <span class="spec-label">${spec.label}:</span>
-                        <span class="spec-value">${spec.value}</span>
-                    `;
-                    modalSpecs.appendChild(specItem);
-                });
-            }
-
-            modal.classList.add('active');
-            currentSlideIndex = 0;
-            updateCarousel();
-        }
-
-        function closeModal() {
-            document.getElementById('project-modal').classList.remove('active');
-        }
-
-        function nextSlide() {
-            currentSlideIndex = (currentSlideIndex + 1) % totalSlides;
-            updateCarousel();
-        }
-
-        function prevSlide() {
-            currentSlideIndex = (currentSlideIndex - 1 + totalSlides) % totalSlides;
-            updateCarousel();
-        }
-
-        function currentSlide(n) {
-            currentSlideIndex = n - 1;
-            updateCarousel();
-        }
-
-        function updateCarousel() {
-            const track = document.getElementById('carousel-track');
-            const indicators = document.querySelectorAll('.carousel-indicator');
-            
-            track.style.transform = `translateX(-${currentSlideIndex * 100}%)`;
-            
-            indicators.forEach((indicator, index) => {
-                indicator.classList.toggle('active', index === currentSlideIndex);
-            });
-        }
-
-        // Close modal when clicking outside
-        document.getElementById('project-modal').addEventListener('click', (e) => {
-            if (e.target.id === 'project-modal') {
-                closeModal();
-            }
-        });
-
-        // Mobile menu functionality
-        const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
-        const navList = document.getElementById('nav-list');
-
-        if (mobileMenuToggle && navList) {
-            mobileMenuToggle.addEventListener('click', () => {
-                navList.classList.toggle('nav-open');
-                mobileMenuToggle.classList.toggle('menu-open');
-            });
-
-            // Close menu when clicking on a nav link
-            const navLinks = document.querySelectorAll('.nav-link');
-            navLinks.forEach(link => {
-                link.addEventListener('click', () => {
-                    navList.classList.remove('nav-open');
-                    mobileMenuToggle.classList.remove('menu-open');
-                });
-            });
-
-            // Close menu when clicking outside
-            document.addEventListener('click', (e) => {
-                if (!mobileMenuToggle.contains(e.target) && !navList.contains(e.target)) {
-                    navList.classList.remove('nav-open');
-                    mobileMenuToggle.classList.remove('menu-open');
-                }
-            });
-        }
-    </script>
+    <script src="gallery.js"></script>
 </body>
 
 </html>
