@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery - Global Windows LLC</title>
+    <!-- Core styles -->
+    <link rel="stylesheet" href="indexStyles.css">
+    <!-- Gallery specific styles -->
+    <link rel="stylesheet" href="gallery.css">
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <!-- Logo Section -->
+        <div class="logo-section">
+            <div class="logo-placeholder">
+                <img src="pictures/GlobalWindowsLogo.png" alt="GlobalWindowsLogo">
+            </div>
+        </div>
+
+        <ul class="nav-list">
+            <li class="nav-item">
+                <a href="index.html" class="nav-link">Home</a>
+            </li>
+            <li class="nav-item">
+                <a href="galleryPage.html" class="nav-link active">Gallery</a>
+            </li>
+            <li class="nav-item">
+                <a href="contactPage.html" class="nav-link">Contact</a>
+            </li>
+            <li class="nav-item">
+                <a href="aboutPage.html" class="nav-link">About</a>
+            </li>
+            <li class="nav-item">
+                <a href="teachingsPage.html" class="nav-link">Teachings</a>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <div class="page-content">
+            <div class="page-header">
+                <h1 class="page-title">Projects</h1>
+                <p class="page-subtitle">Quality window installations across residential and commercial properties</p>
+            </div>
+
+            <!-- Gallery Tabs -->
+            <div class="gallery-tabs">
+                <button class="gallery-tab active" data-category="residential">Residential</button>
+                <button class="gallery-tab" data-category="commercial">Commercial</button>
+            </div>
+
+            <!-- Gallery Content -->
+            <div class="gallery-content">
+                <!-- Residential Section -->
+                <div class="gallery-section active" id="residential-section">
+                    <div class="images-grid">
+                        <div class="image-card" data-project="modern-family">
+                            <div class="image-placeholder">
+                                <img src="" alt="Traverse City Home Window Installation">
+                            </div>
+                            <div class="image-info">
+                                <h3 class="image-title">Traverse City Home</h3>
+                                <p class="image-description">Project Description Text</p>
+                                <div class="image-specs">
+                                    <div class="spec-item">
+                                        <span class="spec-label">Windows:</span>
+                                        <span class="spec-value"># Of Windows</span>
+                                    </div>
+                                    <div class="spec-item">
+                                        <span class="spec-label">Type:</span>
+                                        <span class="spec-value">Type of windows</span>
+                                    </div>
+                                    <div class="spec-item">
+                                        <span class="spec-label">Completed:</span>
+                                        <span class="spec-value">2024</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="image-card" data-project="traditional-colonial">
+                            <div class="image-placeholder">
+                                <img src="placeholderImage" alt="Traditional Colonial Window Installation">
+                            </div>
+                            <div class="image-info">
+                                <h3 class="image-title">Traditional Colonial</h3>
+                                <p class="image-description">Historic home restoration with period-appropriate
+                                    window designs while maintaining modern efficiency.</p>
+                                <div class="image-specs">
+                                    <div class="spec-item">
+                                        <span class="spec-label">Windows:</span>
+                                        <span class="spec-value">18 Units</span>
+                                    </div>
+                                    <div class="spec-item">
+                                        <span class="spec-label">Type:</span>
+                                        <span class="spec-value">Casement</span>
+                                    </div>
+                                    <div class="spec-item">
+                                        <span class="spec-label">Completed:</span>
+                                        <span class="spec-value">2024</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="image-card" data-project="contemporary-ranch">
+                            <div class="image-placeholder">
+                                <img src="pictures/traverseCity/IMG_8158.jpg"
+                                    alt="Contemporary Ranch Window Installation">
+                            </div>
+                            <div class="image-info">
+                                <h3 class="image-title">Contemporary Ranch</h3>
+                                <p class="image-description">New construction windows with sleek frames and maximum
+                                    natural light optimization.</p>
+                                <div class="image-specs">
+                                    <div class="spec-item">
+                                        <span class="spec-label">Windows:</span>
+                                        <span class="spec-value">32 Units</span>
+                                    </div>
+                                    <div class="spec-item">
+                                        <span class="spec-label">Type:</span>
+                                        <span class="spec-value">Picture & Slider</span>
+                                    </div>
+                                    <div class="spec-item">
+                                        <span class="spec-label">Completed:</span>
+                                        <span class="spec-value">2023</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="image-card" data-project="craftsman-bungalow">
+                            <div class="image-placeholder">
+                                <img src="pictures/Hotel-Rose-crains-ext1-scaled.jpg.optimal.jpg"
+                                    alt="Craftsman Bungalow Window Installation">
+                            </div>
+                            <div class="image-info">
+                                <h3 class="image-title">Craftsman Bungalow</h3>
+                                <p class="image-description">Authentic craftsman-style windows with detailed
+                                    mullions and energy-efficient glazing.</p>
+                                <div class="image-specs">
+                                    <div class="spec-item">
+                                        <span class="spec-label">Windows:</span>
+                                        <span class="spec-value">16 Units</span>
+                                    </div>
+                                    <div class="spec-item">
+                                        <span class="spec-label">Type:</span>
+                                        <span class="spec-value">Multi-Pane</span>
+                                    </div>
+                                    <div class="spec-item">
+                                        <span class="spec-label">Completed:</span>
+                                        <span class="spec-value">2023</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="image-card" data-project="luxury-estate">
+                            <div class="image-placeholder">🏡</div>
+                            <div class="image-info">
+                                <h3 class="image-title">Luxury Estate</h3>
+                                <p class="image-description">High-end residential project featuring custom bay
+                                    windows and premium materials throughout.</p>
+                                <div class="image-specs">
+                                    <div class="spec-item">
+                                        <span class="spec-label">Windows:</span>
+                                        <span class="spec-value">48 Units</span>
+                                    </div>
+                                    <div class="spec-item">
+                                        <span class="spec-label">Type:</span>
+                                        <span class="spec-value">Bay & Custom</span>
+                                    </div>
+                                    <div class="spec-item">
+                                        <span class="spec-label">Completed:</span>
+                                        <span class="spec-value">2024</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="image-card" data-project="suburban-remodel">
+                            <div class="image-placeholder">🏘️</div>
+                            <div class="image-info">
+                                <h3 class="image-title">Suburban Remodel</h3>
+                                <p class="image-description">Complete home renovation with energy-efficient windows
+                                    and updated architectural styling.</p>
+                                <div class="image-specs">
+                                    <div class="spec-item">
+                                        <span class="spec-label">Windows:</span>
+                                        <span class="spec-value">28 Units</span>
+                                    </div>
+                                    <div class="spec-item">
+                                        <span class="spec-label">Type:</span>
+                                        <span class="spec-value">Mixed Styles</span>
+                                    </div>
+                                    <div class="spec-item">
+                                        <span class="spec-label">Completed:</span>
+                                        <span class="spec-value">2024</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Commercial Section -->
+                <div class="gallery-section" id="commercial-section">
+                    <div class="images-grid">
+                        <div class="image-card" data-project="office-complex">
+                            <div class="image-placeholder"><img src="pictures/Commercial/traverseCity/HouseExterior.jpg" alt=""></div>
+                            <div class="image-info">
+                                <h3 class="image-title">Traverse City Home</h3>
+                                <p class="image-description">Large-scale commercial installation featuring
+                                    floor-to-ceiling windows and modern curtain wall systems.</p>
+                                <div class="image-specs">
+                                    <div class="spec-item">
+                                        <span class="spec-label">Windows:</span>
+                                        <span class="spec-value">200+ Units</span>
+                                    </div>
+                                    <div class="spec-item">
+                                        <span class="spec-label">Type:</span>
+                                        <span class="spec-value">Residential</span>
+                                    </div>
+                                    <div class="spec-item">
+                                        <span class="spec-label">Completed:</span>
+                                        <span class="spec-value">2023</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="image-card" data-project="retail-storefront">
+                            <div class="image-placeholder"><img src="pictures/Commercial/postDr/IMG_1667.jpg" alt=""></div>
+                            <div class="image-info">
+                                <h3 class="image-title">Post Dr</h3>
+                                <p class="image-description">Newly constructed building</p>
+                                <div class="image-specs">
+                                    <div class="spec-item">
+                                        <span class="spec-label">Windows:</span>
+                                        <span class="spec-value">12 Units</span>
+                                    </div>
+                                    <div class="spec-item">
+                                        <span class="spec-label">Type:</span>
+                                        <span class="spec-value">Commercial</span>
+                                    </div>
+                                    <div class="spec-item">
+                                        <span class="spec-label">Completed:</span>
+                                        <span class="spec-value">2024</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="image-card" data-project="manufacturing-facility">
+                            <div class="image-placeholder"><img src="pictures/Commercial/manisteeHotel/IMG_7615.jpg" alt=""></div>
+                            <div class="image-info">
+                                <h3 class="image-title">Manistee Hotel</h3>
+                                <p class="image-description">New Hotel built and installed with Global Windows</p>
+                                <div class="image-specs">
+                                    <div class="spec-item">
+                                        <span class="spec-label">Windows:</span>
+                                        <span class="spec-value">85 Units</span>
+                                    </div>
+                                    <div class="spec-item">
+                                        <span class="spec-label">Type:</span>
+                                        <span class="spec-value">Commercial Hotel</span>
+                                    </div>
+                                    <div class="spec-item">
+                                        <span class="spec-label">Completed:</span>
+                                        <span class="spec-value">2022</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="image-card" data-project="house-worship">
+                            <div class="image-placeholder"><img src="pictures/Commercial/hollandFirehouse/IMG_9608.jpg" alt=""></div>
+                            <div class="image-info">
+                                <h3 class="image-title">Holland Firehouse</h3>
+                                <p class="image-description">Historical building downtown Holland MI, updated window
+                                    installation.</p>
+                                <div class="image-specs">
+                                    <div class="spec-item">
+                                        <span class="spec-label">Windows:</span>
+                                        <span class="spec-value">36 Units</span>
+                                    </div>
+                                    <div class="spec-item">
+                                        <span class="spec-label">Type:</span>
+                                        <span class="spec-value">Historical Building</span>
+                                    </div>
+                                    <div class="spec-item">
+                                        <span class="spec-label">Completed:</span>
+                                        <span class="spec-value">2024</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="image-card" data-project="educational-campus">
+                            <div class="image-placeholder"><img src="pictures/Commercial/hastingsFoc/IMG_9692.jpg" alt=""></div>
+                            <div class="image-info">
+                                <h3 class="image-title">Hastings FOC</h3>
+                                <p class="image-description">County government office in Hastings, Michigan</p>
+                                <div class="image-specs">
+                                    <div class="spec-item">
+                                        <span class="spec-label">Windows:</span>
+                                        <span class="spec-value">150 Units</span>
+                                    </div>
+                                    <div class="spec-item">
+                                        <span class="spec-label">Type:</span>
+                                        <span class="spec-value">Government Building</span>
+                                    </div>
+                                    <div class="spec-item">
+                                        <span class="spec-label">Completed:</span>
+                                        <span class="spec-value">2024</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="image-card" data-project="medical-center">
+                            <div class="image-placeholder"><img src="pictures/Commercial/florida/IMG_0485.jpg" alt=""></div>
+                            <div class="image-info">
+                                <h3 class="image-title">Florida Home</h3>
+                                <p class="image-description">$1.2 Million window job in Naples, FL.</p>
+                                <div class="image-specs">
+                                    <div class="spec-item">
+                                        <span class="spec-label">Windows:</span>
+                                        <span class="spec-value">120 Units</span>
+                                    </div>
+                                    <div class="spec-item">
+                                        <span class="spec-label">Type:</span>
+                                        <span class="spec-value">Residential</span>
+                                    </div>
+                                    <div class="spec-item">
+                                        <span class="spec-label">Completed:</span>
+                                        <span class="spec-value">2024</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="image-card" data-project="Adelaide">
+                            <div class="image-placeholder"><img src="pictures/Commercial/adelaidePointe/IMG_9645.jpg" alt=""></div>
+                            <div class="image-info">
+                                <h3 class="image-title">Adelaide Pointe</h3>
+                                <p class="image-description">Newly constructed marina in Muskegon, MI.</p>
+                                <div class="image-specs">
+                                    <div class="spec-item">
+                                        <span class="spec-label">Windows:</span>
+                                        <span class="spec-value">120 Units</span>
+                                    </div>
+                                    <div class="spec-item">
+                                        <span class="spec-label">Type:</span>
+                                        <span class="spec-value">Marina Residences</span>
+                                    </div>
+                                    <div class="spec-item">
+                                        <span class="spec-label">Completed:</span>
+                                        <span class="spec-value">2024</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="image-card" data-project="tallTimbers">
+                            <div class="image-placeholder"><img src="pictures/Commercial/tallTimbers/IMG_8592.jpg" alt=""></div>
+                            <div class="image-info">
+                                <h3 class="image-title">Tall Timbers</h3>
+                                <p class="image-description">Newly constructed apartment building in Portage, MI.</p>
+                                <div class="image-specs">
+                                    <div class="spec-item">
+                                        <span class="spec-label">Windows:</span>
+                                        <span class="spec-value">120 Units</span>
+                                    </div>
+                                    <div class="spec-item">
+                                        <span class="spec-label">Type:</span>
+                                        <span class="spec-value">Commercial Apartments</span>
+                                    </div>
+                                    <div class="spec-item">
+                                        <span class="spec-label">Completed:</span>
+                                        <span class="spec-value">2024</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <div class="image-card" data-project="400Rose">
+                            <div class="image-placeholder"><img src="pictures/Commercial/400Rose/IMG_1176.jpg" alt=""></div>
+                            <div class="image-info">
+                                <h3 class="image-title">400 Rose</h3>
+                                <p class="image-description">Newly constructed apartment building in Portage, MI.</p>
+                                <div class="image-specs">
+                                    <div class="spec-item">
+                                        <span class="spec-label">Windows:</span>
+                                        <span class="spec-value">120 Units</span>
+                                    </div>
+                                    <div class="spec-item">
+                                        <span class="spec-label">Type:</span>
+                                        <span class="spec-value">Commercial Apartments</span>
+                                    </div>
+                                    <div class="spec-item">
+                                        <span class="spec-label">Completed:</span>
+                                        <span class="spec-value">2024</span>
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+
+    <!-- Project Modal -->
+    <div class="modal" id="project-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title" id="modal-title">Project Gallery</h2>
+                <button class="close-btn" id="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="carousel-container">
+                    <div class="carousel-track" id="carousel-track">
+                        <!-- Images will be populated by JavaScript -->
+                    </div>
+                    <button class="carousel-nav carousel-prev" id="carousel-prev">&#8249;</button>
+                    <button class="carousel-nav carousel-next" id="carousel-next">&#8250;</button>
+                    <div class="carousel-indicators" id="carousel-indicators">
+                        <!-- Indicators will be populated by JavaScript -->
+                    </div>
+                </div>
+                <div class="modal-info">
+                    <p class="modal-description" id="modal-description"></p>
+                    <div class="modal-specs" id="modal-specs">
+                        <!-- Specs will be populated by JavaScript -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <h3 class="footer-title">GLOBAL WINDOWS LLC</h3>
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h4>Location</h4>
+                    <p>Grand Rapids, Michigan</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>SrobertsLLC@outlook.com</p>
+                    <p>(616)-914-4591</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Global Windows LLC. Built with faith and purpose.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="gallery.js"></script>
+</body>
+
+</html>
