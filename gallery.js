@@ -169,7 +169,10 @@ const projectData = {
   'tallTimbers': {
     title: 'Tall Timbers',
     description: 'Healthcare facility windows meeting strict medical standards for cleanliness and patient comfort.',
-    images: ['🏥', '⚕️', '💡', '🧼', '🌿'],
+    images: [
+      'pictures/Commercial/tallTimbers/IMG_8592.jpg',
+      'pictures/Commercial/tallTimbers/IMG_8591.jpg', 
+      'pictures/Commercial/tallTimbers/IMG_8587.jpg'],
     specs: {}
   }
   
