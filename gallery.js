@@ -103,12 +103,12 @@ const projectData = {
     title: 'Retail Storefront',
     description: 'Downtown retail space with expansive display windows designed for maximum product visibility.',
     images: [
-      'pictures/Commercial/postDr/IMG_1660.jpg',
-      'pictures/Commercial/traverseCity/IMG_8163.jpg', 
-      'pictures/Commercial/traverseCity/IMG_8164.jpg', 
-      'pictures/Commercial/traverseCity/IMG_8160.jpg', 
-      'pictures/Commercial/traverseCity/IMG_8165.jpg', 
-      'pictures/Commercial/traverseCity/IMG_8159.jpg'],
+      'pictures/Commercial/manisteeHotel/IMG_7615.jpg',
+      'pictures/Commercial/postDr/IMG_1658.jpg', 
+      'pictures/Commercial/postDr/IMG_1660.jpg', 
+      'pictures/Commercial/postDr/IMG_1661.jpg', 
+      'pictures/Commercial/postDr/IMG_1663.jpg', 
+      'pictures/Commercial/postDr/IMG_1669.jpg'],
     specs: {}
   },
   'manufacturing-facility': {
