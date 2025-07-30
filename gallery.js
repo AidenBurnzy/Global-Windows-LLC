@@ -152,8 +152,18 @@ const projectData = {
     description: 'Healthcare facility windows meeting strict medical standards for cleanliness and patient comfort.',
     images: [
       'pictures/Commercial/florida/IMG_0485.jpg',
-      'pictures/Commercial/adelaidePointe/IMG_9653.jpg', 
-      'pictures/Commercial/adelaidePointe/IMG_9648.jpg'],
+      'pictures/Commercial/florida/IMG_0482.jpg', 
+      'pictures/Commercial/florida/IMG_0480.jpg',
+      'pictures/Commercial/florida/IMG_0474.jpg',
+      'pictures/Commercial/florida/IMG_0471.jpg',
+      'pictures/Commercial/florida/IMG_0467.jpg',
+      'pictures/Commercial/florida/IMG_0469.jpg',
+      'pictures/Commercial/florida/IMG_0466.jpg',
+      'pictures/Commercial/florida/IMG_0465.jpg',
+      'pictures/Commercial/florida/IMG_0463.jpg',
+      'pictures/Commercial/florida/IMG_0461.jpg',
+      'pictures/Commercial/florida/IMG_0380.jpg',
+      'pictures/Commercial/florida/IMG_0120.jpg'],
     specs: {}
    },
   'tallTimbers': {
