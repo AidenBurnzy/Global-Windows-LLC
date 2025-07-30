@@ -174,7 +174,17 @@ const projectData = {
       'pictures/Commercial/tallTimbers/IMG_8591.jpg', 
       'pictures/Commercial/tallTimbers/IMG_8587.jpg'],
     specs: {}
+  },
+  '400Rose': {
+    title: '400 Rose',
+    description: 'Healthcare facility windows meeting strict medical standards for cleanliness and patient comfort.',
+    images: [
+      'pictures/Commercial/tallTimbers/IMG_8592.jpg',
+      'pictures/Commercial/tallTimbers/IMG_8591.jpg', 
+      'pictures/Commercial/tallTimbers/IMG_8587.jpg'],
+    specs: {}
   }
+  
   
 };
 
