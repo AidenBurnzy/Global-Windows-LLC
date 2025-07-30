@@ -10,38 +10,40 @@
 
 <body>
     <!-- Navigation Bar -->
-    <nav class="navbar">
-        <!-- Logo Section -->
-        <div class="logo-section">
-            <div class="logo-placeholder">
-                <img src="pictures/GlobalWindowsLogo.png" alt="GlobalWindowsLogo">
-            </div>
+    <!-- Navigation Bar -->
+<nav class="navbar" id="navbar">
+    <!-- Logo Section -->
+    <div class="logo-section">
+        <div class="logo-placeholder">
+            <img src="pictures/GlobalWindowsLogo.png" alt="GlobalWindowsLogo">
+        </div>
+    </div>
 
-        <!-- Mobile Menu Toggle Button -->
-        <button class="mobile-menu-toggle" id="mobile-menu-toggle">
-            <span class="hamburger-line"></span>
-            <span class="hamburger-line"></span>
-            <span class="hamburger-line"></span>
-        </button>
+    <ul class="nav-list" id="nav-list">
+        <li class="nav-item">
+            <a href="index.html" class="nav-link">Home</a>
+        </li>
+        <li class="nav-item">
+            <a href="galleryPage.html" class="nav-link">Gallery</a>
+        </li>
+        <li class="nav-item">
+            <a href="contactPage.html" class="nav-link">Contact</a>
+        </li>
+        <li class="nav-item">
+            <a href="aboutPage.html" class="nav-link active">About</a> <!-- Update 'active' class for each page -->
+        </li>
+        <li class="nav-item">
+            <a href="teachingsPage.html" class="nav-link">Teachings</a>
+        </li>
+    </ul>
 
-        <ul class="nav-list" id="nav-list">
-            <li class="nav-item">
-                <a href="index.html" class="nav-link">Home</a>
-            </li>
-            <li class="nav-item">
-                <a href="galleryPage.html" class="nav-link">Gallery</a>
-            </li>
-            <li class="nav-item">
-                <a href="contactPage.html" class="nav-link">Contact</a>
-            </li>
-            <li class="nav-item">
-                <a href="aboutPage.html" class="nav-link">Principal</a>
-            </li>
-            <li class="nav-item">
-                <a href="teachingsPage.html" class="nav-link active">Teachings</a>
-            </li>
-        </ul>
-    </nav>
+    <!-- Mobile Menu Toggle -->
+    <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle navigation menu">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+    </button>
+</nav>
 
     <!-- Main Content -->
     <div class="main-content">

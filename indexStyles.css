@@ -741,7 +741,7 @@ body {
 }
 /* Mobile Menu Styles - Add this to your indexStyles.css file */
 
-/* Mobile Menu Toggle Button */
+/* Mobile Menu Toggle Button - Hidden on desktop */
 .mobile-menu-toggle {
   display: none;
   background: none;
@@ -754,6 +754,21 @@ body {
   gap: 4px;
   z-index: 1001;
   position: relative;
+  order: 3; /* Ensures it appears after logo and nav-list */
+}
+
+/* Ensure navbar has proper flex layout */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* On desktop, hide the mobile menu toggle */
+@media (min-width: 769px) {
+  .mobile-menu-toggle {
+    display: none !important;
+  }
 }
 
 .hamburger-line {
@@ -790,6 +805,11 @@ body {
     justify-content: space-between;
     align-items: center;
     position: relative;
+    flex-wrap: nowrap; /* Prevent wrapping */
+  }
+  
+  .logo-section {
+    order: 1; /* Logo stays on the left */
   }
   
   .nav-list {
@@ -807,6 +827,7 @@ body {
     transition: all 0.3s ease;
     z-index: 1000;
     gap: 0;
+    order: 2; /* Hidden by default */
   }
   
   .navbar.mobile-menu-open .nav-list {
