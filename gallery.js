@@ -1,4 +1,4 @@
-// Gallery functionality - Debug version
+// Gallery functionality - Fixed version
 const galleryTabs = document.querySelectorAll('.gallery-tab');
 const gallerySections = document.querySelectorAll('.gallery-section');
 
@@ -22,16 +22,13 @@ const projectData = {
     title: 'Traverse City',
     description: 'Expanded Project Description',
     images: [
-      
-      'pictures/Residential/traverseCity/IMG_8163.jpg', 
-      'pictures/Residential/traverseCity/IMG_8164.jpg', 
-      'pictures/Residential/traverseCity/IMG_8160.jpg', 
-      'pictures/Residential/traverseCity/IMG_8165.jpg', 
-      'pictures/Residential/traverseCity/IMG_8159.jpg'
+      'pictures/Commercial/traverseCity/IMG_8163.jpg', 
+      'pictures/Commercial/traverseCity/IMG_8164.jpg', 
+      'pictures/Commercial/traverseCity/IMG_8160.jpg', 
+      'pictures/Commercial/traverseCity/IMG_8165.jpg', 
+      'pictures/Commercial/traverseCity/IMG_8159.jpg'
     ],
-    specs: {
-      
-    }
+    specs: {}
   },
   'traditional-colonial': {
     title: 'Traditional Colonial',
@@ -43,9 +40,7 @@ const projectData = {
       'pictures/traverseCity/IMG_8157.jpg', 
       'pictures/traverseCity/IMG_8157.jpg'
     ],
-    specs: {
-      
-    }
+    specs: {}
   },
   'contemporary-ranch': {
     title: 'Contemporary Ranch',
@@ -57,9 +52,7 @@ const projectData = {
       'pictures/traverseCity/IMG_8157.jpg', 
       'pictures/traverseCity/IMG_8157.jpg'
     ],
-    specs: {
-      
-    }
+    specs: {}
   },
   'craftsman-bungalow': {
     title: 'Craftsman Bungalow',
@@ -71,17 +64,13 @@ const projectData = {
       'pictures/traverseCity/IMG_8157.jpg', 
       'pictures/traverseCity/IMG_8157.jpg'
     ],
-    specs: {
-     
-    }
+    specs: {}
   },
   'luxury-estate': {
     title: 'Luxury Estate',
     description: 'High-end residential project featuring custom bay windows and premium materials throughout.',
     images: ['🏡', '💎', '🏰', '🪟', '✨'],
-    specs: {
-      
-    }
+    specs: {}
   },
   'suburban-remodel': {
     title: 'Suburban Remodel',
@@ -93,63 +82,52 @@ const projectData = {
       'pictures/traverseCity/IMG_8157.jpg', 
       'pictures/traverseCity/IMG_8157.jpg'
     ],
-    specs: {
-      
-    }
+    specs: {}
   },
+
+  //Commercial Gallery
   'office-complex': {
     title: 'Office Complex',
     description: 'Large-scale commercial installation featuring floor-to-ceiling windows and modern curtain wall systems.',
     images: [
-      'pictures/traverseCity/IMG_8157.jpg', 
-      'pictures/traverseCity/IMG_8157.jpg', 
-      'pictures/traverseCity/IMG_8157.jpg', 
-      'pictures/traverseCity/IMG_8157.jpg', 
-      'pictures/traverseCity/IMG_8157.jpg'
+      'pictures/Commercial/traverseCity/HouseExterior.jpg',
+      'pictures/Commercial/traverseCity/IMG_8163.jpg', 
+      'pictures/Commercial/traverseCity/IMG_8164.jpg', 
+      'pictures/Commercial/traverseCity/IMG_8160.jpg', 
+      'pictures/Commercial/traverseCity/IMG_8165.jpg', 
+      'pictures/Commercial/traverseCity/IMG_8159.jpg'
     ],
-    specs: {
-      
-    }
+    specs: {}
   },
   'retail-storefront': {
     title: 'Retail Storefront',
     description: 'Downtown retail space with expansive display windows designed for maximum product visibility.',
     images: ['🏪', '🛍️', '💡', '🪟', '🎯'],
-    specs: {
-     
-    }
+    specs: {}
   },
   'manufacturing-facility': {
     title: 'Manufacturing Facility',
     description: 'Industrial windows with enhanced durability and safety features for harsh manufacturing environments.',
     images: ['🏭', '⚙️', '🔧', '🛡️', '🏗️'],
-    specs: {
-      
-    }
+    specs: {}
   },
   'house-worship': {
     title: 'House of Worship',
     description: 'Sacred space windows designed to enhance natural light while maintaining the spiritual atmosphere.',
     images: ['⛪', '🌅', '🎨', '✝️', '🕊️'],
-    specs: {
-      
-    }
+    specs: {}
   },
   'educational-campus': {
     title: 'Educational Campus',
     description: 'School building renovation with energy-efficient windows designed for optimal learning environments.',
     images: ['🏫', '📚', '🌅', '👥', '🎓'],
-    specs: {
-   
-    }
+    specs: {}
   },
   'medical-center': {
     title: 'Medical Center',
     description: 'Healthcare facility windows meeting strict medical standards for cleanliness and patient comfort.',
     images: ['🏥', '⚕️', '💡', '🧼', '🌿'],
-    specs: {
-      
-    }
+    specs: {}
   }
 };
 
@@ -181,7 +159,7 @@ function switchGalleryTab(targetCategory) {
 
 // Function to open project modal
 function openProjectModal(projectId) {
-  console.log('Opening modal for project:', projectId); // Debug log
+  console.log('Opening modal for project:', projectId);
   
   const project = projectData[projectId];
   if (!project) {
@@ -192,7 +170,7 @@ function openProjectModal(projectId) {
   currentProject = project;
   currentSlide = 0;
 
-  console.log('Project images:', project.images); // Debug log
+  console.log('Project images:', project.images);
 
   // Set modal content
   modalTitle.textContent = project.title;
@@ -222,7 +200,6 @@ function openProjectModal(projectId) {
       const img = document.createElement('img');
       img.src = item;
       img.alt = `${project.title} - Image ${index + 1}`;
-      // Remove the inline styles - let CSS handle the sizing
       slide.appendChild(img);
     } else {
       // It's an emoji
@@ -240,10 +217,16 @@ function openProjectModal(projectId) {
 
   // Set the carousel track width to hold all slides side by side
   const numImages = project.images.length;
-  carouselTrack.style.width = `${numImages * 100}%`; // Track is 500% wide for 5 images
+  carouselTrack.style.width = `${numImages * 100}%`;
   
-  console.log('Number of images:', numImages); // Debug log  
-  console.log('Set carousel track width to:', carouselTrack.style.width); // Debug log
+  // Ensure each slide is exactly the right width
+  const slides = carouselTrack.querySelectorAll('.carousel-slide');
+  slides.forEach(slide => {
+    slide.style.width = `${100 / numImages}%`;
+  });
+  
+  console.log('Number of images:', numImages);
+  console.log('Set carousel track width to:', carouselTrack.style.width);
 
   // Create indicators
   carouselIndicators.innerHTML = '';
@@ -264,16 +247,17 @@ function openProjectModal(projectId) {
 
 // Function to update carousel position
 function updateCarousel() {
-  console.log('Updating carousel to slide:', currentSlide); // Debug log
-  console.log('Total slides:', currentProject ? currentProject.images.length : 0); // Debug log
+  console.log('Updating carousel to slide:', currentSlide);
+  console.log('Total slides:', currentProject ? currentProject.images.length : 0);
   
-  // Each slide is 20% of track width, so move by 20% increments  
-  const slideWidth = 20; // Each slide is 20% of track width
+  // Calculate slide width based on actual number of images
+  const numImages = currentProject ? currentProject.images.length : 5;
+  const slideWidth = 100 / numImages;
   const translateValue = -currentSlide * slideWidth;
   
   carouselTrack.style.transform = `translateX(${translateValue}%)`;
   
-  console.log('Applied transform:', carouselTrack.style.transform); // Debug log
+  console.log('Applied transform:', carouselTrack.style.transform);
 
   // Update indicators
   document.querySelectorAll('.carousel-indicator').forEach((indicator, index) => {
@@ -283,34 +267,34 @@ function updateCarousel() {
 
 // Function to go to specific slide
 function goToSlide(slideIndex) {
-  console.log('Going to slide:', slideIndex); // Debug log
+  console.log('Going to slide:', slideIndex);
   currentSlide = slideIndex;
   updateCarousel();
 }
 
 // Function to go to next slide
 function nextSlide() {
-  console.log('Next slide clicked. Current slide:', currentSlide); // Debug log
+  console.log('Next slide clicked. Current slide:', currentSlide);
   
   if (currentProject && currentSlide < currentProject.images.length - 1) {
     currentSlide++;
-    console.log('Moving to slide:', currentSlide); // Debug log
+    console.log('Moving to slide:', currentSlide);
     updateCarousel();
   } else {
-    console.log('Already at last slide or no project loaded'); // Debug log
+    console.log('Already at last slide or no project loaded');
   }
 }
 
 // Function to go to previous slide
 function prevSlide() {
-  console.log('Previous slide clicked. Current slide:', currentSlide); // Debug log
+  console.log('Previous slide clicked. Current slide:', currentSlide);
   
   if (currentSlide > 0) {
     currentSlide--;
-    console.log('Moving to slide:', currentSlide); // Debug log
+    console.log('Moving to slide:', currentSlide);
     updateCarousel();
   } else {
-    console.log('Already at first slide'); // Debug log
+    console.log('Already at first slide');
   }
 }
 
@@ -324,7 +308,7 @@ function closeProjectModal() {
 
 // Event Listeners
 document.addEventListener('DOMContentLoaded', function() {
-  console.log('DOM loaded, adding event listeners'); // Debug log
+  console.log('DOM loaded, adding event listeners');
   
   // Gallery tabs
   galleryTabs.forEach(tab => {
@@ -338,7 +322,7 @@ document.addEventListener('DOMContentLoaded', function() {
   document.querySelectorAll('.image-card').forEach(card => {
     card.addEventListener('click', () => {
       const projectId = card.getAttribute('data-project');
-      console.log('Image card clicked:', projectId); // Debug log
+      console.log('Image card clicked:', projectId);
       openProjectModal(projectId);
     });
   });
@@ -350,7 +334,7 @@ document.addEventListener('DOMContentLoaded', function() {
   
   if (carouselNext) {
     carouselNext.addEventListener('click', function(e) {
-      console.log('Next button clicked!'); // Debug log
+      console.log('Next button clicked!');
       e.preventDefault();
       nextSlide();
     });
@@ -358,7 +342,7 @@ document.addEventListener('DOMContentLoaded', function() {
   
   if (carouselPrev) {
     carouselPrev.addEventListener('click', function(e) {
-      console.log('Previous button clicked!'); // Debug log
+      console.log('Previous button clicked!');
       e.preventDefault();
       prevSlide();
     });
@@ -386,5 +370,5 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
   
-  console.log('All event listeners added'); // Debug log
+  console.log('All event listeners added');
 });
