@@ -14,38 +14,38 @@
     <!-- Navigation Bar -->
 <!-- Navigation Bar -->
 <nav class="navbar" id="navbar">
-    <!-- Logo Section -->
-    <div class="logo-section">
-        <div class="logo-placeholder">
-            <img src="pictures/GlobalWindowsLogo.png" alt="GlobalWindowsLogo">
+        <!-- Logo Section -->
+        <div class="logo-section">
+            <div class="logo-placeholder">
+                <img src="pictures/GlobalWindowsLogo.png" alt="GlobalWindowsLogo">
+            </div>
         </div>
-    </div>
 
-    <ul class="nav-list" id="nav-list">
-        <li class="nav-item">
-            <a href="index.html" class="nav-link">Home</a>
-        </li>
-        <li class="nav-item">
-            <a href="galleryPage.html" class="nav-link">Gallery</a>
-        </li>
-        <li class="nav-item">
-            <a href="contactPage.html" class="nav-link">Contact</a>
-        </li>
-        <li class="nav-item">
-            <a href="aboutPage.html" class="nav-link active">About</a> <!-- Update 'active' class for each page -->
-        </li>
-        <li class="nav-item">
-            <a href="teachingsPage.html" class="nav-link">Teachings</a>
-        </li>
-    </ul>
+        <ul class="nav-list" id="nav-list">
+            <li class="nav-item">
+                <a href="index.html" class="nav-link active">Home</a>
+            </li>
+            <li class="nav-item">
+                <a href="galleryPage.html" class="nav-link">Gallery</a>
+            </li>
+            <li class="nav-item">
+                <a href="contactPage.html" class="nav-link">Contact</a>
+            </li>
+            <li class="nav-item">
+                <a href="aboutPage.html" class="nav-link">About</a>
+            </li>
+            <li class="nav-item">
+                <a href="teachingsPage.html" class="nav-link">Teachings</a>
+            </li>
+        </ul>
 
-    <!-- Mobile Menu Toggle -->
-    <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle navigation menu">
-        <span class="hamburger-line"></span>
-        <span class="hamburger-line"></span>
-        <span class="hamburger-line"></span>
-    </button>
-</nav>
+        <!-- Mobile Menu Toggle -->
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle navigation menu">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+        </button>
+    </nav>
 
 
     <!-- Main Content -->
@@ -82,6 +82,43 @@
             </div>
         </div>
     </footer>
+    <script>
+        // Mobile menu functionality
+        const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+        const navbar = document.getElementById('navbar');
+        const navList = document.getElementById('nav-list');
+
+        if (mobileMenuToggle && navbar) {
+            mobileMenuToggle.addEventListener('click', () => {
+                navbar.classList.toggle('mobile-menu-open');
+                mobileMenuToggle.classList.toggle('active');
+            });
+
+            // Close mobile menu when clicking on a nav link
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.addEventListener('click', () => {
+                    navbar.classList.remove('mobile-menu-open');
+                    mobileMenuToggle.classList.remove('active');
+                });
+            });
+
+            // Close mobile menu when clicking outside
+            document.addEventListener('click', (e) => {
+                if (!navbar.contains(e.target) && !mobileMenuToggle.contains(e.target)) {
+                    navbar.classList.remove('mobile-menu-open');
+                    mobileMenuToggle.classList.remove('active');
+                }
+            });
+        }
+
+        // Add click handler to "Get Started Today" button
+        const getStartedBtn = document.getElementById('get-started-btn');
+        if (getStartedBtn) {
+            getStartedBtn.addEventListener('click', () => {
+                window.location.href = 'contactPage.html';
+            });
+        }
+    </script>
 </body>
 
 </html>
