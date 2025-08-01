@@ -5,9 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact - Global Windows LLC</title>
-    <!-- Core styles FIRST (contains navbar styles) -->
-    <link rel="stylesheet" href="indexStyles.css">
-    <!-- Contact styles SECOND -->
     <link rel="stylesheet" href="contactStyles.css">
 </head>
 
@@ -67,56 +64,61 @@
 
                 <div class="contact-container">
                     <!-- Contact Information -->
-                    <div class="contact-info-section">
-                        <h3>Get In Touch</h3>
+                    
+                        
+                        <button class="contact-toggle-btn" onclick="toggleContactInfo()">
+                            <span>Contact Information</span>
+                            <span class="contact-toggle-icon">▼</span>
+                        </button>
 
-                        <div class="contact-item">
-                            <div class="contact-icon">📍</div>
-                            <div class="contact-details">
-                                <h4>Location</h4>
-                                <p>Grand Rapids, Michigan</p>
-                                <p>Licensed & Insured</p>
+                        <div class="contact-items-container" id="contactItemsContainer">
+                            <div class="contact-item">
+                                <div class="contact-icon">📍</div>
+                                <div class="contact-details">
+                                    <h4>Location</h4>
+                                    <p>Grand Rapids, Michigan</p>
+                                    <p>Licensed & Insured</p>
+                                </div>
+                            </div>
+
+                            <div class="contact-item">
+                                <div class="contact-icon">📞</div>
+                                <div class="contact-details">
+                                    <h4>Phone</h4>
+                                    <p>(616)-914-4591</p>
+                                    <p>Available 7 Days a Week</p>
+                                </div>
+                            </div>
+
+                            <div class="contact-item">
+                                <div class="contact-icon">✉️</div>
+                                <div class="contact-details">
+                                    <h4>Email</h4>
+                                    <p>SrobertsLLC@outlook.com</p>
+                                    <p>Estimates Available</p>
+                                </div>
+                            </div>
+
+                            <div class="contact-item">
+                                <div class="contact-icon">⏰</div>
+                                <div class="contact-details">
+                                    <h4>Business Hours</h4>
+                                    <p>Mon-Fri: 7AM - 6PM</p>
+                                    <p>Saturday: 8AM - 4PM</p>
+                                    <p>Sunday: Emergency Only</p>
+                                </div>
+                            </div>
+
+                            <div class="contact-item">
+                                <div class="contact-icon">🛠️</div>
+                                <div class="contact-details">
+                                    <h4>Services</h4>
+                                    <p>Residential & Commercial</p>
+                                    <p>Window Installation & Repair</p>
+                                </div>
                             </div>
                         </div>
-
-                        <div class="contact-item">
-                            <div class="contact-icon">📞</div>
-                            <div class="contact-details">
-                                <h4>Phone</h4>
-                                <p>(616)-914-4591</p>
-                                <p>Available 7 Days a Week</p>
-                            </div>
-                        </div>
-
-                        <div class="contact-item">
-                            <div class="contact-icon">✉️</div>
-                            <div class="contact-details">
-                                <h4>Email</h4>
-                                <p>SrobertsLLC@outlook.com</p>
-                                <p>Estimates Available</p>
-                            </div>
-                        </div>
-
-                        <div class="contact-item">
-                            <div class="contact-icon">⏰</div>
-                            <div class="contact-details">
-                                <h4>Business Hours</h4>
-                                <p>Mon-Fri: 7AM - 6PM</p>
-                                <p>Saturday: 8AM - 4PM</p>
-                                <p>Sunday: Emergency Only</p>
-                            </div>
-                        </div>
-
-                        <div class="contact-item">
-                            <div class="contact-icon">🛠️</div>
-                            <div class="contact-details">
-                                <h4>Services</h4>
-                                <p>Residential & Commercial</p>
-                                <p>Window Installation & Repair</p>
-                            </div>
-                        </div>
-                    </div>
-
+                    
                     <!-- Contact Form -->
                     <div class="contact-form-section">
                         <h3>Send Us a Message</h3>
@@ -191,19 +193,19 @@
             <!-- Bottom decorative images -->
             <div class="bottom-image-row">
                 <div class="bottom-image">
-                    <img src="pictures/pexels-pixabay-158730.jpg" alt="Modern home exterior">
+                    <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Modern home exterior">
                     <div class="bottom-image-overlay">
-                        <span>Every type of home</span>
+                        <span>Modern Homes</span>
                     </div>
                 </div>
                 <div class="bottom-image">
-                    <img src="pictures/pexels-pixabay-373564.jpg" alt="Window detail">
+                    <img src="https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Window detail">
                     <div class="bottom-image-overlay">
                         <span>Precision Work</span>
                     </div>
                 </div>
                 <div class="bottom-image">
-                    <img src="pictures/pexels-mikebirdy-109553.jpg" alt="Beautiful interior">
+                    <img src="https://images.unsplash.com/photo-1484154218962-a197022b5858?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Beautiful interior">
                     <div class="bottom-image-overlay">
                         <span>Beautiful Results</span>
                     </div>
@@ -213,7 +215,7 @@
             <!-- Service highlights section with collapsible toggle -->
             <div class="service-highlights-wrapper">
                 <button class="highlights-toggle-btn" onclick="toggleHighlights()">
-                    <span>Our Achievements</span>
+                    <span>Our Services & Credentials</span>
                     <span class="toggle-icon">▼</span>
                 </button>
                 <div class="service-highlights" id="highlightsContainer">
@@ -308,53 +310,48 @@
             }
         }
 
+        // Contact info toggle functionality
+        function toggleContactInfo() {
+            const contactContainer = document.getElementById('contactItemsContainer');
+            const toggleBtn = document.querySelector('.contact-toggle-btn');
+            const toggleIcon = document.querySelector('.contact-toggle-icon');
+            
+            contactContainer.classList.toggle('contact-open');
+            toggleBtn.classList.toggle('active');
+            
+            if (contactContainer.classList.contains('contact-open')) {
+                toggleIcon.textContent = '▲';
+            } else {
+                toggleIcon.textContent = '▼';
+            }
+        }
+
         // Contact form functionality
         const contactForm = document.getElementById('contact-form');
 
         if (contactForm) {
             contactForm.addEventListener('submit', (e) => {
-                // Always prevent the default form submission to avoid redirect
                 e.preventDefault();
 
-                // Get form data for validation
                 const formData = new FormData(contactForm);
                 const data = Object.fromEntries(formData);
 
-                // Basic validation
                 if (!data.fullName.trim() || !data.email.trim() || !data.subject || !data.message.trim()) {
                     alert('Please fill in all required fields.');
                     return;
                 }
 
-                // Show loading state
                 const submitBtn = contactForm.querySelector('.submit-btn');
                 const originalText = submitBtn.textContent;
                 submitBtn.textContent = 'Sending...';
                 submitBtn.disabled = true;
 
-                // Simulate sending delay and then show success popup
                 setTimeout(() => {
                     alert('Thank you! Your message has been sent successfully!');
                     contactForm.reset();
-                    
-                    // Re-enable submit button
                     submitBtn.textContent = originalText;
                     submitBtn.disabled = false;
-
-                    // Submit to Netlify in the background (optional)
-                    // This will send the data but won't redirect the user
-                    fetch(window.location.pathname, {
-                        method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/x-www-form-urlencoded',
-                        },
-                        body: new URLSearchParams(formData).toString()
-                    }).catch(error => {
-                        console.log('Background submission failed:', error);
-                        // Form still shows success to user since we already showed the modal
-                    });
-
-                }, 1000); // 1 second delay to show the "Sending..." state
+                }, 1000);
             });
         }
     </script>
