@@ -5,9 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact - Global Windows LLC</title>
-    <!-- Core styles FIRST (contains navbar styles) -->
-    <link rel="stylesheet" href="indexStyles.css">
-    <!-- Contact styles SECOND -->
     <link rel="stylesheet" href="contactStyles.css">
 </head>
 
@@ -67,56 +64,61 @@
 
                 <div class="contact-container">
                     <!-- Contact Information -->
-                    <div class="contact-info-section">
-                        <h3>Get In Touch</h3>
+                    
+                        
+                        <button class="contact-toggle-btn" onclick="toggleContactInfo()">
+                            <span>Contact Information</span>
+                            <span class="contact-toggle-icon">▼</span>
+                        </button>
 
-                        <div class="contact-item">
-                            <div class="contact-icon">📍</div>
-                            <div class="contact-details">
-                                <h4>Location</h4>
-                                <p>Grand Rapids, Michigan</p>
-                                <p>Licensed & Insured</p>
+                        <div class="contact-items-container" id="contactItemsContainer">
+                            <div class="contact-item">
+                                <div class="contact-icon">📍</div>
+                                <div class="contact-details">
+                                    <h4>Location</h4>
+                                    <p>Grand Rapids, Michigan</p>
+                                    <p>Licensed & Insured</p>
+                                </div>
+                            </div>
+
+                            <div class="contact-item">
+                                <div class="contact-icon">📞</div>
+                                <div class="contact-details">
+                                    <h4>Phone</h4>
+                                    <p>(616)-914-4591</p>
+                                    <p>Available 7 Days a Week</p>
+                                </div>
+                            </div>
+
+                            <div class="contact-item">
+                                <div class="contact-icon">✉️</div>
+                                <div class="contact-details">
+                                    <h4>Email</h4>
+                                    <p>SrobertsLLC@outlook.com</p>
+                                    <p>Estimates Available</p>
+                                </div>
+                            </div>
+
+                            <div class="contact-item">
+                                <div class="contact-icon">⏰</div>
+                                <div class="contact-details">
+                                    <h4>Business Hours</h4>
+                                    <p>Mon-Fri: 7AM - 6PM</p>
+                                    <p>Saturday: 8AM - 4PM</p>
+                                    <p>Sunday: Emergency Only</p>
+                                </div>
+                            </div>
+
+                            <div class="contact-item">
+                                <div class="contact-icon">🛠️</div>
+                                <div class="contact-details">
+                                    <h4>Services</h4>
+                                    <p>Residential & Commercial</p>
+                                    <p>Window Installation & Repair</p>
+                                </div>
                             </div>
                         </div>
-
-                        <div class="contact-item">
-                            <div class="contact-icon">📞</div>
-                            <div class="contact-details">
-                                <h4>Phone</h4>
-                                <p>(616)-914-4591</p>
-                                <p>Available 7 Days a Week</p>
-                            </div>
-                        </div>
-
-                        <div class="contact-item">
-                            <div class="contact-icon">✉️</div>
-                            <div class="contact-details">
-                                <h4>Email</h4>
-                                <p>SrobertsLLC@outlook.com</p>
-                                <p>Estimates Available</p>
-                            </div>
-                        </div>
-
-                        <div class="contact-item">
-                            <div class="contact-icon">⏰</div>
-                            <div class="contact-details">
-                                <h4>Business Hours</h4>
-                                <p>Mon-Fri: 7AM - 6PM</p>
-                                <p>Saturday: 8AM - 4PM</p>
-                                <p>Sunday: Emergency Only</p>
-                            </div>
-                        </div>
-
-                        <div class="contact-item">
-                            <div class="contact-icon">🛠️</div>
-                            <div class="contact-details">
-                                <h4>Services</h4>
-                                <p>Residential & Commercial</p>
-                                <p>Window Installation & Repair</p>
-                            </div>
-                        </div>
-                    </div>
-
+                    
                     <!-- Contact Form -->
                     <div class="contact-form-section">
                         <h3>Send Us a Message</h3>
@@ -171,8 +173,6 @@
                                     required></textarea>
                             </div>
 
-                            <div data-netlify-recaptcha="true"></div>
-
                             <button type="submit" class="submit-btn">Send Message</button>
                         </form>
                     </div>
@@ -212,27 +212,33 @@
                 </div>
             </div>
 
-            <!-- Service highlights section -->
-            <div class="service-highlights">
-                <div class="highlight-card">
-                    <div class="highlight-icon">🏆</div>
-                    <h4>40+ Years Experience</h4>
-                    <p>Decades of expertise in window installation</p>
-                </div>
-                <div class="highlight-card">
-                    <div class="highlight-icon">✅</div>
-                    <h4>Licensed & Insured</h4>
-                    <p>Fully certified for your peace of mind</p>
-                </div>
-                <div class="highlight-card">
-                    <div class="highlight-icon">💰</div>
-                    <h4>Estimates Available</h4>
-                    <p>No obligation quotes for all projects</p>
-                </div>
-                <div class="highlight-card">
-                    <div class="highlight-icon">🙏</div>
-                    <h4>Faith-Based Service</h4>
-                    <p>Christian values in every project</p>
+            <!-- Service highlights section with collapsible toggle -->
+            <div class="service-highlights-wrapper">
+                <button class="highlights-toggle-btn" onclick="toggleHighlights()">
+                    <span>Our Services & Credentials</span>
+                    <span class="toggle-icon">▼</span>
+                </button>
+                <div class="service-highlights" id="highlightsContainer">
+                    <div class="highlight-card">
+                        <div class="highlight-icon">🏆</div>
+                        <h4>40+ Years Experience</h4>
+                        <p>Decades of expertise in window installation</p>
+                    </div>
+                    <div class="highlight-card">
+                        <div class="highlight-icon">✅</div>
+                        <h4>Licensed & Insured</h4>
+                        <p>Fully certified for your peace of mind</p>
+                    </div>
+                    <div class="highlight-card">
+                        <div class="highlight-icon">💰</div>
+                        <h4>Estimates Available</h4>
+                        <p>No obligation quotes for all projects</p>
+                    </div>
+                    <div class="highlight-card">
+                        <div class="highlight-icon">🙏</div>
+                        <h4>Faith-Based Service</h4>
+                        <p>Christian values in every project</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -258,227 +264,6 @@
             </div>
         </div>
     </footer>
-
-    <!-- Thank You Modal -->
-    <div id="thankYouModal" class="modal-overlay">
-        <div class="modal-content">
-            <button class="modal-close" id="closeModal">&times;</button>
-            <div class="modal-icon">✅</div>
-            <h3>Thank You!</h3>
-            <p class="modal-main-text">Your message has been sent successfully!</p>
-            <div class="modal-details">
-                <p>We've received your message and will get back to you as soon as possible.</p>
-            </div>
-            <div class="modal-contact-info">
-                <div class="modal-phone">
-                    <span class="modal-phone-icon">📞</span>
-                    <div>
-                        <strong>Need immediate assistance?</strong><br>
-                        <span class="phone-number">(616)-914-4591</span>
-                    </div>
-                </div>
-            </div>
-            <button class="modal-button" id="modalOkButton">Got it!</button>
-        </div>
-    </div>
-
-    <style>
-        /* Thank You Modal Styles */
-        .modal-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.6);
-            backdrop-filter: blur(5px);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 9999;
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.3s ease;
-            padding: 1rem;
-        }
-
-        .modal-overlay.show {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        .modal-content {
-            background: white;
-            border-radius: 20px;
-            padding: 3rem 2.5rem;
-            max-width: 500px;
-            width: 100%;
-            text-align: center;
-            box-shadow: 0 20px 60px rgba(39, 174, 96, 0.2);
-            border-top: 6px solid #27ae60;
-            position: relative;
-            transform: scale(0.8) translateY(50px);
-            transition: all 0.3s ease;
-        }
-
-        .modal-overlay.show .modal-content {
-            transform: scale(1) translateY(0);
-        }
-
-        .modal-close {
-            position: absolute;
-            top: 1rem;
-            right: 1.5rem;
-            background: none;
-            border: none;
-            font-size: 2rem;
-            color: #666;
-            cursor: pointer;
-            transition: color 0.3s ease;
-            line-height: 1;
-            padding: 0.5rem;
-        }
-
-        .modal-close:hover {
-            color: #27ae60;
-        }
-
-        .modal-icon {
-            font-size: 4rem;
-            margin-bottom: 1.5rem;
-            animation: checkmark-bounce 0.6s ease;
-        }
-
-        @keyframes checkmark-bounce {
-            0% { transform: scale(0); }
-            50% { transform: scale(1.2); }
-            100% { transform: scale(1); }
-        }
-
-        .modal-content h3 {
-            color: #27ae60;
-            font-size: 2rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-        }
-
-        .modal-main-text {
-            font-size: 1.2rem;
-            color: #1e3a2e;
-            font-weight: 600;
-            margin-bottom: 1.5rem;
-        }
-
-        .modal-details {
-            background: rgba(39, 174, 96, 0.1);
-            padding: 1.5rem;
-            border-radius: 12px;
-            margin-bottom: 2rem;
-            border-left: 4px solid #27ae60;
-        }
-
-        .modal-details p {
-            color: #666;
-            margin-bottom: 0.5rem;
-            line-height: 1.6;
-        }
-
-        .modal-details p:last-child {
-            margin-bottom: 0;
-        }
-
-        .modal-contact-info {
-            background: rgba(248, 249, 250, 0.8);
-            padding: 1.5rem;
-            border-radius: 12px;
-            margin-bottom: 2rem;
-            border: 2px solid #ecf0f1;
-        }
-
-        .modal-phone {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 1rem;
-        }
-
-        .modal-phone-icon {
-            font-size: 1.5rem;
-            background: linear-gradient(135deg, #27ae60, #2ecc71);
-            color: white;
-            padding: 0.5rem;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            min-width: 40px;
-            height: 40px;
-        }
-
-        .phone-number {
-            color: #27ae60;
-            font-size: 1.2rem;
-            font-weight: 600;
-        }
-
-        .modal-button {
-            background: linear-gradient(45deg, #27ae60, #2ecc71);
-            color: white;
-            border: none;
-            padding: 1rem 2.5rem;
-            border-radius: 50px;
-            cursor: pointer;
-            font-size: 1.1rem;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(39, 174, 96, 0.3);
-        }
-
-        .modal-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(39, 174, 96, 0.4);
-        }
-
-        /* Mobile Responsive */
-        @media (max-width: 768px) {
-            .modal-content {
-                padding: 2rem 1.5rem;
-                margin: 1rem;
-            }
-
-            .modal-icon {
-                font-size: 3rem;
-            }
-
-            .modal-content h3 {
-                font-size: 1.5rem;
-            }
-
-            .modal-main-text {
-                font-size: 1.1rem;
-            }
-
-            .modal-phone {
-                flex-direction: column;
-                gap: 0.5rem;
-            }
-
-            .modal-button {
-                padding: 1rem 2rem;
-                font-size: 1rem;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .modal-overlay {
-                padding: 0.5rem;
-            }
-
-            .modal-content {
-                padding: 2rem 1rem;
-            }
-        }
-    </style>
 
     <script>
         // Mobile menu functionality
@@ -509,89 +294,64 @@
             });
         }
 
-        // Modal functionality
-        const modal = document.getElementById('thankYouModal');
-        const closeModalBtn = document.getElementById('closeModal');
-        const modalOkBtn = document.getElementById('modalOkButton');
-
-        function showModal() {
-            modal.classList.add('show');
-            document.body.style.overflow = 'hidden'; // Prevent background scrolling
+        // Service highlights toggle functionality
+        function toggleHighlights() {
+            const highlightsContainer = document.getElementById('highlightsContainer');
+            const toggleBtn = document.querySelector('.highlights-toggle-btn');
+            const toggleIcon = document.querySelector('.toggle-icon');
+            
+            highlightsContainer.classList.toggle('highlights-open');
+            toggleBtn.classList.toggle('active');
+            
+            if (highlightsContainer.classList.contains('highlights-open')) {
+                toggleIcon.textContent = '▲';
+            } else {
+                toggleIcon.textContent = '▼';
+            }
         }
 
-        function hideModal() {
-            modal.classList.remove('show');
-            document.body.style.overflow = ''; // Restore scrolling
+        // Contact info toggle functionality
+        function toggleContactInfo() {
+            const contactContainer = document.getElementById('contactItemsContainer');
+            const toggleBtn = document.querySelector('.contact-toggle-btn');
+            const toggleIcon = document.querySelector('.contact-toggle-icon');
+            
+            contactContainer.classList.toggle('contact-open');
+            toggleBtn.classList.toggle('active');
+            
+            if (contactContainer.classList.contains('contact-open')) {
+                toggleIcon.textContent = '▲';
+            } else {
+                toggleIcon.textContent = '▼';
+            }
         }
-
-        // Close modal when clicking close button or OK button
-        closeModalBtn.addEventListener('click', hideModal);
-        modalOkBtn.addEventListener('click', hideModal);
-
-        // Close modal when clicking outside the modal content
-        modal.addEventListener('click', (e) => {
-            if (e.target === modal) {
-                hideModal();
-            }
-        });
-
-        // Close modal with Escape key
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && modal.classList.contains('show')) {
-                hideModal();
-            }
-        });
 
         // Contact form functionality
         const contactForm = document.getElementById('contact-form');
 
         if (contactForm) {
             contactForm.addEventListener('submit', (e) => {
-                // Always prevent the default form submission to avoid redirect
                 e.preventDefault();
 
-                // Get form data for validation
                 const formData = new FormData(contactForm);
                 const data = Object.fromEntries(formData);
 
-                // Basic validation
                 if (!data.fullName.trim() || !data.email.trim() || !data.subject || !data.message.trim()) {
                     alert('Please fill in all required fields.');
                     return;
                 }
 
-                // Show loading state
                 const submitBtn = contactForm.querySelector('.submit-btn');
                 const originalText = submitBtn.textContent;
                 submitBtn.textContent = 'Sending...';
                 submitBtn.disabled = true;
 
-                // Simulate sending delay and then show success popup
                 setTimeout(() => {
-                    // Show success modal
-                    showModal();
-                    
-                    // Reset form
+                    alert('Thank you! Your message has been sent successfully!');
                     contactForm.reset();
-                    
-                    // Re-enable submit button
                     submitBtn.textContent = originalText;
                     submitBtn.disabled = false;
-
-                    // Submit to Netlify in the background (optional)
-                    // This will send the data but won't redirect the user
-                    fetch(window.location.pathname, {
-                        method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/x-www-form-urlencoded',
-                        },
-                        body: new URLSearchParams(formData).toString()
-                    }).catch(error => {
-                        console.log('Background submission failed:', error);
-                        // Form still shows success to user since we already showed the modal
-                    });
-
-                }, 1000); // 1 second delay to show the "Sending..." state
+                }, 1000);
             });
         }
     </script>

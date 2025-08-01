@@ -16,6 +16,7 @@
   transition: all 0.3s ease;
   font-weight: 500;
   color: #1e3a2e;
+  white-space: nowrap;
 }
 
 .gallery-tab.active,
@@ -135,6 +136,27 @@
   color: #666;
 }
 
+/* Category-specific styling */
+.doors-section .image-card {
+  border-top: 4px solid #e67e22; /* Orange color for doors */
+}
+
+.doors-section .image-placeholder {
+  background: linear-gradient(135deg, #e67e22 0%, #f39c12 100%);
+}
+
+.windows-section .image-card {
+  border-top: 4px solid #27ae60; /* Green for windows */
+}
+
+.commercial-section .image-card {
+  border-top: 4px solid #3498db; /* Blue for commercial */
+}
+
+.commercial-section .image-placeholder {
+  background: linear-gradient(135deg, #3498db 0%, #5dade2 100%);
+}
+
 /* MODAL AND CAROUSEL STYLES */
 .modal {
   display: none;
@@ -181,6 +203,11 @@
   margin: 0;
   font-size: 1.5rem;
   color: #333;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  flex: 1;
+  margin-right: 1rem;
 }
 
 .close-btn {
@@ -197,6 +224,7 @@
   justify-content: center;
   border-radius: 50%;
   transition: all 0.2s ease;
+  flex-shrink: 0;
 }
 
 .close-btn:hover {
@@ -226,14 +254,6 @@
 
 .carousel-slide {
   width: 20%;
-  height: 100%;
-  flex-shrink: 0;
-  position: relative;
-  overflow: hidden;
-  background: #f8f9fa;
-}
-
-.carousel-slide {
   height: 100%;
   flex-shrink: 0;
   position: relative;
@@ -326,6 +346,8 @@
   line-height: 1.6;
   color: #555;
   margin-bottom: 20px;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 .modal-specs {
@@ -337,19 +359,27 @@
 .modal-spec-item {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 10px;
   background: #f8f9fa;
   border-radius: 5px;
   border-left: 3px solid #27ae60;
+  min-height: 1.5rem;
 }
 
 .modal-spec-item .spec-label {
   font-weight: 600;
   color: #333;
+  white-space: nowrap;
+  margin-right: 1rem;
+  flex-shrink: 0;
 }
 
 .modal-spec-item .spec-value {
   color: #666;
+  white-space: nowrap;
+  text-align: right;
+  flex-shrink: 0;
 }
 
 /* Mobile Responsive */
@@ -395,6 +425,24 @@
   .modal-specs {
     grid-template-columns: 1fr;
   }
+  
+  /* Mobile text adjustments */
+  .spec-label,
+  .spec-value {
+    white-space: normal;
+  }
+  
+  .image-title {
+    white-space: normal;
+    overflow: visible;
+    text-overflow: unset;
+  }
+  
+  .modal-title {
+    white-space: normal;
+    overflow: visible;
+    text-overflow: unset;
+  }
 }
 
 @media (max-width: 480px) {
@@ -424,5 +472,15 @@
   .carousel-indicator {
     width: 10px;
     height: 10px;
+  }
+  
+  /* Ensure mobile text doesn't stack */
+  .spec-item {
+    flex-wrap: nowrap;
+    align-items: flex-start;
+  }
+  
+  .spec-label {
+    margin-right: 0.5rem;
   }
 }
