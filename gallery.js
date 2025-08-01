@@ -22,6 +22,7 @@ const projectData = {
     title: 'Traverse City',
     description: 'Large-scale commercial installation featuring floor-to-ceiling windows and modern curtain wall systems.',
     images: [
+      'pictures/Commercial/traverseCity/HouseExterior.jpg',
       'pictures/Commercial/traverseCity/IMG_8163.jpg', 
       'pictures/Commercial/traverseCity/IMG_8164.jpg', 
       'pictures/Commercial/traverseCity/IMG_8160.jpg', 
