@@ -1,4 +1,3 @@
-// Gallery functionality - Fixed version
 const galleryTabs = document.querySelectorAll('.gallery-tab');
 const gallerySections = document.querySelectorAll('.gallery-section');
 
@@ -31,10 +30,6 @@ const projectData = {
     ],
     specs: {}
   },
-  
-
-  //Commercial Gallery
-
   'retail-storefront': {
     title: 'Post Dr',
     description: 'Newly constructed building',
@@ -269,7 +264,7 @@ function updateCarousel() {
   console.log('Total slides:', currentProject ? currentProject.images.length : 0);
   
   // Calculate slide width based on actual number of images
-  const numImages = currentProject ? currentProject.images.length : 5;
+  const numImages = currentProject ? currentProject.images.length : 1;
   const slideWidth = 100 / numImages;
   const translateValue = -currentSlide * slideWidth;
   
