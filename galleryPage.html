@@ -338,17 +338,15 @@
                     <div class="carousel-track" id="carousel-track">
                         <!-- Images will be populated by JavaScript -->
                     </div>
-                    <button class="carousel-nav carousel-prev" id="carousel-prev">&#8249;</button>
-                    <button class="carousel-nav carousel-next" id="carousel-next">&#8250;</button>
-                </div>
-                <div class="carousel-nav-container">
-                    <button class="carousel-nav carousel-prev mobile-nav" id="carousel-prev-mobile">&#8249; Previous</button>
-                    <button class="carousel-nav carousel-next mobile-nav" id="carousel-next-mobile">Next &#8250;</button>
-                </div>
-                <div class="carousel-indicators" id="carousel-indicators">
-                    <!-- Indicators will be populated by JavaScript -->
+                    <div class="carousel-indicators" id="carousel-indicators">
+                        <!-- Indicators will be populated by JavaScript -->
+                    </div>
                 </div>
                 <div class="modal-info">
+                    <div class="carousel-nav-container">
+                        <button class="carousel-nav" id="carousel-prev-mobile">&#8249; Previous</button>
+                        <button class="carousel-nav" id="carousel-next-mobile">Next &#8250;</button>
+                    </div>
                     <p class="modal-description" id="modal-description"></p>
                     <div class="modal-specs" id="modal-specs">
                         <!-- Specs will be populated by JavaScript -->
@@ -399,17 +397,6 @@
                 });
             });
         }
-
-        // Add event listeners for mobile nav buttons
-        document.getElementById('carousel-prev-mobile').addEventListener('click', (e) => {
-            e.preventDefault();
-            document.getElementById('carousel-prev').click();
-        });
-
-        document.getElementById('carousel-next-mobile').addEventListener('click', (e) => {
-            e.preventDefault();
-            document.getElementById('carousel-next').click();
-        });
     </script>
     <script src="gallery.js"></script>
 </body>
