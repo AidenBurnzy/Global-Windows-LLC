@@ -589,7 +589,7 @@ body {
 }
 
 /* GREEN MOBILE THEME - 1650px and below */
-@media (max-width: 1650px) {
+@media (max-width: 1550px) {
   body {
     background-color: #f8f9fa;
     color: #333;
