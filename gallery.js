@@ -9,8 +9,8 @@ const modalSpecs = document.getElementById('modal-specs');
 const carouselTrack = document.getElementById('carousel-track');
 const carouselIndicators = document.getElementById('carousel-indicators');
 const closeModal = document.getElementById('close-modal');
-const carouselPrev = document.getElementById('carousel-prev');
-const carouselNext = document.getElementById('carousel-next');
+const carouselPrev = document.getElementById('carousel-prev-mobile');
+const carouselNext = document.getElementById('carousel-next-mobile');
 
 let currentSlide = 0;
 let currentProject = null;
