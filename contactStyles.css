@@ -592,8 +592,8 @@ body {
   opacity: 0.8;
 }
 
-/* GREEN MOBILE THEME - 1650px and below */
-@media (max-width: 1650px) {
+/* GREEN MOBILE THEME - 750px and below */
+@media (max-width: 7160px) {
   body {
     background-color: #f8f9fa;
     color: #333;
@@ -731,7 +731,7 @@ body {
     box-shadow: 0 4px 15px rgba(39, 174, 96, 0.3);
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 0;
+    margin-bottom: 0; /* Remove gap */
   }
 
   .contact-toggle-btn:hover {
@@ -741,7 +741,7 @@ body {
 
   .contact-toggle-btn.active {
     border-radius: 15px 15px 0 0;
-    margin-bottom: 0;
+    margin-bottom: 0; /* Ensure no gap when active */
   }
 
   .contact-toggle-icon {
@@ -765,62 +765,24 @@ body {
   }
 
   .contact-item {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
     padding: 1.5rem;
-    border-left: none;
-    border-top: 4px solid #27ae60;
+    border-left: 4px solid #27ae60;
     background: rgba(248, 249, 250, 0.9);
     margin-bottom: 1.5rem;
     border-radius: 12px;
-    min-height: 150px;
   }
 
   .contact-item:last-child {
     margin-bottom: 0;
   }
 
-  .contact-item::before {
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 4px;
-    background: linear-gradient(to right, #27ae60, #2ecc71);
-  }
-
-  .contact-item:hover::before {
-    height: 8px;
-  }
-
-  .contact-item:hover {
-    background: rgba(39, 174, 96, 0.05);
-    transform: translateY(-3px);
-  }
-
   .contact-icon {
-    font-size: 2rem;
-    margin-right: 0;
-    margin-bottom: 1rem;
-    padding: 0.8rem;
-    width: 50px;
-    height: 50px;
     background: linear-gradient(135deg, #27ae60, #2ecc71);
     box-shadow: 0 4px 15px rgba(39, 174, 96, 0.3);
   }
 
-  .contact-item:hover .contact-icon {
-    transform: scale(1.1);
-  }
-
   .contact-details h4 {
     color: #1e3a2e;
-    font-size: 1.1rem;
-    margin-bottom: 0.5rem;
-  }
-
-  .contact-details p {
-    font-size: 0.95rem;
   }
 
   /* Mobile Form Styles */
@@ -961,22 +923,13 @@ body {
 
     .contact-item {
       padding: 1.5rem;
-      min-height: 120px;
+      flex-direction: column;
+      text-align: center;
     }
 
     .contact-icon {
-      font-size: 1.8rem;
-      padding: 0.7rem;
-      width: 45px;
-      height: 45px;
-    }
-
-    .contact-details h4 {
-      font-size: 1rem;
-    }
-
-    .contact-details p {
-      font-size: 0.9rem;
+      margin-right: 0;
+      margin-bottom: 1rem;
     }
 
     .form-group input,
