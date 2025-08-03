@@ -588,14 +588,8 @@ body {
   opacity: 0.8;
 }
 
-/* GREEN MOBILE THEME - 1650px and below */
-@media (max-width: 1550px) {
-  body {
-    background-color: #f8f9fa;
-    color: #333;
-  }
-
-  /* Mobile Navigation */
+@media (max-width: 850px) {
+ /* Mobile Navigation */
   .mobile-menu-toggle {
     display: flex !important;
   }
@@ -665,6 +659,16 @@ body {
     background: #27ae60;
     color: white;
   }
+}
+
+/* GREEN MOBILE THEME - 1650px and below */
+@media (max-width: 1550px) {
+  body {
+    background-color: #f8f9fa;
+    color: #333;
+  }
+
+ 
 
   /* Mobile Page Content */
   .page-content {
