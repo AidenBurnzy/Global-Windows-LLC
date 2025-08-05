@@ -1,3 +1,4 @@
+// Gallery functionality - Fixed version
 const galleryTabs = document.querySelectorAll('.gallery-tab');
 const gallerySections = document.querySelectorAll('.gallery-section');
 
@@ -9,8 +10,8 @@ const modalSpecs = document.getElementById('modal-specs');
 const carouselTrack = document.getElementById('carousel-track');
 const carouselIndicators = document.getElementById('carousel-indicators');
 const closeModal = document.getElementById('close-modal');
-const carouselPrev = document.getElementById('carousel-prev-mobile');
-const carouselNext = document.getElementById('carousel-next-mobile');
+const carouselPrev = document.getElementById('carousel-prev');
+const carouselNext = document.getElementById('carousel-next');
 
 let currentSlide = 0;
 let currentProject = null;
@@ -21,7 +22,6 @@ const projectData = {
     title: 'Traverse City',
     description: 'Large-scale commercial installation featuring floor-to-ceiling windows and modern curtain wall systems.',
     images: [
-      'pictures/Commercial/traverseCity/HouseExterior.jpg',
       'pictures/Commercial/traverseCity/IMG_8163.jpg', 
       'pictures/Commercial/traverseCity/IMG_8164.jpg', 
       'pictures/Commercial/traverseCity/IMG_8160.jpg', 
@@ -30,6 +30,10 @@ const projectData = {
     ],
     specs: {}
   },
+  
+
+  //Commercial Gallery
+
   'retail-storefront': {
     title: 'Post Dr',
     description: 'Newly constructed building',
@@ -264,7 +268,7 @@ function updateCarousel() {
   console.log('Total slides:', currentProject ? currentProject.images.length : 0);
   
   // Calculate slide width based on actual number of images
-  const numImages = currentProject ? currentProject.images.length : 1;
+  const numImages = currentProject ? currentProject.images.length : 5;
   const slideWidth = 100 / numImages;
   const translateValue = -currentSlide * slideWidth;
   

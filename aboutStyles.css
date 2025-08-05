@@ -523,7 +523,6 @@
     max-height: 4.2rem; /* Limit title height to ~3 lines */
     overflow: hidden;
     display: -webkit-box;
-    -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
 }
 
@@ -650,9 +649,105 @@
 @media (min-width: 769px) {
     .writing-title {
         display: -webkit-box;
-        -webkit-line-clamp: 2; /* Limit to 2 lines on desktop */
         -webkit-box-orient: vertical;
         overflow: hidden;
         max-height: 2.8rem;
+    }
+}
+/* Enhanced Founder Section Styles */
+.founder-section {
+    background: #f8f9fa;
+    padding: 4rem 2rem;
+    border-radius: 20px;
+    margin: 3rem 0;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.founder-content {
+    max-width: 900px; /* Increased max-width for better readability */
+    margin: 0 auto;
+    text-align: center;
+}
+
+.founder-text {
+    padding: 2rem; /* Added padding for better spacing */
+}
+
+.founder-text h3 {
+    font-size: 2.2rem; /* Increased from default */
+    color: #1e3a2e;
+    margin-bottom: 2rem; /* Increased margin */
+    font-weight: 700;
+    text-align: center;
+}
+
+.founder-text p {
+    font-size: 1.3rem; /* Significantly increased from 1.1rem */
+    line-height: 1.9; /* Increased line height for better readability */
+    color: #444;
+    margin-bottom: 2rem; /* Better spacing */
+    text-align: left; /* Left align for better readability of longer text */
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.highlight-text {
+    background: linear-gradient(135deg, #27ae60, #2ecc71);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 700;
+    font-size: 1.35rem; /* Slightly larger than surrounding text */
+}
+
+/* Alternative highlight style if gradient text doesn't work well */
+.highlight-text-alt {
+    color: #27ae60;
+    font-weight: 700;
+    font-size: 1.35rem;
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 768px) {
+    .founder-section {
+        padding: 2rem 1rem;
+        margin: 1rem 0;
+    }
+    
+    .founder-text {
+        padding: 1rem;
+    }
+    
+    .founder-text h3 {
+        font-size: 1.8rem; /* Scaled down for mobile */
+    }
+    
+    .founder-text p {
+        font-size: 1.15rem; /* Scaled but still readable on mobile */
+        line-height: 1.7;
+        text-align: left; /* Keep left aligned on mobile too */
+    }
+    
+    .highlight-text,
+    .highlight-text-alt {
+        font-size: 1.2rem; /* Scaled for mobile */
+    }
+}
+
+@media (max-width: 480px) {
+    .founder-text h3 {
+        font-size: 1.6rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .founder-text p {
+        font-size: 1.1rem;
+        line-height: 1.6;
+    }
+    
+    .highlight-text,
+    .highlight-text-alt {
+        font-size: 1.15rem;
     }
 }
