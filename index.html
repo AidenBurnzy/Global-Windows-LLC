@@ -7,6 +7,7 @@
     <title>Global Windows LLC</title>
     <link rel="stylesheet" href="indexStyles.css">
     <link rel="icon" type="image/x-icon" href="pictures/GlobalWindowsLogo.png">
+    <link rel="icon" type="image/x-icon" href="pictures/GlobalWindowsLogo.png">
 </head>
 
 <body>
@@ -31,6 +32,9 @@
             </li>
             <li class="nav-item">
                 <a href="aboutPage.html" class="nav-link">About</a>
+            </li>
+            <li class="nav-item">
+                <a style="text-decoration: underline; text-decoration-thickness: 3px; text-underline-offset: 7px;" href="teachingsPage.html" class="nav-link">Teachings</a>
             </li>
             <li class="nav-item">
                 <a style="text-decoration: underline; text-decoration-thickness: 3px; text-underline-offset: 7px;" href="teachingsPage.html" class="nav-link">Teachings</a>
@@ -77,8 +81,8 @@
             
             <div class="hero-content">
                 <div class="hero-badge">Faith • Quality • Excellence</div>
-                <h1 class="hero-title">Build with Global Windows</h1>
-                <p class="hero-subtitle">Bringing light into homes both physically and spiritually</p>
+                <h1 class="hero-title">Why Build With Global</h1>
+                <p class="hero-subtitle">Building a better world, one man at a time</p>
                 <button class="cta-button" id="get-started-btn">Get Started Today</button>
             </div>
         </section>
@@ -269,23 +273,7 @@
             </div>
         </section>
 
-        <!-- Stats Section -->
-        <section class="stats-section">
-            <div class="stats-grid">
-                <div class="stat-item">
-                    <span class="stat-number">100%</span>
-                    <span class="stat-label">Faith-Driven</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-number">40+</span>
-                    <span class="stat-label">Years Experience</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-number">10,000+</span>
-                    <span class="stat-label">Windows Installed</span>
-                </div>
-            </div>
-        </section>
+       
     </div>
 
     <!-- Footer -->
@@ -345,6 +333,44 @@
                 window.location.href = 'contactPage.html';
             });
         }
+
+        // Service dropdown/accordion functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const serviceDropdowns = document.querySelectorAll('.service-dropdown');
+            
+            serviceDropdowns.forEach(dropdown => {
+                const header = dropdown.querySelector('.service-header');
+                
+                header.addEventListener('click', function() {
+                    const isActive = dropdown.classList.contains('active');
+                    
+                    // Close all other dropdowns
+                    serviceDropdowns.forEach(otherDropdown => {
+                        if (otherDropdown !== dropdown) {
+                            otherDropdown.classList.remove('active');
+                        }
+                    });
+                    
+                    // Toggle current dropdown
+                    if (isActive) {
+                        dropdown.classList.remove('active');
+                    } else {
+                        dropdown.classList.add('active');
+                    }
+                });
+            });
+
+            // Smooth scroll to services section when Services nav link is clicked
+            const servicesNavLink = document.querySelector('a[href="#services"]');
+            if (servicesNavLink) {
+                servicesNavLink.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    document.getElementById('services').scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            }
+        });
 
         // Service dropdown/accordion functionality
         document.addEventListener('DOMContentLoaded', function() {
