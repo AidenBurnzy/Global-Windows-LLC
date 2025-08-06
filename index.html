@@ -77,12 +77,28 @@
             
             <div class="hero-content">
                 <div class="hero-badge">Faith • Quality • Excellence</div>
-                <h1 class="hero-title">Build with Global Windows</h1>
+                <h1 class="hero-title">Why Build With Global</h1>
                 <p class="hero-subtitle">Bringing light into homes both physically and spiritually</p>
                 <button class="cta-button" id="get-started-btn">Get Started Today</button>
             </div>
         </section>
 
+                <section class="stats-section">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <span class="stat-number">100%</span>
+                    <span class="stat-label">Faith-Driven</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">40+</span>
+                    <span class="stat-label">Years Experience</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">10,000+</span>
+                    <span class="stat-label">Windows Installed</span>
+                </div>
+            </div>
+        </section>
         <!-- Updated Services Section with Dropdowns -->
         <section class="services-section" id="services">
             <div class="services-container">
@@ -114,8 +130,6 @@
                                     <div class="feature-item">Energy-efficient options</div>
                                     <div class="feature-item">Custom sizes available</div>
                                     <div class="feature-item">Professional installation</div>
-                                    <div class="feature-item">Comprehensive warranty</div>
-                                    <div class="feature-item">Free consultations</div>
                                     <div class="feature-item">Licensed & insured</div>
                                 </div>
 
@@ -232,10 +246,11 @@
         </section>
 
         <!-- What We Do & Gods Way Section -->
-        <section class="content-section">
+        <section class="content-section mission-section">
+            <div class="content-background-overlay"></div>
             <div class="section-container">
                 <div class="section-header">
-                    <h2 class="section-title">Our Mission</h2>
+                    <h2 class="section-title animated-title" id="why-build-title">Build with Global Windows</h2>
                     <p class="section-subtitle">More than windows - we build with purpose and faith</p>
                 </div>
 
@@ -269,23 +284,6 @@
             </div>
         </section>
 
-        <!-- Stats Section -->
-        <section class="stats-section">
-            <div class="stats-grid">
-                <div class="stat-item">
-                    <span class="stat-number">100%</span>
-                    <span class="stat-label">Faith-Driven</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-number">40+</span>
-                    <span class="stat-label">Years Experience</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-number">10,000+</span>
-                    <span class="stat-label">Windows Installed</span>
-                </div>
-            </div>
-        </section>
     </div>
 
     <!-- Footer -->
@@ -381,6 +379,50 @@
                         behavior: 'smooth'
                     });
                 });
+            }
+
+            // Animated title functionality
+            const animatedTitle = document.getElementById('why-build-title');
+            if (animatedTitle) {
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('animate-in');
+                        }
+                    });
+                }, {
+                    threshold: 0.3,
+                    rootMargin: '0px 0px -100px 0px'
+                });
+
+                observer.observe(animatedTitle);
+
+                // Scale down on scroll
+                let lastScrollY = window.scrollY;
+                let ticking = false;
+
+                function updateTitleScale() {
+                    const rect = animatedTitle.getBoundingClientRect();
+                    const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
+                    
+                    if (isVisible) {
+                        const scrollProgress = Math.max(0, Math.min(1, (window.innerHeight - rect.top) / window.innerHeight));
+                        const scale = 0.8 + (scrollProgress * 0.4); // Scale from 0.8 to 1.2
+                        animatedTitle.style.transform = `scale(${scale})`;
+                    }
+                    
+                    ticking = false;
+                }
+
+                function onScroll() {
+                    lastScrollY = window.scrollY;
+                    if (!ticking) {
+                        requestAnimationFrame(updateTitleScale);
+                        ticking = true;
+                    }
+                }
+
+                window.addEventListener('scroll', onScroll, { passive: true });
             }
         });
     </script>
