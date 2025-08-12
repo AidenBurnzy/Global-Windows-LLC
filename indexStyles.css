@@ -389,7 +389,8 @@ body {
   height: 0;
   border-left: 10px solid transparent;
   border-right: 10px solid transparent;
-  border-bottom: 20px solid rgba(46, 204, 113, 0.2);background: transparent;
+  border-bottom: 20px solid rgba(46, 204, 113, 0.2);
+  background: transparent;
   top: 70%;
   left: 85%;
   animation-delay: 2s;
@@ -564,7 +565,8 @@ body {
 
 .service-dropdown.active .service-content {
   padding: 0 2rem 2rem 2rem;
-  max-height: 500px;
+  max-height: 1000px; /* Increased from 500px to accommodate more content */
+  overflow-y: auto; /* Added to enable scrolling */
   opacity: 1;
 }
 
@@ -980,7 +982,11 @@ body {
     text-align: center;
   }
 
-  /* Mobile styles for service dropdowns */
+  /* Updated Mobile Styles for Services */
+  .services-section {
+    padding: 2rem 1rem;
+  }
+
   .service-header {
     padding: 1rem 1.5rem;
   }
@@ -1004,11 +1010,30 @@ body {
   }
 
   .service-details {
-    padding: 1.5rem;
+    padding: 1rem;
+  }
+
+  .service-details h4 {
+    font-size: 1.1rem;
+  }
+
+  .service-details p {
+    font-size: 0.9rem;
+    line-height: 1.6;
   }
 
   .service-features {
     grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+
+  .feature-item {
+    font-size: 0.85rem;
+  }
+
+  .service-cta-button {
+    padding: 0.75rem 1.5rem;
+    font-size: 0.9rem;
   }
   
   /* Hide animated elements on mobile for performance */
@@ -1051,6 +1076,32 @@ body {
   
   .stat-number {
     font-size: 2rem;
+  }
+
+  /* Additional Mobile Adjustments for Services */
+  .service-header {
+    padding: 0.875rem 1rem;
+  }
+
+  .service-title-content h3 {
+    font-size: 1.1rem;
+  }
+
+  .service-details {
+    padding: 0.75rem;
+  }
+
+  .service-details p {
+    font-size: 0.85rem;
+  }
+
+  .feature-item {
+    font-size: 0.8rem;
+  }
+
+  .service-cta-button {
+    padding: 0.625rem 1.25rem;
+    font-size: 0.85rem;
   }
 }
 
