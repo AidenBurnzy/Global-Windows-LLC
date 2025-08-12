@@ -78,10 +78,10 @@
         /* Additional styles for about page */
         .about-hero {
             background: linear-gradient(rgba(30, 58, 46, 0.8), rgba(45, 90, 66, 0.8)),
-                        url('pictures/Hotel-Rose-crains-ext1-scaled.jpg.optimal.jpg');
+                        url('pictures/Your paragraph text (2).png');
             background-size: cover;
             background-position: center;
-            padding: 4rem 2rem;
+            padding: 8rem 3rem;
             text-align: center;
             color: white;
         }
