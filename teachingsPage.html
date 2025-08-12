@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teachings - Global Windows LLC</title>
+    <link rel="stylesheet" href="teachingsStyles.css">
+    <link rel="stylesheet" href="indexStyles.css">
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar" id="navbar">
+        <!-- Logo Section -->
+        <div class="logo-section">
+            <div class="logo-placeholder">
+                <img src="pictures/GlobalWindowsLogo.png" alt="GlobalWindowsLogo">
+            </div>
+        </div>
+
+        <ul class="nav-list" id="nav-list">
+            <li class="nav-item">
+                <a href="index.html" class="nav-link">Home</a>
+            </li>
+            <li class="nav-item">
+                <a href="galleryPage.html" class="nav-link">Gallery</a>
+            </li>
+            <li class="nav-item">
+                <a href="contactPage.html" class="nav-link">Contact</a>
+            </li>
+            <li class="nav-item">
+                <a href="aboutPage.html" class="nav-link">About</a>
+            </li>
+            <li class="nav-item">
+                <a href="teachingsPage.html" class="nav-link active">Teachings</a>
+            </li>
+        </ul>
+
+        <!-- Mobile Menu Toggle -->
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle navigation menu">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+        </button>
+    </nav>
+
+    <!-- Teachings Hero Section -->
+    <section class="teachings-hero">
+        <h1>Teachings & Reflections</h1>
+        <p>Spiritual insights and personal reflections from our founder, rooted in faith and inspired by God's Word</p>
+    </section>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <div class="teachings-content">
+            
+            <!-- Introduction Section -->
+            <section class="intro-section">
+                <div class="intro-content">
+                    <h2 class="section-title">A Heart for Teaching</h2>
+                    <div class="intro-text">
+                        <p>This page is where our founder shares his spiritual writings—personal reflections inspired by faith, life, and the Word of God. Each message is meant to uplift, guide, and encourage. Alongside every post, you'll find a music video that brings the message to life, offering deeper insight and connection.</p>
+                        
+                        <p>These teachings emerge from years of walking with Christ, learning through trials and triumphs, and discovering God's faithfulness in every season. They are offered in the spirit of fellowship, hoping to encourage others on their own spiritual journey.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Back to Top Button -->
+            <div style="text-align: center; margin: 2rem 0;">
+            </div>
+
+            <!-- Founder's Reflections Section -->
+            <section class="writings-section" id="founder-reflections">
+                <div class="section-header-with-button">
+                    <h2 class="section-title">Reflections from Our Founder</h2>
+                </div>
+
+                <div class="reflection-bubbles-container">
+                    <div class="reflection-bubble" data-reflection="0">
+                        <h3 class="bubble-title">"Today, I Breathe You In"</h3>
+                        <div class="bubble-preview">A morning prayer of gratitude and surrender...</div>
+                    </div>
+
+                    <div class="reflection-bubble" data-reflection="1">
+                        <h3 class="bubble-title">"Still other seed fell on good soil"</h3>
+                        <div class="bubble-preview">Understanding the condition of our hearts...</div>
+                    </div>
+
+                    <div class="reflection-bubble" data-reflection="2">
+                        <h3 class="bubble-title">"Standing on my own two feet"</h3>
+                        <div class="bubble-preview">When Jesus carries us through life's storms...</div>
+                    </div>
+
+                    <div class="reflection-bubble" data-reflection="3">
+                        <h3 class="bubble-title">Alone Again</h3>
+                        <div class="bubble-preview">Finding comfort in God when feeling isolated...</div>
+                    </div>
+
+                    <div class="reflection-bubble" data-reflection="4">
+                        <h3 class="bubble-title">Understanding</h3>
+                        <div class="bubble-preview">The gift of biblical understanding and spiritual growth...</div>
+                    </div>
+
+                    <div class="reflection-bubble" data-reflection="5">
+                        <h3 class="bubble-title">The author of time</h3>
+                        <div class="bubble-preview">Making the most of the time God gives us...</div>
+                    </div>
+                </div>
+
+                <!-- Modal for expanded reflections -->
+                <div class="reflection-modal" id="reflection-modal">
+                    <div class="modal-content">
+                        <button class="modal-close" id="modal-close">&times;</button>
+                        <div class="modal-body" id="modal-body">
+                            <!-- Content will be dynamically inserted here -->
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Call to Action Section -->
+            <section class="cta-section">
+                <div class="cta-content">
+                    <h2 class="section-title" style="color: white;">Join Our Community</h2>
+                    <p style="font-size: 1.2rem; margin-bottom: 2rem; opacity: 0.9;">
+                        If these reflections have touched your heart, we invite you to connect with us. Whether you're seeking spiritual guidance, looking for quality window installation, or interested in our mentoring programs, we're here to serve.
+                    </p>
+                    <div class="cta-buttons">
+                        <a href="contactPage.html" class="cta-button primary">Get in Touch</a>
+                        <a href="aboutPage.html" class="cta-button secondary">Learn About Our Mission</a>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <h3 class="footer-title">GLOBAL WINDOWS LLC</h3>
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h4>Location</h4>
+                    <p>Grand Rapids, Michigan</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>SrobertsLLC@outlook.com</p>
+                    <p>(616)-914-4591</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Global Windows LLC. Built with faith and purpose.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="teachingsPage.js"></script>
+</body>
+
+</html>
