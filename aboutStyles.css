@@ -74,21 +74,104 @@
             }
         }
 
+        /* Global styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-        /* Additional styles for about page */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* Navigation Styles */
+        .navbar {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+        }
+
+        .logo-section img {
+            height: 50px;
+            width: auto;
+        }
+
+        .nav-list {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: #1e3a2e;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            color: #27ae60;
+        }
+
+        .nav-link.active::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: #27ae60;
+        }
+
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            flex-direction: column;
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+
+        .hamburger-line {
+            width: 25px;
+            height: 3px;
+            background: #1e3a2e;
+            margin: 3px 0;
+            transition: 0.3s;
+        }
+
+
+
+        /* About Hero Section - now part of extended background */
         .about-hero {
             background: linear-gradient(rgba(30, 58, 46, 0.8), rgba(45, 90, 66, 0.8)),
-                        url('pictures/Your paragraph text (2).png');
-            background-size: cover;
-            background-position: center;
-            padding: 8rem 3rem;
+                        url('pictures/Hotel-Rose-crains-ext1-scaled.jpg.optimal.jpg');
+            background-size: 100%;
+            background-position-x: center;
+            background-position-y: top;
+            padding: 8rem 3rem 4rem;
             text-align: center;
             color: white;
         }
 
         .about-hero h1 {
             font-size: clamp(2.5rem, 5vw, 4rem);
-            margin-bottom: 1rem;
+            margin-bottom: 3rem;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
         }
 
@@ -98,6 +181,8 @@
             margin: 0 auto;
             opacity: 0.95;
         }
+
+       
 
         .about-content {
             max-width: 1200px;
@@ -226,18 +311,71 @@
             line-height: 1.6;
         }
 
-        .faith-section {
-            background: #f8f9fa;
-            padding: 4rem 2rem;
-            border-radius: 20px;
-            margin: 2rem 0;
-        }
+       .faith-section {
+    background: linear-gradient(rgba(30, 58, 46, 0.8), rgba(45, 90, 66, 0.8)),
+                url('pictures/Residential/3d-rendering-cross-water.jpg');
+    background-position: center;
+    background-size: auto;
+    padding: 4rem 2rem;
+    border-radius: 20px;
+    margin: 2rem 0;
+    color: white; /* Make all text white by default */
+}
 
-        .faith-content {
-            max-width: 800px;
-            margin: 0 auto;
-            text-align: center;
-        }
+.faith-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* Make the section title white with shadow */
+.faith-section .section-title {
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    margin-bottom: 2rem;
+}
+
+/* Make sure the underline after the title is visible */
+.faith-section .section-title::after {
+    background: #2ecc71; /* Keep the green accent */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Style the text content to be white with shadow */
+.faith-section .about-text {
+    color: white;
+    font-size: 1.2rem;
+    line-height: 1.8;
+}
+
+.faith-section .about-text p {
+    margin-bottom: 1.5rem;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+}
+
+/* Make strong text more visible */
+.faith-section .about-text strong {
+    color: #2ecc71;
+    font-weight: 700;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+/* Add better contrast for mobile */
+@media (max-width: 768px) {
+    .faith-section {
+        background-size: cover;
+        padding: 3rem 1.5rem;
+    }
+    
+    .faith-section .about-text {
+        font-size: 1.1rem;
+        line-height: 1.7;
+    }
+    
+    .faith-section .about-text p {
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    }
+}
 
         .gospel-highlight {
             background: linear-gradient(135deg, #1e3a2e, #2d5a42);
@@ -250,17 +388,6 @@
             margin: 3rem 0;
         }
 
-        .gospel-highlight::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M50 10 L60 35 L85 35 L67 52 L73 77 L50 65 L27 77 L33 52 L15 35 L40 35 Z" fill="rgba(255,255,255,0.05)"/></svg>') repeat;
-            opacity: 0.3;
-        }
-
         .gospel-content {
             position: relative;
             z-index: 2;
@@ -268,174 +395,129 @@
             margin: 0 auto;
         }
 
-        .writings-section {
-            background: white;
+        .founder-section {
+            background: #f8f9fa;
             padding: 4rem 2rem;
             border-radius: 20px;
             margin: 3rem 0;
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
         }
 
-        .writings-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .writing-card {
-            background: #f8f9fa;
-            padding: 2rem;
-            border-radius: 15px;
-            border-left: 5px solid #27ae60;
-            transition: transform 0.3s ease;
-        }
-
-        .writing-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-        }
-
-        .writing-date {
-            font-size: 0.9rem;
-            color: #27ae60;
-            font-weight: 600;
-            margin-bottom: 1rem;
-        }
-
-        .writing-title {
-            font-size: 1.4rem;
-            color: #1e3a2e;
-            margin-bottom: 1rem;
-            font-weight: 600;
-        }
-
-        .writing-excerpt {
-            color: #666;
-            line-height: 1.6;
-            margin-bottom: 1rem;
-        }
-
-        .writing-verse {
-            font-style: italic;
-            color: #2d5a42;
-            border-top: 1px solid #ddd;
-            padding-top: 1rem;
-            margin-top: 1rem;
-        }
-
-        .stats-showcase {
-            background: linear-gradient(135deg, #1e3a2e, #2d5a42);
-            color: white;
-            padding: 4rem 2rem;
+        .founder-content {
+            max-width: 900px;
+            margin: 0 auto;
             text-align: center;
-            margin: 3rem 0;
-            border-radius: 20px;
         }
 
-        .stats-grid {
+        .founder-text {
+            padding: 2rem;
+        }
+
+        .founder-text h3 {
+            font-size: 2.2rem;
+            color: #1e3a2e;
+            margin-bottom: 2rem;
+            font-weight: 700;
+            text-align: center;
+        }
+
+        .founder-text p {
+            font-size: 1.3rem;
+            line-height: 1.9;
+            color: #444;
+            margin-bottom: 2rem;
+            text-align: left;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .highlight-text {
+            background: linear-gradient(135deg, #27ae60, #2ecc71);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 700;
+            font-size: 1.35rem;
+        }
+
+        /* Footer */
+        .footer {
+            background: #1e3a2e;
+            color: white;
+            padding: 3rem 2rem 2rem;
+            text-align: center;
+        }
+
+        .footer-title {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            color: #2ecc71;
+        }
+
+        .footer-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 2rem;
-            max-width: 800px;
-            margin: 2rem auto 0;
+            max-width: 600px;
+            margin: 0 auto 2rem;
         }
 
-        .stat-item {
-            padding: 1.5rem;
-        }
-
-        .stat-number {
-            display: block;
-            font-size: 3rem;
-            font-weight: 700;
+        .footer-section h4 {
             color: #2ecc71;
-            margin-bottom: 0.5rem;
+            margin-bottom: 1rem;
         }
 
-        .stat-label {
-            font-size: 1.1rem;
-            opacity: 0.9;
+        .footer-bottom {
+            border-top: 1px solid #2d5a42;
+            padding-top: 1rem;
+            margin-top: 2rem;
+            opacity: 0.8;
         }
 
-        /* Navigation Buttons */
-        .scroll-to-reflections-btn {
-            background: linear-gradient(45deg, #27ae60, #2ecc71) !important;
-            color: white !important;
-            border: none !important;
-            padding: 1rem 2rem !important;
-            font-size: 1rem !important;
-            border-radius: 50px !important;
-            cursor: pointer !important;
-            transition: all 0.3s ease !important;
-            font-weight: 600 !important;
-            box-shadow: 0 4px 15px rgba(39, 174, 96, 0.4) !important;
-            margin-top: 2rem !important;
-            display: inline-flex !important;
-            align-items: center !important;
-            gap: 0.5rem !important;
-            text-decoration: none !important;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
-            z-index: 100 !important;
-            position: relative !important;
-        }
-
-        .scroll-to-reflections-btn:hover {
-            transform: translateY(-3px) !important;
-            box-shadow: 0 6px 20px rgba(39, 174, 96, 0.6) !important;
-            background: linear-gradient(45deg, #229954, #27ae60) !important;
-        }
-
-        .btn-arrow {
-            font-size: 1.2rem !important;
-            transition: transform 0.3s ease !important;
-            color: white !important;
-        }
-
-        .scroll-to-reflections-btn:hover .btn-arrow {
-            transform: translateY(3px) !important;
-        }
-
-        .section-header-with-button {
-            display: flex !important;
-            justify-content: center !important;
-            align-items: center !important;
-            gap: 2rem !important;
-            flex-wrap: wrap !important;
-            margin-bottom: 2rem !important;
-        }
-
-        .back-to-top-btn {
-            background: linear-gradient(45deg, #1e3a2e, #2d5a42) !important;
-            color: white !important;
-            border: none !important;
-            padding: 0.75rem 1.5rem !important;
-            font-size: 0.9rem !important;
-            border-radius: 50px !important;
-            cursor: pointer !important;
-            transition: all 0.3s ease !important;
-            font-weight: 500 !important;
-            box-shadow: 0 3px 10px rgba(30, 58, 46, 0.3) !important;
-            display: inline-flex !important;
-            align-items: center !important;
-            gap: 0.5rem !important;
-            text-decoration: none !important;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
-            z-index: 100 !important;
-            position: relative !important;
-        }
-
-        .back-to-top-btn:hover {
-            transform: translateY(-2px) !important;
-            box-shadow: 0 5px 15px rgba(30, 58, 46, 0.5) !important;
-            background: linear-gradient(45deg, #2d5a42, #3a6f52) !important;
-        }
-
-        .back-to-top-btn:hover .btn-arrow {
-            transform: translateY(-3px) !important;
-        }
-
+        /* Mobile Styles */
         @media (max-width: 768px) {
+            .navbar {
+                padding: 1rem;
+            }
+
+            .nav-list {
+                position: fixed;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: white;
+                flex-direction: column;
+                padding: 2rem;
+                box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+                transform: translateY(-100%);
+                opacity: 0;
+                visibility: hidden;
+                transition: all 0.3s ease;
+            }
+
+            .navbar.mobile-menu-open .nav-list {
+                transform: translateY(0);
+                opacity: 1;
+                visibility: visible;
+            }
+
+            .mobile-menu-toggle {
+                display: flex;
+            }
+
+            .navbar.mobile-menu-open .hamburger-line:nth-child(1) {
+                transform: rotate(45deg) translate(5px, 5px);
+            }
+
+            .navbar.mobile-menu-open .hamburger-line:nth-child(2) {
+                opacity: 0;
+            }
+
+            .navbar.mobile-menu-open .hamburger-line:nth-child(3) {
+                transform: rotate(-45deg) translate(7px, -6px);
+            }
+
             .two-column {
                 grid-template-columns: 1fr;
                 gap: 2rem;
@@ -449,305 +531,26 @@
                 font-size: 2rem;
             }
 
-            .faith-section, .gospel-highlight, .writings-section {
+            .faith-section, .gospel-highlight, .founder-section {
+                text-decoration-color: #eee;
                 padding: 2rem 1rem;
                 margin: 1rem 0;
-            }
-
-            .writings-grid {
-                grid-template-columns: 1fr;
             }
 
             .stats-showcase {
                 padding: 3rem 1rem;
             }
 
-            .section-header-with-button {
-                flex-direction: column;
-                gap: 1rem;
-                text-align: center;
+            .founder-text h3 {
+                font-size: 1.8rem;
             }
 
-            .scroll-to-reflections-btn {
-                padding: 0.875rem 1.75rem;
-                font-size: 0.95rem;
+            .founder-text p {
+                font-size: 1.15rem;
+                line-height: 1.7;
             }
 
-            .back-to-top-btn {
-                padding: 0.625rem 1.25rem;
-                font-size: 0.85rem;
+            .highlight-text {
+                font-size: 1.2rem;
             }
         }
-/* Enhanced Writing Cards Styles */
-.writings-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 2rem;
-    margin-top: 3rem;
-    align-items: start; /* This ensures cards align to the top */
-}
-
-.writing-card {
-    background: #f8f9fa;
-    padding: 2rem;
-    border-radius: 15px;
-    border-left: 5px solid #27ae60;
-    transition: all 0.3s ease;
-    height: 500px; /* Fixed height for consistency */
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
-    position: relative;
-}
-
-.writing-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-}
-
-.writing-date {
-    font-size: 0.9rem;
-    color: #27ae60;
-    font-weight: 600;
-    margin-bottom: 1rem;
-    flex-shrink: 0; /* Prevents date from shrinking */
-}
-
-.writing-title {
-    font-size: 1.2rem; /* Slightly smaller for better fit */
-    color: #1e3a2e;
-    margin-bottom: 1rem;
-    font-weight: 600;
-    line-height: 1.4;
-    flex-shrink: 0; /* Prevents title from shrinking */
-    max-height: 4.2rem; /* Limit title height to ~3 lines */
-    overflow: hidden;
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-}
-
-.writing-excerpt {
-    color: #666;
-    line-height: 1.5; /* Slightly tighter line height */
-    margin-bottom: 1rem;
-    flex: 1; /* Takes up available space */
-    overflow: hidden;
-    font-size: 0.95rem; /* Slightly smaller font */
-    position: relative;
-}
-
-/* Create a scrollable area for long content */
-.writing-excerpt {
-    overflow-y: auto;
-    padding-right: 0.5rem;
-}
-
-/* Custom scrollbar styling */
-.writing-excerpt::-webkit-scrollbar {
-    width: 4px;
-}
-
-.writing-excerpt::-webkit-scrollbar-track {
-    background: #f1f1f1;
-    border-radius: 2px;
-}
-
-.writing-excerpt::-webkit-scrollbar-thumb {
-    background: #27ae60;
-    border-radius: 2px;
-}
-
-.writing-excerpt::-webkit-scrollbar-thumb:hover {
-    background: #229954;
-}
-
-.writing-verse {
-    font-style: italic;
-    color: #2d5a42;
-    border-top: 1px solid #ddd;
-    padding-top: 1rem;
-    margin-top: 1rem;
-    flex-shrink: 0; /* Prevents verse from shrinking */
-    font-size: 0.9rem;
-    line-height: 1.4;
-}
-
-/* Alternative approach - Show excerpt with "Read More" functionality */
-.writing-card-alt {
-    background: #f8f9fa;
-    padding: 2rem;
-    border-radius: 15px;
-    border-left: 5px solid #27ae60;
-    transition: all 0.3s ease;
-    min-height: 400px; /* Minimum height */
-    display: flex;
-    flex-direction: column;
-}
-
-.writing-excerpt-preview {
-    color: #666;
-    line-height: 1.6;
-    margin-bottom: 1rem;
-    flex: 1;
-    font-size: 0.95rem;
-    max-height: 200px; /* Limit preview height */
-    overflow: hidden;
-    position: relative;
-}
-
-.writing-excerpt-preview::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 40px;
-    background: linear-gradient(transparent, #f8f9fa);
-    pointer-events: none;
-}
-
-.read-more-btn {
-    background: none;
-    border: none;
-    color: #27ae60;
-    font-weight: 600;
-    cursor: pointer;
-    padding: 0.5rem 0;
-    font-size: 0.9rem;
-    transition: color 0.3s ease;
-    align-self: flex-start;
-}
-
-.read-more-btn:hover {
-    color: #229954;
-    text-decoration: underline;
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    .writings-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .writing-card {
-        height: auto; /* Allow natural height on mobile */
-        min-height: 300px;
-        padding: 1.5rem;
-    }
-    
-    .writing-title {
-        font-size: 1.1rem;
-    }
-    
-    .writing-excerpt {
-        font-size: 0.9rem;
-        max-height: 250px; /* Limit height on mobile */
-    }
-}
-
-/* For very long titles, add ellipsis */
-@media (min-width: 769px) {
-    .writing-title {
-        display: -webkit-box;
-        -webkit-box-orient: vertical;
-        overflow: hidden;
-        max-height: 2.8rem;
-    }
-}
-/* Enhanced Founder Section Styles */
-.founder-section {
-    background: #f8f9fa;
-    padding: 4rem 2rem;
-    border-radius: 20px;
-    margin: 3rem 0;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-}
-
-.founder-content {
-    max-width: 900px; /* Increased max-width for better readability */
-    margin: 0 auto;
-    text-align: center;
-}
-
-.founder-text {
-    padding: 2rem; /* Added padding for better spacing */
-}
-
-.founder-text h3 {
-    font-size: 2.2rem; /* Increased from default */
-    color: #1e3a2e;
-    margin-bottom: 2rem; /* Increased margin */
-    font-weight: 700;
-    text-align: center;
-}
-
-.founder-text p {
-    font-size: 1.3rem; /* Significantly increased from 1.1rem */
-    line-height: 1.9; /* Increased line height for better readability */
-    color: #444;
-    margin-bottom: 2rem; /* Better spacing */
-    text-align: left; /* Left align for better readability of longer text */
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.highlight-text {
-    background: linear-gradient(135deg, #27ae60, #2ecc71);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    font-weight: 700;
-    font-size: 1.35rem; /* Slightly larger than surrounding text */
-}
-
-/* Alternative highlight style if gradient text doesn't work well */
-.highlight-text-alt {
-    color: #27ae60;
-    font-weight: 700;
-    font-size: 1.35rem;
-}
-
-/* Mobile responsive adjustments */
-@media (max-width: 768px) {
-    .founder-section {
-        padding: 2rem 1rem;
-        margin: 1rem 0;
-    }
-    
-    .founder-text {
-        padding: 1rem;
-    }
-    
-    .founder-text h3 {
-        font-size: 1.8rem; /* Scaled down for mobile */
-    }
-    
-    .founder-text p {
-        font-size: 1.15rem; /* Scaled but still readable on mobile */
-        line-height: 1.7;
-        text-align: left; /* Keep left aligned on mobile too */
-    }
-    
-    .highlight-text,
-    .highlight-text-alt {
-        font-size: 1.2rem; /* Scaled for mobile */
-    }
-}
-
-@media (max-width: 480px) {
-    .founder-text h3 {
-        font-size: 1.6rem;
-        margin-bottom: 1.5rem;
-    }
-    
-    .founder-text p {
-        font-size: 1.1rem;
-        line-height: 1.6;
-    }
-    
-    .highlight-text,
-    .highlight-text-alt {
-        font-size: 1.15rem;
-    }
-}
