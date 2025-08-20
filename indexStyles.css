@@ -14,11 +14,15 @@ body {
 
 /* Navigation Styles */
 .navbar {
-  background: white;
+  background: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(10px);
   padding: 1rem 2rem;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
   z-index: 1000;
   display: flex;
   justify-content: space-between;
@@ -135,7 +139,6 @@ body {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    position: relative;
     flex-wrap: nowrap;
   }
   
@@ -210,6 +213,7 @@ body {
 /* Main Content */
 .main-content {
   min-height: calc(100vh - 80px);
+  padding-top: 120px; /* Account for fixed navbar */
 }
 
 /* Hero Section */
@@ -432,6 +436,39 @@ body {
   z-index: 4;
 }
 
+/* Stats Section - Fixed to show all 3 stats */
+.stats-section {
+  background: linear-gradient(135deg, #1e3a2e 0%, #2d5a42 100%);
+  padding: 3rem 2rem;
+  color: white;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.stat-item {
+  text-align: center;
+  padding: 1.5rem;
+}
+
+.stat-number {
+  display: block;
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-weight: 700;
+  color: #2ecc71;
+  margin-bottom: 0.5rem;
+}
+
+.stat-label {
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
+
 /* Updated Services Section with Dropdowns */
 .services-section {
   padding: 4rem 2rem;
@@ -565,8 +602,8 @@ body {
 
 .service-dropdown.active .service-content {
   padding: 0 2rem 2rem 2rem;
-  max-height: 1000px; /* Increased from 500px to accommodate more content */
-  overflow-y: auto; /* Added to enable scrolling */
+  max-height: 1000px;
+  overflow-y: auto;
   opacity: 1;
 }
 
@@ -732,6 +769,7 @@ body {
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
 }
 
+/* Two Column Content - Fixed for proper mobile stacking */
 .two-column-content {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -780,39 +818,6 @@ body {
 .card-description {
   color: #444;
   line-height: 1.7;
-}
-
-/* Stats Section */
-.stats-section {
-  background: linear-gradient(135deg, #1e3a2e 0%, #2d5a42 100%);
-  padding: 3rem 2rem;
-  color: white;
-}
-
-.stats-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 2rem;
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-.stat-item {
-  text-align: center;
-  padding: 1.5rem;
-}
-
-.stat-number {
-  display: block;
-  font-size: clamp(2.5rem, 5vw, 3.5rem);
-  font-weight: 700;
-  color: #2ecc71;
-  margin-bottom: 0.5rem;
-}
-
-.stat-label {
-  font-size: 1.1rem;
-  opacity: 0.9;
 }
 
 /* Page Content Styles */
@@ -921,13 +926,15 @@ body {
 /* Mobile Responsive Styles */
 @media (max-width: 768px) {
   .logo-placeholder {
-    width: 50px;
-    height: 50px;
+    width: 100px;
+    height: 103px;
   }
   
   .logo-placeholder img {
-    width: 40px;
-    height: 40px;
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    object-fit: cover;
   }
   
   .hero-section {
@@ -960,16 +967,37 @@ body {
     font-size: 1rem;
   }
   
+  /* Fixed Stats Section for Mobile - Show all 3 stats side by side, shorter */
   .stats-section {
     padding: 2rem 1rem;
   }
-  
-  .page-content {
-    padding: 1rem;
+
+  .stats-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem;
+    max-width: 100%;
   }
-  
+
+  .stat-item {
+    padding: 1rem 0.5rem;
+  }
+
+  .stat-number {
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+  }
+
+  .stat-label {
+    font-size: 0.9rem;
+  }
+
+  /* Two-column content will naturally stack with grid auto-fit */
   .two-column-content {
     grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .page-content {
+    padding: 1rem;
   }
   
   .footer {
@@ -1045,6 +1073,14 @@ body {
 }
 
 @media (max-width: 480px) {
+  .navbar {
+    padding: 0.75rem;
+  }
+  
+  .main-content {
+    padding-top: 110px; /* Adjusted for smaller mobile navbar */
+  }
+
   .hero-section {
     min-height: 60vh;
     padding: 0.5rem;
@@ -1109,17 +1145,6 @@ body {
 @media (max-width: 768px) and (orientation: landscape) {
   .hero-section {
     min-height: 100vh;
-  }
-  
-  .navbar {
-    position: fixed;
-    width: 100%;
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(10px);
-  }
-  
-  .main-content {
-    margin-top: 120px;
   }
 }
 

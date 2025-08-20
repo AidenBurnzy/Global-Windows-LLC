@@ -605,10 +605,6 @@
     padding: 0.5rem 1rem;
   }
 
-  .logo-section img {
-    max-height: 40px;
-  }
-
   .nav-list {
     font-size: 0.9rem;
   }
@@ -798,10 +794,6 @@
     .navbar {
         padding: 0.5rem;
     }
-
-    .logo-section img {
-        max-height: 35px;
-    }
 }
 
 /* For very long titles, add ellipsis */
@@ -845,5 +837,114 @@
     .cta-buttons,
     .back-to-top-button {
         display: none;
+    }
+}
+/* Add this to your existing CSS to fix mobile box sizing */
+
+/* Enhanced mobile responsive styles for consistent box sizes */
+@media (max-width: 1550px) {
+  .reflection-bubbles-container {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    padding: 0.5rem;
+  }
+
+  .reflection-bubble {
+    min-height: 180px;
+    max-height: 180px; /* Add max-height for consistency */
+    padding: 1.5rem;
+    margin: 0 auto;
+    width: 100%; /* Ensure full width */
+    max-width: 400px;
+    box-sizing: border-box; /* Include padding in width calculation */
+  }
+
+  .bubble-title {
+    font-size: 1.1rem;
+    margin-bottom: 0.8rem;
+    min-height: 2.2rem; /* Reserve space for title */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .bubble-preview {
+    font-size: 0.9rem;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    overflow: hidden; /* Prevent text overflow */
+  }
+}
+
+@media (max-width: 768px) {
+    .reflection-bubbles-container {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        padding: 0.5rem;
+        justify-items: center; /* Center the boxes */
+    }
+
+    .reflection-bubble {
+        min-height: 160px;
+        max-height: 160px; /* Consistent height */
+        padding: 1.5rem;
+        width: 100%;
+        max-width: 350px; /* Consistent max width */
+        box-sizing: border-box;
+    }
+
+    .bubble-title {
+        font-size: 1.1rem;
+        margin-bottom: 0.8rem;
+        min-height: 2.2rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .bubble-preview {
+        font-size: 0.9rem;
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        line-height: 1.4;
+        overflow: hidden;
+    }
+}
+
+@media (max-width: 480px) {
+    .reflection-bubble {
+        min-height: 140px;
+        max-height: 140px; /* Consistent height */
+        padding: 1rem;
+        width: 100%;
+        max-width: 320px; /* Consistent max width */
+        box-sizing: border-box;
+    }
+
+    .bubble-title {
+        font-size: 1rem;
+        margin-bottom: 0.6rem;
+        min-height: 2rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .bubble-preview {
+        font-size: 0.85rem;
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        line-height: 1.3;
+        overflow: hidden;
     }
 }
