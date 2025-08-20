@@ -109,16 +109,6 @@ body {
     color: #27ae60;
 }
 
-.nav-link.active::after {
-    content: '';
-    position: absolute;
-    bottom: -5px;
-    left: 0;
-    right: 0;
-    height: 2px;
-    background: #27ae60;
-}
-
 .mobile-menu-toggle {
     display: none;
     background: none;
