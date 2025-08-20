@@ -1,347 +1,340 @@
+/* Global styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-        /* Button Styles */
-        .scroll-button {
-            background: linear-gradient(45deg, #27ae60, #2ecc71);
-            color: white;
-            border: none;
-            padding: 1rem 2rem;
-            font-size: 1.1rem;
-            border-radius: 50px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            font-weight: 600;
-            box-shadow: 0 4px 15px rgba(39, 174, 96, 0.4);
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
 
-        .scroll-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(39, 174, 96, 0.6);
-            background: linear-gradient(45deg, #229954, #27ae60);
-        }
+/* Button Styles */
+.scroll-button {
+    background: linear-gradient(45deg, #27ae60, #2ecc71);
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    box-shadow: 0 4px 15px rgba(39, 174, 96, 0.4);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
 
-        .scroll-button:focus {
-            outline: 2px solid #27ae60;
-            outline-offset: 2px;
-        }
+.scroll-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(39, 174, 96, 0.6);
+    background: linear-gradient(45deg, #229954, #27ae60);
+}
 
-        .back-to-top-button {
-            background: rgba(39, 174, 96, 0.9);
-            color: white;
-            border: none;
-            padding: 0.75rem 1.5rem;
-            font-size: 0.9rem;
-            border-radius: 25px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            font-weight: 500;
-            box-shadow: 0 2px 10px rgba(39, 174, 96, 0.3);
-            margin-left: 1rem;
-        }
+.scroll-button:focus {
+    outline: 2px solid #27ae60;
+    outline-offset: 2px;
+}
 
-        .back-to-top-button:hover {
-            background: rgba(39, 174, 96, 1);
-            transform: translateY(-2px);
-            box-shadow: 0 4px 15px rgba(39, 174, 96, 0.5);
-        }
+.back-to-top-button {
+    background: rgba(39, 174, 96, 0.9);
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    font-size: 0.9rem;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    box-shadow: 0 2px 10px rgba(39, 174, 96, 0.3);
+    margin-left: 1rem;
+}
 
-        .section-header-with-button {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 1rem;
-            margin-bottom: 1rem;
-        }
+.back-to-top-button:hover {
+    background: rgba(39, 174, 96, 1);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(39, 174, 96, 0.5);
+}
 
-        /* Mobile responsiveness for buttons */
-        @media (max-width: 768px) {
-            .section-header-with-button {
-                flex-direction: column;
-                text-align: center;
-            }
-            
-            .back-to-top-button {
-                margin-left: 0;
-                margin-top: 1rem;
-            }
-            
-            .scroll-button {
-                padding: 0.875rem 1.5rem;
-                font-size: 1rem;
-            }
-        }
+.section-header-with-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
 
-        /* Global styles */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+/* Navigation Styles */
+.navbar {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+}
 
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
-        }
+.logo-section img {
+    height: 50px;
+    width: auto;
+}
 
-        /* Navigation Styles */
-        .navbar {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 1000;
-            padding: 1rem 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            transition: all 0.3s ease;
-            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
-        }
+.nav-list {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
 
-        .logo-section img {
-            height: 50px;
-            width: auto;
-        }
+.nav-link {
+    text-decoration: none;
+    color: #1e3a2e;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    position: relative;
+}
 
-        .nav-list {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-        }
+.nav-link:hover,
+.nav-link.active {
+    color: #27ae60;
+}
 
-        .nav-link {
-            text-decoration: none;
-            color: #1e3a2e;
-            font-weight: 500;
-            transition: color 0.3s ease;
-            position: relative;
-        }
+.nav-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: #27ae60;
+}
 
-        .nav-link:hover,
-        .nav-link.active {
-            color: #27ae60;
-        }
+.mobile-menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    flex-direction: column;
+    cursor: pointer;
+    padding: 0.5rem;
+}
 
-        .nav-link.active::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            right: 0;
-            height: 2px;
-            background: #27ae60;
-        }
+.hamburger-line {
+    width: 25px;
+    height: 3px;
+    background: #1e3a2e;
+    margin: 3px 0;
+    transition: 0.3s;
+}
 
-        .mobile-menu-toggle {
-            display: none;
-            background: none;
-            border: none;
-            flex-direction: column;
-            cursor: pointer;
-            padding: 0.5rem;
-        }
+/* About Hero Section */
+.about-hero {
+    background: 
+        linear-gradient(rgba(30, 58, 46, 0.4), rgba(45, 90, 66, 0.4)),
+        url('pictures/Residential/3d-rendering-cross-water.jpg');
+    background-size: cover, cover;
+    background-repeat: no-repeat, no-repeat;
+    background-position: center center, 0px -200px;
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    padding: 4rem 2rem;
+    text-align: center;
+    color: white;
+    border-bottom: 10px solid black;
+}
 
-        .hamburger-line {
-            width: 25px;
-            height: 3px;
-            background: #1e3a2e;
-            margin: 3px 0;
-            transition: 0.3s;
-        }
+.about-hero h1 {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    margin-bottom: 2rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    z-index: 2;
+}
 
+.about-hero p {
+    font-size: clamp(1.1rem, 2.5vw, 1.3rem);
+    max-width: 600px;
+    margin: 0 auto;
+    opacity: 0.95;
+    z-index: 2;
+}
 
+/* Content Sections */
+.about-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
 
-        /* About Hero Section - now part of extended background */
-        .about-hero {
-            background: linear-gradient(rgba(30, 58, 46, 0.8), rgba(45, 90, 66, 0.8)),
-                        url('pictures/Hotel-Rose-crains-ext1-scaled.jpg.optimal.jpg');
-            background-size: 100%;
-            background-position-x: center;
-            background-position-y: top;
-            padding: 8rem 3rem 4rem;
-            text-align: center;
-            color: white;
-        }
+.about-section {
+    padding: 4rem 0;
+    border-bottom: 1px solid #eee;
+}
 
-        .about-hero h1 {
-            font-size: clamp(2.5rem, 5vw, 4rem);
-            margin-bottom: 3rem;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-        }
+.about-section:last-child {
+    border-bottom: none;
+}
 
-        .about-hero p {
-            font-size: clamp(1.1rem, 2.5vw, 1.3rem);
-            max-width: 600px;
-            margin: 0 auto;
-            opacity: 0.95;
-        }
+.section-title {
+    font-size: 2.5rem;
+    color: #1e3a2e;
+    margin-bottom: 2rem;
+    text-align: center;
+    position: relative;
+}
 
-       
+.section-title::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background: #27ae60;
+    margin: 1rem auto;
+    border-radius: 2px;
+}
 
-        .about-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
+.two-column {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+    margin-top: 2rem;
+}
 
-        .about-section {
-            padding: 4rem 0;
-            border-bottom: 1px solid #eee;
-        }
+.about-text {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #444;
+}
 
-        .about-section:last-child {
-            border-bottom: none;
-        }
+.about-text p {
+    margin-bottom: 1.5rem;
+}
 
-        .section-title {
-            font-size: 2.5rem;
-            color: #1e3a2e;
-            margin-bottom: 2rem;
-            text-align: center;
-            position: relative;
-        }
+.highlight-box {
+    background: linear-gradient(135deg, #27ae60, #2ecc71);
+    color: white;
+    padding: 2.5rem;
+    border-radius: 15px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
 
-        .section-title::after {
-            content: '';
-            display: block;
-            width: 80px;
-            height: 4px;
-            background: #27ae60;
-            margin: 1rem auto;
-            border-radius: 2px;
-        }
+.highlight-box::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    width: 100%;
+    height: 100%;
+    background: rgba(255,255,255,0.1);
+    border-radius: 50%;
+    transform: rotate(45deg);
+}
 
-        .two-column {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            align-items: center;
-            margin-top: 2rem;
-        }
+.highlight-box h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    position: relative;
+    z-index: 2;
+}
 
-        .about-text {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            color: #444;
-        }
+.highlight-box p {
+    font-size: 1.1rem;
+    position: relative;
+    z-index: 2;
+    opacity: 0.95;
+}
 
-        .about-text p {
-            margin-bottom: 1.5rem;
-        }
+.services-showcase {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
 
-        .highlight-box {
-            background: linear-gradient(135deg, #27ae60, #2ecc71);
-            color: white;
-            padding: 2.5rem;
-            border-radius: 15px;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
+.service-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+    border-top: 4px solid #27ae60;
+}
 
-        .highlight-box::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -50%;
-            width: 100%;
-            height: 100%;
-            background: rgba(255,255,255,0.1);
-            border-radius: 50%;
-            transform: rotate(45deg);
-        }
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(39, 174, 96, 0.2);
+}
 
-        .highlight-box h3 {
-            font-size: 1.8rem;
-            margin-bottom: 1rem;
-            position: relative;
-            z-index: 2;
-        }
+.service-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    display: block;
+    color: #27ae60;
+}
 
-        .highlight-box p {
-            font-size: 1.1rem;
-            position: relative;
-            z-index: 2;
-            opacity: 0.95;
-        }
+.service-card h4 {
+    font-size: 1.3rem;
+    color: #1e3a2e;
+    margin-bottom: 1rem;
+}
 
-        .services-showcase {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
+.service-card p {
+    color: #666;
+    line-height: 1.6;
+}
 
-        .service-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 15px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-            text-align: center;
-            transition: transform 0.3s ease;
-            border-top: 4px solid #27ae60;
-        }
-
-        .service-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 10px 30px rgba(39, 174, 96, 0.2);
-        }
-
-        .service-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            display: block;
-            color: #27ae60;
-        }
-
-        .service-card h4 {
-            font-size: 1.3rem;
-            color: #1e3a2e;
-            margin-bottom: 1rem;
-        }
-
-        .service-card p {
-            color: #666;
-            line-height: 1.6;
-        }
-
-       .faith-section {
+/* Faith Section */
+.faith-section {
     background: linear-gradient(rgba(30, 58, 46, 0.8), rgba(45, 90, 66, 0.8)),
-                url('pictures/Residential/3d-rendering-cross-water.jpg');
+                url('pictures/IMG_9792.jpg');
     background-position: center;
-    background-size: auto;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
     padding: 4rem 2rem;
     border-radius: 20px;
-    margin: 2rem 0;
-    color: white; /* Make all text white by default */
+    margin: 2rem auto;
+    color: white;
+    min-height: 400px;
+    max-width: 850px;
+    width: 80%;
 }
 
 .faith-content {
     max-width: 800px;
     margin: 0 auto;
     text-align: center;
+    position: relative;
+    z-index: 2;
 }
 
-/* Make the section title white with shadow */
 .faith-section .section-title {
     color: white;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
     margin-bottom: 2rem;
 }
 
-/* Make sure the underline after the title is visible */
 .faith-section .section-title::after {
-    background: #2ecc71; /* Keep the green accent */
+    background: #2ecc71;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
-/* Style the text content to be white with shadow */
 .faith-section .about-text {
     color: white;
     font-size: 1.2rem;
@@ -353,18 +346,235 @@
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
 }
 
-/* Make strong text more visible */
 .faith-section .about-text strong {
     color: #2ecc71;
     font-weight: 700;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
 }
 
-/* Add better contrast for mobile */
+/* Gospel Section */
+.gospel-highlight {
+    background: linear-gradient(135deg, #1e3a2e, #2d5a42);
+    color: white;
+    padding: 4rem 2rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    border-radius: 20px;
+    margin: 3rem 0;
+}
+
+.gospel-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Founder Section */
+.founder-section {
+    background: #f8f9fa;
+    padding: 4rem 2rem;
+    border-radius: 20px;
+    margin: 3rem 0;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.founder-content {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.founder-text {
+    padding: 2rem;
+}
+
+.founder-text h3 {
+    font-size: 2.2rem;
+    color: #1e3a2e;
+    margin-bottom: 2rem;
+    font-weight: 700;
+    text-align: center;
+}
+
+.founder-text p {
+    font-size: 1.3rem;
+    line-height: 1.9;
+    color: #444;
+    margin-bottom: 2rem;
+    text-align: left;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.highlight-text {
+    background: linear-gradient(135deg, #27ae60, #2ecc71);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 700;
+    font-size: 1.35rem;
+}
+
+/* Footer */
+.footer {
+    background: #1e3a2e;
+    color: white;
+    padding: 3rem 2rem 2rem;
+    text-align: center;
+}
+
+.footer-title {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    color: #2ecc71;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    max-width: 600px;
+    margin: 0 auto 2rem;
+}
+
+.footer-section h4 {
+    color: #2ecc71;
+    margin-bottom: 1rem;
+}
+
+.footer-bottom {
+    border-top: 1px solid #2d5a42;
+    padding-top: 1rem;
+    margin-top: 2rem;
+    opacity: 0.8;
+}
+
+/* Mobile Styles */
 @media (max-width: 768px) {
+    .navbar {
+        padding: 1rem;
+    }
+
+    .nav-list {
+        position: fixed;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: white;
+        flex-direction: column;
+        padding: 2rem;
+        box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        transform: translateY(-100%);
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+    }
+
+    .navbar.mobile-menu-open .nav-list {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .mobile-menu-toggle {
+        display: flex;
+    }
+
+    .navbar.mobile-menu-open .hamburger-line:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .navbar.mobile-menu-open .hamburger-line:nth-child(2) {
+        opacity: 0;
+    }
+
+    .navbar.mobile-menu-open .hamburger-line:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -6px);
+    }
+
+    /* About Hero Mobile */
+    .about-hero {
+        min-height: 80vh;
+        padding: 2rem 1rem;
+        background-size: cover, cover; /* Ensure image covers full width */
+        background-position: center center, center center; /* Center both gradient and image */
+        border-bottom: none; /* Remove direct border */
+        position: relative;
+    }
+
+    /* Add border as pseudo-element that matches image width */
+    .about-hero::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 5px;
+        background: black;
+        width: 100%;
+    }
+
+    .about-hero h1 {
+        font-size: clamp(2rem, 8vw, 3rem);
+        margin-bottom: 1.5rem;
+        text-shadow: 2px 2px 6px rgba(0,0,0,0.7);
+    }
+
+    .about-hero p {
+        font-size: clamp(1rem, 4vw, 1.2rem);
+        max-width: 90%;
+        text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+    }
+
+    /* Button mobile responsiveness */
+    .section-header-with-button {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .back-to-top-button {
+        margin-left: 0;
+        margin-top: 1rem;
+    }
+    
+    .scroll-button {
+        padding: 0.875rem 1.5rem;
+        font-size: 1rem;
+    }
+
+    /* Service cards mobile */
+    .services-showcase {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        margin-top: 2rem;
+    }
+
+    .service-card {
+        padding: 1.5rem;
+    }
+
+    /* General mobile adjustments */
+    .two-column {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .about-section {
+        padding: 2rem 0;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
     .faith-section {
-        background-size: cover;
-        padding: 3rem 1.5rem;
+        background-size: 100% 100%;
+        padding: 3rem 1rem;
+        width: 100%;
+        max-width: none;
     }
     
     .faith-section .about-text {
@@ -375,182 +585,30 @@
     .faith-section .about-text p {
         text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
     }
+
+    .gospel-highlight, .founder-section {
+        padding: 2rem 1rem;
+        margin: 1rem 0;
+    }
+
+    .founder-text h3 {
+        font-size: 1.8rem;
+    }
+
+    .founder-text p {
+        font-size: 1.15rem;
+        line-height: 1.7;
+    }
+
+    .highlight-text {
+        font-size: 1.2rem;
+    }
 }
 
-        .gospel-highlight {
-            background: linear-gradient(135deg, #1e3a2e, #2d5a42);
-            color: white;
-            padding: 4rem 2rem;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-            border-radius: 20px;
-            margin: 3rem 0;
-        }
-
-        .gospel-content {
-            position: relative;
-            z-index: 2;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .founder-section {
-            background: #f8f9fa;
-            padding: 4rem 2rem;
-            border-radius: 20px;
-            margin: 3rem 0;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-        }
-
-        .founder-content {
-            max-width: 900px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        .founder-text {
-            padding: 2rem;
-        }
-
-        .founder-text h3 {
-            font-size: 2.2rem;
-            color: #1e3a2e;
-            margin-bottom: 2rem;
-            font-weight: 700;
-            text-align: center;
-        }
-
-        .founder-text p {
-            font-size: 1.3rem;
-            line-height: 1.9;
-            color: #444;
-            margin-bottom: 2rem;
-            text-align: left;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .highlight-text {
-            background: linear-gradient(135deg, #27ae60, #2ecc71);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            font-weight: 700;
-            font-size: 1.35rem;
-        }
-
-        /* Footer */
-        .footer {
-            background: #1e3a2e;
-            color: white;
-            padding: 3rem 2rem 2rem;
-            text-align: center;
-        }
-
-        .footer-title {
-            font-size: 1.5rem;
-            margin-bottom: 2rem;
-            color: #2ecc71;
-        }
-
-        .footer-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-            max-width: 600px;
-            margin: 0 auto 2rem;
-        }
-
-        .footer-section h4 {
-            color: #2ecc71;
-            margin-bottom: 1rem;
-        }
-
-        .footer-bottom {
-            border-top: 1px solid #2d5a42;
-            padding-top: 1rem;
-            margin-top: 2rem;
-            opacity: 0.8;
-        }
-
-        /* Mobile Styles */
-        @media (max-width: 768px) {
-            .navbar {
-                padding: 1rem;
-            }
-
-            .nav-list {
-                position: fixed;
-                top: 100%;
-                left: 0;
-                right: 0;
-                background: white;
-                flex-direction: column;
-                padding: 2rem;
-                box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-                transform: translateY(-100%);
-                opacity: 0;
-                visibility: hidden;
-                transition: all 0.3s ease;
-            }
-
-            .navbar.mobile-menu-open .nav-list {
-                transform: translateY(0);
-                opacity: 1;
-                visibility: visible;
-            }
-
-            .mobile-menu-toggle {
-                display: flex;
-            }
-
-            .navbar.mobile-menu-open .hamburger-line:nth-child(1) {
-                transform: rotate(45deg) translate(5px, 5px);
-            }
-
-            .navbar.mobile-menu-open .hamburger-line:nth-child(2) {
-                opacity: 0;
-            }
-
-            .navbar.mobile-menu-open .hamburger-line:nth-child(3) {
-                transform: rotate(-45deg) translate(7px, -6px);
-            }
-
-            .two-column {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-
-            .about-section {
-                padding: 2rem 0;
-            }
-
-            .section-title {
-                font-size: 2rem;
-            }
-
-            .faith-section, .gospel-highlight, .founder-section {
-                text-decoration-color: #eee;
-                padding: 2rem 1rem;
-                margin: 1rem 0;
-            }
-
-            .stats-showcase {
-                padding: 3rem 1rem;
-            }
-
-            .founder-text h3 {
-                font-size: 1.8rem;
-            }
-
-            .founder-text p {
-                font-size: 1.15rem;
-                line-height: 1.7;
-            }
-
-            .highlight-text {
-                font-size: 1.2rem;
-            }
-        }
+/* Tablet adjustment */
+@media (max-width: 992px) and (min-width: 769px) {
+    .faith-section {
+        max-width: 600px;
+        width: 100%;
+    }
+}
