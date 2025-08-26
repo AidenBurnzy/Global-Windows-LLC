@@ -296,19 +296,6 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
-  // Add scroll effect to navbar
-  window.addEventListener('scroll', () => {
-    const navbar = document.getElementById('navbar');
-    if (navbar) {
-      if (window.scrollY > 100) {
-        navbar.style.background = 'linear-gradient(135deg, rgba(30, 58, 46, 0.95), rgba(45, 90, 66, 0.95))';
-        navbar.style.backdropFilter = 'blur(10px)';
-      } else {
-        navbar.style.background = 'linear-gradient(135deg, #1e3a2e, #2d5a42)';
-        navbar.style.backdropFilter = 'none';
-      }
-    }
-  });
 
   // Add subtle parallax effect to featured teaching
   window.addEventListener('scroll', () => {
