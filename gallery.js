@@ -1,4 +1,4 @@
-// Gallery functionality - Fixed version
+// Gallery functionality - Fixed version with fullscreen functionality
 const galleryTabs = document.querySelectorAll('.gallery-tab');
 const gallerySections = document.querySelectorAll('.gallery-section');
 
@@ -15,6 +15,11 @@ const carouselNext = document.getElementById('carousel-next');
 
 let currentSlide = 0;
 let currentProject = null;
+
+// Fullscreen elements
+let fullscreenOverlay = null;
+let fullscreenImage = null;
+let fullscreenText = null;
 
 // Project data
 const projectData = {
@@ -159,6 +164,53 @@ function isImagePath(str) {
   return typeof str === 'string' && (str.includes('.jpg') || str.includes('.jpeg') || str.includes('.png') || str.includes('.gif') || str.includes('.webp'));
 }
 
+// Function to create fullscreen overlay
+function createFullscreenOverlay() {
+  if (!fullscreenOverlay) {
+    fullscreenOverlay = document.createElement('div');
+    fullscreenOverlay.className = 'fullscreen-overlay';
+    
+    fullscreenImage = document.createElement('img');
+    fullscreenImage.className = 'fullscreen-image';
+    
+    fullscreenText = document.createElement('div');
+    fullscreenText.className = 'fullscreen-text';
+    fullscreenText.textContent = 'Click anywhere to close';
+    
+    fullscreenOverlay.appendChild(fullscreenImage);
+    fullscreenOverlay.appendChild(fullscreenText);
+    document.body.appendChild(fullscreenOverlay);
+    
+    // Add click event to close fullscreen
+    fullscreenOverlay.addEventListener('click', closeFullscreen);
+  }
+}
+
+// Function to open image in fullscreen
+function openFullscreen(imageSrc, imageAlt = '') {
+  createFullscreenOverlay();
+  
+  fullscreenImage.src = imageSrc;
+  fullscreenImage.alt = imageAlt;
+  
+  // Prevent page scrolling when fullscreen is open
+  document.body.style.overflow = 'hidden';
+  
+  // Show fullscreen overlay
+  fullscreenOverlay.classList.add('active');
+  
+  console.log('Opened fullscreen for:', imageSrc);
+}
+
+// Function to close fullscreen
+function closeFullscreen() {
+  if (fullscreenOverlay) {
+    fullscreenOverlay.classList.remove('active');
+    document.body.style.overflow = '';
+    console.log('Closed fullscreen');
+  }
+}
+
 // Function to switch gallery tabs
 function switchGalleryTab(targetCategory) {
   galleryTabs.forEach(tab => {
@@ -223,6 +275,13 @@ function openProjectModal(projectId) {
       const img = document.createElement('img');
       img.src = item;
       img.alt = `${project.title} - Image ${index + 1}`;
+      
+      // Add fullscreen click event to carousel images
+      img.addEventListener('click', (e) => {
+        e.stopPropagation(); // Prevent modal navigation
+        openFullscreen(img.src, img.alt);
+      });
+      
       slide.appendChild(img);
     } else {
       // It's an emoji
@@ -394,6 +453,15 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // Keyboard navigation
   document.addEventListener('keydown', (e) => {
+    // Handle fullscreen keyboard events
+    if (fullscreenOverlay && fullscreenOverlay.classList.contains('active')) {
+      if (e.key === 'Escape') {
+        closeFullscreen();
+      }
+      return;
+    }
+    
+    // Handle modal keyboard events
     if (modal && modal.classList.contains('active')) {
       if (e.key === 'Escape') {
         closeProjectModal();
