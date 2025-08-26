@@ -3,24 +3,24 @@ const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
 const navbar = document.getElementById('navbar');
 const navList = document.getElementById('nav-list');
 
-if (mobileMenuToggle && navbar) {
+if (mobileMenuToggle && navList) {
   mobileMenuToggle.addEventListener('click', () => {
-    navbar.classList.toggle('mobile-menu-open');
+    navList.classList.toggle('active');
     mobileMenuToggle.classList.toggle('active');
   });
 
   // Close mobile menu when clicking on a nav link
   document.querySelectorAll('.nav-link').forEach(link => {
     link.addEventListener('click', () => {
-      navbar.classList.remove('mobile-menu-open');
+      navList.classList.remove('active');
       mobileMenuToggle.classList.remove('active');
     });
   });
 
   // Close mobile menu when clicking outside
   document.addEventListener('click', (e) => {
-    if (!navbar.contains(e.target) && !mobileMenuToggle.contains(e.target)) {
-      navbar.classList.remove('mobile-menu-open');
+    if (!navbar.contains(e.target)) {
+      navList.classList.remove('active');
       mobileMenuToggle.classList.remove('active');
     }
   });
@@ -28,6 +28,26 @@ if (mobileMenuToggle && navbar) {
 
 // Reflection data
 const reflections = [
+  {
+    title: '"The Cart Of Life"',
+    content: `The cart of life
+
+When a boy becomes a man, life gives him his cart—the Cart of Life. From that day forward, he is tasked with pulling it, step by step, mile by mile.
+
+At first, the cart is light. He fills it with dreams, responsibilities, and his career. Then one day, he meets a woman, and together they begin building a life. She joins him in the cart, and they journey forward as one.
+
+When the road gets steep and the burden heavy, he asks her to step out and help him pull. Side by side, they bear the weight together. But when the path smooths again, he gently tells her, "Get back in, I've got this," and he pulls once more—because that's what a good man does.
+
+They add children to the cart—more weight, more joy, more responsibility. And again, when the terrain becomes rough, she helps. And again, when it eases, he takes the lead.
+
+A good man never stops pulling that cart—not until the day his strength fades and she, too, can no longer help. But if he has lived well—if he has shown his children what it means to carry a cart with love, strength, and faith—then one day, they will come to him and say:
+
+"Dad, you and Mom… get in. Now it's our turn."
+
+Thank You, Lord, for good men. For men who pull the cart of life without complaint. For men who lead with love.`,
+    verse: 'Listen to Your Heart - Kelly Clarkson',
+    link: 'https://www.youtube.com/watch?v=ycO7jS__NVg&t=1s'
+  },
   {
     title: '"Today, I Breathe You In"',
     content: `Today, I woke up wrapped in light,
@@ -59,7 +79,7 @@ So today—I breathe You in.
 Today—I rise again.
 Not in my power, but Yours alone—
 My Heavenly Father, my anchor, my home.`,
-    verse: 'Kelly Clarkson - Listen to your heart',
+    verse: 'Listen to Your Heart - Kelly Clarkson',
     link: 'https://www.youtube.com/watch?v=ycO7jS__NVg&t=1s'
   },
   {
@@ -92,7 +112,9 @@ Lord, soften my heart. Pull up the weeds of pain, lies, and bitterness. Help me 
   },
   {
     title: '"Standing on my own two feet"',
-    content: `Standing on my own two feet There are moments in life when we can't even remember standing on our own two feet—because we weren't. Those were the times Jesus was carrying us through the storms, through the battles waged by the enemy. The devil, the god of this world, will whisper lies: You're a failure. You don't deserve a good life because of your past. He uses shame to blind your mind and keep you from the truth.
+    content: `Standing on my own two feet 
+
+There are moments in life when we can't even remember standing on our own two feet—because we weren't. Those were the times Jesus was carrying us through the storms, through the battles waged by the enemy. The devil, the god of this world, will whisper lies: You're a failure. You don't deserve a good life because of your past. He uses shame to blind your mind and keep you from the truth.
 
 But here's what God says: I knew you before you were even formed in the womb. I saw your flaws, your mistakes, your struggles—and I still chose to love you. His love is unconditional. No price tag. No conditions.
 
@@ -107,18 +129,28 @@ Love wins. Every time.
 This world is broken, but one person at a time, we can bring it back to the vision of God's plan.
 
 Love you all.`,
-    verse: "Staind - It's Been Awhile",
+    verse: "It's Been Awhile - Staind",
     link: 'https://www.youtube.com/watch?v=araU0fZj6oQ'
   },
   {
     title: 'Alone Again',
-    content: `Alone again Do you ever feel like you're surrounded by loved ones but still feel alone inside? You're screaming for help, saying, "Here I am! I'm in pain!" All you need is for someone to acknowledge your existence, but instead, you're met with silence. Why can't they see the pain in your heart? Sometimes, you need to be alone and reach out to our Heavenly Father, who tells you, "I see your pain, and I acknowledge you. I hear your cries for love." Your flaws are a result of dealing with a world that's wronged you. If someone would just say, "I see you," it would make a big difference. If you don't have a Heavenly Father, where do you turn? If you've felt this way, know that the Lord knows I have. I don't think I could handle people's coldness; it's always about them. But with God, it's about you. Thank you, Jesus, for being with me tonight; I know I'm not alone. Thank you for showing me love; I couldn't make it without you.`,
-    verse: 'Dokken - Alone Again',
+    content: `Alone again 
+
+Do you ever feel like you're surrounded by loved ones but still feel alone inside? You're screaming for help, saying, "Here I am! I'm in pain!" All you need is for someone to acknowledge your existence, but instead, you're met with silence. Why can't they see the pain in your heart? 
+
+Sometimes, you need to be alone and reach out to our Heavenly Father, who tells you, "I see your pain, and I acknowledge you. I hear your cries for love." Your flaws are a result of dealing with a world that's wronged you. If someone would just say, "I see you," it would make a big difference. 
+
+If you don't have a Heavenly Father, where do you turn? If you've felt this way, know that the Lord knows I have. I don't think I could handle people's coldness; it's always about them. But with God, it's about you. 
+
+Thank you, Jesus, for being with me tonight; I know I'm not alone. Thank you for showing me love; I couldn't make it without you.`,
+    verse: 'Alone Again - Dokken',
     link: 'https://www.youtube.com/watch?v=PHgY53QXTyA'
   },
   {
     title: 'Understanding',
-    content: `Bible understanding I sometimes wonder why many people don't understand the Bible, yet I do. What is special about me that I have this gift?
+    content: `Bible understanding 
+
+I sometimes wonder why many people don't understand the Bible, yet I do. What is special about me that I have this gift?
 
 Understanding.
 
@@ -135,8 +167,8 @@ We damage the parts, and inevitably, the motor will die.
 The devil is putting wear on us—God's most amazing creation. We need to do the maintenance—read the Bible—to keep that wear from destroying our lives. We may not fully understand His Word, but we can all recognize where the devil has caused damage.
 
 Thankfully, we can always turn to God's mechanics—those who have studied the inner workings of His great masterpiece—to help guide us back to Him.`,
-    verse: 'Bryan Adams - A Little More Understanding',
-    link: 'https://www.youtube.com/watch?v=avMSEjtOjR0&list=RDavMSEjtOjR0&start_radio=1'
+    verse: 'Tears In Heaven - Eric Clapton',
+    link: 'https://www.youtube.com/watch?v=JxPj3GAYYZ0&list=RDJxPj3GAYYZ0&start_radio=1'
   },
   {
     title: 'The author of time',
@@ -156,40 +188,71 @@ Do you know someone living in bondage? If you have the keys to the Kingdom, open
 
 Thank you, Mother, for teaching me through watching you. Even as a child, I knew this couldn't be God's plan—there was too much pain and hate. I saw the sacrifices you made for me, and I love you for them.
 
-We are all human, just doing the best we can. But the Bible is the book of life, and it will show you the way.
-David Gilmour - "TIME" Live in Pompeii 2016`,
-    verse: 'David Gilmour - "TIME"',
+We are all human, just doing the best we can. But the Bible is the book of life, and it will show you the way.`,
+    verse: 'Time - David Gilmour Live in Pompeii 2016',
     link: 'https://www.youtube.com/watch?v=AukADw4m7CE'
   }
 ];
 
-// Reflection bubble functionality
+// Reflection functionality
 document.addEventListener('DOMContentLoaded', function () {
+  // Get all clickable elements (both featured card and regular bubbles)
+  const featuredCard = document.querySelector('.featured-teaching-card');
   const bubbles = document.querySelectorAll('.reflection-bubble');
   const modal = document.getElementById('reflection-modal');
   const modalBody = document.getElementById('modal-body');
   const modalClose = document.getElementById('modal-close');
 
-  // Add click event to each bubble
+  // Function to open modal with reflection content
+  function openModal(reflectionIndex) {
+    const reflection = reflections[reflectionIndex];
+    
+    // Create special styling for the featured "Cart of Life" teaching
+    const isCartOfLife = reflectionIndex === 0;
+    
+    const specialStyling = isCartOfLife ? `
+      <div style="background: linear-gradient(135deg, #1e3a2e, #2d5a42); color: white; padding: 1rem; border-radius: 15px; margin-bottom: 2rem; text-align: center;">
+        <div style="background: linear-gradient(45deg, #f39c12, #e67e22); color: white; padding: 0.5rem 1rem; border-radius: 20px; font-weight: bold; font-size: 0.9rem; margin-bottom: 1rem; display: inline-block;">
+          ⭐ FEATURED TEACHING
+        </div>
+        <h2 style="color: white; margin: 0; text-shadow: 2px 2px 4px rgba(0,0,0,0.3);">${reflection.title}</h2>
+      </div>
+    ` : `<h2 class="modal-writing-title">${reflection.title}</h2>`;
+
+    // Music section - only show for non-Cart of Life teachings
+    const musicSection = isCartOfLife ? '' : `
+      <div class="modal-writing-verse" style="margin-bottom: 2rem; padding: 1rem; background: linear-gradient(135deg, #f8f9fa, #e9ecef); border-radius: 10px; border-left: 4px solid #27ae60;">
+        <a href="${reflection.link}" target="_blank" style="color: #27ae60; text-decoration: none; font-weight: 600; font-size: 1.1rem; display: inline-block; padding: 0.5rem 1rem; background: white; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: all 0.3s ease;">🎵 ${reflection.verse}</a>
+      </div>
+    `;
+
+    // Populate modal content
+    modalBody.innerHTML = `
+      <div style="text-align: center; max-width: 700px; margin: 0 auto; padding: 1rem;">
+        ${specialStyling}
+        ${musicSection}
+        <div class="modal-writing-content" style="text-align: left; font-family: 'Georgia', 'Times New Roman', serif; font-size: 1.1rem; line-height: 1.8; color: #333; white-space: pre-line; background: #fafafa; padding: 2rem; border-radius: 12px; box-shadow: inset 0 2px 4px rgba(0,0,0,0.05);">${reflection.content}</div>
+      </div>
+    `;
+    
+    // Show modal
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+
+  // Add click event to featured card
+  if (featuredCard) {
+    featuredCard.addEventListener('click', function () {
+      const reflectionIndex = parseInt(this.dataset.reflection);
+      openModal(reflectionIndex);
+    });
+  }
+
+  // Add click event to each regular bubble
   bubbles.forEach(bubble => {
     bubble.addEventListener('click', function () {
       const reflectionIndex = parseInt(this.dataset.reflection);
-      const reflection = reflections[reflectionIndex];
-      
-      // Populate modal content
-      modalBody.innerHTML = `
-        <div style="text-align: center; max-width: 700px; margin: 0 auto; padding: 1rem;">
-          <h2 class="modal-writing-title" style="margin-bottom: 1.5rem;">${reflection.title}</h2>
-          <div class="modal-writing-verse" style="margin-bottom: 2rem; padding: 1rem; background: linear-gradient(135deg, #f8f9fa, #e9ecef); border-radius: 10px; border-left: 4px solid #27ae60;">
-            <a href="${reflection.link}" target="_blank" style="color: #27ae60; text-decoration: none; font-weight: 600; font-size: 1.1rem; display: inline-block; padding: 0.5rem 1rem; background: white; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: all 0.3s ease;">🎵 ${reflection.verse}</a>
-          </div>
-          <div class="modal-writing-content" style="text-align: left; font-family: 'Georgia', 'Times New Roman', serif; font-size: 1.1rem; line-height: 1.8; color: #333; white-space: pre-line; background: #fafafa; padding: 2rem; border-radius: 12px; box-shadow: inset 0 2px 4px rgba(0,0,0,0.05);">${reflection.content}</div>
-        </div>
-      `;
-      
-      // Show modal
-      modal.classList.add('active');
-      document.body.style.overflow = 'hidden';
+      openModal(reflectionIndex);
     });
   });
 
@@ -199,32 +262,48 @@ document.addEventListener('DOMContentLoaded', function () {
     document.body.style.overflow = 'auto';
   }
 
-  modalClose.addEventListener('click', closeModal);
+  if (modalClose) {
+    modalClose.addEventListener('click', closeModal);
+  }
 
   // Close modal when clicking outside content
-  modal.addEventListener('click', function (e) {
-    if (e.target === modal) {
-      closeModal();
-    }
-  });
+  if (modal) {
+    modal.addEventListener('click', function (e) {
+      if (e.target === modal) {
+        closeModal();
+      }
+    });
+  }
 
   // Close modal with Escape key
   document.addEventListener('keydown', function (e) {
-    if (e.key === 'Escape' && modal.classList.contains('active')) {
+    if (e.key === 'Escape' && modal && modal.classList.contains('active')) {
       closeModal();
     }
   });
 
-  // Back to top functionality
-  const backToTopBtn = document.getElementById('back-to-top');
-
-  if (backToTopBtn) {
-    backToTopBtn.addEventListener('click', function (e) {
+  // Smooth scrolling for anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
       e.preventDefault();
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-      });
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        target.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+      }
     });
-  }
+  });
+
+
+  // Add subtle parallax effect to featured teaching
+  window.addEventListener('scroll', () => {
+    const featuredSection = document.querySelector('.featured-teaching-section');
+    if (featuredSection) {
+      const scrolled = window.pageYOffset;
+      const rate = scrolled * -0.1;
+      featuredSection.style.transform = `translateY(${rate}px)`;
+    }
+  });
 });
