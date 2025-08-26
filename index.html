@@ -170,7 +170,7 @@
                                 </div>
 
                                 <div class="service-cta">
-                                    <a href="galleryPage.html" class="service-cta-button">Commercial Gallery</a>
+                                    <a href="galleryPage.html#commercial" class="service-cta-button commercial-gallery-btn">Commercial Gallery</a>
                                 </div>
                             </div>
                         </div>
@@ -345,6 +345,18 @@
                 window.location.href = 'contactPage.html';
             });
         }
+
+        // Commercial gallery button functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const commercialGalleryBtn = document.querySelector('.commercial-gallery-btn');
+            if (commercialGalleryBtn) {
+                commercialGalleryBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    // Navigate to gallery page with commercial hash
+                    window.location.href = 'galleryPage.html#commercial';
+                });
+            }
+        });
 
         // Service dropdown/accordion functionality
         document.addEventListener('DOMContentLoaded', function() {
