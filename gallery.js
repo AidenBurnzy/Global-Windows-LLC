@@ -213,6 +213,8 @@ function closeFullscreen() {
 
 // Function to switch gallery tabs
 function switchGalleryTab(targetCategory) {
+  console.log('Switching to tab:', targetCategory);
+  
   galleryTabs.forEach(tab => {
     tab.classList.remove('active');
   });
@@ -224,11 +226,31 @@ function switchGalleryTab(targetCategory) {
   const activeTab = document.querySelector(`[data-category="${targetCategory}"]`);
   if (activeTab) {
     activeTab.classList.add('active');
+    console.log('Activated tab:', activeTab);
+  } else {
+    console.log('Tab not found for category:', targetCategory);
   }
 
   const activeSection = document.getElementById(targetCategory + '-section');
   if (activeSection) {
     activeSection.classList.add('active');
+    console.log('Activated section:', activeSection);
+  } else {
+    console.log('Section not found for category:', targetCategory + '-section');
+  }
+}
+
+// Handle hash navigation from external links
+function handleHashNavigation() {
+  const hash = window.location.hash.replace('#', '');
+  console.log('Handling hash navigation:', hash);
+  
+  if (hash === 'commercial') {
+    console.log('Switching to commercial tab');
+    switchGalleryTab('commercial');
+  } else if (hash === 'residential') {
+    console.log('Switching to residential tab');
+    switchGalleryTab('residential');
   }
 }
 
@@ -404,11 +426,16 @@ function closeProjectModal() {
 document.addEventListener('DOMContentLoaded', function() {
   console.log('DOM loaded, adding event listeners');
   
+  // Handle hash navigation FIRST, before setting up other events
+  handleHashNavigation();
+  
   // Gallery tabs
   galleryTabs.forEach(tab => {
     tab.addEventListener('click', (e) => {
       const category = tab.getAttribute('data-category');
       switchGalleryTab(category);
+      // Update URL hash when tab is clicked
+      window.location.hash = category;
     });
   });
 
@@ -474,4 +501,10 @@ document.addEventListener('DOMContentLoaded', function() {
   });
   
   console.log('All event listeners added');
+});
+
+// Handle hash changes while on the page
+window.addEventListener('hashchange', function() {
+  console.log('Hash changed, handling navigation');
+  handleHashNavigation();
 });
