@@ -691,6 +691,7 @@ body {
 }
 
 /* Mobile phones */
+/* Mobile phones */
 @media (max-width: 480px) {
   .main-content {
     margin: 1%;
@@ -731,6 +732,8 @@ body {
     text-align: center;
     padding: 1.25rem;
     margin-bottom: 1.5rem;
+    align-items: center; /* Add this to center the items */
+    justify-content: center; /* Add this to center the content */
   }
   
   .contact-icon {
@@ -740,13 +743,24 @@ body {
     align-self: center;
   }
   
+  .contact-details {
+    text-align: center; /* Ensure text is centered */
+    width: 100%; /* Take full width */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center the text content */
+  }
+  
   .contact-details h4 {
     font-size: 1.1rem;
     margin-bottom: 0.5rem;
+    text-align: center; /* Explicitly center the heading */
   }
   
   .contact-details p {
     font-size: 0.95rem;
+    text-align: center; /* Explicitly center the paragraphs */
+    margin: 0 auto; /* Center the paragraphs */
   }
 
   /* Form Elements */
@@ -835,46 +849,5 @@ body {
   
   .footer-section h4 {
     font-size: 1.1rem;
-  }
-}
-
-/* Extra small devices */
-@media (max-width: 320px) {
-  .page-content {
-    padding: 0.75rem;
-  }
-  
-  .contact-info-section,
-  .contact-form-section {
-    padding: 1rem;
-  }
-  
-  .contact-item {
-    padding: 1rem;
-  }
-  
-  .form-group input,
-  .form-group select,
-  .form-group textarea {
-    padding: 0.875rem;
-  }
-  
-  .submit-btn {
-    padding: 1rem 1.5rem;
-    font-size: 1rem;
-  }
-  
-  .contact-toggle-btn,
-  .highlights-toggle-btn {
-    padding: 0.75rem 1rem;
-    font-size: 0.95rem;
-  }
-  
-  .highlight-card {
-    padding: 1rem;
-  }
-  
-  .highlight-icon {
-    font-size: 2rem;
   }
 }
