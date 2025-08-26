@@ -9,6 +9,7 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
     color: #333;
+    overflow-x: hidden;
 }
 
 /* Button Styles */
@@ -26,6 +27,9 @@ body {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
+    min-width: 160px;
+    justify-content: center;
+    text-align: center;
 }
 
 .scroll-button:hover {
@@ -51,6 +55,7 @@ body {
     font-weight: 500;
     box-shadow: 0 2px 10px rgba(39, 174, 96, 0.3);
     margin-left: 1rem;
+    min-width: 120px;
 }
 
 .back-to-top-button:hover {
@@ -83,11 +88,13 @@ body {
     align-items: center;
     transition: all 0.3s ease;
     box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+    min-height: 70px;
 }
 
 .logo-section img {
     height: 50px;
     width: auto;
+    max-width: 200px;
 }
 
 .nav-list {
@@ -102,11 +109,21 @@ body {
     font-weight: 500;
     transition: color 0.3s ease;
     position: relative;
+    white-space: nowrap;
 }
 
 .nav-link:hover,
 .nav-link.active {
     color: #27ae60;
+}
+
+.mobile-menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    padding: 5px;
+    background: none;
+    border: none;
 }
 
 .hamburger-line {
@@ -117,14 +134,69 @@ body {
     transition: 0.3s;
 }
 
+.mobile-menu-toggle.active .hamburger-line:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.mobile-menu-toggle.active .hamburger-line:nth-child(2) {
+    opacity: 0;
+}
+
+.mobile-menu-toggle.active .hamburger-line:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+
+/* Mobile Navigation */
+.mobile-nav {
+    display: none;
+    position: fixed;
+    top: 70px;
+    left: 0;
+    right: 0;
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    z-index: 999;
+}
+
+.mobile-nav.active {
+    display: block;
+}
+
+.mobile-nav-list {
+    list-style: none;
+    padding: 1rem 0;
+}
+
+.mobile-nav-list li {
+    text-align: center;
+    padding: 1rem 0;
+    border-bottom: 1px solid #eee;
+}
+
+.mobile-nav-list li:last-child {
+    border-bottom: none;
+}
+
+.mobile-nav-list a {
+    text-decoration: none;
+    color: #1e3a2e;
+    font-weight: 500;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+}
+
+.mobile-nav-list a:hover,
+.mobile-nav-list a.active {
+    color: #27ae60;
+}
+
 /* About Hero Section */
 .about-hero {
-    background: 
-        
-        url('pictures/Residential/CrossImage.png');
-    background-size: cover, cover;
-    background-repeat: no-repeat, no-repeat;
-    background-position: center center, 0px 150px;
+    background: url('pictures/Residential/CrossImage.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center 20%;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -132,17 +204,34 @@ body {
     justify-content: center;
     position: relative;
     overflow: hidden;
-    padding: 4rem 2rem;
+    padding: 6rem 2rem 4rem;
     text-align: center;
     color: white;
     border-bottom: 10px solid black;
 }
 
+.about-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 1;
+}
+
+.about-hero > * {
+    position: relative;
+    z-index: 2;
+}
+
 .about-hero h1 {
     font-size: clamp(2.5rem, 5vw, 4rem);
     margin-bottom: 2rem;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-    z-index: 2;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+    font-weight: 700;
+    line-height: 1.2;
 }
 
 .about-hero p {
@@ -150,7 +239,7 @@ body {
     max-width: 600px;
     margin: 0 auto;
     opacity: 0.95;
-    z-index: 2;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
 }
 
 /* Content Sections */
@@ -170,11 +259,12 @@ body {
 }
 
 .section-title {
-    font-size: 2.5rem;
+    font-size: clamp(2rem, 4vw, 2.5rem);
     color: #1e3a2e;
     margin-bottom: 2rem;
     text-align: center;
     position: relative;
+    line-height: 1.2;
 }
 
 .section-title::after {
@@ -196,7 +286,7 @@ body {
 }
 
 .about-text {
-    font-size: 1.1rem;
+    font-size: clamp(1rem, 2vw, 1.1rem);
     line-height: 1.8;
     color: #444;
 }
@@ -228,17 +318,19 @@ body {
 }
 
 .highlight-box h3 {
-    font-size: 1.8rem;
+    font-size: clamp(1.4rem, 3vw, 1.8rem);
     margin-bottom: 1rem;
     position: relative;
     z-index: 2;
+    line-height: 1.3;
 }
 
 .highlight-box p {
-    font-size: 1.1rem;
+    font-size: clamp(1rem, 2vw, 1.1rem);
     position: relative;
     z-index: 2;
     opacity: 0.95;
+    line-height: 1.6;
 }
 
 .services-showcase {
@@ -246,6 +338,17 @@ body {
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 2rem;
     margin-top: 3rem;
+}
+
+/* Teaching section - 4 boxes in a row on desktop */
+.teaching-showcase {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 3rem;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .service-card {
@@ -256,6 +359,24 @@ body {
     text-align: center;
     transition: transform 0.3s ease;
     border-top: 4px solid #27ae60;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Teaching cards - optimized for 4-in-a-row layout */
+.teaching-card {
+    background: white;
+    padding: 1.8rem 1.5rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+    border-top: 4px solid #27ae60;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    min-height: 280px;
 }
 
 .service-card:hover {
@@ -263,22 +384,32 @@ body {
     box-shadow: 0 10px 30px rgba(39, 174, 96, 0.2);
 }
 
+.teaching-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(39, 174, 96, 0.2);
+}
+
 .service-icon {
-    font-size: 3rem;
+    font-size: clamp(2.5rem, 5vw, 3rem);
     margin-bottom: 1rem;
     display: block;
     color: #27ae60;
 }
 
-.service-card h4 {
-    font-size: 1.3rem;
+.service-card h4,
+.teaching-card h4 {
+    font-size: clamp(1.1rem, 2.5vw, 1.3rem);
     color: #1e3a2e;
     margin-bottom: 1rem;
+    line-height: 1.3;
 }
 
-.service-card p {
+.service-card p,
+.teaching-card p {
     color: #666;
     line-height: 1.6;
+    font-size: clamp(0.9rem, 2vw, 1rem);
+    flex-grow: 1;
 }
 
 /* Faith Section */
@@ -286,15 +417,16 @@ body {
     background: linear-gradient(rgba(30, 58, 46, 0.8), rgba(45, 90, 66, 0.8)),
                 url('pictures/IMG_9792.jpg');
     background-position: center;
-    background-size: 100% 100%;
+    background-size: cover;
     background-repeat: no-repeat;
+    background-attachment: scroll;
     padding: 4rem 2rem;
     border-radius: 20px;
     margin: 2rem auto;
     color: white;
     min-height: 400px;
     max-width: 850px;
-    width: 80%;
+    width: 90%;
 }
 
 .faith-content {
@@ -318,7 +450,7 @@ body {
 
 .faith-section .about-text {
     color: white;
-    font-size: 1.2rem;
+    font-size: clamp(1rem, 2.5vw, 1.2rem);
     line-height: 1.8;
 }
 
@@ -348,7 +480,7 @@ body {
 .gospel-content {
     position: relative;
     z-index: 2;
-    max-width: 800px;
+    max-width: 1000px;
     margin: 0 auto;
 }
 
@@ -372,15 +504,16 @@ body {
 }
 
 .founder-text h3 {
-    font-size: 2.2rem;
+    font-size: clamp(1.8rem, 4vw, 2.2rem);
     color: #1e3a2e;
     margin-bottom: 2rem;
     font-weight: 700;
     text-align: center;
+    line-height: 1.3;
 }
 
 .founder-text p {
-    font-size: 1.3rem;
+    font-size: clamp(1.1rem, 2.5vw, 1.3rem);
     line-height: 1.9;
     color: #444;
     margin-bottom: 2rem;
@@ -396,7 +529,7 @@ body {
     -webkit-text-fill-color: transparent;
     background-clip: text;
     font-weight: 700;
-    font-size: 1.35rem;
+    font-size: clamp(1.15rem, 2.5vw, 1.35rem);
 }
 
 /* Footer */
@@ -408,7 +541,7 @@ body {
 }
 
 .footer-title {
-    font-size: 1.5rem;
+    font-size: clamp(1.3rem, 3vw, 1.5rem);
     margin-bottom: 2rem;
     color: #2ecc71;
 }
@@ -424,6 +557,13 @@ body {
 .footer-section h4 {
     color: #2ecc71;
     margin-bottom: 1rem;
+    font-size: clamp(1rem, 2.5vw, 1.1rem);
+}
+
+.footer-section p,
+.footer-section a {
+    font-size: clamp(0.9rem, 2vw, 1rem);
+    line-height: 1.6;
 }
 
 .footer-bottom {
@@ -431,5 +571,247 @@ body {
     padding-top: 1rem;
     margin-top: 2rem;
     opacity: 0.8;
+    font-size: clamp(0.8rem, 2vw, 0.9rem);
 }
 
+/* Responsive Media Queries */
+@media (max-width: 768px) {
+    /* Reset background position for mobile - keep it centered */
+    .about-hero {
+        background-position: center center;
+    }
+    
+    /* Navigation */
+    .navbar {
+        padding: 1rem;
+    }
+    
+    .nav-list {
+        display: none;
+    }
+    
+    .mobile-menu-toggle {
+        display: flex;
+    }
+    
+    /* Buttons */
+    .scroll-button {
+        padding: 0.8rem 1.5rem;
+        font-size: 1rem;
+        min-width: 140px;
+    }
+    
+    .back-to-top-button {
+        margin-left: 0;
+        margin-top: 1rem;
+        min-width: 100px;
+    }
+    
+    .section-header-with-button {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    /* Layout adjustments */
+    .two-column {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .about-content {
+        padding: 0 1rem;
+    }
+    
+    .about-section {
+        padding: 3rem 0;
+    }
+    
+    /* Services */
+    .services-showcase {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        margin-top: 2rem;
+    }
+    
+    /* Teaching section - stack on mobile with proper centering */
+    .teaching-showcase {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        margin-top: 2rem;
+        max-width: 400px;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 0 1rem;
+    }
+    
+    .service-card {
+        padding: 1.5rem;
+    }
+    
+    .teaching-card {
+        padding: 1.5rem;
+        min-height: auto;
+        margin: 0 auto;
+        max-width: 350px;
+        width: 100%;
+    }
+    
+    /* Faith section */
+    .faith-section {
+        width: 95%;
+        padding: 3rem 1.5rem;
+        margin: 1rem auto;
+    }
+    
+    /* Founder section */
+    .founder-section {
+        padding: 3rem 1.5rem;
+        margin: 2rem 0;
+    }
+    
+    .founder-text {
+        padding: 1rem;
+    }
+    
+    /* Gospel section */
+    .gospel-highlight {
+        padding: 3rem 1.5rem;
+        margin: 2rem 0;
+    }
+    
+    /* Footer */
+    .footer {
+        padding: 2rem 1rem 1.5rem;
+    }
+    
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Even smaller screens */
+    .navbar {
+        padding: 0.8rem;
+    }
+    
+    .about-hero {
+        padding: 5rem 1rem 3rem;
+        min-height: 90vh;
+    }
+    
+    .about-content {
+        padding: 0 0.5rem;
+    }
+    
+    .scroll-button {
+        padding: 0.7rem 1.2rem;
+        font-size: 0.9rem;
+        min-width: 120px;
+    }
+    
+    .highlight-box,
+    .faith-section,
+    .founder-section,
+    .gospel-highlight {
+        padding: 2rem 1rem;
+        border-radius: 15px;
+    }
+    
+    .service-card {
+        padding: 1.2rem;
+    }
+    
+    .teaching-card {
+        padding: 1.2rem;
+        min-height: auto;
+        max-width: 320px;
+    }
+    
+    .teaching-showcase {
+        max-width: 320px;
+        padding: 0 0.5rem;
+    }
+    
+    .footer-grid {
+        max-width: 300px;
+    }
+}
+
+@media (max-width: 360px) {
+    /* Very small screens */
+    .about-hero {
+        padding: 4rem 0.5rem 2rem;
+    }
+    
+    .section-title {
+        margin-bottom: 1.5rem;
+    }
+    
+    .about-section {
+        padding: 2rem 0;
+    }
+    
+    .highlight-box,
+    .faith-section,
+    .founder-section,
+    .gospel-highlight {
+        padding: 1.5rem 0.8rem;
+        margin: 1rem 0;
+    }
+    
+    .teaching-showcase {
+        max-width: 280px;
+        padding: 0 0.5rem;
+    }
+    
+    .teaching-card {
+        max-width: 280px;
+    }
+}
+
+/* Medium-large screens - 4 boxes in row for teaching */
+@media (min-width: 1024px) {
+    .teaching-showcase {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1.5rem;
+    }
+    
+    .teaching-card {
+        min-height: 300px;
+    }
+}
+
+/* Large screens optimization */
+@media (min-width: 1200px) {
+    .about-content {
+        padding: 0 3rem;
+    }
+    
+    .services-showcase {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    /* Teaching section - force 4 columns on large screens */
+    .teaching-showcase {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1.5rem;
+    }
+    
+    .faith-section {
+        width: 85%;
+    }
+}
+
+/* Landscape mobile optimization */
+@media (max-width: 768px) and (orientation: landscape) {
+    .about-hero {
+        min-height: 70vh;
+        padding: 3rem 2rem;
+    }
+    
+    .about-hero h1 {
+        margin-bottom: 1rem;
+    }
+}

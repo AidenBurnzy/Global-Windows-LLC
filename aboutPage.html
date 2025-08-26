@@ -7,7 +7,6 @@
     <title>About - Global Windows LLC</title>
     <link rel="stylesheet" href="aboutStyles.css">
     <link rel="stylesheet" href="indexStyles.css">
-
 </head>
 
 <body>
@@ -15,12 +14,12 @@
     <nav class="navbar" id="navbar">
         <!-- Logo Section -->
         <div class="logo-section">
-    <div class="logo-placeholder">
-        <a href="index.html">
-            <img src="pictures/GlobalWindowsLogo.png" alt="GlobalWindowsLogo">
-        </a>
-    </div>
-</div>
+            <div class="logo-placeholder">
+                <a href="index.html">
+                    <img src="pictures/GlobalWindowsLogo.png" alt="GlobalWindowsLogo">
+                </a>
+            </div>
+        </div>
 
         <ul class="nav-list" id="nav-list">
             <li class="nav-item">
@@ -46,6 +45,17 @@
             <span class="hamburger-line"></span>
             <span class="hamburger-line"></span>
         </button>
+
+        <!-- Mobile Navigation Menu -->
+        <div class="mobile-nav" id="mobile-nav">
+            <ul class="mobile-nav-list">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="galleryPage.html" class="nav-link">Gallery</a></li>
+                <li><a href="contactPage.html" class="nav-link">Contact</a></li>
+                <li><a href="aboutPage.html" class="nav-link active">About</a></li>
+                <li><a href="teachingsPage.html" class="nav-link">Teachings</a></li>
+            </ul>
+        </div>
     </nav>
 
     <!-- About Hero Section -->
@@ -58,7 +68,7 @@
     <div class="main-content">
         <div class="about-content">
 
-              <!-- Faith-Driven Company Section -->
+            <!-- Faith-Driven Company Section -->
             <section class="faith-section">
                 <div class="faith-content">
                     <h2 class="section-title">More Than Business - A Ministry</h2>
@@ -104,8 +114,7 @@
                             with unmatched craftsmanship and reliability.</p>
                     </div>
                 </div>
-
-               
+            </section>
 
             <!-- Gospel Teaching Section -->
             <section class="gospel-highlight">
@@ -116,23 +125,23 @@
                             biblical manhood. Our founder personally mentors each team member, teaching them:</p>
                     </div>
 
-                    <div class="services-showcase" style="margin-top: 2rem;">
-                        <div class="service-card" style="background: rgba(255,255,255,0.95); color: #333;">
+                    <div class="teaching-showcase" style="margin-top: 2rem;">
+                        <div class="teaching-card" style="background: rgba(255,255,255,0.95); color: #333;">
                             <span class="service-icon" style="color: #27ae60;">📖</span>
                             <h4>Biblical Principles</h4>
                             <p>Daily application of Scripture to work and life decisions</p>
                         </div>
-                        <div class="service-card" style="background: rgba(255,255,255,0.95); color: #333;">
+                        <div class="teaching-card" style="background: rgba(255,255,255,0.95); color: #333;">
                             <span class="service-icon" style="color: #27ae60;">👥</span>
                             <h4>Christian Leadership</h4>
                             <p>Developing servant leaders who put others before themselves</p>
                         </div>
-                        <div class="service-card" style="background: rgba(255,255,255,0.95); color: #333;">
+                        <div class="teaching-card" style="background: rgba(255,255,255,0.95); color: #333;">
                             <span class="service-icon" style="color: #27ae60;">💪</span>
                             <h4>Work Ethic</h4>
                             <p>Excellence in craftsmanship as a reflection of our Creator</p>
                         </div>
-                        <div class="service-card" style="background: rgba(255,255,255,0.95); color: #333;">
+                        <div class="teaching-card" style="background: rgba(255,255,255,0.95); color: #333;">
                             <span class="service-icon" style="color: #27ae60;">❤️</span>
                             <h4>Service Heart</h4>
                             <p>Serving customers and community as Christ served others</p>
@@ -146,23 +155,18 @@
             </section>
 
             <!-- Meet Our Founder Section -->
-<section class="founder-section">
-    <h2 class="section-title">Meet Our Founder</h2>
-    
-    <div class="founder-content">
-        <div class="founder-text">
-            <h3 style="text-align: center;">Stephan Roberts</h3>
-            <p> Our founder brings over <span class="highlight-text">two decades of experience</span> in the window installation industry, combined with a deep commitment to Christian discipleship and community service. What sets him apart is not just his technical expertise, but his heart for <span class="highlight-text">mentoring young men</span> and building them up in both practical skills and spiritual maturity. Every project becomes an opportunity to demonstrate excellence, integrity, and the love of Christ. Through Global Windows LLC, he has created more than a business—he has built a ministry that impacts lives, transforms communities, and glorifies God through honest work and faithful service.</p>
-        <br><br>
-        <br><br>
-        </div>
-
-            </video>
-        </div>
-    </div>
-    
-</section>
-            <!-- Founder's Reflections Section -->
+            <section class="founder-section">
+                <h2 class="section-title">Meet Our Founder</h2>
+                
+                <div class="founder-content">
+                    <div class="founder-text">
+                        <h3 style="text-align: center;">Stephan Roberts</h3>
+                        <p>Our founder brings over <span class="highlight-text">four decades of experience</span> in the window installation industry, combined with a deep commitment to Christian discipleship and community service. What sets him apart is not just his technical expertise, but his heart for <span class="highlight-text">mentoring young men</span> and building them up in both practical skills and spiritual maturity. Every project becomes an opportunity to demonstrate excellence, integrity, and the love of Christ. Through Global Windows LLC, he has created more than a business—he has built a ministry that impacts lives, transforms communities, and glorifies God through honest work and faithful service.</p>
+                        <br><br>
+                        <br><br>
+                    </div>
+                </div>
+            </section>
 
         </div>
     </div>
@@ -192,12 +196,13 @@
         // Mobile menu functionality
         const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
         const navbar = document.getElementById('navbar');
-        const navList = document.getElementById('nav-list');
+        const mobileNav = document.getElementById('mobile-nav');
 
-        if (mobileMenuToggle && navbar) {
+        if (mobileMenuToggle && navbar && mobileNav) {
             mobileMenuToggle.addEventListener('click', () => {
                 navbar.classList.toggle('mobile-menu-open');
                 mobileMenuToggle.classList.toggle('active');
+                mobileNav.classList.toggle('active');
             });
 
             // Close mobile menu when clicking on a nav link
@@ -205,6 +210,7 @@
                 link.addEventListener('click', () => {
                     navbar.classList.remove('mobile-menu-open');
                     mobileMenuToggle.classList.remove('active');
+                    mobileNav.classList.remove('active');
                 });
             });
 
@@ -213,6 +219,7 @@
                 if (!navbar.contains(e.target) && !mobileMenuToggle.contains(e.target)) {
                     navbar.classList.remove('mobile-menu-open');
                     mobileMenuToggle.classList.remove('active');
+                    mobileNav.classList.remove('active');
                 }
             });
         }

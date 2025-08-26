@@ -79,8 +79,8 @@ So today—I breathe You in.
 Today—I rise again.
 Not in my power, but Yours alone—
 My Heavenly Father, my anchor, my home.`,
-    verse: 'Listen to Your Heart - Kelly Clarkson',
-    link: 'https://www.youtube.com/watch?v=ycO7jS__NVg&t=1s'
+    verse: 'In The Air Tonight - Phil Collins',
+    link: 'https://www.youtube.com/watch?v=CFDFX4Ao-UY'
   },
   {
     title: '"Still other seed fell on good soil"',
@@ -107,8 +107,8 @@ Also, reflect on your own heart. Is there pain or bitterness that's crowding out
 Prayer
 
 Lord, soften my heart. Pull up the weeds of pain, lies, and bitterness. Help me receive Your Word with faith and joy. Show me how to love others enough to understand their pain and help prepare their hearts for You. Thank You for never giving up on broken soil. In Jesus' name, amen.`,
-    verse: 'In The Air Tonight - Phil Collins',
-    link: 'https://www.youtube.com/watch?v=CFDFX4Ao-UY'
+    verse: 'Listen To Your Heart - Kelly Clarkson',
+    link: 'https://www.youtube.com/watch?v=ycO7jS__NVg&t=1s'
   },
   {
     title: '"Standing on my own two feet"',
