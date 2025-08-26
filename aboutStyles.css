@@ -109,15 +109,6 @@ body {
     color: #27ae60;
 }
 
-.mobile-menu-toggle {
-    display: none;
-    background: none;
-    border: none;
-    flex-direction: column;
-    cursor: pointer;
-    padding: 0.5rem;
-}
-
 .hamburger-line {
     width: 25px;
     height: 3px;
@@ -129,12 +120,12 @@ body {
 /* About Hero Section */
 .about-hero {
     background: 
-        linear-gradient(rgba(30, 58, 46, 0.4), rgba(45, 90, 66, 0.4)),
-        url('pictures/Residential/3d-rendering-cross-water.jpg');
+        
+        url('pictures/Residential/CrossImage.png');
     background-size: cover, cover;
     background-repeat: no-repeat, no-repeat;
-    background-position: center center, 0px -200px;
-    min-height: 80vh;
+    background-position: center center, 0px 150px;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -442,163 +433,3 @@ body {
     opacity: 0.8;
 }
 
-/* Mobile Styles */
-@media (max-width: 768px) {
-    .navbar {
-        padding: 1rem;
-    }
-
-    .nav-list {
-        position: fixed;
-        top: 100%;
-        left: 0;
-        right: 0;
-        background: white;
-        flex-direction: column;
-        padding: 2rem;
-        box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-        transform: translateY(-100%);
-        opacity: 0;
-        visibility: hidden;
-        transition: all 0.3s ease;
-    }
-
-    .navbar.mobile-menu-open .nav-list {
-        transform: translateY(0);
-        opacity: 1;
-        visibility: visible;
-    }
-
-    .mobile-menu-toggle {
-        display: flex;
-    }
-
-    .navbar.mobile-menu-open .hamburger-line:nth-child(1) {
-        transform: rotate(45deg) translate(5px, 5px);
-    }
-
-    .navbar.mobile-menu-open .hamburger-line:nth-child(2) {
-        opacity: 0;
-    }
-
-    .navbar.mobile-menu-open .hamburger-line:nth-child(3) {
-        transform: rotate(-45deg) translate(7px, -6px);
-    }
-
-    /* About Hero Mobile */
-    .about-hero {
-        min-height: 80vh;
-        padding: 2rem 1rem;
-        background-size: cover, cover; /* Ensure image covers full width */
-        background-position: center center, center center; /* Center both gradient and image */
-        border-bottom: none; /* Remove direct border */
-        position: relative;
-    }
-
-    /* Add border as pseudo-element that matches image width */
-    .about-hero::after {
-        content: '';
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        height: 5px;
-        background: black;
-        width: 100%;
-    }
-
-    .about-hero h1 {
-        font-size: clamp(2rem, 8vw, 3rem);
-        margin-bottom: 1.5rem;
-        text-shadow: 2px 2px 6px rgba(0,0,0,0.7);
-    }
-
-    .about-hero p {
-        font-size: clamp(1rem, 4vw, 1.2rem);
-        max-width: 90%;
-        text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
-    }
-
-    /* Button mobile responsiveness */
-    .section-header-with-button {
-        flex-direction: column;
-        text-align: center;
-    }
-    
-    .back-to-top-button {
-        margin-left: 0;
-        margin-top: 1rem;
-    }
-    
-    .scroll-button {
-        padding: 0.875rem 1.5rem;
-        font-size: 1rem;
-    }
-
-    /* Service cards mobile */
-    .services-showcase {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-        margin-top: 2rem;
-    }
-
-    .service-card {
-        padding: 1.5rem;
-    }
-
-    /* General mobile adjustments */
-    .two-column {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-    }
-
-    .about-section {
-        padding: 2rem 0;
-    }
-
-    .section-title {
-        font-size: 2rem;
-    }
-
-    .faith-section {
-        background-size: 100% 100%;
-        padding: 3rem 1rem;
-        width: 100%;
-        max-width: none;
-    }
-    
-    .faith-section .about-text {
-        font-size: 1.1rem;
-        line-height: 1.7;
-    }
-    
-    .faith-section .about-text p {
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
-    }
-
-    .gospel-highlight, .founder-section {
-        padding: 2rem 1rem;
-        margin: 1rem 0;
-    }
-
-    .founder-text h3 {
-        font-size: 1.8rem;
-    }
-
-    .founder-text p {
-        font-size: 1.15rem;
-        line-height: 1.7;
-    }
-
-    .highlight-text {
-        font-size: 1.2rem;
-    }
-}
-
-/* Tablet adjustment */
-@media (max-width: 992px) and (min-width: 769px) {
-    .faith-section {
-        max-width: 600px;
-        width: 100%;
-    }
-}
