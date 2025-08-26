@@ -118,8 +118,14 @@ const projectData = {
     title: '400 Rose',
     description: 'Newly constructed apartment building in Portage, MI.',
     images: [
+      'pictures/Commercial/400Rose/IMG_1657.jpg'],
+    specs: {}
+  },
+  'Ironworks': {
+    title: 'Iron Works',
+    description: 'Newly constructed apartment building in Portage, MI.',
+    images: [
       'pictures/Commercial/400Rose/IMG_1176.jpg',
-      'pictures/Commercial/400Rose/IMG_1657.jpg', 
       'pictures/Commercial/400Rose/IMG_1658.jpg',
       'pictures/Commercial/400Rose/IMG_7042.jpg'],
     specs: {}
