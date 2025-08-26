@@ -35,8 +35,8 @@ body {
 }
 
 .logo-placeholder {
-  width: 80px;
-  height: 80px;
+  width: 120px;
+  height: 120px;
   background: #fff;
   border-radius: 50%;
   display: flex;
@@ -46,8 +46,8 @@ body {
 }
 
 .logo-placeholder img {
-  width: 80px;
-  height: 80px;
+  width: 150px;
+  height: 150px;
   border-radius: 50%;
   object-fit: cover;
   vertical-align: top;
