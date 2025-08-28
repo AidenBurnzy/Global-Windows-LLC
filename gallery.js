@@ -175,11 +175,10 @@ const projectData = {
     title: 'Contemporary Lakeside Home',
     description: 'Arched picture, Decorative entry sidelight, Casement, and Bay windows.',
     images: [
-      'pictures/Residential/project1/project2/IMG_6809.jpeg',
+      'pictures/Residential/project1/project2/IMG_6809.jpg',
       'pictures/Residential/project1/project2/IMG_1614.jpeg', 
-      'pictures/Residential/project1/project2/IMG_6808.jpeg',
-      'pictures/Residential/project1/project2/IMG_6811.jpeg',
-      'pictures/Residential/project1/project2/IMG_6813.jpeg'],
+      'pictures/Residential/project1/project2/IMG_6808.jpg',
+      'pictures/Residential/project1/project2/IMG_6811.jpeg'],
     specs: {}
   }
 };
