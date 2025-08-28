@@ -25,13 +25,14 @@ let fullscreenText = null;
 const projectData = {
   'traverseCity': {
     title: 'Traverse City',
-    description: 'Large-scale commercial installation featuring floor-to-ceiling windows and modern curtain wall systems.',
+    description: 'Traverse City, MI',
     images: [
-      'pictures/Commercial/traverseCity/IMG_8163.jpg', 
-      'pictures/Commercial/traverseCity/IMG_8164.jpg', 
-      'pictures/Commercial/traverseCity/IMG_8160.jpg', 
-      'pictures/Commercial/traverseCity/IMG_8165.jpg', 
-      'pictures/Commercial/traverseCity/IMG_8159.jpg'
+      'pictures/Commercial/traverseCity/tc1.jpg', 
+      'pictures/Commercial/traverseCity/tc2.jpg', 
+      'pictures/Commercial/traverseCity/tc3.jpg', 
+      'pictures/Commercial/traverseCity/tc4.jpg', 
+      'pictures/Commercial/traverseCity/tc5.jpg',
+      'pictures/Commercial/traverseCity/tc6.jpg',
     ],
     specs: {}
   },
@@ -39,100 +40,124 @@ const projectData = {
 
   //Commercial Gallery
 
-  'retail-storefront': {
+  'postDr': {
     title: 'Post Dr',
-    description: 'Newly constructed building',
-    images: [
-      'pictures/Commercial/postDr/IMG_1667.jpg',
-      'pictures/Commercial/postDr/IMG_1658.jpg', 
-      'pictures/Commercial/postDr/IMG_1660.jpg', 
-      'pictures/Commercial/postDr/IMG_1661.jpg', 
-      'pictures/Commercial/postDr/IMG_1663.jpg', 
-      'pictures/Commercial/postDr/IMG_1669.jpg'],
+    description: '1309 Post Dr NE, Belmont, MI',
+    images: [ 
+      'pictures/Commercial/postDr/pd1.jpg'],
     specs: {}
   },
-  'manufacturing-facility': {
+  'manisteeHotel': {
     title: 'Manistee Hotel',
-    description: 'Newly built hotel building.',
+    description: '1070 Nursery Rd, Wellston, MI',
     images: [
-      'pictures/Commercial/manisteeHotel/IMG_7615.jpg',
-      'pictures/Commercial/manisteeHotel/IMG_7616.jpg', 
-      'pictures/Commercial/manisteeHotel/IMG_7617.jpg', 
-      'pictures/Commercial/manisteeHotel/IMG_7618.jpg'],
+      'pictures/Commercial/manisteeHotel/mh1.jpg'],
     specs: {}
   },
-  'house-worship': {
+  'hollandFirehouse': {
     title: 'Holland Firehouse',
-    description: 'Historical building downtown Holland MI.',
+    description: '106 E 8th St, Holland, MI',
     images: [
-      'pictures/Commercial/hollandFirehouse/IMG_9607.jpg',
-      'pictures/Commercial/hollandFirehouse/IMG_9605.jpg', 
-      'pictures/Commercial/hollandFirehouse/IMG_9609.jpg', 
-      'pictures/Commercial/hollandFirehouse/IMG_9610.jpg',
-      'pictures/Commercial/hollandFirehouse/IMG_9603.jpg'],
+      'pictures/Commercial/hollandFirehouse/hf1.jpg'],
     specs: {}
   },
-  'educational-campus': {
+  'hastingsFOC': {
     title: 'Hastings FOC',
-    description: 'County government office in Hastings, Michigan.',
+    description: '102 S Broadway St, Hastings, MI',
     images: [
-      'pictures/Commercial/hastingsFoc/IMG_9692.jpg',
-      'pictures/Commercial/hastingsFoc/IMG_9691.jpg', 
-      'pictures/Commercial/hastingsFoc/IMG_9688.jpg',
-      'pictures/Commercial/hastingsFoc/IMG_9702.jpg'],
+      'pictures/Commercial/hastingsFoc/hfoc1.jpg'],
     specs: {}
   },
-  'Adelaide': {
+  'adelaidePointe': {
     title: 'Adelaide Pointe Marina',
-    description: 'Newly constructed marina in Muskegon, MI.',
-    images: [
-      'pictures/Commercial/adelaidePointe/IMG_9645.jpg',
-      'pictures/Commercial/adelaidePointe/IMG_9653.jpg', 
-      'pictures/Commercial/adelaidePointe/IMG_9648.jpg'],
+    description: '1000 Adelaide Circle, Muskegon, MI',
+    images: [ 
+      'pictures/Commercial/adelaidePointe/ap1.jpg'],
     specs: {}
   },
-  'medical-center': {
+  'floridaHome': {
     title: 'Florida Home',
-    description: '$1.2 Million window job in Naples, FL.',
+    description: 'Naples, FL',
     images: [
-      'pictures/Commercial/florida/IMG_0485.jpg',
-      'pictures/Commercial/florida/IMG_0482.jpg', 
-      'pictures/Commercial/florida/IMG_0480.jpg',
-      'pictures/Commercial/florida/IMG_0474.jpg',
-      'pictures/Commercial/florida/IMG_0471.jpg',
-      'pictures/Commercial/florida/IMG_0467.jpg',
-      'pictures/Commercial/florida/IMG_0469.jpg',
-      'pictures/Commercial/florida/IMG_0466.jpg',
-      'pictures/Commercial/florida/IMG_0465.jpg',
-      'pictures/Commercial/florida/IMG_0463.jpg',
-      'pictures/Commercial/florida/IMG_0461.jpg',
-      'pictures/Commercial/florida/IMG_0380.jpg',
-      'pictures/Commercial/florida/IMG_0120.jpg'],
+      'pictures/Commercial/florida/fl1.jpg',
+      'pictures/Commercial/florida/fl2.jpg', 
+      'pictures/Commercial/florida/fl3.jpg',
+      'pictures/Commercial/florida/fl4.jpg',
+      'pictures/Commercial/florida/fl5.jpg',
+      'pictures/Commercial/florida/fl6.jpg',
+      'pictures/Commercial/florida/fl7.jpg',
+      'pictures/Commercial/florida/fl8.jpg',
+      'pictures/Commercial/florida/fl9.jpg',
+      'pictures/Commercial/florida/fl10.jpg',
+      'pictures/Commercial/florida/fl11.jpg',
+      'pictures/Commercial/florida/fl12.jpg'],
+
+    specs: {}
+   },
+   '530rose': {
+    title: '530 Rose',
+    description: '530 Rose St, Kalamazoo, MI',
+    images: [
+      'pictures/Commercial/530Rose/530R1.jpg',
+      'pictures/Commercial/530Rose/530R2.jpg',
+      'pictures/Commercial/530Rose/530R3.jpg',
+      'pictures/Commercial/530Rose/530R4.jpg',
+      'pictures/Commercial/530Rose/530R5.jpg',
+      'pictures/Commercial/530Rose/530R6.jpg'],
+
     specs: {}
    },
   'tallTimbers': {
     title: 'Tall Timbers',
-    description: 'Newly constructed apartment building in Portage, MI.',
+    description: '4200 West Centre, Portage, MI',
     images: [
-      'pictures/Commercial/tallTimbers/IMG_8592.jpg',
-      'pictures/Commercial/tallTimbers/IMG_8591.jpg', 
-      'pictures/Commercial/tallTimbers/IMG_8587.jpg'],
+      'pictures/Commercial/tallTimbers/tt1.jpg'],
     specs: {}
   },
   '400Rose': {
     title: '400 Rose',
-    description: 'Newly constructed apartment building in Portage, MI.',
+    description: '400 Rose St, Kalamazoo, MI',
     images: [
-      'pictures/Commercial/400Rose/IMG_1657.jpg'],
+      'pictures/Commercial/400Rose/400R1.jpg',
+      'pictures/Commercial/400Rose/400R2.jpg',
+      'pictures/Commercial/400Rose/400R3.jpg',
+      'pictures/Commercial/400Rose/400R4.jpg',
+      'pictures/Commercial/400Rose/400R5.jpg',
+      'pictures/Commercial/400Rose/400R6.jpg',
+      'pictures/Commercial/400Rose/400R7.jpg',
+      'pictures/Commercial/400Rose/400R8.jpg',
+      'pictures/Commercial/400Rose/400R9.jpg',
+      'pictures/Commercial/400Rose/400R10.jpg',
+      'pictures/Commercial/400Rose/400R11.jpg',
+      'pictures/Commercial/400Rose/400R2.jpg',
+      'pictures/Commercial/400Rose/400R13.jpg',
+      'pictures/Commercial/400Rose/400R14.jpg'],
     specs: {}
   },
-  'Ironworks': {
+  'ironWorks': {
     title: 'Iron Works',
-    description: 'Newly constructed apartment building in Portage, MI.',
+    description: '225 N Rose St, Kalamazoo, MI',
     images: [
-      'pictures/Commercial/400Rose/IMG_1176.jpg',
-      'pictures/Commercial/400Rose/IMG_1658.jpg',
-      'pictures/Commercial/400Rose/IMG_7042.jpg'],
+      'pictures/Commercial/ironWorks/iw1.jpg',
+      'pictures/Commercial/ironWorks/iw2.jpg',
+      'pictures/Commercial/ironWorks/iw3.jpg',
+      'pictures/Commercial/ironWorks/iw4.jpg',
+      'pictures/Commercial/ironWorks/iw5.jpg',
+      'pictures/Commercial/ironWorks/iw6.jpg',
+      'pictures/Commercial/ironWorks/iw7.jpg',
+      'pictures/Commercial/ironWorks/iw8.jpg'],
+    specs: {}
+  },
+  'riversEdge': {
+    title: 'Rivers Edge',
+    description: '508 Harrison St, Kalamazoo, MI',
+    images: [
+      'pictures/Commercial/riversEdge/re1.jpg',
+      'pictures/Commercial/riversEdge/re2.jpg', 
+      'pictures/Commercial/riversEdge/re3.jpg',
+      'pictures/Commercial/riversEdge/re4.jpg',
+      'pictures/Commercial/riversEdge/re5.jpg',
+      'pictures/Commercial/riversEdge/re6.jpg'],
     specs: {}
   },
   'project1': {
