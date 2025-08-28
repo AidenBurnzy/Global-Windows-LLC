@@ -1,29 +1,30 @@
 // Mobile menu functionality
+// Mobile menu functionality
 const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
 const navbar = document.getElementById('navbar');
 const navList = document.getElementById('nav-list');
 
-if (mobileMenuToggle && navList) {
-  mobileMenuToggle.addEventListener('click', () => {
-    navList.classList.toggle('active');
-    mobileMenuToggle.classList.toggle('active');
-  });
-
-  // Close mobile menu when clicking on a nav link
-  document.querySelectorAll('.nav-link').forEach(link => {
-    link.addEventListener('click', () => {
-      navList.classList.remove('active');
-      mobileMenuToggle.classList.remove('active');
+if (mobileMenuToggle && navbar) {
+    mobileMenuToggle.addEventListener('click', () => {
+        navbar.classList.toggle('mobile-menu-open');
+        mobileMenuToggle.classList.toggle('active');
     });
-  });
 
-  // Close mobile menu when clicking outside
-  document.addEventListener('click', (e) => {
-    if (!navbar.contains(e.target)) {
-      navList.classList.remove('active');
-      mobileMenuToggle.classList.remove('active');
-    }
-  });
+    // Close mobile menu when clicking on a nav link
+    document.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', () => {
+            navbar.classList.remove('mobile-menu-open');
+            mobileMenuToggle.classList.remove('active');
+        });
+    });
+
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', (e) => {
+        if (!navbar.contains(e.target) && !mobileMenuToggle.contains(e.target)) {
+            navbar.classList.remove('mobile-menu-open');
+            mobileMenuToggle.classList.remove('active');
+        }
+    });
 }
 
 // Reflection data
