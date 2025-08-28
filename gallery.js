@@ -1,4 +1,4 @@
-// Gallery functionality - Fixed version with fullscreen functionality
+// Gallery functionality - Updated version with fullscreen navigation
 const galleryTabs = document.querySelectorAll('.gallery-tab');
 const gallerySections = document.querySelectorAll('.gallery-section');
 
@@ -20,6 +20,10 @@ let currentProject = null;
 let fullscreenOverlay = null;
 let fullscreenImage = null;
 let fullscreenText = null;
+let fullscreenPrevBtn = null;
+let fullscreenNextBtn = null;
+let fullscreenCounter = null;
+let currentFullscreenIndex = 0;
 
 // Project data
 const projectData = {
@@ -215,7 +219,7 @@ function isImagePath(str) {
   return typeof str === 'string' && (str.includes('.jpg') || str.includes('.jpeg') || str.includes('.png') || str.includes('.gif') || str.includes('.webp'));
 }
 
-// Function to create fullscreen overlay
+// Function to create fullscreen overlay with navigation
 function createFullscreenOverlay() {
   if (!fullscreenOverlay) {
     fullscreenOverlay = document.createElement('div');
@@ -226,23 +230,117 @@ function createFullscreenOverlay() {
     
     fullscreenText = document.createElement('div');
     fullscreenText.className = 'fullscreen-text';
-    fullscreenText.textContent = 'Click anywhere to close';
+    fullscreenText.textContent = 'Click anywhere to close • Use arrows to navigate';
+    
+    // Create navigation buttons
+    fullscreenPrevBtn = document.createElement('button');
+    fullscreenPrevBtn.className = 'fullscreen-nav fullscreen-prev';
+    fullscreenPrevBtn.innerHTML = '&#8249;';
+    fullscreenPrevBtn.setAttribute('aria-label', 'Previous image');
+    
+    fullscreenNextBtn = document.createElement('button');
+    fullscreenNextBtn.className = 'fullscreen-nav fullscreen-next';
+    fullscreenNextBtn.innerHTML = '&#8250;';
+    fullscreenNextBtn.setAttribute('aria-label', 'Next image');
+    
+    // Create counter
+    fullscreenCounter = document.createElement('div');
+    fullscreenCounter.className = 'fullscreen-counter';
     
     fullscreenOverlay.appendChild(fullscreenImage);
     fullscreenOverlay.appendChild(fullscreenText);
+    fullscreenOverlay.appendChild(fullscreenPrevBtn);
+    fullscreenOverlay.appendChild(fullscreenNextBtn);
+    fullscreenOverlay.appendChild(fullscreenCounter);
     document.body.appendChild(fullscreenOverlay);
     
-    // Add click event to close fullscreen
-    fullscreenOverlay.addEventListener('click', closeFullscreen);
+    // Add event listeners for navigation
+    fullscreenPrevBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      navigateFullscreenImage(-1);
+    });
+    
+    fullscreenNextBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      navigateFullscreenImage(1);
+    });
+    
+    // Add click event to close fullscreen (but not on buttons or image)
+    fullscreenOverlay.addEventListener('click', (e) => {
+      if (e.target === fullscreenOverlay || e.target === fullscreenText) {
+        closeFullscreen();
+      }
+    });
+    
+    // Prevent image click from closing fullscreen
+    fullscreenImage.addEventListener('click', (e) => {
+      e.stopPropagation();
+    });
+  }
+}
+
+// Function to navigate fullscreen images
+function navigateFullscreenImage(direction) {
+  if (!currentProject || !currentProject.images) return;
+  
+  const imageImages = currentProject.images.filter(item => isImagePath(item));
+  if (imageImages.length <= 1) return;
+  
+  currentFullscreenIndex += direction;
+  
+  // Handle looping
+  if (currentFullscreenIndex >= imageImages.length) {
+    currentFullscreenIndex = 0;
+  } else if (currentFullscreenIndex < 0) {
+    currentFullscreenIndex = imageImages.length - 1;
+  }
+  
+  updateFullscreenImage();
+}
+
+// Function to update fullscreen image
+function updateFullscreenImage() {
+  if (!currentProject || !fullscreenImage) return;
+  
+  const imageImages = currentProject.images.filter(item => isImagePath(item));
+  if (imageImages.length === 0) return;
+  
+  const currentImage = imageImages[currentFullscreenIndex];
+  fullscreenImage.src = currentImage;
+  fullscreenImage.alt = `${currentProject.title} - Image ${currentFullscreenIndex + 1}`;
+  
+  // Update counter
+  if (fullscreenCounter) {
+    if (imageImages.length > 1) {
+      fullscreenCounter.textContent = `${currentFullscreenIndex + 1} of ${imageImages.length}`;
+      fullscreenCounter.style.display = 'block';
+    } else {
+      fullscreenCounter.style.display = 'none';
+    }
+  }
+  
+  // Show/hide navigation buttons based on number of images
+  if (fullscreenPrevBtn && fullscreenNextBtn) {
+    if (imageImages.length > 1) {
+      fullscreenPrevBtn.style.display = 'flex';
+      fullscreenNextBtn.style.display = 'flex';
+    } else {
+      fullscreenPrevBtn.style.display = 'none';
+      fullscreenNextBtn.style.display = 'none';
+    }
   }
 }
 
 // Function to open image in fullscreen
 function openFullscreen(imageSrc, imageAlt = '') {
+  if (!currentProject) return;
+  
   createFullscreenOverlay();
   
-  fullscreenImage.src = imageSrc;
-  fullscreenImage.alt = imageAlt;
+  // Find the index of the clicked image in the project's image array
+  const imageImages = currentProject.images.filter(item => isImagePath(item));
+  currentFullscreenIndex = imageImages.findIndex(img => img === imageSrc);
+  if (currentFullscreenIndex === -1) currentFullscreenIndex = 0;
   
   // Prevent page scrolling when fullscreen is open
   document.body.style.overflow = 'hidden';
@@ -250,7 +348,10 @@ function openFullscreen(imageSrc, imageAlt = '') {
   // Show fullscreen overlay
   fullscreenOverlay.classList.add('active');
   
-  console.log('Opened fullscreen for:', imageSrc);
+  // Update the image and counter
+  updateFullscreenImage();
+  
+  console.log('Opened fullscreen for:', imageSrc, 'at index:', currentFullscreenIndex);
 }
 
 // Function to close fullscreen
@@ -535,6 +636,12 @@ document.addEventListener('DOMContentLoaded', function() {
     if (fullscreenOverlay && fullscreenOverlay.classList.contains('active')) {
       if (e.key === 'Escape') {
         closeFullscreen();
+      } else if (e.key === 'ArrowLeft') {
+        e.preventDefault();
+        navigateFullscreenImage(-1);
+      } else if (e.key === 'ArrowRight') {
+        e.preventDefault();
+        navigateFullscreenImage(1);
       }
       return;
     }
