@@ -1,34 +1,211 @@
 /* Teachings Page Specific Styles */
 
-/* Hero Section */
-.teachings-hero {
-    background: linear-gradient(rgba(30, 58, 46, 0.8), rgba(45, 90, 66, 0.8)),
-                url(pictures/pexels-sevenstormphotography-1604849.jpg);
-    background-size: cover;
-    background-position: center;
-    padding: 4rem 2rem;
-    text-align: center;
+/* Featured Teaching Hero Section - FIXED */
+.featured-teaching-hero,
+section.featured-teaching-hero {
+    background: linear-gradient(rgba(30, 58, 46, 0.7), rgba(45, 90, 66, 0.7)), url('pictures/pexels-sevenstormphotography-1604849.jpg') !important;
+    background-image: linear-gradient(rgba(30, 58, 46, 0.7), rgba(45, 90, 66, 0.7)), url('pictures/pexels-sevenstormphotography-1604849.jpg') !important;
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    background-attachment: fixed !important;
+    padding: 8rem 2rem 4rem 2rem !important;
+    text-align: center !important;
+    color: white !important;
+    min-height: 80vh !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    position: relative !important;
+    overflow: hidden !important;
+    margin: 0 !important;
+    margin-top: 80px !important;
+}
+
+/* Remove any conflicting pseudo-elements */
+.featured-teaching-hero::before,
+.featured-teaching-hero::after,
+section.featured-teaching-hero::before,
+section.featured-teaching-hero::after {
+    display: none !important;
+    content: none !important;
+    background: none !important;
+    background-image: none !important;
+}
+
+/* Ensure no background images are inherited */
+.featured-teaching-hero *,
+section.featured-teaching-hero * {
+    background-image: none !important;
+}
+
+.featured-teaching-header {
+    margin-bottom: 3rem;
+    max-width: 800px;
+}
+
+.hero-title {
+    font-size: clamp(2.5rem, 5vw, 4rem) !important;
+    margin-bottom: 1rem !important;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5) !important;
+    font-weight: 700 !important;
+    color: white !important;
+}
+
+.hero-subtitle {
+    font-size: clamp(1.1rem, 2.5vw, 1.3rem) !important;
+    opacity: 0.95 !important;
+    line-height: 1.6 !important;
+    color: white !important;
+}
+
+.featured-teaching-card {
+    max-width: 900px !important;
+    margin: 0 auto !important;
+    background: rgba(0, 0, 0, 0.2) !important;
+    backdrop-filter: blur(10px) !important;
+    border-radius: 25px !important;
+    padding: 3rem !important;
+    color: white !important;
+    position: relative !important;
+    cursor: pointer !important;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    overflow: hidden !important;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+}
+
+.featured-teaching-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, #27ae60, #2ecc71);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    border-radius: 25px;
+}
+
+.featured-teaching-card:hover {
+    transform: translateY(-10px) scale(1.02) !important;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4) !important;
+}
+
+.featured-teaching-card:hover::before {
+    opacity: 0.15;
+}
+
+.featured-badge {
+    position: absolute !important;
+    top: -10px !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    background: linear-gradient(45deg, #f39c12, #e67e22) !important;
+    color: white !important;
+    padding: 0.75rem 1.5rem !important;
+    border-radius: 20px !important;
+    font-weight: 700 !important;
+    font-size: 0.85rem !important;
+    letter-spacing: 1px !important;
+    box-shadow: 0 5px 15px rgba(243, 156, 18, 0.4) !important;
+    z-index: 3 !important;
+    animation: pulse 2s infinite !important;
+}
+
+.featured-badge span {
+    color: white !important;
+    font-weight: 700 !important;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: translateX(-50%) scale(1); }
+    50% { transform: translateX(-50%) scale(1.05); }
+}
+
+.featured-content {
+    position: relative !important;
+    z-index: 2 !important;
+}
+
+.featured-title {
+    font-size: 2.5rem !important;
+    margin-bottom: 1.5rem !important;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5) !important;
+    color: #ffffff !important;
+    font-weight: 700 !important;
+}
+
+.featured-preview {
+    font-size: 1.2rem !important;
+    line-height: 1.7 !important;
+    margin-bottom: 2rem !important;
+    opacity: 1 !important;
+    color: #ffffff !important;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3) !important;
+}
+
+.featured-cta {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 1rem !important;
+    padding: 1rem 2rem !important;
+    background: rgba(255, 255, 255, 0.1) !important;
+    border-radius: 50px !important;
+    border: 2px solid rgba(255, 255, 255, 0.3) !important;
+    transition: all 0.3s ease !important;
+    backdrop-filter: blur(10px) !important;
+}
+
+.featured-teaching-card:hover .featured-cta {
+    background: rgba(255, 255, 255, 0.2) !important;
+    border-color: rgba(255, 255, 255, 0.6) !important;
+    transform: translateY(-3px) !important;
+}
+
+.cta-text {
+    font-weight: 600 !important;
+    font-size: 1.1rem !important;
+    color: white !important;
+}
+
+.cta-arrow {
+    font-size: 1.5rem !important;
+    transition: transform 0.3s ease !important;
+    color: white !important;
+}
+
+.featured-teaching-card:hover .cta-arrow {
+    transform: translateX(5px);
+}
+
+.featured-decoration {
+    position: absolute;
+    right: 2rem;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0.1;
+    z-index: 1;
+}
+
+.decoration-circle {
+    width: 150px;
+    height: 150px;
+    border: 3px solid currentColor;
+    border-radius: 50%;
+    position: relative;
+}
+
+.decoration-cross {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 3rem;
     color: white;
-    min-height: 60vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.teachings-hero h1 {
-    font-size: clamp(2.5rem, 5vw, 4rem);
-    margin-bottom: 1rem;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-    font-weight: 700;
-}
-
-.teachings-hero p {
-    font-size: clamp(1.1rem, 2.5vw, 1.3rem);
-    max-width: 700px;
-    margin: 0 auto;
-    opacity: 0.95;
-    line-height: 1.6;
 }
 
 /* Main Content */
@@ -44,7 +221,7 @@
 
 /* Introduction Section */
 .intro-section {
-    padding: 4rem 0;
+    padding: 1rem 0;
     border-bottom: 1px solid #eee;
 }
 
@@ -81,163 +258,6 @@
 
 .intro-text p {
     margin-bottom: 1.5rem;
-}
-
-/* Featured Teaching Section */
-.featured-teaching-section {
-    padding: 4rem 0;
-    background: linear-gradient(135deg, #f8f9fa, #ffffff);
-    border-bottom: 1px solid #eee;
-}
-
-.featured-teaching-header {
-    text-align: center;
-    margin-bottom: 3rem;
-}
-
-.featured-subtitle {
-    font-size: 1.2rem;
-    color: #666;
-    margin-top: 1rem;
-    font-style: italic;
-}
-
-.featured-teaching-card {
-    max-width: 900px;
-    margin: 0 auto;
-    background: linear-gradient(135deg, #1e3a2e, #2d5a42);
-    border-radius: 25px;
-    padding: 3rem;
-    color: white;
-    position: relative;
-    cursor: pointer;
-    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-    overflow: hidden;
-    box-shadow: 0 15px 35px rgba(30, 58, 46, 0.3);
-}
-
-.featured-teaching-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(45deg, #27ae60, #2ecc71);
-    opacity: 0;
-    transition: opacity 0.5s ease;
-    border-radius: 25px;
-}
-
-.featured-teaching-card:hover {
-    transform: translateY(-10px) scale(1.02);
-    box-shadow: 0 25px 50px rgba(30, 58, 46, 0.4);
-}
-
-.featured-teaching-card:hover::before {
-    opacity: 0.1;
-}
-
-.featured-badge {
-    position: absolute;
-    top: -10px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: linear-gradient(45deg, #f39c12, #e67e22);
-    color: white;
-    padding: 0.75rem 1.5rem;
-    border-radius: 20px;
-    font-weight: 700;
-    font-size: 0.85rem;
-    letter-spacing: 1px;
-    box-shadow: 0 5px 15px rgba(243, 156, 18, 0.4);
-    z-index: 3;
-    animation: pulse 2s infinite;
-}
-
-@keyframes pulse {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.05); }
-}
-
-.featured-content {
-    position: relative;
-    z-index: 2;
-}
-
-.featured-title {
-    font-size: 2.5rem;
-    margin-bottom: 1.5rem;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-    color: #ffffff;
-    font-weight: 700;
-}
-
-.featured-preview {
-    font-size: 1.2rem;
-    line-height: 1.7;
-    margin-bottom: 2rem;
-    opacity: 0.95;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
-}
-
-.featured-cta {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 1rem;
-    padding: 1rem 2rem;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 50px;
-    border: 2px solid rgba(255, 255, 255, 0.3);
-    transition: all 0.3s ease;
-    backdrop-filter: blur(10px);
-}
-
-.featured-teaching-card:hover .featured-cta {
-    background: rgba(255, 255, 255, 0.2);
-    border-color: rgba(255, 255, 255, 0.6);
-    transform: translateY(-3px);
-}
-
-.cta-text {
-    font-weight: 600;
-    font-size: 1.1rem;
-}
-
-.cta-arrow {
-    font-size: 1.5rem;
-    transition: transform 0.3s ease;
-}
-
-.featured-teaching-card:hover .cta-arrow {
-    transform: translateX(5px);
-}
-
-.featured-decoration {
-    position: absolute;
-    right: 2rem;
-    top: 50%;
-    transform: translateY(-50%);
-    opacity: 0.1;
-    z-index: 1;
-}
-
-.decoration-circle {
-    width: 150px;
-    height: 150px;
-    border: 3px solid currentColor;
-    border-radius: 50%;
-    position: relative;
-}
-
-.decoration-cross {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 3rem;
-    color: white;
 }
 
 /* Back to Top Button */
@@ -653,17 +673,30 @@
 
 /* Responsive Design */
 @media (max-width: 1550px) {
-    .teachings-hero {
-        min-height: 50vh;
-        padding: 3rem 1rem;
+    .featured-teaching-hero {
+        min-height: 70vh !important;
+        padding: 3rem 1rem !important;
     }
 
-    .teachings-hero h1 {
-        font-size: clamp(2rem, 4vw, 3rem);
+    .hero-title {
+        font-size: clamp(2rem, 4vw, 3rem) !important;
     }
 
-    .teachings-hero p {
-        font-size: clamp(1rem, 2vw, 1.2rem);
+    .hero-subtitle {
+        font-size: clamp(1rem, 2vw, 1.2rem) !important;
+    }
+
+    .featured-teaching-card {
+        padding: 2rem !important;
+        max-width: 800px !important;
+    }
+
+    .featured-title {
+        font-size: 2rem !important;
+    }
+
+    .featured-preview {
+        font-size: 1.1rem !important;
     }
 
     .intro-section {
@@ -681,22 +714,6 @@
 
     .teachings-content {
         padding: 0 1rem;
-    }
-
-    .featured-teaching-section {
-        padding: 3rem 1rem;
-    }
-
-    .featured-teaching-card {
-        padding: 2rem;
-    }
-
-    .featured-title {
-        font-size: 2rem;
-    }
-
-    .featured-preview {
-        font-size: 1.1rem;
     }
 
     .writings-section {
@@ -787,9 +804,40 @@
 }
 
 @media (max-width: 768px) {
-    .teachings-hero {
-        min-height: 50vh;
-        padding: 3rem 1rem;
+    .featured-teaching-hero {
+        min-height: 60vh !important;
+        padding: 2rem 1rem !important;
+    }
+
+    .featured-teaching-header {
+        margin-bottom: 2rem;
+    }
+
+    .featured-teaching-card {
+        padding: 2rem 1.5rem !important;
+        margin: 0 1rem !important;
+    }
+
+    .featured-title {
+        font-size: 1.8rem !important;
+        margin-bottom: 1rem !important;
+    }
+
+    .featured-preview {
+        font-size: 1rem !important;
+        margin-bottom: 1.5rem !important;
+    }
+
+    .featured-badge {
+        top: -8px !important;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+        padding: 0.5rem 1rem !important;
+        font-size: 0.75rem !important;
+    }
+
+    .featured-decoration {
+        display: none;
     }
 
     .intro-section {
@@ -798,37 +846,6 @@
 
     .section-title {
         font-size: 2rem;
-    }
-
-    .featured-teaching-section {
-        padding: 2rem 1rem;
-    }
-
-    .featured-teaching-card {
-        padding: 2rem 1.5rem;
-        margin: 0 1rem;
-    }
-
-    .featured-title {
-        font-size: 1.8rem;
-        margin-bottom: 1rem;
-    }
-
-    .featured-preview {
-        font-size: 1rem;
-        margin-bottom: 1.5rem;
-    }
-
-    .featured-badge {
-        top: -8px;
-        left: 50%;
-        transform: translateX(-50%);
-        padding: 0.5rem 1rem;
-        font-size: 0.75rem;
-    }
-
-    .featured-decoration {
-        display: none;
     }
 
     .writings-section {
@@ -938,46 +955,42 @@
 }
 
 @media (max-width: 480px) {
-    .teachings-hero {
-        min-height: 40vh;
-        padding: 2rem 0.5rem;
+    .featured-teaching-hero {
+        min-height: 50vh !important;
+        padding: 2rem 0.5rem !important;
     }
 
-    .teachings-hero h1 {
-        font-size: 1.8rem;
+    .hero-title {
+        font-size: 1.8rem !important;
     }
 
-    .teachings-hero p {
-        font-size: 0.95rem;
+    .hero-subtitle {
+        font-size: 0.95rem !important;
     }
 
     .teachings-content {
         padding: 0 0.5rem;
     }
 
-    .featured-teaching-section {
-        padding: 2rem 0.5rem;
-    }
-
     .featured-teaching-card {
-        padding: 1.5rem 1rem;
-        margin: 0 0.5rem;
+        padding: 1.5rem 1rem !important;
+        margin: 0 0.5rem !important;
     }
 
     .featured-title {
-        font-size: 1.5rem;
+        font-size: 1.5rem !important;
     }
 
     .featured-preview {
-        font-size: 0.95rem;
+        font-size: 0.95rem !important;
     }
 
     .featured-badge {
-        top: -6px;
-        left: 50%;
-        transform: translateX(-50%);
-        padding: 0.4rem 0.8rem;
-        font-size: 0.7rem;
+        top: -6px !important;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+        padding: 0.4rem 0.8rem !important;
+        font-size: 0.7rem !important;
     }
 
     .writings-section {
@@ -1070,7 +1083,7 @@
 
 /* Print styles */
 @media print {
-    .teachings-hero,
+    .featured-teaching-hero,
     .cta-section {
         background: white !important;
         color: black !important;

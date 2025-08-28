@@ -299,12 +299,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
   // Add subtle parallax effect to featured teaching
-  window.addEventListener('scroll', () => {
-    const featuredSection = document.querySelector('.featured-teaching-section');
-    if (featuredSection) {
-      const scrolled = window.pageYOffset;
-      const rate = scrolled * -0.1;
-      featuredSection.style.transform = `translateY(${rate}px)`;
-    }
-  });
+  // Add subtle parallax effect to featured teaching
+window.addEventListener('scroll', () => {
+  const featuredSection = document.querySelector('.featured-teaching-hero');
+  if (featuredSection) {
+    const scrolled = window.pageYOffset;
+    const rate = scrolled * -0.1;
+    featuredSection.style.transform = `translateY(${rate}px)`;
+  }
+});
 });
