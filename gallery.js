@@ -58,7 +58,25 @@ const projectData = {
     title: 'Holland Firehouse',
     description: '106 E 8th St, Holland, MI',
     images: [
-      'pictures/Commercial/hollandFirehouse/hf1.jpg'],
+      'pictures/Commercial/hollandFirehouse/hf1.jpg',
+      'pictures/Commercial/hollandFirehouse/hf2.jpg',
+      'pictures/Commercial/hollandFirehouse/hf3.jpg',
+      'pictures/Commercial/hollandFirehouse/hf4.jpg',
+      'pictures/Commercial/hollandFirehouse/hf5.jpg',
+      'pictures/Commercial/hollandFirehouse/hf6.jpg',
+      'pictures/Commercial/hollandFirehouse/hf7.jpg'],
+    specs: {}
+  },
+  'theOutpost': {
+    title: 'The Outpost',
+    description: '25 E 8th St, Holland, MI',
+    images: [
+      'pictures/Commercial/theOutpostHolland/toh1.jpg',
+      'pictures/Commercial/theOutpostHolland/toh2.jpg',
+      'pictures/Commercial/theOutpostHolland/toh3.jpg',
+      'pictures/Commercial/theOutpostHolland/toh4.jpg',
+      'pictures/Commercial/theOutpostHolland/toh5.jpg',
+      'pictures/Commercial/theOutpostHolland/toh6.jpg'],
     specs: {}
   },
   'hastingsFOC': {
@@ -72,7 +90,16 @@ const projectData = {
     title: 'Adelaide Pointe Marina',
     description: '1000 Adelaide Circle, Muskegon, MI',
     images: [ 
-      'pictures/Commercial/adelaidePointe/ap1.jpg'],
+      'pictures/Commercial/adelaidePointe/ap1.jpg',
+      'pictures/Commercial/adelaidePointe/ap2.jpg',
+      'pictures/Commercial/adelaidePointe/ap3.jpg',
+      'pictures/Commercial/adelaidePointe/ap4.jpg',
+      'pictures/Commercial/adelaidePointe/ap5.jpg',
+      'pictures/Commercial/adelaidePointe/ap6.jpg',
+      'pictures/Commercial/adelaidePointe/ap7.jpg',
+      'pictures/Commercial/adelaidePointe/ap8.jpg',
+      'pictures/Commercial/adelaidePointe/ap9.jpg',
+      'pictures/Commercial/adelaidePointe/ap10.jpg'],
     specs: {}
   },
   'floridaHome': {
