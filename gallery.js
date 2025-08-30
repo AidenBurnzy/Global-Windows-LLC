@@ -12,6 +12,7 @@ const carouselIndicators = document.getElementById('carousel-indicators');
 const closeModal = document.getElementById('close-modal');
 const carouselPrev = document.getElementById('carousel-prev');
 const carouselNext = document.getElementById('carousel-next');
+const enlargeHint = document.getElementById('enlarge-hint');
 
 // Fullscreen elements
 const fullscreenModal = document.getElementById('fullscreen-modal');
@@ -22,6 +23,8 @@ const fullscreenNext = document.querySelector('.fullscreen-next');
 let currentSlide = 0;
 let currentFullscreenSlide = 0;
 let currentProject = null;
+let touchStartX = 0;
+let touchEndX = 0;
 
 // Project data
 const projectData = {
@@ -198,6 +201,11 @@ function isImagePath(str) {
     return typeof str === 'string' && (str.includes('.jpg') || str.includes('.jpeg') || str.includes('.png') || str.includes('.gif') || str.includes('.webp'));
 }
 
+// Function to check if device is mobile
+function isMobileDevice() {
+    return /Mobi|Android/i.test(navigator.userAgent) || window.innerWidth <= 768;
+}
+
 // Function to switch gallery tabs
 function switchGalleryTab(targetCategory) {
     console.log('Switching to tab:', targetCategory);
@@ -259,6 +267,11 @@ function openProjectModal(projectId) {
     // Set modal content
     modalTitle.textContent = project.title;
     modalDescription.textContent = project.description;
+
+    // Update enlarge hint text based on device
+    if (enlargeHint) {
+        enlargeHint.textContent = isMobileDevice() ? 'Tap image for fullscreen' : 'Click image for fullscreen';
+    }
 
     // Create specs
     modalSpecs.innerHTML = '';
@@ -464,6 +477,18 @@ if (mobileMenuToggle && navbar) {
     });
 }
 
+// Swipe functionality for mobile
+function handleSwipe() {
+    const swipeThreshold = 50; // Minimum distance for swipe
+    const deltaX = touchEndX - touchStartX;
+    
+    if (deltaX > swipeThreshold) {
+        prevSlide();
+    } else if (deltaX < -swipeThreshold) {
+        nextSlide();
+    }
+}
+
 // Event Listeners
 document.addEventListener('DOMContentLoaded', function() {
     console.log('DOM loaded, adding event listeners');
@@ -539,6 +564,18 @@ document.addEventListener('DOMContentLoaded', function() {
             console.log('Fullscreen previous button clicked');
             prevFullscreen();
         });
+    }
+
+    // Swipe event listeners for mobile
+    if (carouselTrack) {
+        carouselTrack.addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+        }, { passive: true });
+
+        carouselTrack.addEventListener('touchend', (e) => {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+        }, { passive: true });
     }
 
     // Keyboard navigation
