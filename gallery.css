@@ -13,7 +13,7 @@ body {
   overflow-x: hidden;
 }
 
-/* Navigation Styles - Match Home Page */
+/* Navigation Styles */
 .navbar {
   background: rgba(255, 255, 255, 0.98);
   backdrop-filter: blur(10px);
@@ -33,12 +33,12 @@ body {
 
 .logo-section {
   flex-shrink: 0;
-  z-index: 1001;
+  z-index: 1002;
 }
 
 .logo-placeholder {
-  width: clamp(80px, 12vw, 120px);
-  height: clamp(80px, 12vw, 120px);
+  width: clamp(60px, 10vw, 120px);
+  height: clamp(60px, 10vw, 120px);
   background: #fff;
   border-radius: 50%;
   display: flex;
@@ -49,8 +49,8 @@ body {
 }
 
 .logo-placeholder img {
-  width: clamp(100px, 15vw, 150px);
-  height: clamp(100px, 15vw, 150px);
+  width: clamp(75px, 12vw, 150px);
+  height: clamp(75px, 12vw, 150px);
   border-radius: 50%;
   object-fit: cover;
   transform: translateY(2px);
@@ -102,7 +102,7 @@ body {
   justify-content: center;
   align-items: center;
   gap: 4px;
-  z-index: 1002;
+  z-index: 1003;
   position: relative;
 }
 
@@ -127,6 +127,25 @@ body {
   transform: rotate(-45deg) translate(6px, -6px);
 }
 
+/* Mobile Menu Overlay */
+.mobile-menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.mobile-menu-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
 /* Mobile Navigation */
 @media (max-width: 900px) {
   .mobile-menu-toggle {
@@ -136,53 +155,50 @@ body {
   .nav-list {
     position: fixed;
     top: 0;
-    left: 0;
-    width: 100vw;
+    right: -100%;
+    width: min(300px, 80vw);
     height: 100vh;
     background: rgba(255, 255, 255, 0.98);
     backdrop-filter: blur(10px);
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 2rem;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    transform: translateX(-100%);
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.4s ease;
+    justify-content: flex-start;
+    align-items: stretch;
+    padding: 120px 2rem 2rem;
+    box-shadow: -4px 0 15px rgba(0, 0, 0, 0.2);
+    transition: right 0.4s ease;
     gap: 1rem;
+    z-index: 1001;
   }
   
   .navbar.mobile-menu-open .nav-list {
-    transform: translateX(0);
-    opacity: 1;
-    visibility: visible;
+    right: 0;
   }
   
   .nav-item {
-    width: auto;
+    width: 100%;
   }
   
   .nav-link {
-    padding: 1rem 2rem;
-    font-size: 1.2rem;
+    padding: 1rem 1.5rem;
+    font-size: 1.1rem;
     border-radius: 12px;
-    min-width: 200px;
     text-align: center;
+    width: 100%;
   }
   
   .nav-link:hover {
     background: rgba(39, 174, 96, 0.1);
-    transform: scale(1.05);
+    transform: translateX(-5px);
   }
 }
 
 /* Main Content */
 .main-content {
   min-height: calc(100vh - 80px);
-  padding-top: clamp(140px, 20vw, 180px);
+  padding-top: clamp(100px, 15vw, 140px);
   padding-left: clamp(1rem, 4vw, 2rem);
   padding-right: clamp(1rem, 4vw, 2rem);
+  padding-bottom: 2rem;
 }
 
 .page-content {
@@ -379,10 +395,12 @@ body {
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.8);
-  z-index: 1000;
+  z-index: 2000;
   opacity: 0;
   visibility: hidden;
   transition: all 0.3s ease;
+  padding: 10px;
+  box-sizing: border-box;
 }
 
 .modal.active {
@@ -396,42 +414,46 @@ body {
 .modal-content {
   background: rgba(248, 249, 250, 0.95);
   backdrop-filter: blur(10px);
-  width: 90%;
-  max-width: 800px;
-  max-height: 90vh;
+  width: 100%;
+  max-width: min(800px, 95vw);
+  max-height: min(90vh, 700px);
   border-radius: 12px;
   overflow: hidden;
   position: relative;
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
 }
 
 .modal-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: clamp(1rem, 3vw, 1.25rem) clamp(1.5rem, 4vw, 2rem);
+  padding: clamp(1rem, 3vw, 1.25rem) clamp(1rem, 4vw, 2rem);
   border-bottom: 1px solid rgba(39, 174, 96, 0.2);
   background: linear-gradient(135deg, rgba(39, 174, 96, 0.05), rgba(46, 204, 113, 0.05));
+  flex-shrink: 0;
 }
 
 .modal-title {
   margin: 0;
-  font-size: clamp(1.3rem, 3vw, 1.5rem);
+  font-size: clamp(1.1rem, 3vw, 1.5rem);
   color: #1e3a2e;
   font-weight: 600;
   flex: 1;
   margin-right: 1rem;
+  word-break: break-word;
 }
 
 .close-btn {
   background: linear-gradient(45deg, #27ae60, #2ecc71);
   border: none;
-  font-size: 1.5rem;
+  font-size: clamp(1.2rem, 3vw, 1.5rem);
   cursor: pointer;
   color: white;
   padding: 0.5rem;
-  width: 40px;
-  height: 40px;
+  width: clamp(35px, 8vw, 40px);
+  height: clamp(35px, 8vw, 40px);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -449,15 +471,20 @@ body {
 
 .modal-body {
   padding: 0;
+  flex: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
 }
 
 /* CAROUSEL */
 .carousel-container {
   position: relative;
   width: 100%;
-  height: clamp(300px, 50vh, 500px);
+  height: clamp(250px, 40vh, 400px);
   overflow: hidden;
   background: linear-gradient(135deg, rgba(39, 174, 96, 0.05), rgba(46, 204, 113, 0.05));
+  flex-shrink: 0;
 }
 
 .carousel-track {
@@ -477,11 +504,12 @@ body {
   align-items: center;
   justify-content: center;
   box-sizing: border-box;
+  padding: 20px;
 }
 
 .carousel-slide img {
-  max-width: calc(100% - 120px);
-  max-height: calc(100% - 40px);
+  max-width: 100%;
+  max-height: 100%;
   width: auto;
   height: auto;
   object-fit: contain;
@@ -507,9 +535,9 @@ body {
   background: linear-gradient(45deg, #27ae60, #2ecc71);
   color: white;
   border: none;
-  width: 45px;
-  height: 45px;
-  font-size: 20px;
+  width: clamp(35px, 8vw, 45px);
+  height: clamp(35px, 8vw, 45px);
+  font-size: clamp(16px, 4vw, 20px);
   cursor: pointer;
   z-index: 10;
   border-radius: 50%;
@@ -537,17 +565,17 @@ body {
 /* Carousel Indicators */
 .carousel-indicators {
   position: absolute;
-  bottom: 20px;
+  bottom: 15px;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
-  gap: 10px;
+  gap: 8px;
   z-index: 10;
 }
 
 .carousel-indicator {
-  width: 12px;
-  height: 12px;
+  width: clamp(10px, 2.5vw, 12px);
+  height: clamp(10px, 2.5vw, 12px);
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.5);
   cursor: pointer;
@@ -563,8 +591,9 @@ body {
 
 /* Modal Info Section */
 .modal-info {
-  padding: clamp(1rem, 3vw, 1.5rem) clamp(1.5rem, 4vw, 2rem);
+  padding: clamp(1rem, 3vw, 1.5rem);
   background: rgba(248, 249, 250, 0.8);
+  flex-shrink: 0;
 }
 
 .modal-description {
@@ -618,7 +647,7 @@ body {
   font-size: clamp(0.85rem, 2vw, 0.9rem);
 }
 
-/* Footer - Match Home Page */
+/* Footer */
 .footer {
   background: #1e3a2e;
   color: white;
@@ -668,8 +697,14 @@ body {
   font-size: clamp(0.85rem, 2vw, 1rem);
 }
 
-/* Mobile Responsive Adjustments */
+/* Mobile Specific Responsive Adjustments */
 @media (max-width: 768px) {
+  .main-content {
+    padding-top: 90px;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
   .images-grid {
     grid-template-columns: 1fr;
   }
@@ -685,30 +720,57 @@ body {
     text-align: center;
   }
   
+  .modal {
+    padding: 5px;
+  }
+  
   .modal-content {
-    width: 95%;
-    margin: 10px auto;
+    max-height: 95vh;
+  }
+  
+  .carousel-container {
+    height: clamp(200px, 35vh, 300px);
   }
   
   .carousel-nav {
-    width: 40px;
-    height: 40px;
-    font-size: 18px;
+    width: 35px;
+    height: 35px;
+    font-size: 16px;
+  }
+  
+  .carousel-prev {
+    left: 5px;
+  }
+  
+  .carousel-next {
+    right: 5px;
   }
   
   .modal-specs {
     grid-template-columns: 1fr;
   }
+  
+  .modal-header {
+    padding: 1rem;
+  }
+  
+  .modal-info {
+    padding: 1rem;
+  }
+  
+  .carousel-slide {
+    padding: 10px;
+  }
 }
 
-@media (max-width: 400px) {
+@media (max-width: 480px) {
   .navbar {
     padding: 0.5rem 1rem;
     min-height: 70px;
   }
   
   .main-content {
-    padding-top: 115px;
+    padding-top: 80px;
   }
   
   .image-placeholder {
@@ -717,22 +779,57 @@ body {
   }
   
   .carousel-container {
-    height: 250px;
+    height: 200px;
   }
   
   .modal-header {
     flex-direction: column;
     gap: 1rem;
     text-align: center;
+    padding: 0.75rem;
+  }
+  
+  .modal-title {
+    margin-right: 0;
+    margin-bottom: 0.5rem;
   }
   
   .carousel-indicators {
-    gap: 0.25rem;
+    gap: 6px;
+    bottom: 10px;
   }
   
   .carousel-indicator {
-    width: 10px;
-    height: 10px;
+    width: 8px;
+    height: 8px;
+  }
+  
+  .nav-list {
+    padding-top: 90px;
+  }
+}
+
+@media (max-width: 360px) {
+  .main-content {
+    padding-top: 75px;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+  
+  .modal {
+    padding: 2px;
+  }
+  
+  .carousel-container {
+    height: 180px;
+  }
+  
+  .modal-header {
+    padding: 0.5rem;
+  }
+  
+  .modal-info {
+    padding: 0.75rem;
   }
 }
 
@@ -758,7 +855,8 @@ body {
 .gallery-tab:focus,
 .image-card:focus,
 .close-btn:focus,
-.carousel-nav:focus {
+.carousel-nav:focus,
+.carousel-indicator:focus {
   outline: 2px solid #27ae60;
   outline-offset: 2px;
 }
@@ -772,5 +870,33 @@ body {
   
   .gallery-tab {
     border: 2px solid #27ae60;
+  }
+}
+
+/* Touch-friendly improvements */
+@media (hover: none) and (pointer: coarse) {
+  .nav-link:hover,
+  .gallery-tab:hover,
+  .image-card:hover,
+  .carousel-nav:hover,
+  .close-btn:hover {
+    transform: none;
+  }
+  
+  .nav-link:active,
+  .gallery-tab:active,
+  .carousel-nav:active,
+  .close-btn:active {
+    transform: scale(0.95);
+  }
+  
+  .carousel-nav {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .close-btn {
+    width: 40px;
+    height: 40px;
   }
 }
