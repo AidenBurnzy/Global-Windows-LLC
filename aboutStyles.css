@@ -72,30 +72,6 @@ body {
     gap: 1rem;
     margin-bottom: 1rem;
 }
-/* Mobile Navigation - Hide by default */
-.mobile-nav {
-    display: none;
-    position: fixed;
-    top: 70px;
-    left: 0;
-    right: 0;
-    background: rgba(255, 255, 255, 0.98);
-    backdrop-filter: blur(10px);
-    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-    z-index: 999;
-}
-
-/* Only show mobile nav when mobile menu is open */
-.navbar.mobile-menu-open .mobile-nav {
-    display: block;
-}
-
-/* Hide mobile nav on desktop screens */
-@media (min-width: 769px) {
-    .mobile-nav {
-        display: none !important;
-    }
-}
 
 /* About Hero Section */
 .about-hero {
@@ -487,18 +463,6 @@ body {
         background-position: center center;
     }
     
-    /* Navigation */
-    .navbar {
-        padding: 1rem;
-    }
-    
-    .nav-list {
-        display: none;
-    }
-    
-    .mobile-menu-toggle {
-        display: flex;
-    }
     
     /* Buttons */
     .scroll-button {
@@ -595,12 +559,6 @@ body {
         gap: 1.5rem;
     }
 }
-
-@media (max-width: 480px) {
-    /* Even smaller screens */
-    .navbar {
-        padding: 0.8rem;
-    }
     
     .about-hero {
         padding: 5rem 1rem 3rem;
@@ -643,7 +601,7 @@ body {
     .footer-grid {
         max-width: 300px;
     }
-}
+
 
 @media (max-width: 360px) {
     /* Very small screens */
