@@ -13,7 +13,14 @@ const closeModal = document.getElementById('close-modal');
 const carouselPrev = document.getElementById('carousel-prev');
 const carouselNext = document.getElementById('carousel-next');
 
+// Fullscreen elements
+const fullscreenModal = document.getElementById('fullscreen-modal');
+const fullscreenImage = document.getElementById('fullscreen-image');
+const fullscreenPrev = document.querySelector('.fullscreen-prev');
+const fullscreenNext = document.querySelector('.fullscreen-next');
+
 let currentSlide = 0;
+let currentFullscreenSlide = 0;
 let currentProject = null;
 
 // Project data
@@ -56,18 +63,6 @@ const projectData = {
             'pictures/Commercial/hollandFirehouse/hf5.jpg',
             'pictures/Commercial/hollandFirehouse/hf6.jpg',
             'pictures/Commercial/hollandFirehouse/hf7.jpg'],
-        specs: {}
-    },
-    'theOutpost': {
-        title: 'The Outpost',
-        description: '25 E 8th St, Holland, MI',
-        images: [
-            'pictures/Commercial/theOutpostHolland/toh1.jpg',
-            'pictures/Commercial/theOutpostHolland/toh2.jpg',
-            'pictures/Commercial/theOutpostHolland/toh3.jpg',
-            'pictures/Commercial/theOutpostHolland/toh4.jpg',
-            'pictures/Commercial/theOutpostHolland/toh5.jpg',
-            'pictures/Commercial/theOutpostHolland/toh6.jpg'],
         specs: {}
     },
     'hastingsFOC': {
@@ -145,7 +140,6 @@ const projectData = {
             'pictures/Commercial/400Rose/400R9.jpg',
             'pictures/Commercial/400Rose/400R10.jpg',
             'pictures/Commercial/400Rose/400R11.jpg',
-            'pictures/Commercial/400Rose/400R2.jpg',
             'pictures/Commercial/400Rose/400R13.jpg',
             'pictures/Commercial/400Rose/400R14.jpg'],
         specs: {}
@@ -290,6 +284,8 @@ function openProjectModal(projectId) {
             const img = document.createElement('img');
             img.src = item;
             img.alt = `${project.title} - Image ${index + 1}`;
+            img.loading = 'lazy';
+            img.addEventListener('click', () => openFullscreen(index));
             slide.appendChild(img);
         } else {
             // It's an emoji
@@ -400,7 +396,48 @@ function prevSlide() {
     }
 }
 
-// Function to close modal
+// Function to open fullscreen view
+function openFullscreen(startIndex) {
+    if (!currentProject) return;
+
+    currentFullscreenSlide = startIndex;
+    updateFullscreenImage();
+
+    fullscreenModal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
+
+// Function to update fullscreen image
+function updateFullscreenImage() {
+    if (currentProject && currentProject.images[currentFullscreenSlide]) {
+        fullscreenImage.src = currentProject.images[currentFullscreenSlide];
+        fullscreenImage.alt = `${currentProject.title} - Image ${currentFullscreenSlide + 1}`;
+    }
+}
+
+// Function to go to next fullscreen image
+function nextFullscreen() {
+    if (currentProject) {
+        currentFullscreenSlide = (currentFullscreenSlide + 1) % currentProject.images.length;
+        updateFullscreenImage();
+    }
+}
+
+// Function to go to previous fullscreen image
+function prevFullscreen() {
+    if (currentProject) {
+        currentFullscreenSlide = (currentFullscreenSlide - 1 + currentProject.images.length) % currentProject.images.length;
+        updateFullscreenImage();
+    }
+}
+
+// Function to close fullscreen
+function closeFullscreen() {
+    fullscreenModal.classList.remove('active');
+    document.body.style.overflow = '';
+}
+
+// Function to close project modal
 function closeProjectModal() {
     modal.classList.remove('active');
     document.body.style.overflow = '';
@@ -474,12 +511,33 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Close modal when clicking outside
+    // Close project modal when clicking outside
     if (modal) {
         modal.addEventListener('click', (e) => {
             if (e.target === modal) {
                 closeProjectModal();
             }
+        });
+    }
+
+    // Fullscreen controls
+    if (fullscreenModal) {
+        fullscreenModal.addEventListener('click', closeFullscreen);
+    }
+
+    if (fullscreenNext) {
+        fullscreenNext.addEventListener('click', (e) => {
+            e.stopPropagation();
+            console.log('Fullscreen next button clicked');
+            nextFullscreen();
+        });
+    }
+
+    if (fullscreenPrev) {
+        fullscreenPrev.addEventListener('click', (e) => {
+            e.stopPropagation();
+            console.log('Fullscreen previous button clicked');
+            prevFullscreen();
         });
     }
 
@@ -492,6 +550,17 @@ document.addEventListener('DOMContentLoaded', function() {
                 prevSlide();
             } else if (e.key === 'ArrowRight') {
                 nextSlide();
+            }
+        } else if (fullscreenModal && fullscreenModal.classList.contains('active')) {
+            if (e.key === 'Escape') {
+                console.log('Escape key pressed, closing fullscreen');
+                closeFullscreen();
+            } else if (e.key === 'ArrowLeft') {
+                console.log('ArrowLeft key pressed, going to previous fullscreen image');
+                prevFullscreen();
+            } else if (e.key === 'ArrowRight') {
+                console.log('ArrowRight key pressed, going to next fullscreen image');
+                nextFullscreen();
             }
         }
     });
