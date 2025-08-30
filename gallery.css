@@ -235,6 +235,7 @@ body {
 .modal-content {
   background: rgba(248, 249, 250, 0.95);
   backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px); /* Safari support */
   width: 100%;
   max-width: min(800px, 95vw);
   max-height: min(90vh, 700px);
@@ -305,7 +306,10 @@ body {
   height: clamp(250px, 40vh, 400px);
   overflow: hidden;
   background: linear-gradient(135deg, rgba(39, 174, 96, 0.05), rgba(46, 204, 113, 0.05));
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px); /* Safari support */
   flex-shrink: 0;
+  touch-action: pan-y pinch-zoom;
 }
 
 .carousel-track {
@@ -420,8 +424,8 @@ body {
   padding: 5px 10px;
   border-radius: 5px;
   font-size: 0.8rem;
-  z-index: 10;
-  opacity: 0.8;
+  z-index: 12;
+  opacity: 1;
   pointer-events: none;
 }
 
@@ -430,6 +434,7 @@ body {
   padding: clamp(1rem, 3vw, 1.5rem);
   background: rgba(248, 249, 250, 0.8);
   flex-shrink: 0;
+  position: relative;
 }
 
 .modal-description {
@@ -700,6 +705,24 @@ body {
     font-size: 0.9rem;
     bottom: 10px;
   }
+
+  .enlarge-hint {
+    position: absolute;
+    top: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: transparent;
+    color: #000000;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-size: 0.7rem;
+    line-height: 1.2;
+    text-align: center;
+    opacity: 1;
+    z-index: 15;
+    pointer-events: none;
+    text-shadow: 0 0 2px rgba(0, 0, 0, 0.7);
+  }
 }
 
 @media (max-width: 360px) {
@@ -733,6 +756,12 @@ body {
 
   .fullscreen-text {
     font-size: 0.8rem;
+  }
+
+  .enlarge-hint {
+    font-size: 0.65rem;
+    padding: 2px 5px;
+    top: 2px;
   }
 }
 
