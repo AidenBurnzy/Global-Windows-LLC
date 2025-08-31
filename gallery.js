@@ -271,7 +271,13 @@ function openProjectModal(projectId) {
     // Update enlarge hint text based on device
     if (enlargeHint) {
         enlargeHint.textContent = isMobileDevice() ? 'Tap image for fullscreen' : 'Click image for fullscreen';
+        if (isMobileDevice()) {
+    enlargeHint.style.position = 'static';
+    enlargeHint.style.margin = '10px auto 0';
+    enlargeHint.style.display = 'block';
+}
     }
+    
 
     // Create specs
     modalSpecs.innerHTML = '';

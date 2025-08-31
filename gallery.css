@@ -414,7 +414,7 @@ body {
   border-color: #27ae60;
 }
 
-/* Enlarge Hint */
+/* Enlarge Hint - Default desktop styles */
 .enlarge-hint {
   position: absolute;
   bottom: 15px;
@@ -427,6 +427,7 @@ body {
   z-index: 12;
   opacity: 1;
   pointer-events: none;
+  display: block;
 }
 
 /* Modal Info Section */
@@ -623,6 +624,7 @@ body {
 }
 
 /* Mobile Specific Responsive Adjustments */
+
 @media (max-width: 768px) {
   .main-content {
     padding-top: 90px;
@@ -703,25 +705,29 @@ body {
 
   .fullscreen-text {
     font-size: 0.9rem;
-    bottom: 10px;
+    bottom: 80px;
   }
 
+  /* Mobile-specific positioning for enlarge hint */
   .enlarge-hint {
-    position: absolute;
-    top: 5px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: transparent;
-    color: #000000;
-    padding: 2px 6px;
-    border-radius: 3px;
-    font-size: 0.7rem;
-    line-height: 1.2;
+    position: absolute !important;
+    top: 10px !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    bottom: auto !important;
+    right: auto !important;
+    background: rgba(39, 174, 96, 0.9) !important;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-size: 0.8rem;
     text-align: center;
-    opacity: 1;
-    z-index: 15;
+    width: fit-content;
+    box-shadow: 0 2px 8px rgba(39, 174, 96, 0.3);
     pointer-events: none;
-    text-shadow: 0 0 2px rgba(0, 0, 0, 0.7);
+    z-index: 15;
+    white-space: nowrap;
+    display: block !important;
   }
 }
 
@@ -759,9 +765,9 @@ body {
   }
 
   .enlarge-hint {
-    font-size: 0.65rem;
-    padding: 2px 5px;
-    top: 2px;
+    font-size: 0.7rem;
+    padding: 6px 10px;
+    top: 5px;
   }
 }
 
