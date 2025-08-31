@@ -45,7 +45,15 @@ const projectData = {
         title: 'Post Dr',
         description: '1309 Post Dr NE, Belmont, MI',
         images: [ 
-            'pictures/Commercial/postDr/pd1.jpg'],
+            'pictures/Commercial/postDr/pd1.jpg',
+            'pictures/Commercial/postDr/pd2.jpg',
+            'pictures/Commercial/postDr/pd3.jpg',
+            'pictures/Commercial/postDr/pd4.jpg',
+            'pictures/Commercial/postDr/pd5.jpg',
+            'pictures/Commercial/postDr/pd6.jpg',
+            'pictures/Commercial/postDr/pd7.jpg',
+            'pictures/Commercial/postDr/pd8.jpg',
+            'pictures/Commercial/postDr/pd9.jpg'],
         specs: {}
     },
     'manisteeHotel': {
@@ -125,7 +133,16 @@ const projectData = {
         title: 'Tall Timbers',
         description: '4200 West Centre, Portage, MI',
         images: [
-            'pictures/Commercial/tallTimbers/tt1.jpg'],
+            'pictures/Commercial/tallTimbers/tt1.jpg',
+            'pictures/Commercial/tallTimbers/tt2.jpg',
+            'pictures/Commercial/tallTimbers/tt3.jpg',
+            'pictures/Commercial/tallTimbers/tt4.jpg',
+            'pictures/Commercial/tallTimbers/tt5.jpg',
+            'pictures/Commercial/tallTimbers/tt6.jpg',
+            'pictures/Commercial/tallTimbers/tt7.jpg',
+            'pictures/Commercial/tallTimbers/tt8.jpg',
+            'pictures/Commercial/tallTimbers/tt9.jpg',
+            'pictures/Commercial/tallTimbers/tt10.jpg'],
         specs: {}
     },
     '400Rose': {
