@@ -1,4 +1,8 @@
 /* Reset and Base Styles */
+#poopButton{
+  background: linear-gradient(135deg, #3498db 0%, #5dade2 100%);
+}
+
 * {
   margin: 0;
   padding: 0;

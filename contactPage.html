@@ -5,21 +5,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact - Global Windows LLC</title>
+    <link rel="stylesheet" href="baseStyles.css">
     <link rel="stylesheet" href="contactStyles.css">
-    <link rel="stylesheet" href="navStyles.css">
+
 </head>
 
 <body>
-     <!-- Navigation Bar -->
+    <!-- Navigation Bar -->
     <nav class="navbar" id="navbar">
         <!-- Logo Section -->
         <div class="logo-section">
-    <div class="logo-placeholder">
-        <a href="index.html">
-            <img src="pictures/GlobalWindowsLogo.png" alt="GlobalWindowsLogo">
-        </a>
-    </div>
-</div>
+            <div class="logo-placeholder">
+                <a href="index.html">
+                    <img src="pictures/GlobalWindowsLogo.png" alt="GlobalWindowsLogo">
+                </a>
+            </div>
+        </div>
 
         <ul class="nav-list" id="nav-list">
             <li class="nav-item">
@@ -35,12 +36,13 @@
                 <a href="aboutPage.html" class="nav-link">About</a>
             </li>
             <li class="nav-item">
-                <a style="text-decoration: underline; text-decoration-thickness: 3px; text-underline-offset: 7px;" href="teachingsPage.html" class="nav-link">Teachings</a>
+                <a style="text-decoration: underline; text-decoration-thickness: 3px; text-underline-offset: 7px;"
+                    href="teachingsPage.html" class="nav-link">Teachings</a>
             </li>
         </ul>
 
 
-<!-- Mobile Menu Toggle -->
+        <!-- Mobile Menu Toggle -->
         <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle navigation menu">
             <span class="hamburger-line"></span>
             <span class="hamburger-line"></span>
@@ -59,21 +61,13 @@
             <!-- Contact Container with Side Images -->
             <div class="contact-wrapper">
                 <!-- Left Side Image -->
-                <div class="contact-side-image left-image">
-                    <div class="image-container">
-                        <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Home construction">
-                        <div class="side-image-text">
-                            <h4>Residential</h4>
-                            <p>Expert Service</p>
-                        </div>
-                    </div>
-                </div>
+
 
                 <div class="contact-container">
                     <!-- Contact Information -->
                     <div class="contact-info-section">
                         <h3>Get In Touch</h3>
-                        
+
                         <button class="contact-toggle-btn" onclick="toggleContactInfo()">
                             <span>Contact Information</span>
                             <span class="contact-toggle-icon">▼</span>
@@ -102,7 +96,10 @@
                                 <div class="contact-icon">✉️</div>
                                 <div class="contact-details">
                                     <h4>Email</h4>
-                                    <p>SrobertsLLC@outlook.com</p>
+                                    <a href="mailto:SrobertsLLC@outlook.com" style="color: #27ae60;">
+                                        SrobertsLLC@outlook.com
+                                    </a>
+
                                     <p>Estimates Available</p>
                                 </div>
                             </div>
@@ -134,7 +131,7 @@
 
                         <form id="contact-form" name="contact" method="POST" netlify>
                             <input type="hidden" name="form-name" value="contact" />
-                            
+
                             <div class="form-group">
                                 <label for="full-name">Full Name <span class="required">*</span></label>
                                 <input type="text" id="full-name" name="fullName" required>
@@ -187,16 +184,7 @@
                     </div>
                 </div>
 
-                <!-- Right Side Image -->
-                <div class="contact-side-image right-image">
-                    <div class="image-container">
-                        <img src="https://images.unsplash.com/photo-1449824913935-59a10b8d2000?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Quality windows">
-                        <div class="side-image-text">
-                            <h4>Commercial</h4>
-                            <p>Quality Results</p>
-                        </div>
-                    </div>
-                </div>
+
             </div>
 
             <!-- Bottom decorative images -->
@@ -303,10 +291,10 @@
             const highlightsContainer = document.getElementById('highlightsContainer');
             const toggleBtn = document.querySelector('.highlights-toggle-btn');
             const toggleIcon = document.querySelector('.toggle-icon');
-            
+
             highlightsContainer.classList.toggle('highlights-open');
             toggleBtn.classList.toggle('active');
-            
+
             if (highlightsContainer.classList.contains('highlights-open')) {
                 toggleIcon.textContent = '▲';
             } else {
@@ -319,10 +307,10 @@
             const contactContainer = document.getElementById('contactItemsContainer');
             const toggleBtn = document.querySelector('.contact-toggle-btn');
             const toggleIcon = document.querySelector('.contact-toggle-icon');
-            
+
             contactContainer.classList.toggle('contact-open');
             toggleBtn.classList.toggle('active');
-            
+
             if (contactContainer.classList.contains('contact-open')) {
                 toggleIcon.textContent = '▲';
             } else {
