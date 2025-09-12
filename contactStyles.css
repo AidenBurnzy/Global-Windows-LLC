@@ -1,140 +1,22 @@
-/* Reset and Base Styles */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+/* Contact-specific styles only - all base style overrides removed */
 
-body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  line-height: 1.6;
-  color: #333;
-  background-color: #f8f9fa;
-}
-
-/* Main Content */
-.main-content {
-  min-height: calc(100vh - 80px);
-  margin: 5%;
-  padding-top: 120px; /* Account for fixed navbar */
-}
-
-.page-content {
-  max-width: none;
-  width: 100%;
-  padding: 2rem 4rem;
-}
-
-.page-header {
-  text-align: center;
-  margin-bottom: 3rem;
-  padding: 2rem 0;
-}
-
-.page-title {
-  font-size: clamp(2.5rem, 5vw, 3.5rem);
-  color: #1e3a2e;
-  margin-bottom: 1rem;
-  font-weight: 700;
-}
-
-.page-subtitle {
-  font-size: clamp(1.1rem, 2.5vw, 1.3rem);
-  color: #7f8c8d;
-  max-width: 600px;
-  margin: 0 auto;
-}
-
-/* Contact Wrapper with Side Images */
+/* Contact Wrapper */
 .contact-wrapper {
-  display: grid;
-  grid-template-columns: 0.8fr 6fr 0.8fr;
-  gap: 1.5rem;
-  align-items: start;
   margin: 4rem 0;
   position: relative;
   z-index: 2;
   width: 100%;
 }
 
-.contact-side-image {
-  position: relative;
-  height: 650px;
-  border-radius: 15px;
-  overflow: hidden;
-  box-shadow: 0 8px 25px rgba(39, 174, 96, 0.2);
-  transition: all 0.3s ease;
-}
-
-.contact-side-image:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 35px rgba(39, 174, 96, 0.3);
-}
-
-.contact-side-image .image-container {
-  width: 100%;
-  height: 100%;
-  position: relative;
-  overflow: hidden;
-}
-
-.contact-side-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.3s ease;
-}
-
-.contact-side-image:hover img {
-  transform: scale(1.05);
-}
-
-.contact-side-image::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(135deg, rgba(30, 58, 46, 0.4), rgba(39, 174, 96, 0.4));
-  z-index: 2;
-  transition: opacity 0.3s ease;
-}
-
-.contact-side-image:hover::before {
-  opacity: 0.7;
-}
-
-.side-image-text {
-  position: absolute;
-  bottom: 20px;
-  left: 20px;
-  color: white;
-  z-index: 3;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-}
-
-.side-image-text h4 {
-  font-size: 1.5rem;
-  font-weight: 600;
-  margin-bottom: 0.5rem;
-}
-
-.side-image-text p {
-  font-size: 1rem;
-  opacity: 0.9;
-}
-
-/* Contact Container */
+/* Contact Container - 90% width */
 .contact-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 4rem;
   position: relative;
   z-index: 5;
-  max-width: 1600px;
+  width: 90%;
   margin: 0 auto;
-  width: 100%;
 }
 
 .contact-info-section,
@@ -147,7 +29,6 @@ body {
   backdrop-filter: blur(10px);
   position: relative;
   overflow: hidden;
-  transition: all 0.3s ease;
   min-height: 700px;
   width: 100%;
 }
@@ -174,12 +55,6 @@ body {
   z-index: -1;
 }
 
-.contact-info-section:hover,
-.contact-form-section:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 12px 35px rgba(39, 174, 96, 0.15);
-}
-
 /* Contact Toggle Button - Hidden on Desktop */
 .contact-toggle-btn {
   display: none;
@@ -199,11 +74,6 @@ body {
   align-items: center;
 }
 
-.contact-toggle-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(39, 174, 96, 0.4);
-}
-
 .contact-toggle-icon {
   font-size: 1.2rem;
   transition: transform 0.3s ease;
@@ -215,7 +85,6 @@ body {
 
 /* Contact Items Container */
 .contact-items-container {
-  /* Always visible on desktop */
   opacity: 1;
   max-height: none;
   overflow: visible;
@@ -231,7 +100,6 @@ body {
   background: rgba(248, 249, 250, 0.8);
   border-radius: 12px;
   border-left: 4px solid #27ae60;
-  transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
 }
@@ -244,16 +112,6 @@ body {
   width: 4px;
   height: 100%;
   background: linear-gradient(to bottom, #27ae60, #2ecc71);
-  transition: width 0.3s ease;
-}
-
-.contact-item:hover::before {
-  width: 8px;
-}
-
-.contact-item:hover {
-  background: rgba(39, 174, 96, 0.05);
-  transform: translateX(5px);
 }
 
 .contact-icon {
@@ -267,12 +125,7 @@ body {
   align-items: center;
   justify-content: center;
   box-shadow: 0 4px 15px rgba(39, 174, 96, 0.3);
-  transition: transform 0.3s ease;
   color: white;
-}
-
-.contact-item:hover .contact-icon {
-  transform: scale(1.1) rotate(5deg);
 }
 
 .contact-details h4 {
@@ -507,99 +360,33 @@ body {
   line-height: 1.6;
 }
 
-/* Footer */
-.footer {
-  background: #1e3a2e;
-  color: white;
-  padding: 3rem 2rem 1rem;
-}
-
-.footer-content {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.footer-title {
-  text-align: center;
-  font-size: 1.8rem;
-  margin-bottom: 2rem;
-  color: #2ecc71;
-  font-weight: 700;
-}
-
-.footer-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
-  margin-bottom: 2rem;
-}
-
-.footer-section h4 {
-  color: #2ecc71;
-  margin-bottom: 1rem;
-  font-size: 1.2rem;
-  font-weight: 600;
-}
-
-.footer-section p {
-  margin-bottom: 0.5rem;
-  opacity: 0.9;
-}
-
-.footer-bottom {
-  text-align: center;
-  padding-top: 2rem;
-  border-top: 1px solid #2d5a42;
-  opacity: 0.8;
-}
-
 /* ===== MOBILE RESPONSIVE STYLES ===== */
+
+/* Stack contact boxes at 1350px */
+@media (max-width: 1350px) {
+  .contact-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    width: 90%;
+  }
+}
 
 /* Large tablets and small desktops */
 @media (max-width: 1024px) {
-  .contact-wrapper {
-    grid-template-columns: 1fr 8fr 1fr;
-    gap: 1rem;
-  }
-  
-  .contact-container {
-    gap: 2rem;
-  }
-  
   .contact-info-section,
   .contact-form-section {
     padding: 3rem;
     min-height: 600px;
   }
-  
-  .page-content {
-    padding: 2rem;
-  }
 }
 
 /* Tablets */
 @media (max-width: 768px) {
-  .main-content {
-    margin: 2%;
-  }
-  
-  .page-content {
-    padding: 1.5rem;
-  }
-  
-  .page-header {
-    margin-bottom: 2rem;
-    padding: 1rem 0;
-  }
-
   /* Contact Layout - Switch to single column */
   .contact-wrapper {
     display: block;
     margin: 2rem 0;
-  }
-  
-  .contact-side-image {
-    display: none; /* Hide side images on tablet */
   }
   
   .contact-container {
@@ -616,12 +403,10 @@ body {
   }
 
   /* MOBILE DROPDOWN FUNCTIONALITY */
-  /* Show the toggle button on mobile */
   .contact-toggle-btn {
     display: flex;
   }
   
-  /* Hide contact items by default on mobile */
   .contact-items-container {
     max-height: 0;
     opacity: 0;
@@ -630,7 +415,6 @@ body {
     margin: 0;
   }
   
-  /* Show contact items when dropdown is open */
   .contact-items-container.contact-open {
     max-height: 2000px;
     opacity: 1;
@@ -638,13 +422,11 @@ body {
     padding-top: 1rem;
   }
 
-  /* Service Highlights - Keep always visible on mobile (no dropdown) */
   .highlights-toggle-btn {
-    display: none; /* Keep hidden on mobile */
+    display: none;
   }
   
   .service-highlights {
-    /* Always visible on mobile - no dropdown behavior */
     opacity: 1;
     max-height: none;
     overflow: visible;
@@ -662,7 +444,6 @@ body {
     padding: 0.6rem;
   }
 
-  /* Bottom Images */
   .bottom-image-row {
     grid-template-columns: repeat(3, 1fr);
     gap: 1.5rem;
@@ -673,7 +454,6 @@ body {
     height: 180px;
   }
 
-  /* Service Highlights */
   .service-highlights {
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 1.5rem;
@@ -682,39 +462,10 @@ body {
   .highlight-card {
     padding: 1.5rem;
   }
-
-  /* Footer */
-  .footer-grid {
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1.5rem;
-  }
 }
 
 /* Mobile phones */
-/* Mobile phones */
 @media (max-width: 480px) {
-  .main-content {
-    margin: 1%;
-  }
-  
-  .page-content {
-    padding: 1rem;
-  }
-  
-  .page-header {
-    margin-bottom: 1.5rem;
-    padding: 0.5rem 0;
-  }
-  
-  .page-title {
-    font-size: clamp(2rem, 8vw, 2.5rem);
-  }
-  
-  .page-subtitle {
-    font-size: clamp(1rem, 4vw, 1.1rem);
-  }
-
-  /* Contact Sections */
   .contact-info-section,
   .contact-form-section {
     padding: 1.5rem;
@@ -732,8 +483,8 @@ body {
     text-align: center;
     padding: 1.25rem;
     margin-bottom: 1.5rem;
-    align-items: center; /* Add this to center the items */
-    justify-content: center; /* Add this to center the content */
+    align-items: center;
+    justify-content: center;
   }
   
   .contact-icon {
@@ -744,26 +495,25 @@ body {
   }
   
   .contact-details {
-    text-align: center; /* Ensure text is centered */
-    width: 100%; /* Take full width */
+    text-align: center;
+    width: 100%;
     display: flex;
     flex-direction: column;
-    align-items: center; /* Center the text content */
+    align-items: center;
   }
   
   .contact-details h4 {
     font-size: 1.1rem;
     margin-bottom: 0.5rem;
-    text-align: center; /* Explicitly center the heading */
+    text-align: center;
   }
   
   .contact-details p {
     font-size: 0.95rem;
-    text-align: center; /* Explicitly center the paragraphs */
-    margin: 0 auto; /* Center the paragraphs */
+    text-align: center;
+    margin: 0 auto;
   }
 
-  /* Form Elements */
   .form-group {
     margin-bottom: 1.5rem;
   }
@@ -791,14 +541,12 @@ body {
     border-radius: 8px;
   }
 
-  /* Toggle Buttons */
   .contact-toggle-btn,
   .highlights-toggle-btn {
     padding: 0.875rem 1.25rem;
     font-size: 1rem;
   }
 
-  /* Bottom Images */
   .bottom-image-row {
     grid-template-columns: repeat(3, 1fr);
     gap: 1rem;
@@ -809,7 +557,6 @@ body {
     height: 160px;
   }
 
-  /* Service Highlights */
   .service-highlights-wrapper {
     margin: 2rem 0;
   }
@@ -829,25 +576,5 @@ body {
   
   .highlight-card h4 {
     font-size: 1.2rem;
-  }
-
-  /* Footer */
-  .footer {
-    padding: 2rem 1rem 1rem;
-  }
-  
-  .footer-title {
-    font-size: 1.5rem;
-    margin-bottom: 1.5rem;
-  }
-  
-  .footer-grid {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-    text-align: center;
-  }
-  
-  .footer-section h4 {
-    font-size: 1.1rem;
   }
 }
