@@ -56,13 +56,6 @@ const projectData = {
             'pictures/Commercial/postDr/pd9.jpg'],
         specs: {}
     },
-    'manisteeHotel': {
-        title: 'Manistee Hotel',
-        description: '1070 Nursery Rd, Wellston, MI',
-        images: [
-            'pictures/Commercial/manisteeHotel/mh1.jpg'],
-        specs: {}
-    },
     'hollandFirehouse': {
         title: 'Holland Firehouse',
         description: '106 E 8th St, Holland, MI',
@@ -80,7 +73,15 @@ const projectData = {
         title: 'Hastings FOC',
         description: '102 S Broadway St, Hastings, MI',
         images: [
-            'pictures/Commercial/hastingsFoc/hfoc1.jpg'],
+            'pictures/Commercial/hastingsFoc/hfoc1.jpg',
+            'pictures/Commercial/hastingsFoc/hfoc2.jpg',
+            'pictures/Commercial/hastingsFoc/hfoc3.jpg',
+            'pictures/Commercial/hastingsFoc/hfoc4.jpg',
+            'pictures/Commercial/hastingsFoc/hfoc5.jpg',
+            'pictures/Commercial/hastingsFoc/hfoc6.jpg',
+            'pictures/Commercial/hastingsFoc/hfoc7.jpg',
+            'pictures/Commercial/hastingsFoc/hfoc8.jpg',
+            'pictures/Commercial/hastingsFoc/hfoc9.jpg'],
         specs: {}
     },
     'adelaidePointe': {
