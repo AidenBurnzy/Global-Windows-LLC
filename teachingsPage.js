@@ -50,6 +50,48 @@ Thank You, Lord, for good men. For men who pull the cart of life without complai
     link: 'https://www.youtube.com/watch?v=ycO7jS__NVg&t=1s'
   },
   {
+    title: 'Placed In My Path',
+    content: `Placed In My Path
+
+My message from our heavenly father today
+Not everyone in my life is easy to deal with.
+Not everyone thinks like I do, believes like I do, or sees the world the way I see it.
+And for a long time, I wondered why God would place certain people in my path — people who test my patience, challenge my peace, or stand in opposition to what I value.
+
+But the more I grow, the more I begin to understand a deeper truth:
+
+Some people are placed in my life not to frustrate me, but to reveal me.
+To show me whether I am truly living as Jesus taught, or only when it feels convenient.
+
+It's easy to love the lovable.
+It's easy to agree with those who agree with me.
+But Jesus loved the ones who opposed Him, who misunderstood Him, who judged Him, mocked Him, and rejected Him. He responded with patience when others were impatient, with mercy when others were harsh, and with forgiveness when others held onto offense.
+
+So when I face a difficult person, I ask myself:
+• Am I comparing myself to them, forgetting that I too am flawed?
+• Am I judging them, ignoring the fact that God is still working on me as well?
+• Am I losing patience, instead of seeing that they are a child of God with their own wounds and battles?
+
+Every person carries a story I cannot see.
+Every heart holds a battle I cannot judge.
+Every soul is one God loves.
+
+And sometimes, God uses the people who challenge me the most to stretch my character, to deepen my compassion, to teach me humility, and to remind me that I am not yet finished — I am still being shaped.
+
+Difficult people are not obstacles.
+They are opportunities.
+Opportunities to become more like Jesus.
+Opportunities to practice the patience I pray for.
+Opportunities to love the way I claim I believe.
+
+So I choose to walk with grace.
+I choose to respond with mercy.
+I choose to remember that we are all children of God — each of us carrying our own faults, failures, and hopes of becoming better than we were yesterday.
+
+Because in the end, the true test of Christ within me is not how I treat those who treat me well…
+but how I treat those who don't.`
+  },
+  {
     title: '"Today, I Breathe You In"',
     content: `Today, I woke up wrapped in light,
 Love in the air, and power in flight.
@@ -192,6 +234,48 @@ Thank you, Mother, for teaching me through watching you. Even as a child, I knew
 We are all human, just doing the best we can. But the Bible is the book of life, and it will show you the way.`,
     verse: 'Time - David Gilmour Live in Pompeii 2016',
     link: 'https://www.youtube.com/watch?v=AukADw4m7CE'
+  },
+  {
+    title: 'Revealed Through Resistance',
+    content: `Revealed Through Resistance
+
+My message from our heavenly father today
+Not everyone in my life is easy to deal with.
+Not everyone thinks like I do, believes like I do, or sees the world the way I see it.
+And for a long time, I wondered why God would place certain people in my path — people who test my patience, challenge my peace, or stand in opposition to what I value.
+
+But the more I grow, the more I begin to understand a deeper truth:
+
+Some people are placed in my life not to frustrate me, but to reveal me.
+To show me whether I am truly living as Jesus taught, or only when it feels convenient.
+
+It’s easy to love the lovable.
+It’s easy to agree with those who agree with me.
+But Jesus loved the ones who opposed Him, who misunderstood Him, who judged Him, mocked Him, and rejected Him. He responded with patience when others were impatient, with mercy when others were harsh, and with forgiveness when others held onto offense.
+
+So when I face a difficult person, I ask myself:
+• Am I comparing myself to them, forgetting that I too am flawed?
+• Am I judging them, ignoring the fact that God is still working on me as well?
+• Am I losing patience, instead of seeing that they are a child of God with their own wounds and battles?
+
+Every person carries a story I cannot see.
+Every heart holds a battle I cannot judge.
+Every soul is one God loves.
+
+And sometimes, God uses the people who challenge me the most to stretch my character, to deepen my compassion, to teach me humility, and to remind me that I am not yet finished — I am still being shaped.
+
+Difficult people are not obstacles.
+They are opportunities.
+Opportunities to become more like Jesus.
+Opportunities to practice the patience I pray for.
+Opportunities to love the way I claim I believe.
+
+So I choose to walk with grace.
+I choose to respond with mercy.
+I choose to remember that we are all children of God — each of us carrying our own faults, failures, and hopes of becoming better than we were yesterday.
+
+Because in the end, the true test of Christ within me is not how I treat those who treat me well…
+but how I treat those who don't.`
   }
 ];
 
@@ -220,8 +304,8 @@ document.addEventListener('DOMContentLoaded', function () {
       </div>
     ` : `<h2 class="modal-writing-title">${reflection.title}</h2>`;
 
-    // Music section - only show for non-Cart of Life teachings
-    const musicSection = isCartOfLife ? '' : `
+    // Music section - only show for teachings that have verse and link properties
+    const musicSection = (isCartOfLife || !reflection.verse || !reflection.link) ? '' : `
       <div class="modal-writing-verse" style="margin-bottom: 2rem; padding: 1rem; background: linear-gradient(135deg, #f8f9fa, #e9ecef); border-radius: 10px; border-left: 4px solid #27ae60;">
         <a href="${reflection.link}" target="_blank" style="color: #27ae60; text-decoration: none; font-weight: 600; font-size: 1.1rem; display: inline-block; padding: 0.5rem 1rem; background: white; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: all 0.3s ease;">🎵 ${reflection.verse}</a>
       </div>
