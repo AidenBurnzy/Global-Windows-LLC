@@ -45,9 +45,25 @@ A good man never stops pulling that cart—not until the day his strength fades 
 
 "Dad, you and Mom… get in. Now it's our turn."
 
-Thank You, Lord, for good men. For men who pull the cart of life without complaint. For men who lead with love.`,
-    verse: 'Listen to Your Heart - Kelly Clarkson',
-    link: 'https://www.youtube.com/watch?v=ycO7jS__NVg&t=1s'
+Thank You, Lord, for good men. For men who pull the cart of life without complaint. For men who lead with love.`
+  },
+  {
+    title: '"Running With The Devil"',
+    content: `Running With The Devil
+As you go through life, you have to ask yourself: Who are you running with? Are you running with the divine, or are you chasing worldly things? It's easy to see the difference.
+Are you giving your time and energy to a company that will eventually discard you, while your family longs for your presence? What happened to your dreams? The devil tricks people into selling out their own dreams to build someone else’s. Then, when those in power no longer need you—when they can no longer manipulate you for their own gain—they cast you aside, leaving your life in shambles.
+
+If you lie, cheat, or steal—if you gain at the expense of someone else’s pain through deception—you are running with the devil. But if you measure every decision against the truth of God’s Word, then you are running with our Heavenly Father.
+
+So, ask yourself: Who am I running this human race with?
+
+If you are running with the devil, shame will take hold of your life. But if you are running with God, peace will fill your heart.
+
+What is the condition of your heart today? You may be able to lie to others, but you cannot lie to yourself.
+
+Just my thoughts for today.`,
+verse: 'Runnin With The Devil - Van Halen',
+    link: 'https://www.youtube.com/watch?v=B0apMuRyPvY'
   },
   {
     title: 'Placed In My Path',
