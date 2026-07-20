@@ -292,6 +292,54 @@ I choose to remember that we are all children of God — each of us carrying our
 
 Because in the end, the true test of Christ within me is not how I treat those who treat me well…
 but how I treat those who don't.`
+  },
+  {
+    title: '"Wounds That Cannot Be Seen"',
+    content: `Some wounds never bleed where others can see them.
+
+As a child, I experienced trauma that changed the course of my life. Years later, a neurologist explained that the pathways responsible for spelling had likely been damaged and might never function normally. Hearing those words could have become a reason to quit, to believe I had nothing worthwhile to offer.
+
+But God had a different plan.
+
+The world often measures intelligence by how well a person reads, writes, or speaks. God looks at the heart.
+
+For years I felt frustrated because I knew what I wanted to say, but I struggled to put it on paper. The words in my heart did not always come out the way I intended. Yet God continued to teach me, to reveal His Word, and to strengthen my faith.
+
+My weakness became a reminder that every good thing comes from Him.
+
+Childhood trauma can leave scars that last a lifetime. It can affect the mind, emotions, relationships, and the way a person sees themselves. Some wounds are visible, but many are hidden deep within the heart. Yet no wound is hidden from God.
+
+Jesus has the final word.
+
+He is able to heal what others believe cannot be healed. Sometimes He restores instantly. Sometimes He walks with us through a lifetime of healing. In either case, His grace is sufficient.
+
+If you carry wounds from your childhood, know this: your past does not determine your future. Your scars do not cancel God's purpose for your life. He knows every wound you carry, and He is able to redeem what the enemy meant for destruction.
+
+One of Satan's greatest strategies is to wound a child before that child understands who they are in Christ. Shame, fear, rejection, and lies planted early can influence a lifetime. But the gospel tells us that what is planted by darkness can be uprooted by the truth of Jesus Christ.
+
+The enemy may wound a child, but he cannot erase the image of God within that child. Christ is still able to restore hope, purpose, and eternal life.
+
+As I look back on my own life, I no longer see only the wounds. I see the hand of God carrying me through them. What others believed would limit me became another opportunity for God to demonstrate His strength. If these words have reached your heart, then they are proof that God can speak through imperfect people for His perfect purposes.
+
+Perhaps that is one of the greatest lessons of my life: God does not call the qualified—He qualifies those He calls. My spelling may never be perfect, my grammar may never be flawless, but the Holy Spirit is not limited by my weaknesses. If anything, my weaknesses have become another testimony that the message has always belonged to God, not to me.
+
+"So that your faith might not rest on human wisdom, but on God's power." — 1 Corinthians 2:5`
+  },
+  {
+    title: '"The Trinity and Our Walk with God"',
+    content: `As I reflected on the Trinity, a thought came to my heart.
+
+God the Father exists outside of time. He is the Alpha and the Omega, the beginning and the end. Before I was born, He knew me. He knows every step I have taken and every step I will ever take. My past has never surprised Him, and my future has never been uncertain to Him. He is the eternal Author of my life.
+
+Jesus Christ entered time for us.
+
+The eternal Son of God took on flesh and walked among us. He lived the life we could not live, died the death we deserved, and rose again so that we could be reconciled to the Father. Because Jesus stepped into our world, He meets us in the present. Every day we can walk with Him, speak with Him, and follow Him. He is the bridge between a holy God and sinful man.
+
+The Holy Spirit is God's living presence within us.
+
+The Father sends the Spirit, and the Son sends the Spirit to dwell in those who believe. The Holy Spirit is not merely a force or an influence, but God Himself living within His people. He teaches us, convicts us, comforts us, and reminds us of the words of Christ. He opens our hearts to understand the Scriptures and guides us into truth.
+
+As I thought about this, I realized something beautiful.`
   }
 ];
 
