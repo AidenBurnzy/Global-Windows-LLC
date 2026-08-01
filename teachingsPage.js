@@ -340,6 +340,81 @@ The Holy Spirit is God's living presence within us.
 The Father sends the Spirit, and the Son sends the Spirit to dwell in those who believe. The Holy Spirit is not merely a force or an influence, but God Himself living within His people. He teaches us, convicts us, comforts us, and reminds us of the words of Christ. He opens our hearts to understand the Scriptures and guides us into truth.
 
 As I thought about this, I realized something beautiful.`
+  },
+  {
+    title: 'The Gift of Stillness',
+    content: `The Gift of Stillness
+
+There are moments when life feels loud and overwhelming. The pressure of responsibilities, the noise of the world, and the weight of our own thoughts can make it hard to hear God. In those seasons, stillness becomes a gift.
+
+To be still is not to stop living. It is to stop striving long enough to remember who holds us. It is to sit in the presence of God and let Him quiet the fear that tries to rule our hearts.
+
+When we slow down, we begin to hear the voice of the Father more clearly. We remember that He is not rushing. He is faithful. He is near. And He is enough.
+
+Stillness teaches us trust. It reminds us that peace does not come from controlling every outcome, but from surrendering them to God. The Lord does not always ask us to move faster. Sometimes He asks us to be still and know that He is God.
+
+This week, make space for silence. Put down the noise. Breathe. Pray. Listen. Let God restore your mind and strengthen your spirit.
+
+The world is busy, but God's presence is still available to those who seek Him.`
+  },
+  {
+    title: 'Child Sacrifice',
+    content: `Child Sacrifice
+
+From the earliest pages of Scripture, we see humanity tempted to exchange the truth of God for the lies of the world. The Bible records times when children were sacrificed to false gods, revealing just how far the human heart can fall when it turns away from the Lord. Those acts were an outward expression of a deeper spiritual rebellion against God.
+
+As Christians, we rightly grieve and are horrified by every form of violence and abuse against children. Yet I believe there is another question every parent should ask themselves.
+
+If I never teach my children about Jesus Christ, if I never introduce them to the One who gave His life to save them, what have I placed before them? Have I allowed the world to become their teacher instead of God?
+
+The god of this world offers countless promises of success, pleasure, wealth, and self-sufficiency, but those promises can never give eternal life. Only Jesus Christ, the Son of God, can do that. He willingly died for our sins so that we would not remain separated from God, and He rose again to offer forgiveness and everlasting life to all who believe in Him.
+
+Parents have many responsibilities, but none is greater than leading their children to know Christ. We work to feed them, clothe them, educate them, and protect them from physical harm. Yet the greatest protection we can offer is to teach them the truth of God's Word and point them to Jesus.
+
+Do not assume that remaining silent about God is a neutral choice. Every child will be taught by someone. If we do not teach them the truth, the world will gladly teach them its own version of truth.
+
+“Train up a child in the way he should go; even when he is old he will not depart from it.” — Proverbs 22:6
+
+“These words that I command you today shall be on your heart. You shall teach them diligently to your children.” — Deuteronomy 6:6–7
+
+The greatest inheritance we can leave our children is not wealth or success, but faith in Jesus Christ. Everything else will pass away, but the Word of God endures forever.
+
+Stephan Roberts
+Everyone you ever encounter in life is a child of God!!!`
+  },
+  {
+    title: 'The Doorway',
+    content: `Thought for Today – The Doorway
+
+Today I was thinking about my Heavenly Father.
+
+The Bible teaches that God exists beyond the physical world. He is not confined by time, space, or the dimensions we know. Yet He did not leave us without a way to know Him. He gave us His Word, and through His Holy Spirit He speaks to those who seek Him.
+
+Then a question came to my heart.
+
+If there is no reality beyond this physical world, why has mankind spent thousands of years trying to discover one?
+
+Why are scientists searching for higher dimensions? Why do people chase stories of portals, alternate realities, and the supernatural? Why does every generation seem convinced there must be something beyond what our eyes can see?
+
+Could it be because there is?
+
+The Bible declares that God “has set eternity in the human heart” (Ecclesiastes 3:11). Perhaps this longing is not an accident. Perhaps it is a reminder that we were created for more than this temporary world.
+
+Yet while many search for hidden doors and secret gateways, God has already revealed the only doorway that leads to eternal life.
+
+Jesus said, “I am the door. If anyone enters by Me, he will be saved…” (John 10:9).
+
+The greatest doorway is not a portal into another dimension—it is a relationship with the Creator of every dimension.
+
+So my question to those who do not believe is not meant to argue, but to invite reflection:
+
+If there is no reality beyond this one, why does the human heart never stop searching for it?
+
+Perhaps the reason is that the One who created us also placed within us a longing to find Him.
+
+“For now we see through a glass, darkly; but then face to face…” (1 Corinthians 13:12).
+
+One day, every question about what lies beyond this world will be answered. Until then, God has already shown us the path—not through hidden portals, but through His Son, Jesus Christ.`
   }
 ];
 
